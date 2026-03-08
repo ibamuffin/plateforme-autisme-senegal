@@ -1,35 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Jeux Interactifs - Plateforme Autisme Sénégal</title>
-    <meta name="description" content="Jeux éducatifs et interactifs adaptés pour les enfants vivant avec les TSA au Sénégal. Activités ludiques pour favoriser l'apprentissage.">
-    <meta name="keywords" content="jeux interactifs, autisme, TSA, éducation, enfants, activités ludiques, sénégal">
-    
-    <!-- Favicon -->
+    <title>Répertoire écoles TSA - Plateforme Autisme Sénégal</title>
+    <meta name="description" content="Annuaire des Écoles Spécialisées TSA au Sénégal">
     <link rel="icon" type="image/svg+xml" href="images/logo-autisme-senegal.svg">
-    
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/web3-components.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="styles/fontawesome-local.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
-    
-    <!-- Font Awesome Fallback Script -->
-    <script src="js/fontawesome-fallback.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Animated Interactive Background -->
     <div class="animated-background" id="animatedBg"></div>
-
-    <!-- Navigation (Template d'origine) -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -37,345 +20,151 @@
                 <h2>Plateforme Autisme Sénégal</h2>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html#accueil" class="nav-link">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#objectifs" class="nav-link">Objectifs</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#activites" class="nav-link">Activités</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#ressources" class="nav-link active">Ressources</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#donation" class="nav-link">Don</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a></li>
+                <li class="nav-item"><a href="index.html#objectifs" class="nav-link">Objectifs</a></li>
+                <li class="nav-item"><a href="index.html#activites" class="nav-link">Activités</a></li>
+                <li class="nav-item"><a href="index.html#ressources" class="nav-link active">Ressources</a></li>
+                <li class="nav-item"><a href="index.html#donation" class="nav-link">Don</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <div class="hero-icon-box">
-                <i class="fas fa-gamepad"></i>
+    <section class="hero gradient-bg-blue">
+        <div class="hero-content" style="padding: 4rem 0;">
+            <div class="icon-box-modern gradient-bg-blue float-animation" style="margin: 0 auto 1.5rem;">
+                <i class="fas fa-school"></i>
             </div>
-            <h1>Jeux Interactifs</h1>
-            <p class="hero-subtitle">Des activités ludiques et éducatives pour accompagner les enfants avec TSA</p>
-            <div class="hero-breadcrumb">
-                <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
-                <span>/</span>
-                <a href="index.html#ressources">Ressources</a>
-                <span>/</span>
-                <span>Jeux Interactifs</span>
+            <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Répertoire des Écoles Spécialisées TSA</h1>
+            <p class="hero-subtitle" style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">Trouvez les professionnels de santé spécialisés dans l'autisme au Sénégal</p>
+            <div class="hero-breadcrumb" style="margin-top: 1.5rem;">
+                <a href="index.html" style="color: white;"><i class="fas fa-home"></i> Accueil</a>
+                <span style="color: white;">/</span>
+                <a href="index.html#ressources" style="color: white;">Ressources</a>
+                <span style="color: white;">/</span>
+                <span style="color: rgba(255,255,255,0.8);">écoles</span>
             </div>
         </div>
     </section>
-
-    <!-- Jeux Interactifs Section -->
-    <section id="jeux" class="section games-section">
+    <section class="section bg-light">
         <div class="container">
-            <div class="games-intro">
-                <h2>Des jeux adaptés pour favoriser l'apprentissage</h2>
-                <p class="lead">Nos jeux interactifs sont spécialement conçus pour stimuler le développement cognitif, social et sensoriel des enfants vivant avec les Troubles du Spectre Autistique. Chaque activité peut être adaptée selon les besoins et le niveau de l'enfant.</p>
-            </div>
-
-            <div class="games-controls">
-                <h3>Paramètres d'accessibilité</h3>
-                <div class="accessibility-controls">
-                    <div class="control-group">
-                        <label for="volumeControl">
-                            <i class="fas fa-volume-up"></i> Volume des sons
-                        </label>
-                        <input type="range" id="volumeControl" min="0" max="100" value="70" class="volume-slider">
-                        <span id="volumeValue">70%</span>
-                    </div>
-
-                    <div class="control-group">
-                        <label for="animationSpeed">
-                            <i class="fas fa-tachometer-alt"></i> Vitesse des animations
-                        </label>
-                        <select id="animationSpeed" class="speed-select">
-                            <option value="slow">Lente</option>
-                            <option value="normal" selected>Normale</option>
-                            <option value="fast">Rapide</option>
-                        </select>
-                    </div>
-
-                    <div class="control-group">
-                        <label>
-                            <input type="checkbox" id="contrastMode" class="toggle-checkbox">
-                            <i class="fas fa-adjust"></i> Mode Contraste Élevé
-                        </label>
-                    </div>
-
-                    <div class="control-group">
-                        <label>
-                            <input type="checkbox" id="focusMode" class="toggle-checkbox">
-                            <i class="fas fa-eye"></i> Mode Focus (réduit les distractions)
-                        </label>
-                    </div>
+            <div class="info-banner-modern">
+                <div class="info-banner-icon"><i class="fas fa-info-circle"></i></div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem; color: #1f2937;">Répertoire en cours de mise à jour</h4>
+                    <p style="margin: 0; color: #6b7280;">Ce répertoire est régulièrement mis à jour. Pour signaler des modifications, <a href="index.html#contact" style="color: #2563eb; font-weight: 600;">contactez-nous</a>.</p>
                 </div>
             </div>
-
-            <div class="games-grid">
-                <!-- Jeu 1: Puzzle des Émotions -->
-                <div class="game-card" data-game="emotions-puzzle">
-                    <div class="game-icon">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <h3>Puzzle des Émotions</h3>
-                    <p class="game-description">Reconnaître et assembler les expressions faciales pour comprendre les émotions de base.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-brain"></i> Reconnaissance émotionnelle</span>
-                        <span class="benefit-tag"><i class="fas fa-hand-pointer"></i> Motricité fine</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('emotions-puzzle')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
+            <div class="grid-modern-4" style="margin: 3rem 0;">
+                <div class="stat-counter">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label"><i class="fas fa-school"></i> écoles Spécialisés</div>
                 </div>
-
-                <!-- Jeu 2: Séquences Logiques -->
-                <div class="game-card" data-game="sequences">
-                    <div class="game-icon">
-                        <i class="fas fa-sort-amount-down"></i>
-                    </div>
-                    <h3>Séquences Logiques</h3>
-                    <p class="game-description">Organiser des images dans l'ordre chronologique pour comprendre les routines quotidiennes.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-clock"></i> Séquencement temporel</span>
-                        <span class="benefit-tag"><i class="fas fa-lightbulb"></i> Raisonnement logique</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('sequences')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
+                <div class="stat-counter">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label"><i class="fas fa-hospital"></i> Établissements</div>
                 </div>
-
-                <!-- Jeu 3: Jardin des Couleurs -->
-                <div class="game-card" data-game="colors-garden">
-                    <div class="game-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Jardin des Couleurs</h3>
-                    <p class="game-description">Planter des fleurs en associant les couleurs pour développer la reconnaissance visuelle.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-palette"></i> Reconnaissance des couleurs</span>
-                        <span class="benefit-tag"><i class="fas fa-check-circle"></i> Association visuelle</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('colors-garden')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
+                <div class="stat-counter">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label"><i class="fas fa-map-marker-alt"></i> Régions</div>
                 </div>
-
-                <!-- Jeu 4: Tri des Formes -->
-                <div class="game-card" data-game="shapes-sorting">
-                    <div class="game-icon">
-                        <i class="fas fa-shapes"></i>
-                    </div>
-                    <h3>Tri des Formes</h3>
-                    <p class="game-description">Classer les formes géométriques dans les bonnes catégories.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-cube"></i> Reconnaissance des formes</span>
-                        <span class="benefit-tag"><i class="fas fa-sort"></i> Classification</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('shapes-sorting')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
-                </div>
-
-                <!-- Jeu 5: Piano Musical -->
-                <div class="game-card" data-game="musical-piano">
-                    <div class="game-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h3>Piano Musical</h3>
-                    <p class="game-description">Créer de la musique en tapant sur des touches colorées pour développer l'expression créative.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-headphones"></i> Stimulation auditive</span>
-                        <span class="benefit-tag"><i class="fas fa-paint-brush"></i> Expression créative</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('musical-piano')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
-                </div>
-
-                <!-- Jeu 6: Routine du Matin -->
-                <div class="game-card" data-game="morning-routine">
-                    <div class="game-icon">
-                        <i class="fas fa-sun"></i>
-                    </div>
-                    <h3>Routine du Matin</h3>
-                    <p class="game-description">Apprendre les étapes de la routine matinale dans le bon ordre.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-list-ol"></i> Routines quotidiennes</span>
-                        <span class="benefit-tag"><i class="fas fa-user-check"></i> Autonomie</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('morning-routine')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
-                </div>
-
-                <!-- Jeu 7: Bulles Apaisantes -->
-                <div class="game-card" data-game="calming-bubbles">
-                    <div class="game-icon">
-                        <i class="fas fa-circle"></i>
-                    </div>
-                    <h3>Bulles Apaisantes</h3>
-                    <p class="game-description">Éclater des bulles doucement pour favoriser le calme et la concentration.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-spa"></i> Apaisement</span>
-                        <span class="benefit-tag"><i class="fas fa-crosshairs"></i> Coordination œil-main</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('calming-bubbles')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
-                </div>
-
-                <!-- Jeu 8: Sons des Animaux -->
-                <div class="game-card" data-game="animal-sounds">
-                    <div class="game-icon">
-                        <i class="fas fa-paw"></i>
-                    </div>
-                    <h3>Sons des Animaux</h3>
-                    <p class="game-description">Associer les animaux à leurs cris pour développer l'apprentissage auditif.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-volume-up"></i> Discrimination auditive</span>
-                        <span class="benefit-tag"><i class="fas fa-link"></i> Association son-image</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('animal-sounds')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
-                </div>
-
-                <!-- Jeu 9: Dessin Libre -->
-                <div class="game-card" data-game="free-drawing">
-                    <div class="game-icon">
-                        <i class="fas fa-pencil-alt"></i>
-                    </div>
-                    <h3>Dessin Libre</h3>
-                    <p class="game-description">Dessiner librement avec différentes couleurs et formes pour stimuler la créativité.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-palette"></i> Expression artistique</span>
-                        <span class="benefit-tag"><i class="fas fa-hand-sparkles"></i> Motricité fine</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('free-drawing')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
-                </div>
-
-                <!-- Jeu 10: Correspondance d'Objets -->
-                <div class="game-card" data-game="object-matching">
-                    <div class="game-icon">
-                        <i class="fas fa-equals"></i>
-                    </div>
-                    <h3>Correspondance d'Objets</h3>
-                    <p class="game-description">Trouver les paires d'objets identiques pour développer la mémoire visuelle.</p>
-                    <div class="game-benefits">
-                        <span class="benefit-tag"><i class="fas fa-brain"></i> Mémoire visuelle</span>
-                        <span class="benefit-tag"><i class="fas fa-eye"></i> Attention aux détails</span>
-                    </div>
-                    <button class="play-button" onclick="launchGame('object-matching')">
-                        <i class="fas fa-play"></i> Jouer
-                    </button>
+                <div class="stat-counter">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label"><i class="fas fa-clock"></i> Urgences</div>
                 </div>
             </div>
-
-            <!-- Conseils pour les parents -->
-            <div class="parent-tips">
-                <h3><i class="fas fa-info-circle"></i> Conseils pour les parents et accompagnants</h3>
-                <div class="tips-grid">
-                    <div class="tip-card">
-                        <i class="fas fa-clock"></i>
-                        <h4>Durée adaptée</h4>
-                        <p>Limitez les sessions à 15-20 minutes pour éviter la fatigue et maintenir l'engagement.</p>
+            <div class="modern-card" style="margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 1.5rem; color: #1f2937;"><i class="fas fa-search"></i> Rechercher un médecin</h3>
+                <div class="grid-modern-4">
+                    <div><input type="text" class="input-modern" placeholder="Nom du médecin..."></div>
+                    <div><select class="select-modern"><option>Toutes spécialités</option><option>École Spécialisée</option><option>Neurologue</option><option>Psychiatre</option></select></div>
+                    <div><select class="select-modern"><option>Toutes régions</option><option>Dakar</option><option>Thiès</option><option>Saint-Louis</option></select></div>
+                    <div><select class="select-modern"><option>Tous établissements</option><option>Établissement Fann</option><option>Le Dantec</option><option>Cabinets Privés</option></select></div>
+                </div>
+            </div>
+            <div class="grid-modern-2">
+                <div class="professional-card">
+                    <div class="professional-avatar"><i class="fas fa-school"></i></div>
+                    <h3 style="margin-bottom: 0.5rem;">École Aminata Les Papillons <span class="modern-badge badge-success" style="font-size: 0.75rem; padding: 0.25rem 0.75rem;"><i class="fas fa-check-circle"></i> Vérifié</span></h3>
+                    <span class="badge-info" style="display: inline-block; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem;">École Spécialisée - Programme TSA</span>
+                    <p style="color: #6b7280; margin-bottom: 1.5rem;"><i class="fas fa-hospital"></i> École Établissement Fann</p>
+                    <div class="grid-modern-2" style="gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="tag-modern"><i class="fas fa-map-marker-alt"></i> Dakar-Fann</div>
+                        <div class="tag-modern"><i class="fas fa-phone"></i> +221 33 869 19 06</div>
+                        <div class="tag-modern"><i class="fas fa-clock"></i> Lun-Ven 8h-17h</div>
+                        <div class="tag-modern"><i class="fas fa-graduation-cap"></i> 15 ans exp.</div>
                     </div>
-                    <div class="tip-card">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <h4>Accompagnement</h4>
-                        <p>Restez présent pour encourager et guider l'enfant, surtout lors des premières utilisations.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="tel:+221338691906" class="btn-modern btn-primary-modern"><i class="fas fa-phone"></i> Appeler</a>
+                        <a href="mailto:contact@hopitalfann.sn" class="btn-modern btn-success-modern"><i class="fas fa-envelope"></i> Email</a>
                     </div>
-                    <div class="tip-card">
-                        <i class="fas fa-star"></i>
-                        <h4>Renforcement positif</h4>
-                        <p>Félicitez chaque effort et progression, même minime, pour renforcer la motivation.</p>
+                </div>
+                <div class="professional-card">
+                    <div class="professional-avatar gradient-bg-green"><i class="fas fa-brain"></i></div>
+                    <h3 style="margin-bottom: 0.5rem;">École Moussa Étoile du Matin <span class="modern-badge badge-success" style="font-size: 0.75rem; padding: 0.25rem 0.75rem;"><i class="fas fa-check-circle"></i> Vérifié</span></h3>
+                    <span class="badge-warning" style="display: inline-block; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem;">Neurologue Pédiatrique</span>
+                    <p style="color: #6b7280; margin-bottom: 1.5rem;"><i class="fas fa-hospital"></i> Établissement Le Dantec - Neurologie</p>
+                    <div class="grid-modern-2" style="gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="tag-modern"><i class="fas fa-map-marker-alt"></i> Dakar-Plateau</div>
+                        <div class="tag-modern"><i class="fas fa-phone"></i> +221 33 839 50 50</div>
+                        <div class="tag-modern"><i class="fas fa-clock"></i> Lun-Ven 9h-16h</div>
+                        <div class="tag-modern"><i class="fas fa-microscope"></i> Examens neuro</div>
                     </div>
-                    <div class="tip-card">
-                        <i class="fas fa-sync-alt"></i>
-                        <h4>Répétition régulière</h4>
-                        <p>La répétition aide à l'apprentissage. Rejouez les mêmes jeux plusieurs fois par semaine.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="tel:+221338395050" class="btn-modern btn-primary-modern"><i class="fas fa-phone"></i> Appeler</a>
+                        <a href="mailto:contact@dantec.sn" class="btn-modern btn-success-modern"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+                <div class="professional-card">
+                    <div class="professional-avatar gradient-bg-orange"><i class="fas fa-heartbeat"></i></div>
+                    <h3 style="margin-bottom: 0.5rem;">École Fatou Arc-en-Ciel <span class="modern-badge badge-success" style="font-size: 0.75rem; padding: 0.25rem 0.75rem;"><i class="fas fa-check-circle"></i> Vérifié</span></h3>
+                    <span class="badge-info" style="display: inline-block; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem;">École Spécialisée</span>
+                    <p style="color: #6b7280; margin-bottom: 1.5rem;"><i class="fas fa-clinic-medical"></i> Cabinet Privé - Clinique Madeleine</p>
+                    <div class="grid-modern-2" style="gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="tag-modern"><i class="fas fa-map-marker-alt"></i> Dakar-Mermoz</div>
+                        <div class="tag-modern"><i class="fas fa-phone"></i> +221 77 123 45 67</div>
+                        <div class="tag-modern"><i class="fas fa-clock"></i> Lun-Sam 10h-19h</div>
+                        <div class="tag-modern"><i class="fas fa-home"></i> Domicile OK</div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="tel:+221771234567" class="btn-modern btn-primary-modern"><i class="fas fa-phone"></i> Appeler</a>
+                        <a href="mailto:dr.Arc-en-Ciel@clinique.sn" class="btn-modern btn-success-modern"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+                <div class="professional-card">
+                    <div class="professional-avatar gradient-bg-1"><i class="fas fa-head-side-virus"></i></div>
+                    <h3 style="margin-bottom: 0.5rem;">École Ibrahima Espoir et Vie <span class="modern-badge badge-success" style="font-size: 0.75rem; padding: 0.25rem 0.75rem;"><i class="fas fa-check-circle"></i> Vérifié</span></h3>
+                    <span class="badge-warning" style="display: inline-block; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem;">Psychiatre - Autisme</span>
+                    <p style="color: #6b7280; margin-bottom: 1.5rem;"><i class="fas fa-hospital"></i> Établissement Abass Ndao</p>
+                    <div class="grid-modern-2" style="gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="tag-modern"><i class="fas fa-map-marker-alt"></i> Dakar-Grand Yoff</div>
+                        <div class="tag-modern"><i class="fas fa-phone"></i> +221 33 827 33 33</div>
+                        <div class="tag-modern"><i class="fas fa-clock"></i> Lun-Ven 8h30-16h30</div>
+                        <div class="tag-modern"><i class="fas fa-pills"></i> Traitement</div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="tel:+221338273333" class="btn-modern btn-primary-modern"><i class="fas fa-phone"></i> Appeler</a>
+                        <a href="mailto:contact@abassndao.sn" class="btn-modern btn-success-modern"><i class="fas fa-envelope"></i> Email</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Game Modal -->
-    <div id="gameModal" class="game-modal">
-        <div class="game-container">
-            <div class="game-header">
-                <h3 id="gameTitle">Jeu Interactif</h3>
-                <button class="close-game" onclick="closeGame()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="game-content" id="gameContent">
-                <!-- Le contenu du jeu sera chargé dynamiquement ici -->
-                <div class="game-loading">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>Chargement du jeu...</p>
-                </div>
-            </div>
-            <div class="game-controls">
-                <button class="game-control-btn" onclick="restartGame()">
-                    <i class="fas fa-redo"></i> Recommencer
-                </button>
-                <button class="game-control-btn" onclick="pauseGame()">
-                    <i class="fas fa-pause"></i> Pause
-                </button>
-                <button class="game-control-btn" onclick="closeGame()">
-                    <i class="fas fa-times"></i> Fermer
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Plateforme Autisme Sénégal</h4>
-                    <p>Ensemble pour améliorer la prise en charge des enfants vivant avec les Troubles du Spectre Autistique au Sénégal.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Liens Utiles</h4>
-                    <ul>
-                        <li><a href="index.html#qui-sommes-nous">Qui sommes-nous ?</a></li>
-                        <li><a href="index.html#objectifs">Objectifs</a></li>
-                        <li><a href="index.html#activites">Activités</a></li>
-                        <li><a href="index.html#ressources">Ressources</a></li>
-                    </ul>
+                    <p>Ensemble pour améliorer la prise en charge des enfants vivant avec les TSA au Sénégal.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Ressources</h4>
                     <ul>
                         <li><a href="jeux-interactifs.html">Jeux Interactifs</a></li>
-                        <li><a href="repertoire-medecins.html">Répertoire Médecins</a></li>
-                        <li><a href="repertoire-paramedicaux.html">Répertoire Paramédicaux</a></li>
-                        <li><a href="repertoire-ecoles.html">Répertoire Écoles</a></li>
+                        <li><a href="repertoire-medecins.html">écoles</a></li>
+                        <li><a href="repertoire-paramedicaux.html">Paramédicaux</a></li>
+                        <li><a href="repertoire-ecoles.html">Écoles</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -393,7 +182,6 @@
             </div>
         </div>
     </footer>
-
     <script src="js/main.js"></script>
 </body>
 </html>
