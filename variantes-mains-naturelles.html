@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparaison des Variantes - Mains Naturelles | Plateforme Autisme Sénégal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            color: #1f2937;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1);
+        }
+
+        h1 {
+            color: #1e40af;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 5px solid #2563eb;
+            margin: 2rem 0;
+        }
+
+        .info-box h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .info-box p {
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .variant-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .variant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+            border-color: #3b82f6;
+        }
+
+        .variant-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .variant-title {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .variant-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .variant-subtitle {
+            color: #6b7280;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .logo-display {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border-radius: 15px;
+            border: 2px dashed #cbd5e1;
+        }
+
+        .logo-display img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.15);
+        }
+
+        .characteristics {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .characteristics h4 {
+            color: #2563eb;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .characteristics ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .characteristics li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .characteristics li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .symbolism {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .symbolism h5 {
+            color: #92400e;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .symbolism p {
+            color: #78350f;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .recommendation {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border-left: 5px solid #10b981;
+        }
+
+        .recommendation h3 {
+            color: #065f46;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation p {
+            color: #064e3b;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .technical-specs {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .technical-specs h3 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .spec-item {
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 3px solid #3b82f6;
+        }
+
+        .spec-label {
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .spec-value {
+            font-size: 1.1rem;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+        }
+
+        .btn-secondary:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 1rem;
+            }
+
+            .action-buttons {
+                display: none;
+            }
+
+            .variant-card {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="emoji">🙌</div>
+            <h1>Variantes Mains Naturelles</h1>
+            <p class="subtitle">Trois styles de gestes pour symboliser l'union et la solidarité</p>
+        </header>
+
+        <div class="info-box">
+            <h3>🎨 Amélioration du design</h3>
+            <p>
+                Ces trois variantes ont été créées avec des <strong>mains naturelles</strong> utilisant des courbes de Bézier organiques, 
+                remplaçant les formes elliptiques géométriques pour un rendu plus humain et chaleureux. Chaque variante propose 
+                un geste différent pour exprimer différentes facettes de la solidarité et du soutien.
+            </p>
+        </div>
+
+        <div class="comparison-grid">
+            <!-- Variante A -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <span class="variant-emoji">👐</span>
+                    <h2 class="variant-title">Variante A</h2>
+                    <p class="variant-subtitle">Mains Ouvertes</p>
+                </div>
+
+                <div class="logo-display">
+                    <img 
+                        src="logos/logo-autisme-proposition-1-variant-a-small.png"
+                        srcset="logos/logo-autisme-proposition-1-variant-a-small.png 200w,
+                                logos/logo-autisme-proposition-1-variant-a-medium.png 400w,
+                                logos/logo-autisme-proposition-1-variant-a-large.png 800w,
+                                logos/logo-autisme-proposition-1-variant-a-xlarge.png 1600w"
+                        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+                        alt="Logo Autisme Sénégal - Variante A - Mains Ouvertes"
+                    >
+                </div>
+
+                <div class="characteristics">
+                    <h4>Caractéristiques :</h4>
+                    <ul>
+                        <li>Doigts bien écartés et naturellement espacés</li>
+                        <li>Pouces à angle organique (40-45°)</li>
+                        <li>Paumes avec asymétrie subtile</li>
+                        <li>Lignes de paume pour réalisme</li>
+                    </ul>
+                </div>
+
+                <div class="symbolism">
+                    <h5>Symbolisme :</h5>
+                    <p>
+                        Les mains ouvertes symbolisent l'<strong>accueil</strong>, la <strong>transparence</strong> 
+                        et l'<strong>honnêteté</strong>. Ce geste évoque l'ouverture d'esprit nécessaire pour 
+                        comprendre et accompagner les enfants autistes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Variante B -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <span class="variant-emoji">🙌</span>
+                    <h2 class="variant-title">Variante B</h2>
+                    <p class="variant-subtitle">Mains en Célébration</p>
+                </div>
+
+                <div class="logo-display">
+                    <img 
+                        src="logos/logo-autisme-proposition-1-variant-b-small.png"
+                        srcset="logos/logo-autisme-proposition-1-variant-b-small.png 200w,
+                                logos/logo-autisme-proposition-1-variant-b-medium.png 400w,
+                                logos/logo-autisme-proposition-1-variant-b-large.png 800w,
+                                logos/logo-autisme-proposition-1-variant-b-xlarge.png 1600w"
+                        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+                        alt="Logo Autisme Sénégal - Variante B - Mains en Célébration"
+                    >
+                </div>
+
+                <div class="characteristics">
+                    <h4>Caractéristiques :</h4>
+                    <ul>
+                        <li>Paumes orientées vers l'avant</li>
+                        <li>Doigts pointant vers le haut</li>
+                        <li>Reflets lumineux sur les paumes</li>
+                        <li>Posture dynamique et énergique</li>
+                    </ul>
+                </div>
+
+                <div class="symbolism">
+                    <h5>Symbolisme :</h5>
+                    <p>
+                        Les mains levées en célébration expriment la <strong>joie</strong>, l'<strong>espoir</strong> 
+                        et la <strong>victoire collective</strong>. Ce geste représente la fierté des accomplissements 
+                        et le soutien enthousiaste de la communauté.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Variante C -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <span class="variant-emoji">🤲</span>
+                    <h2 class="variant-title">Variante C</h2>
+                    <p class="variant-subtitle">Mains en Offrande</p>
+                </div>
+
+                <div class="logo-display">
+                    <img 
+                        src="logos/logo-autisme-proposition-1-variant-c-small.png"
+                        srcset="logos/logo-autisme-proposition-1-variant-c-small.png 200w,
+                                logos/logo-autisme-proposition-1-variant-c-medium.png 400w,
+                                logos/logo-autisme-proposition-1-variant-c-large.png 800w,
+                                logos/logo-autisme-proposition-1-variant-c-xlarge.png 1600w"
+                        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+                        alt="Logo Autisme Sénégal - Variante C - Mains en Offrande"
+                    >
+                </div>
+
+                <div class="characteristics">
+                    <h4>Caractéristiques :</h4>
+                    <ul>
+                        <li>Paumes courbées formant un bol</li>
+                        <li>Doigts légèrement courbés vers l'intérieur</li>
+                        <li>Aura douce autour des paumes</li>
+                        <li>Lignes de paume organiques</li>
+                    </ul>
+                </div>
+
+                <div class="symbolism">
+                    <h5>Symbolisme :</h5>
+                    <p>
+                        Les mains en coupe symbolisent l'<strong>offrande</strong>, la <strong>protection</strong> 
+                        et le <strong>soin bienveillant</strong>. Ce geste évoque l'engagement à prendre soin 
+                        et à protéger les enfants vivant avec les TSA.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommendation">
+            <h3>💡 Recommandation</h3>
+            <p>
+                <strong>Les trois variantes</strong> représentent des valeurs complémentaires de la plateforme :
+            </p>
+            <p>• <strong>Variante A</strong> : Pour une communication d'accueil et d'inclusion</p>
+            <p>• <strong>Variante B</strong> : Pour des événements festifs et de célébration</p>
+            <p>• <strong>Variante C</strong> : Pour les campagnes de sensibilisation au soin et à la protection</p>
+            <p style="margin-top: 1rem;">
+                Le choix dépendra du <strong>message prioritaire</strong> que vous souhaitez véhiculer 
+                et du <strong>contexte d'utilisation</strong> du logo.
+            </p>
+        </div>
+
+        <div class="technical-specs">
+            <h3>📋 Spécifications Techniques</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Format SVG</div>
+                    <div class="spec-value">Vectoriel</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">ViewBox</div>
+                    <div class="spec-value">200 × 200</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Résolutions PNG</div>
+                    <div class="spec-value">4 tailles</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">DPI</div>
+                    <div class="spec-value">300</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Mains</div>
+                    <div class="spec-value">Courbes Bézier</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Échelle</div>
+                    <div class="spec-value">1.15x</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Palette</div>
+                    <div class="spec-value">Bleu Autisme</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Effets</div>
+                    <div class="spec-value">Ombres + Filtres</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="window.print()">
+                🖨️ Imprimer la Comparaison
+            </button>
+            <a href="propositions-v2-modifiees.html" class="btn btn-secondary">
+                ← Voir les Propositions Principales
+            </a>
+            <a href="index.html" class="btn btn-secondary">
+                🏠 Retour à l'Accueil
+            </a>
+        </div>
+
+        <footer style="text-align: center; margin-top: 3rem; padding: 2rem; color: #6b7280;">
+            <p style="margin-bottom: 0.5rem;">
+                <strong>Plateforme des Associations d'Autisme au Sénégal</strong>
+            </p>
+            <p style="font-size: 0.9rem;">
+                Ensemble pour l'Autisme 💙
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

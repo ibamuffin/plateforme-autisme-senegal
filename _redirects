@@ -1,0 +1,10 @@
+# Redirections pour la plateforme autisme
+/jeux /#jeux 200
+/don /#don 200
+/contact /#contact 200
+/objectifs /#objectifs 200
+/activites /#activites 200
+/resultats /#resultats 200
+
+# Redirection pour les erreurs 404
+/* /index.html 200

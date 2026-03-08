@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- PROPOSITION 1 - VARIANTE A: Mains Naturelles Ouvertes -->
+  
+  <defs>
+    <radialGradient id="bgGrad1a" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1" />
+    </radialGradient>
+    
+    <filter id="shadow1a" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="rgba(30,64,175,0.35)"/>
+    </filter>
+    
+    <linearGradient id="h1a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    
+    <linearGradient id="h2a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    
+    <linearGradient id="h3a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#93c5fd"/>
+    </linearGradient>
+    
+    <linearGradient id="h4a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#bfdbfe"/>
+    </linearGradient>
+    
+    <linearGradient id="h5a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    
+    <linearGradient id="h6a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1d4ed8"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    
+    <linearGradient id="puzzleGrad1a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    
+    <!-- Définition d'une main naturelle réutilisable -->
+    <g id="naturalHand">
+      <!-- Paume avec forme organique -->
+      <path d="M-4 5 C-5 3, -5.5 0, -5 -3 C-4.5 -6, -2 -7.5, 0 -8 C2 -7.5, 4.5 -6, 5 -3 C5.5 0, 5 3, 4 5 C2.5 6.5, 0.5 7, 0 7 C-0.5 7, -2.5 6.5, -4 5 Z"/>
+      
+      <!-- Auriculaire (petit doigt) -->
+      <path d="M-4.5 -3 C-5 -4.5, -5.2 -6.5, -5.3 -8 C-5.3 -9.5, -5 -10.5, -4.5 -11 C-4 -10.8, -3.8 -9.8, -3.8 -8.2 C-3.7 -6.5, -3.8 -4.5, -4 -3.2 Z"/>
+      
+      <!-- Annulaire -->
+      <path d="M-2 -4 C-2.3 -6, -2.5 -8.5, -2.5 -11 C-2.5 -12.8, -2.2 -13.8, -1.7 -14.2 C-1.2 -13.9, -1 -12.9, -1 -11.1 C-1 -8.6, -1.2 -6, -1.5 -4.2 Z"/>
+      
+      <!-- Majeur (doigt du milieu - le plus long) -->
+      <path d="M0.2 -4.5 C0 -7, -0.1 -10, -0.1 -12.5 C-0.1 -14.5, 0.2 -15.5, 0.7 -15.8 C1.2 -15.5, 1.4 -14.5, 1.4 -12.5 C1.4 -10, 1.2 -7, 1 -4.7 Z"/>
+      
+      <!-- Index -->
+      <path d="M2.5 -4 C2.3 -6.2, 2.2 -8.8, 2.2 -11 C2.2 -12.5, 2.5 -13.3, 3 -13.5 C3.5 -13.2, 3.7 -12.4, 3.7 -10.9 C3.7 -8.7, 3.5 -6.1, 3.3 -4.1 Z"/>
+      
+      <!-- Pouce -->
+      <path d="M-4 -1 C-5.5 -2, -7 -3.5, -8 -5 C-8.8 -6.5, -9 -7.5, -8.5 -8 C-8 -7.8, -7.2 -6.9, -6.5 -5.5 C-5.5 -3.8, -4.5 -2.2, -3.5 -1 Z"/>
+      
+      <!-- Poignet -->
+      <ellipse cx="0" cy="8" rx="4" ry="3" opacity="0.9"/>
+      
+      <!-- Détails de paume (lignes) -->
+      <path d="M-2.5 0 Q-0.5 1.5, 1.5 0.8" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none" opacity="0.8"/>
+      <path d="M-1.8 2.5 Q0 3.8, 2 3" stroke="rgba(255,255,255,0.25)" stroke-width="0.6" fill="none" opacity="0.7"/>
+    </g>
+  </defs>
+  
+  <circle cx="100" cy="100" r="98" fill="url(#bgGrad1a)" stroke="#2563eb" stroke-width="2"/>
+  
+  <!-- 6 Mains naturelles en cercle -->
+  <g transform="translate(100, 50) scale(1.15) rotate(0)" filter="url(#shadow1a)" fill="url(#h1a)">
+    <use href="#naturalHand"/>
+  </g>
+  
+  <g transform="translate(150, 75) scale(1.15) rotate(60)" filter="url(#shadow1a)" fill="url(#h2a)">
+    <use href="#naturalHand"/>
+  </g>
+  
+  <g transform="translate(150, 125) scale(1.15) rotate(120)" filter="url(#shadow1a)" fill="url(#h3a)">
+    <use href="#naturalHand"/>
+  </g>
+  
+  <g transform="translate(100, 150) scale(1.15) rotate(180)" filter="url(#shadow1a)" fill="url(#h4a)">
+    <use href="#naturalHand"/>
+  </g>
+  
+  <g transform="translate(50, 125) scale(1.15) rotate(240)" filter="url(#shadow1a)" fill="url(#h5a)">
+    <use href="#naturalHand"/>
+  </g>
+  
+  <g transform="translate(50, 75) scale(1.15) rotate(300)" filter="url(#shadow1a)" fill="url(#h6a)">
+    <use href="#naturalHand"/>
+  </g>
+  
+  <!-- Puzzle central -->
+  <g transform="translate(100, 100)" filter="url(#shadow1a)">
+    <circle cx="0" cy="0" r="25" fill="white" opacity="0.95"/>
+    <path d="M-12 -12 L-3 -12 Q-3 -15, 0 -15 Q3 -15, 3 -12 L12 -12 L12 -3 Q15 -3, 15 0 Q15 3, 12 3 L12 12 L3 12 Q3 15, 0 15 Q-3 15, -3 12 L-12 12 L-12 3 Q-15 3, -15 0 Q-15 -3, -12 -3 Z" 
+          fill="#1e40af" opacity="0.3"/>
+    <path d="M-12 -12 L-3 -12 Q-3 -15, 0 -15 Q3 -15, 3 -12 L12 -12 L12 -3 Q15 -3, 15 0 Q15 3, 12 3 L12 12 L3 12 Q3 15, 0 15 Q-3 15, -3 12 L-12 12 L-12 3 Q-15 3, -15 0 Q-15 -3, -12 -3 Z" 
+          fill="#2563eb" opacity="0.3" transform="rotate(90)"/>
+    <path d="M-12 -12 L-3 -12 Q-3 -15, 0 -15 Q3 -15, 3 -12 L12 -12 L12 -3 Q15 -3, 15 0 Q15 3, 12 3 L12 12 L3 12 Q3 15, 0 15 Q-3 15, -3 12 L-12 12 L-12 3 Q-15 3, -15 0 Q-15 -3, -12 -3 Z" 
+          fill="#3b82f6" opacity="0.3" transform="rotate(180)"/>
+    <path d="M-12 -12 L-3 -12 Q-3 -15, 0 -15 Q3 -15, 3 -12 L12 -12 L12 -3 Q15 -3, 15 0 Q15 3, 12 3 L12 12 L3 12 Q3 15, 0 15 Q-3 15, -3 12 L-12 12 L-12 3 Q-15 3, -15 0 Q-15 -3, -12 -3 Z" 
+          fill="#60a5fa" opacity="0.3" transform="rotate(270)"/>
+    <circle cx="0" cy="0" r="6" fill="url(#puzzleGrad1a)"/>
+  </g>
+  
+  <path d="M100 95 L100.8 97 L103 97 L101.3 98.5 L102 100.5 L100 99.2 L98 100.5 L98.7 98.5 L97 97 L99.2 97 Z" 
+        fill="#93c5fd" opacity="0.3"/>
+  
+  <!-- Texte -->
+  <g transform="translate(100, 192)">
+    <rect x="-75" y="-14" width="150" height="22" rx="11" fill="white" opacity="0.95" filter="url(#shadow1a)"/>
+    <rect x="-75" y="-14" width="150" height="22" rx="11" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="800" 
+          fill="#1e40af" text-anchor="middle" textLength="140" lengthAdjust="spacing" letter-spacing="0.5">
+      ENSEMBLE POUR L'AUTISME
+    </text>
+  </g>
+</svg>

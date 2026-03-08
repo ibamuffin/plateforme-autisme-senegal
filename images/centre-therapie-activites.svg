@@ -1,0 +1,161 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arrière-plan -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    
+    <pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="#cbd5e1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <rect width="400" height="300" fill="url(#bgGradient)"/>
+  <rect width="400" height="300" fill="url(#pattern)"/>
+  
+  <!-- Salle de classe/centre thérapeutique -->
+  <rect x="50" y="80" width="300" height="180" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+  
+  <!-- Tableau/écran -->
+  <rect x="70" y="100" width="80" height="60" fill="#1f2937" stroke="#374151" stroke-width="2" rx="4"/>
+  
+  <!-- Contenu du tableau - puzzle coloré -->
+  <g transform="translate(80, 110)">
+    <rect width="15" height="15" fill="#2563EB" rx="2"/>
+    <rect x="15" width="15" height="15" fill="#10B981" rx="2"/>
+    <rect x="30" width="15" height="15" fill="#F59E0B" rx="2"/>
+    <rect x="45" width="15" height="15" fill="#EF4444" rx="2"/>
+    
+    <rect y="15" width="15" height="15" fill="#8B5CF6" rx="2"/>
+    <rect x="15" y="15" width="15" height="15" fill="#06B6D4" rx="2"/>
+    <rect x="30" y="15" width="15" height="15" fill="#84CC16" rx="2"/>
+    <rect x="45" y="15" width="15" height="15" fill="#F97316" rx="2"/>
+    
+    <rect y="30" width="15" height="15" fill="#EC4899" rx="2"/>
+    <rect x="15" y="30" width="15" height="15" fill="#6366F1" rx="2"/>
+    <rect x="30" y="30" width="15" height="15" fill="#22C55E" rx="2"/>
+    <rect x="45" y="30" width="15" height="15" fill="#EAB308" rx="2"/>
+  </g>
+  
+  <!-- Thérapeute/Éducateur -->
+  <g transform="translate(180, 120)">
+    <!-- Corps -->
+    <ellipse cx="0" cy="40" rx="20" ry="35" fill="#3B82F6"/>
+    <!-- Tête -->
+    <circle cx="0" cy="0" r="20" fill="#F4A460"/>
+    <!-- Cheveux -->
+    <path d="M -18 -12 Q -22 -20 -15 -25 Q 0 -28 15 -25 Q 22 -20 18 -12" fill="#8B4513"/>
+    <!-- Yeux -->
+    <circle cx="-6" cy="-4" r="2" fill="white"/>
+    <circle cx="6" cy="-4" r="2" fill="white"/>
+    <circle cx="-6" cy="-4" r="1" fill="black"/>
+    <circle cx="6" cy="-4" r="1" fill="black"/>
+    <!-- Sourire -->
+    <path d="M -10 6 Q 0 14 10 6" stroke="black" stroke-width="1.5" fill="none"/>
+    <!-- Bras pointant vers le tableau -->
+    <ellipse cx="-35" cy="25" rx="10" ry="25" fill="#F4A460" transform="rotate(-45)"/>
+    <ellipse cx="30" cy="30" rx="10" ry="25" fill="#F4A460" transform="rotate(20)"/>
+    <!-- Badge professionnel -->
+    <rect x="-8" y="20" width="16" height="12" fill="white" stroke="#2563EB" stroke-width="1" rx="2"/>
+    <text x="0" y="28" font-family="Arial" font-size="6" text-anchor="middle" fill="#2563EB">TSA</text>
+    <!-- Jambes -->
+    <ellipse cx="-10" cy="85" rx="8" ry="25" fill="#1F2937"/>
+    <ellipse cx="10" cy="85" rx="8" ry="25" fill="#1F2937"/>
+  </g>
+  
+  <!-- Enfants en cercle - thérapie de groupe -->
+  <!-- Enfant 1 -->
+  <g transform="translate(120, 180)">
+    <circle cx="0" cy="0" r="15" fill="#F4A460"/>
+    <path d="M -12 -8 Q -15 -15 -8 -18 Q 0 -20 8 -18 Q 15 -15 12 -8" fill="#654321"/>
+    <circle cx="-4" cy="-3" r="1.5" fill="white"/>
+    <circle cx="4" cy="-3" r="1.5" fill="white"/>
+    <circle cx="-4" cy="-3" r="0.8" fill="black"/>
+    <circle cx="4" cy="-3" r="0.8" fill="black"/>
+    <path d="M -6 4 Q 0 8 6 4" stroke="black" stroke-width="1" fill="none"/>
+    <ellipse cx="0" cy="20" rx="12" ry="18" fill="#FF69B4"/>
+    <!-- Pièce de puzzle dans les mains -->
+    <rect x="-8" y="10" width="16" height="12" fill="#2563EB" stroke="white" stroke-width="1" rx="2"/>
+    <circle cx="8" cy="16" r="2" fill="#2563EB"/>
+  </g>
+  
+  <!-- Enfant 2 -->
+  <g transform="translate(280, 185)">
+    <circle cx="0" cy="0" r="15" fill="#D2B48C"/>
+    <path d="M -12 -8 Q -15 -15 -8 -18 Q 0 -20 8 -18 Q 15 -15 12 -8" fill="#2F1B14"/>
+    <circle cx="-4" cy="-3" r="1.5" fill="white"/>
+    <circle cx="4" cy="-3" r="1.5" fill="white"/>
+    <circle cx="-4" cy="-3" r="0.8" fill="black"/>
+    <circle cx="4" cy="-3" r="0.8" fill="black"/>
+    <path d="M -6 4 Q 0 8 6 4" stroke="black" stroke-width="1" fill="none"/>
+    <ellipse cx="0" cy="20" rx="12" ry="18" fill="#10B981"/>
+    <!-- Pièce de puzzle dans les mains -->
+    <rect x="-8" y="10" width="16" height="12" fill="#10B981" stroke="white" stroke-width="1" rx="2"/>
+    <path d="M -8 16 Q -13 16 -13 11 Q -13 6 -8 6" fill="none" stroke="#10B981" stroke-width="2"/>
+  </g>
+  
+  <!-- Enfant 3 -->
+  <g transform="translate(200, 220)">
+    <circle cx="0" cy="0" r="15" fill="#FDBCB4"/>
+    <path d="M -12 -8 Q -15 -15 -8 -18 Q 0 -20 8 -18 Q 15 -15 12 -8 L 8 -3 L -8 -3 Z" fill="#FFB347"/>
+    <circle cx="-4" cy="-3" r="1.5" fill="white"/>
+    <circle cx="4" cy="-3" r="1.5" fill="white"/>
+    <circle cx="-4" cy="-3" r="0.8" fill="black"/>
+    <circle cx="4" cy="-3" r="0.8" fill="black"/>
+    <path d="M -6 4 Q 0 8 6 4" stroke="black" stroke-width="1" fill="none"/>
+    <ellipse cx="0" cy="20" rx="12" ry="18" fill="#F59E0B"/>
+    <!-- Pièce de puzzle dans les mains -->
+    <rect x="-8" y="10" width="16" height="12" fill="#F59E0B" stroke="white" stroke-width="1" rx="2"/>
+    <circle cx="-2" cy="22" r="2" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+  
+  <!-- Matériel pédagogique -->
+  <!-- Livres -->
+  <g transform="translate(320, 200)">
+    <rect x="0" y="0" width="15" height="20" fill="#2563EB" stroke="#1D4ED8" stroke-width="1"/>
+    <rect x="3" y="3" width="15" height="20" fill="#10B981" stroke="#059669" stroke-width="1"/>
+    <rect x="6" y="6" width="15" height="20" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
+    <text x="13" y="18" font-family="Arial" font-size="8" fill="white">ABC</text>
+  </g>
+  
+  <!-- Jouets éducatifs -->
+  <g transform="translate(80, 200)">
+    <!-- Blocs colorés -->
+    <rect x="0" y="0" width="12" height="12" fill="#EF4444" stroke="white" stroke-width="1"/>
+    <rect x="12" y="0" width="12" height="12" fill="#3B82F6" stroke="white" stroke-width="1"/>
+    <rect x="6" y="12" width="12" height="12" fill="#10B981" stroke="white" stroke-width="1"/>
+    
+    <!-- Formes géométriques -->
+    <circle cx="35" cy="10" r="8" fill="#8B5CF6" stroke="white" stroke-width="1"/>
+    <polygon points="55,2 63,18 47,18" fill="#F59E0B" stroke="white" stroke-width="1"/>
+  </g>
+  
+  <!-- Fenêtres avec vue sur l'extérieur -->
+  <rect x="280" y="100" width="50" height="40" fill="#87CEEB" stroke="#64748B" stroke-width="2" rx="4"/>
+  <line x1="305" y1="100" x2="305" y2="140" stroke="#64748B" stroke-width="1"/>
+  <line x1="280" y1="120" x2="330" y2="120" stroke="#64748B" stroke-width="1"/>
+  
+  <!-- Arbre visible par la fenêtre -->
+  <g transform="translate(300, 110)">
+    <rect x="3" y="15" width="4" height="15" fill="#8B4513"/>
+    <circle cx="5" cy="10" r="8" fill="#22C55E" opacity="0.8"/>
+  </g>
+  
+  <!-- Panneau d'informations -->
+  <rect x="60" y="180" width="30" height="40" fill="white" stroke="#CBD5E1" stroke-width="1" rx="2"/>
+  <text x="75" y="190" font-family="Arial" font-size="6" text-anchor="middle" fill="#1F2937">INFOS</text>
+  <text x="75" y="200" font-family="Arial" font-size="4" text-anchor="middle" fill="#6B7280">TSA</text>
+  <text x="75" y="208" font-family="Arial" font-size="4" text-anchor="middle" fill="#6B7280">Support</text>
+  
+  <!-- Sol -->
+  <rect x="50" y="250" width="300" height="10" fill="#E5E7EB" opacity="0.5"/>
+  
+  <!-- Titre de la scène -->
+  <text x="200" y="30" font-family="Inter, sans-serif" font-size="18" font-weight="600" text-anchor="middle" fill="#1F2937">
+    Centre de Prise en Charge TSA
+  </text>
+  <text x="200" y="50" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="#6B7280">
+    Accompagnement spécialisé et thérapies adaptées
+  </text>
+</svg>

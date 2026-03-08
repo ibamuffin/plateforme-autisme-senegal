@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparaison des Logos Autisme Sénégal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .logo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .logo-preview {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border: 2px solid #e2e8f0;
+        }
+
+        .logo-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-title {
+            color: #1f2937;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .logo-description {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .logo-features li {
+            color: #374151;
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .logo-features li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        .comparison-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+        }
+
+        .comparison-title {
+            color: #1f2937;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table th {
+            background: #f8fafc;
+            color: #374151;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .logos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧩 Logos Autisme Sénégal</h1>
+        <p class="subtitle">Trois propositions inspirées du contexte africain et des symboles de solidarité</p>
+        
+        <div class="logos-grid">
+            <!-- Logo 1 -->
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="images/logo-autisme-senegal-v1.svg" alt="Logo Solidarité Africaine">
+                </div>
+                <h3 class="logo-title">Version 1: Solidarité Africaine</h3>
+                <p class="logo-description">
+                    Inspiré du concept de main protectrice et des couleurs vibrantes africaines. 
+                    Met l'accent sur la protection et l'accompagnement des enfants autistes.
+                </p>
+                <ul class="logo-features">
+                    <li>Main protectrice en arc multicouleur</li>
+                    <li>Figures représentant la diversité</li>
+                    <li>Étoile du drapeau sénégalais</li>
+                    <li>Motifs géométriques africains</li>
+                    <li>Couleurs du drapeau national</li>
+                </ul>
+            </div>
+
+            <!-- Logo 2 -->
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="images/logo-autisme-senegal-v2.svg" alt="Logo Cercle de Solidarité">
+                </div>
+                <h3 class="logo-title">Version 2: Cercle de Solidarité</h3>
+                <p class="logo-description">
+                    Basé sur le concept de mains unies en cercle. Symbolise l'union, la solidarité 
+                    et le soutien mutuel dans la communauté autisme.
+                </p>
+                <ul class="logo-features">
+                    <li>Six mains en cercle colorées</li>
+                    <li>Puzzle central (symbole autisme)</li>
+                    <li>Harmonie des couleurs</li>
+                    <li>Cercles concentriques décoratifs</li>
+                    <li>Message "Ensemble pour l'autisme"</li>
+                </ul>
+            </div>
+
+            <!-- Logo 3 -->
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="images/logo-autisme-senegal-v3.svg" alt="Logo Arbre de Vie Africain">
+                </div>
+                <h3 class="logo-title">Version 3: Arbre de Vie Africain</h3>
+                <p class="logo-description">
+                    Centré sur l'arbre baobab, symbole de l'Afrique. Représente la croissance, 
+                    l'enracinement et la communauté qui protège et nourrit.
+                </p>
+                <ul class="logo-features">
+                    <li>Baobab africain central</li>
+                    <li>Communauté autour de l'arbre</li>
+                    <li>Soleil et oiseaux (espoir)</li>
+                    <li>Racines et branches (connexions)</li>
+                    <li>Motifs traditionnels sénégalais</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="comparison-section">
+            <h2 class="comparison-title">Analyse Comparative</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Critères</th>
+                        <th>Solidarité Africaine</th>
+                        <th>Cercle de Solidarité</th>
+                        <th>Arbre de Vie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Symbolisme africain</strong></td>
+                        <td><span class="highlight">Très fort</span></td>
+                        <td>Modéré</td>
+                        <td><span class="highlight">Excellent</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Représentation autisme</strong></td>
+                        <td>Diversité et protection</td>
+                        <td><span class="highlight">Puzzle central</span></td>
+                        <td>Communauté bienveillante</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Couleurs Sénégal</strong></td>
+                        <td><span class="highlight">Intégrées</span></td>
+                        <td><span class="highlight">Intégrées</span></td>
+                        <td><span class="highlight">Intégrées</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lisibilité</strong></td>
+                        <td>Bonne</td>
+                        <td><span class="highlight">Excellente</span></td>
+                        <td>Bonne</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Impact émotionnel</strong></td>
+                        <td>Protection, sécurité</td>
+                        <td>Union, solidarité</td>
+                        <td><span class="highlight">Croissance, espoir</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adaptabilité</strong></td>
+                        <td>Moyenne</td>
+                        <td><span class="highlight">Très bonne</span></td>
+                        <td>Bonne</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #bfdbfe); border-radius: 15px;">
+                <h4 style="color: #1e40af; margin-bottom: 1rem;">💡 Recommandation</h4>
+                <p style="color: #1f2937;">
+                    Le <strong>Logo Version 2 (Cercle de Solidarité)</strong> semble offrir le meilleur équilibre entre 
+                    symbolisme, lisibilité et adaptabilité. Il intègre parfaitement le symbole puzzle de l'autisme 
+                    tout en montrant l'union communautaire, valeur fondamentale au Sénégal.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

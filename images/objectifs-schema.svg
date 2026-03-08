@@ -1,0 +1,169 @@
+<svg width="350" height="300" viewBox="0 0 350 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arrière-plan -->
+  <defs>
+    <linearGradient id="objectifGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eff6ff;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <rect width="350" height="300" fill="url(#objectifGrad)"/>
+  
+  <!-- Titre -->
+  <text x="175" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1F2937">
+    7 Objectifs Spécifiques
+  </text>
+  
+  <!-- Cercle central - Objectif général -->
+  <g transform="translate(175, 150)">
+    <circle cx="0" cy="0" r="50" fill="#2563EB" filter="url(#shadow)"/>
+    <text x="0" y="-8" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">
+      OBJECTIF
+    </text>
+    <text x="0" y="5" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="white">
+      GÉNÉRAL
+    </text>
+    <text x="0" y="18" font-family="Arial" font-size="8" text-anchor="middle" fill="rgba(255,255,255,0.9)">
+      Améliorer la prise
+    </text>
+    <text x="0" y="28" font-family="Arial" font-size="8" text-anchor="middle" fill="rgba(255,255,255,0.9)">
+      en charge TSA
+    </text>
+  </g>
+  
+  <!-- Objectifs spécifiques en cercle autour -->
+  
+  <!-- Objectif 1: Concertation -->
+  <g transform="translate(175, 70)">
+    <circle cx="0" cy="0" r="35" fill="#10B981" filter="url(#shadow)"/>
+    <g transform="translate(0, -10)">
+      <!-- Icône handshake -->
+      <path d="M -8 -5 L -4 -8 L 0 -5 L 4 -8 L 8 -5 L 4 -2 L 0 -5 L -4 -2 Z" fill="white"/>
+      <path d="M -6 -2 L -2 2 L 2 2 L 6 -2" stroke="white" stroke-width="2" fill="none"/>
+    </g>
+    <text x="0" y="12" font-family="Arial" font-size="7" text-anchor="middle" fill="white">Concertation</text>
+    <text x="0" y="20" font-family="Arial" font-size="7" text-anchor="middle" fill="white">avec l'État</text>
+  </g>
+  
+  <!-- Objectif 2: État des lieux -->
+  <g transform="translate(270, 100)">
+    <circle cx="0" cy="0" r="30" fill="#F59E0B" filter="url(#shadow)"/>
+    <g transform="translate(0, -5)">
+      <!-- Icône search -->
+      <circle cx="0" cy="0" r="6" stroke="white" stroke-width="2" fill="none"/>
+      <line x1="6" y1="6" x2="10" y2="10" stroke="white" stroke-width="2"/>
+    </g>
+    <text x="0" y="12" font-family="Arial" font-size="6" text-anchor="middle" fill="white">État des</text>
+    <text x="0" y="19" font-family="Arial" font-size="6" text-anchor="middle" fill="white">lieux</text>
+  </g>
+  
+  <!-- Objectif 3: Personnel médical -->
+  <g transform="translate(300, 180)">
+    <circle cx="0" cy="0" r="30" fill="#EF4444" filter="url(#shadow)"/>
+    <g transform="translate(0, -5)">
+      <!-- Icône médical -->
+      <rect x="-6" y="-1" width="12" height="2" fill="white"/>
+      <rect x="-1" y="-6" width="2" height="12" fill="white"/>
+    </g>
+    <text x="0" y="12" font-family="Arial" font-size="6" text-anchor="middle" fill="white">Personnel</text>
+    <text x="0" y="19" font-family="Arial" font-size="6" text-anchor="middle" fill="white">médical</text>
+  </g>
+  
+  <!-- Objectif 4: Programmes éducatifs -->
+  <g transform="translate(270, 250)">
+    <circle cx="0" cy="0" r="30" fill="#8B5CF6" filter="url(#shadow)"/>
+    <g transform="translate(0, -5)">
+      <!-- Icône livre -->
+      <rect x="-6" y="-4" width="12" height="8" fill="white" rx="1"/>
+      <line x1="-4" y1="-2" x2="4" y2="-2" stroke="#8B5CF6" stroke-width="1"/>
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#8B5CF6" stroke-width="1"/>
+      <line x1="-4" y1="2" x2="4" y2="2" stroke="#8B5CF6" stroke-width="1"/>
+    </g>
+    <text x="0" y="12" font-family="Arial" font-size="6" text-anchor="middle" fill="white">Programmes</text>
+    <text x="0" y="19" font-family="Arial" font-size="6" text-anchor="middle" fill="white">éducatifs</text>
+  </g>
+  
+  <!-- Objectif 5: Formation enseignants -->
+  <g transform="translate(175, 270)">
+    <circle cx="0" cy="0" r="30" fill="#06B6D4" filter="url(#shadow)"/>
+    <g transform="translate(0, -5)">
+      <!-- Icône enseignant -->
+      <rect x="-6" y="-2" width="12" height="4" fill="white" rx="1"/>
+      <circle cx="0" cy="-8" r="3" fill="white"/>
+      <rect x="-4" y="2" width="8" height="6" fill="white" rx="1"/>
+    </g>
+    <text x="0" y="12" font-family="Arial" font-size="6" text-anchor="middle" fill="white">Formation</text>
+    <text x="0" y="19" font-family="Arial" font-size="6" text-anchor="middle" fill="white">enseignants</text>
+  </g>
+  
+  <!-- Objectif 6: Éducation inclusive -->
+  <g transform="translate(80, 250)">
+    <circle cx="0" cy="0" r="30" fill="#84CC16" filter="url(#shadow)"/>
+    <g transform="translate(0, -5)">
+      <!-- Icône groupe inclusif -->
+      <circle cx="-5" cy="0" r="3" fill="white"/>
+      <circle cx="0" cy="0" r="3" fill="white"/>
+      <circle cx="5" cy="0" r="3" fill="white"/>
+      <rect x="-8" y="3" width="16" height="4" fill="white" rx="2"/>
+    </g>
+    <text x="0" y="12" font-family="Arial" font-size="6" text-anchor="middle" fill="white">Éducation</text>
+    <text x="0" y="19" font-family="Arial" font-size="6" text-anchor="middle" fill="white">inclusive</text>
+  </g>
+  
+  <!-- Objectif 7: Infrastructures -->
+  <g transform="translate(50, 180)">
+    <circle cx="0" cy="0" r="30" fill="#F97316" filter="url(#shadow)"/>
+    <g transform="translate(0, -5)">
+      <!-- Icône bâtiment -->
+      <rect x="-6" y="-4" width="12" height="8" fill="white" rx="1"/>
+      <rect x="-4" y="-2" width="2" height="2" fill="#F97316"/>
+      <rect x="-1" y="-2" width="2" height="2" fill="#F97316"/>
+      <rect x="2" y="-2" width="2" height="2" fill="#F97316"/>
+      <rect x="-4" y="0" width="2" height="2" fill="#F97316"/>
+      <rect x="-1" y="0" width="2" height="2" fill="#F97316"/>
+      <rect x="2" y="0" width="2" height="2" fill="#F97316"/>
+    </g>
+    <text x="0" y="12" font-family="Arial" font-size="6" text-anchor="middle" fill="white">Infrastructures</text>
+    <text x="0" y="19" font-family="Arial" font-size="6" text-anchor="middle" fill="white">spécialisées</text>
+  </g>
+  
+  <!-- Objectif 8: Retour au centre (Concertation) -->
+  <g transform="translate(80, 100)">
+    <circle cx="0" cy="0" r="30" fill="#EC4899" filter="url(#shadow)"/>
+    <g transform="translate(0, -5)">
+      <!-- Icône dialogue -->
+      <ellipse cx="-3" cy="0" rx="5" ry="3" fill="white"/>
+      <ellipse cx="3" cy="0" rx="5" ry="3" fill="white"/>
+      <polygon points="-8,3 -5,6 -2,3" fill="white"/>
+      <polygon points="8,3 5,6 2,3" fill="white"/>
+    </g>
+    <text x="0" y="12" font-family="Arial" font-size="6" text-anchor="middle" fill="white">Cadre de</text>
+    <text x="0" y="19" font-family="Arial" font-size="6" text-anchor="middle" fill="white">travail</text>
+  </g>
+  
+  <!-- Lignes de connexion -->
+  <g stroke="#CBD5E1" stroke-width="2" opacity="0.6">
+    <!-- Du centre vers tous les objectifs -->
+    <line x1="175" y1="100" x2="175" y2="70"/>
+    <line x1="225" y1="130" x2="270" y2="100"/>
+    <line x1="225" y1="170" x2="300" y2="180"/>
+    <line x1="195" y1="195" x2="270" y2="250"/>
+    <line x1="175" y1="200" x2="175" y2="270"/>
+    <line x1="155" y1="195" x2="80" y2="250"/>
+    <line x1="125" y1="170" x2="50" y2="180"/>
+    <line x1="125" y1="130" x2="80" y2="100"/>
+  </g>
+  
+  <!-- Indicateur de progression -->
+  <g transform="translate(175, 290)">
+    <rect x="-100" y="-5" width="200" height="10" fill="#E5E7EB" rx="5"/>
+    <rect x="-100" y="-5" width="140" height="10" fill="#10B981" rx="5"/>
+    <text x="0" y="15" font-family="Arial" font-size="8" text-anchor="middle" fill="#374151">
+      Progression vers un système inclusif
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propositions de Modification - Logo Autisme Sénégal V2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #e0e7ff 100%);
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(30, 64, 175, 0.1);
+        }
+        
+        h1 {
+            color: #1e40af;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            color: #2563eb;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            color: #6b7280;
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .requirements {
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .requirements h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .requirements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .requirements li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #374151;
+        }
+        
+        .requirements li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .logo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(30, 64, 175, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(30, 64, 175, 0.2);
+            border-color: #2563eb;
+        }
+        
+        .card-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            color: #1e40af;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .card-concept {
+            color: #2563eb;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .logo-display {
+            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+        
+        .logo-display img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(30, 64, 175, 0.2));
+        }
+        
+        .card-features {
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            color: #1e40af;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #4b5563;
+            font-size: 0.9rem;
+        }
+        
+        .feature-list li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+        }
+        
+        .strengths {
+            background: #f0fdf4;
+            border-left: 3px solid #10b981;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .strengths h4 {
+            color: #065f46;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .strengths p {
+            color: #047857;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        
+        .original-comparison {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(30, 64, 175, 0.1);
+            margin-bottom: 50px;
+        }
+        
+        .original-comparison h2 {
+            color: #1e40af;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .original-logo {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 3px solid #f59e0b;
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
+        .original-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .comparison-details {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .comparison-details h3 {
+            color: #92400e;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .comparison-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .comparison-details li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #78350f;
+        }
+        
+        .comparison-details li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-weight: bold;
+        }
+        
+        .recommendation {
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .recommendation h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .recommendation p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .print-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 20px;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            .logo-card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>� Propositions de Modification du Logo V2</h1>
+            <p class="subtitle">Plateforme des Associations d'Autisme au Sénégal</p>
+            <p class="description">
+                Trois variations épurées mettant en valeur les mains de solidarité,
+                utilisant exclusivement les couleurs du bleu autisme, avec suppression des éléments décoratifs.
+            </p>
+            
+            <div class="requirements">
+                <h3>✨ Modifications Demandées</h3>
+                <ul>
+                    <li><strong>Couleurs pures de l'autisme</strong> : Palette bleu exclusivement (#1e40af → #dbeafe)</li>
+                    <li><strong>Mains agrandies</strong> : Symbole de solidarité en premier plan (échelle augmentée)</li>
+                    <li><strong>Suppression des bonshommes</strong> : Design épuré et professionnel</li>
+                    <li><strong>Étoile discrète ou absente</strong> : Moins d'évidence sur les éléments décoratifs</li>
+                </ul>
+            </div>
+        </header>
+        
+        <div class="original-comparison">
+            <h2>📊 Comparaison avec le Logo Original V2</h2>
+            <div class="comparison-table">
+                <div class="original-logo">
+                    <img src="logos/logo-autisme-senegal-v2-improved.svg" alt="Logo Original V2">
+                </div>
+                <div class="comparison-details">
+                    <h3>Caractéristiques du Logo Original</h3>
+                    <ul>
+                        <li>6 mains en cercle (échelle 0.85 - taille moyenne)</li>
+                        <li>3 bonshommes représentant les enfants</li>
+                        <li>Étoile proéminente avec effet lumineux</li>
+                        <li>Puzzle central à 4 pièces</li>
+                        <li>Cercles décoratifs en pointillés</li>
+                        <li>Couleurs bleu autisme + éléments verts/jaunes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison-grid">
+            <!-- Proposition 1 -->
+            <div class="logo-card">
+                <div class="card-header">
+                    <div class="card-number">PROPOSITION 1</div>
+                    <h2 class="card-title">Focus Mains Géantes</h2>
+                    <p class="card-concept">"La solidarité au premier plan"</p>
+                </div>
+                
+                <div class="logo-display">
+                    <img src="logos/logo-autisme-proposition-1-large.png" 
+                         srcset="logos/logo-autisme-proposition-1-small.png 200w,
+                                 logos/logo-autisme-proposition-1-medium.png 400w,
+                                 logos/logo-autisme-proposition-1-large.png 800w,
+                                 logos/logo-autisme-proposition-1-xlarge.png 1600w"
+                         sizes="(max-width: 600px) 200px, (max-width: 1200px) 400px, 800px"
+                         alt="Proposition 1">
+                </div>
+                
+                <div class="card-features">
+                    <h3 class="feature-title">🎨 Caractéristiques</h3>
+                    <ul class="feature-list">
+                        <li><strong>Mains agrandies</strong> : Échelle 1.2 (vs 0.85)</li>
+                        <li><strong>Puzzle central simplifié</strong> : 4 pièces compactes</li>
+                        <li><strong>Étoile minuscule</strong> : Taille réduite, opacité 30%</li>
+                        <li><strong>Bonshommes supprimés</strong> : Design épuré</li>
+                        <li><strong>Couleurs 100% bleu autisme</strong> : 6 gradients bleus</li>
+                    </ul>
+                </div>
+                
+                <div class="strengths">
+                    <h4>✓ Points Forts</h4>
+                    <p>
+                        Design équilibré gardant les éléments essentiels. Les mains sont bien visibles
+                        sans écraser le centre. Le puzzle reste identifiable comme symbole de l'autisme.
+                        Idéal pour une transition douce du logo original.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Proposition 2 -->
+            <div class="logo-card">
+                <div class="card-header">
+                    <div class="card-number">PROPOSITION 2</div>
+                    <h2 class="card-title">Mains Très Grandes + Puzzle Dominant</h2>
+                    <p class="card-concept">"L'autisme au cœur de la solidarité"</p>
+                </div>
+                
+                <div class="logo-display">
+                    <img src="logos/logo-autisme-proposition-2-large.png"
+                         srcset="logos/logo-autisme-proposition-2-small.png 200w,
+                                 logos/logo-autisme-proposition-2-medium.png 400w,
+                                 logos/logo-autisme-proposition-2-large.png 800w,
+                                 logos/logo-autisme-proposition-2-xlarge.png 1600w"
+                         sizes="(max-width: 600px) 200px, (max-width: 1200px) 400px, 800px"
+                         alt="Proposition 2">
+                </div>
+                
+                <div class="card-features">
+                    <h3 class="feature-title">🎨 Caractéristiques</h3>
+                    <ul class="feature-list">
+                        <li><strong>Mains extra grandes</strong> : Échelle 1.35 (impact visuel fort)</li>
+                        <li><strong>Puzzle central détaillé</strong> : 4 pièces grandes et visibles</li>
+                        <li><strong>Étoile intégrée au puzzle</strong> : Subtile au centre (opacité 60%)</li>
+                        <li><strong>Bonshommes absents</strong> : Focus professionnel</li>
+                        <li><strong>Effet lumineux renforcé</strong> : Glow sur le puzzle</li>
+                    </ul>
+                </div>
+                
+                <div class="strengths">
+                    <h4>✓ Points Forts</h4>
+                    <p>
+                        Le meilleur équilibre entre mains et symbole central. Le puzzle est grand et
+                        clairement identifiable. Les mains forment un cadre puissant. L'étoile est
+                        présente mais discrète, intégrée harmonieusement au puzzle central.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Proposition 3 -->
+            <div class="logo-card">
+                <div class="card-header">
+                    <div class="card-number">PROPOSITION 3</div>
+                    <h2 class="card-title">Mains Monumentales</h2>
+                    <p class="card-concept">"La puissance de l'union"</p>
+                </div>
+                
+                <div class="logo-display">
+                    <img src="logos/logo-autisme-proposition-3-large.png"
+                         srcset="logos/logo-autisme-proposition-3-small.png 200w,
+                                 logos/logo-autisme-proposition-3-medium.png 400w,
+                                 logos/logo-autisme-proposition-3-large.png 800w,
+                                 logos/logo-autisme-proposition-3-xlarge.png 1600w"
+                         sizes="(max-width: 600px) 200px, (max-width: 1200px) 400px, 800px"
+                         alt="Proposition 3">
+                </div>
+                
+                <div class="card-features">
+                    <h3 class="feature-title">🎨 Caractéristiques</h3>
+                    <ul class="feature-list">
+                        <li><strong>Mains monumentales</strong> : Échelle 1.5 (maximum)</li>
+                        <li><strong>Symbole central minimal</strong> : Petit cercle avec mini puzzle</li>
+                        <li><strong>Pas d'étoile visible</strong> : Épuration totale</li>
+                        <li><strong>Design ultra-épuré</strong> : Mains comme élément principal</li>
+                        <li><strong>Détails renforcés</strong> : Reflets sur les paumes</li>
+                    </ul>
+                </div>
+                
+                <div class="strengths">
+                    <h4>✓ Points Forts</h4>
+                    <p>
+                        Design le plus audacieux et moderne. Les mains dominent complètement le logo,
+                        créant un impact visuel très fort. Parfait pour affirmer le message de solidarité
+                        et d'union. Design contemporain et minimaliste, très professionnel.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recommendation">
+            <h2>💡 Recommandation Finale</h2>
+            <p>
+                La <strong>Proposition 2</strong> offre le meilleur compromis : mains très grandes et impactantes,
+                puzzle central bien visible pour l'identité autisme, et étoile subtile intégrée de façon élégante.
+            </p>
+            <p style="margin-top: 15px; font-size: 0.95rem; opacity: 0.9;">
+                La Proposition 1 convient pour une transition douce. La Proposition 3 est idéale pour un impact maximal
+                et un design ultra-moderne centré sur la solidarité.
+            </p>
+        </div>
+    </div>
+    
+    <button class="print-button" onclick="window.print()">🖨️ Imprimer / PDF</button>
+</body>
+</html>

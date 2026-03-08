@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <defs>
+        <!-- Gradient principal bleu autisme avec reflets -->
+        <linearGradient id="premiumBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+            <stop offset="30%" style="stop-color:#2563eb;stop-opacity:1" />
+            <stop offset="70%" style="stop-color:#3b82f6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Gradient or pour accents premium -->
+        <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#fbbf24;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#fcd34d;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Gradient vert -->
+        <linearGradient id="greenAccent5" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+        </linearGradient>
+        
+        <filter id="premiumShadow">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="3" result="offsetblur"/>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.35"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        
+        <filter id="glow5">
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Fond blanc -->
+    <rect width="200" height="200" fill="white" opacity="0.98"/>
+    
+    <!-- Conception premium: Lettre "P" entourée de swoosh fluides et pièces de puzzle -->
+    <g filter="url(#premiumShadow)">
+        <!-- Grande lettre P moderne -->
+        <g>
+            <!-- Barre verticale -->
+            <rect x="75" y="45" width="15" height="90" fill="url(#premiumBlue)" rx="3"/>
+            
+            <!-- Partie arrondie supérieure -->
+            <path d="M 90 45 L 120 45 Q 140 45 140 65 Q 140 85 120 85 L 90 85 Z" 
+                  fill="url(#premiumBlue)"/>
+            
+            <!-- Détail lumineux interne -->
+            <rect x="78" y="48" width="3" height="84" fill="white" opacity="0.2" rx="1.5"/>
+        </g>
+        
+        <!-- Swoosh fluide supérieur (or) -->
+        <path d="M 145 50 Q 160 45 170 58 Q 175 68 168 78 Q 162 85 152 80 L 145 75" 
+              fill="url(#goldAccent)" opacity="0.85" filter="url(#glow5)"/>
+        
+        <!-- Swoosh fluide gauche (vert) -->
+        <path d="M 55 70 Q 40 68 32 80 Q 28 90 35 100 Q 42 107 52 102 L 58 97" 
+              fill="url(#greenAccent5)" opacity="0.85" filter="url(#glow5)"/>
+        
+        <!-- Swoosh fluide droite inférieur (bleu clair) -->
+        <path d="M 148 95 Q 163 98 168 110 Q 170 122 162 130 Q 155 135 147 128" 
+              fill="#60a5fa" opacity="0.85" filter="url(#glow5)"/>
+        
+        <!-- Swoosh fluide gauche inférieur (or) -->
+        <path d="M 52 110 Q 37 113 32 125 Q 30 137 38 145 Q 45 150 53 143" 
+              fill="url(#goldAccent)" opacity="0.75" filter="url(#glow5)"/>
+    </g>
+    
+    <!-- Constellation de pièces de puzzle autour du logo -->
+    <g>
+        <!-- Puzzle 1 - haut gauche -->
+        <g transform="translate(55, 45)">
+            <circle cx="0" cy="-2" r="2" fill="#dbeafe"/>
+            <rect x="-4" y="-1" width="8" height="8" fill="#3b82f6" rx="1"/>
+        </g>
+        
+        <!-- Puzzle 2 - haut droite -->
+        <g transform="translate(145, 45)">
+            <circle cx="0" cy="-2" r="2" fill="#fef3c7"/>
+            <rect x="-4" y="-1" width="8" height="8" fill="#fbbf24" rx="1"/>
+        </g>
+        
+        <!-- Puzzle 3 - milieu -->
+        <g transform="translate(100, 65)">
+            <circle cx="0" cy="-2.5" r="2.5" fill="#dbeafe"/>
+            <rect x="-5" y="-1.5" width="10" height="10" fill="#2563eb" rx="1"/>
+            <path d="M 5 2.5 Q 7.5 4 5 5.5" fill="white"/>
+        </g>
+        
+        <!-- Puzzle 4 - bas gauche -->
+        <g transform="translate(60, 135)">
+            <circle cx="0" cy="-2" r="2" fill="#d1fae5"/>
+            <rect x="-4" y="-1" width="8" height="8" fill="#10b981" rx="1"/>
+        </g>
+        
+        <!-- Puzzle 5 - bas droite -->
+        <g transform="translate(140, 135)">
+            <circle cx="0" cy="-2" r="2" fill="#dbeafe"/>
+            <rect x="-4" y="-1" width="8" height="8" fill="#60a5fa" rx="1"/>
+        </g>
+    </g>
+    
+    <!-- Texte principal -->
+    <text x="100" y="172" font-family="Inter, Arial, sans-serif" font-size="7" font-weight="700" 
+          fill="#1e40af" text-anchor="middle" textLength="130" lengthAdjust="spacing">
+        ENSEMBLE POUR L'AUTISME
+    </text>
+    
+    <!-- Sous-titre -->
+    <text x="100" y="183" font-family="Inter, Arial, sans-serif" font-size="5.5" font-weight="500" 
+          fill="#6b7280" text-anchor="middle">
+        Plateforme des Associations • Sénégal
+    </text>
+    
+    <!-- Petite étoile sénégalaise stylisée -->
+    <g transform="translate(100, 25)">
+        <polygon points="0,-4 1,-1.5 4,-1.5 1.5,0.5 2.5,3.5 0,1.5 -2.5,3.5 -1.5,0.5 -4,-1.5 -1,-1.5" 
+                 fill="url(#goldAccent)" opacity="0.8"/>
+    </g>
+</svg>

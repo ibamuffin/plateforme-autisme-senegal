@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <defs>
+        <!-- Gradient bleu autisme moderne -->
+        <linearGradient id="modernBlue1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Gradient swoosh accent -->
+        <linearGradient id="swooshAccent1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#93c5fd;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Ombre portée douce -->
+        <filter id="softShadow1">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="2" result="offsetblur"/>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.3"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Fond blanc semi-transparent -->
+    <rect width="200" height="200" fill="white" opacity="0.98"/>
+    
+    <!-- Lettre "P" stylisée pour "Pour l'Autisme" -->
+    <g filter="url(#softShadow1)">
+        <!-- Corps principal du P -->
+        <path d="M 60 50 L 60 150 L 75 150 L 75 110 L 110 110 C 130 110 145 95 145 75 C 145 55 130 50 110 50 Z M 75 65 L 105 65 C 118 65 128 70 128 75 C 128 80 118 95 105 95 L 75 95 Z" 
+              fill="url(#modernBlue1)"/>
+        
+        <!-- Swoosh dynamique 1 - arc supérieur -->
+        <path d="M 145 60 Q 165 55 175 70 Q 180 80 170 90 Q 160 95 150 85" 
+              fill="url(#swooshAccent1)" opacity="0.8"/>
+        
+        <!-- Swoosh dynamique 2 - arc inférieur -->
+        <path d="M 140 100 Q 155 105 160 120 Q 162 135 150 140 Q 140 142 135 130" 
+              fill="url(#swooshAccent1)" opacity="0.7"/>
+        
+        <!-- Pièce de puzzle intégrée dans le P -->
+        <g transform="translate(85, 72)">
+            <!-- Tête de puzzle -->
+            <circle cx="0" cy="-5" r="3" fill="#dbeafe"/>
+            <!-- Corps de puzzle -->
+            <rect x="-6" y="-3" width="12" height="12" fill="#93c5fd" rx="1"/>
+            <!-- Encoche droite -->
+            <path d="M 6 1 Q 9 3 6 5" fill="white"/>
+        </g>
+    </g>
+    
+    <!-- Texte "ENSEMBLE POUR L'AUTISME" -->
+    <text x="100" y="175" font-family="Inter, Arial, sans-serif" font-size="7" font-weight="600" 
+          fill="#1e40af" text-anchor="middle" textLength="130" lengthAdjust="spacing">
+        ENSEMBLE POUR L'AUTISME
+    </text>
+    
+    <!-- Petit détail puzzle en bas -->
+    <g transform="translate(30, 165)">
+        <circle cx="0" cy="-2" r="1.5" fill="#2563eb"/>
+        <rect x="-3" y="-1" width="6" height="6" fill="#3b82f6" rx="0.5"/>
+    </g>
+    <g transform="translate(170, 165)">
+        <circle cx="0" cy="-2" r="1.5" fill="#2563eb"/>
+        <rect x="-3" y="-1" width="6" height="6" fill="#3b82f6" rx="0.5"/>
+    </g>
+</svg>

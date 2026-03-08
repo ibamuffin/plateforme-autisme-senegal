@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Plateforme Associations Autisme Sénégal - Améliorer la prise en charge des enfants TSA</title>
+    <meta name="description" content="Plateforme des associations d'autisme au Sénégal pour améliorer la prise en charge des enfants vivant avec les TSA. Objectifs, activités et résultats pour l'inclusion.">
+    <meta name="keywords" content="autisme, sénégal, TSA, associations, enfants, prise en charge, inclusion, santé, éducation">
+    <meta name="author" content="Plateforme Associations Autisme Sénégal">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="fr">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Plateforme Associations Autisme Sénégal">
+    <meta property="og:description" content="Améliorer la prise en charge des enfants vivant avec les TSA au Sénégal">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://plateforme-autisme-senegal.netlify.app">
+    <meta property="og:image" content="https://plateforme-autisme-senegal.netlify.app/images/logo-autisme-senegal.svg">
+    <meta property="og:locale" content="fr_SN">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plateforme Associations Autisme Sénégal">
+    <meta name="twitter:description" content="Améliorer la prise en charge des enfants vivant avec les TSA au Sénégal">
+    <meta name="twitter:image" content="https://plateforme-autisme-senegal.netlify.app/images/logo-autisme-senegal.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logo-autisme-senegal.svg">
+    <link rel="alternate icon" href="images/logo-autisme-senegal.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Local Version avec fallback -->
+    <link rel="stylesheet" href="styles/fontawesome-local.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Font Awesome Fallback Script -->
+    <script src="js/fontawesome-fallback.js"></script>
+</head>
+<body>
+    <!-- Animated Interactive Background -->
+    <div class="animated-background" id="animatedBg">
+        <!-- Background elements will be added dynamically by JavaScript -->
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo-autisme-senegal.svg" alt="Logo Plateforme Autisme Sénégal" class="logo-image">
+                <h2>Plateforme Autisme Sénégal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#objectifs" class="nav-link">Objectifs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#activites" class="nav-link">Activités</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ressources" class="nav-link">Ressources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#donation" class="nav-link">Don</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Plateforme des Associations d'Autisme au Sénégal</h1>
+            <p class="hero-subtitle">« Ensemble pour une société plus inclusive où chaque personne compte »</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-text="1/160">1/160</div>
+                    <div class="stat-label">Personnes touchées selon l'OMS</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-text="0.8%">0.8%</div>
+                    <div class="stat-label">Enfants en bas âge au Sénégal</div>
+                </div>
+            </div>
+            <a href="#contexte" class="cta-button">En savoir plus <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-visual">
+            <img src="images/enfants-autisme-accueil.svg" alt="Enfants avec autisme tenant des pièces de puzzle" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Qui sommes-nous Section -->
+    <section id="qui-sommes-nous" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Qui sommes-nous ?</h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-eye"></i> Notre Vision</h3>
+                        <p class="lead">« Ensemble pour une société plus inclusive où chaque personne compte »</p>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 2rem;">
+                        <h3><i class="fas fa-bullseye"></i> Notre Mission</h3>
+                        <p>Fédérer les actions des associations pour une amélioration de la prise en charge des enfants vivant avec les TSA.</p>
+                    </div>
+
+                    <div class="vision-box" style="margin-top: 2rem;">
+                        <h3><i class="fas fa-star"></i> Objectif Général</h3>
+                        <p>Fédérer les associations engagées dans le domaine de l'autisme afin de promouvoir une société inclusive, équitable et respectueuse des droits des personnes autistes, à travers le plaidoyer, la sensibilisation, le renforcement des capacités et l'amélioration de l'accès aux services éducatifs, sanitaires et sociaux.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;"><i class="fas fa-users"></i> Coordonner les efforts</h3>
+                    <p>Nous coordonnons les efforts des différentes parties prenantes pour que des actions concrètes soient posées par les autorités. Nous devons parler d'une seule et même voix afin de mieux porter la problématique de l'autisme.</p>
+                </div>
+                <div class="content-visual">
+                    <img src="images/contexte-statistiques-updated.svg" alt="Plateforme des associations d'autisme" class="context-image">
+                    <div class="infographic">
+                        <div class="infographic-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h4>Fédération</h4>
+                            <p>Unir les associations pour plus d'impact</p>
+                        </div>
+                        <div class="infographic-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Inclusion</h4>
+                            <p>Une société où chaque personne compte</p>
+                        </div>
+                        <div class="infographic-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Amélioration</h4>
+                            <p>Meilleure prise en charge des enfants TSA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Context Section -->
+    <section id="contexte" class="section">
+        <div class="container">
+            <h2 class="section-title">Contexte et Justification</h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p class="lead">L'autisme est une pathologie qui commence à prendre de l'ampleur dans le monde. Selon l'OMS, une (1) personne sur cent soixante (160) est atteinte d'autisme.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Situation au Sénégal</h3>
+                        <p>Au Sénégal, le peu de statistiques que nous avons à disposition renseignent que <strong>"0,8% des enfants en bas âge sont touchés par l'autisme"</strong> selon le Centre pédopsychiatrique de l'hôpital Fann.</p>
+                    </div>
+
+                    <h3>Défis actuels</h3>
+                    <ul class="challenge-list">
+                        <li><i class="fas fa-exclamation-triangle"></i> Déficit criard en termes de ressources médicales</li>
+                        <li><i class="fas fa-user-md"></i> Manque de personnel paramédical spécialisé</li>
+                        <li><i class="fas fa-graduation-cap"></i> Insuffisance de ressources éducatives adaptées</li>
+                        <li><i class="fas fa-building"></i> Infrastructures spécialisées limitées</li>
+                    </ul>
+
+                    <div class="vision-box">
+                        <h3>Notre Vision</h3>
+                        <p>Coordonner les efforts des différentes parties prenantes pour que des actions concrètes soient posées par les nouvelles autorités. Nous devons parler d'une seule et même voix afin de mieux porter la problématique de l'autisme.</p>
+                    </div>
+                </div>
+                <div class="content-visual">
+                    <img src="images/contexte-statistiques-updated.svg" alt="Statistiques et défis de l'autisme au Sénégal" class="context-image">
+                    <div class="infographic">
+                        <div class="infographic-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-globe-africa"></i>
+                            </div>
+                            <h4>Ampleur Mondiale</h4>
+                            <p>L'autisme prend de l'ampleur à travers le monde</p>
+                        </div>
+                        <div class="infographic-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Statistiques Locales</h4>
+                            <p>0,8% des enfants sénégalais concernés</p>
+                        </div>
+                        <div class="infographic-item">
+                            <div class="icon-circle">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h4>Action Collective</h4>
+                            <p>Plusieurs associations mobilisées</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section id="objectifs" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Nos Objectifs</h2>
+            
+            <div class="objective-main">
+                <h3>Objectif Général</h3>
+                <p class="objective-general">Fédérer les associations engagées dans le domaine de l'autisme afin de promouvoir une société inclusive, équitable et respectueuse des droits des personnes autistes, à travers le plaidoyer, la sensibilisation, le renforcement des capacités et l'amélioration de l'accès aux services éducatifs, sanitaires et sociaux.</p>
+                
+                <div class="objectives-visual">
+                    <img src="images/objectifs-schema-updated.svg" alt="Schéma des 7 objectifs spécifiques de la plateforme" class="objectives-image">
+                </div>
+            </div>
+
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Cadre de Concertation</h4>
+                    <p>Créer un cadre de concertation pérenne avec l'État</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>État des Lieux</h4>
+                    <p>Inciter les autorités à faire un état des lieux de la situation des enfants</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h4>Personnel Médical</h4>
+                    <p>Faire le plaidoyer pour renforcer le personnel médical et paramédical</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4>Programmes Éducatifs</h4>
+                    <p>Accompagner l'État dans l'élaboration de programmes d'éducation adaptés à l'autisme</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h4>Formation Enseignants</h4>
+                    <p>Aider à renforcer les capacités du corps enseignant sur la prise en charge pédagogique</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Éducation Inclusive</h4>
+                    <p>Amener l'État à mettre en place un véritable système d'éducation inclusive</p>
+                </div>
+
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h4>Infrastructures</h4>
+                    <p>Pousser les autorités à renforcer les infrastructures éducatives spécialisées</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activites" class="section">
+        <div class="container">
+            <h2 class="section-title">Nos Activités</h2>
+            
+            <div class="activities-hero">
+                <img src="images/centre-therapie-activites.svg" alt="Centre de thérapie et d'activités pour enfants avec TSA" class="activities-image">
+            </div>
+            
+            <div class="activities-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Coordonner les actions des associations</h4>
+                        <p>Harmoniser et organiser les efforts de toutes les associations membres pour maximiser l'impact</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Sensibiliser les autorités</h4>
+                        <p>Alerter les décideurs sur l'urgence de la prise en charge des enfants TSA</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Mener des actions de plaidoyer</h4>
+                        <p>Défendre les droits des personnes autistes auprès des institutions publiques</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Créer des cadres de concertation</h4>
+                        <p>Établir des mécanismes permanents de dialogue avec les institutions publiques</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Assister les associations</h4>
+                        <p>Accompagner les associations dans la mise en œuvre de leurs activités</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Animer le cadre de concertation</h4>
+                        <p>Faciliter les échanges réguliers avec les institutions publiques</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Former les associations</h4>
+                        <p>Renforcer les capacités des associations sur les nouvelles pratiques et outils de l'autisme</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Connecter avec les bailleurs</h4>
+                        <p>Mettre en relation les associations avec de potentiels bailleurs de fonds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="ressources" class="section games-section">
+        <div class="container">
+            <div class="games-header">
+                <h2 class="section-title">
+                    <i class="fas fa-book-medical"></i>
+                    Ressources
+                </h2>
+                <p class="section-subtitle">Outils et répertoires pour accompagner les familles et professionnels</p>
+            </div>
+
+            <div class="objectives-grid">
+                <!-- Jeux Interactifs -->
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h4>Jeux Interactifs</h4>
+                    <p>Jeux éducatifs et ludiques adaptés aux enfants avec TSA pour stimuler l'apprentissage et le développement</p>
+                    <a href="#jeux-interactifs" class="cta-button" style="margin-top: 1rem;">Accéder <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Répertoire des Médecins -->
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h4>Répertoire des Médecins</h4>
+                    <p>Liste des médecins spécialisés dans l'autisme et les troubles du développement au Sénégal</p>
+                    <a href="#repertoire-medecins" class="cta-button" style="margin-top: 1rem;">Consulter <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Répertoire des Paramédicaux -->
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                    <h4>Répertoire des Paramédicaux</h4>
+                    <p>Orthophonistes, psychomotriciens, ergothérapeutes et autres professionnels spécialisés</p>
+                    <a href="#repertoire-paramedicaux" class="cta-button" style="margin-top: 1rem;">Consulter <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Répertoire des Écoles Spécialisées -->
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h4>Répertoire des Écoles Spécialisées</h4>
+                    <p>Établissements scolaires et centres d'apprentissage adaptés aux enfants avec TSA</p>
+                    <a href="#repertoire-ecoles" class="cta-button" style="margin-top: 1rem;">Consulter <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Information complémentaire -->
+            <div class="info-box" style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 15px; border-left: 5px solid #2563eb;">
+                <h3 style="color: #1e40af; margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> Mise à jour des répertoires</h3>
+                <p style="color: #1f2937; line-height: 1.6;">Les répertoires sont régulièrement mis à jour pour vous offrir les informations les plus récentes. Si vous êtes un professionnel et souhaitez être référencé, ou si vous constatez une information erronée, n'hésitez pas à nous contacter.</p>
+                <a href="#contact" class="cta-button" style="margin-top: 1rem;">Nous contacter <i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Modal (conservé pour les jeux interactifs accessibles via la section ressources) -->
+    <div id="gameModal" class="game-modal" style="display: none;">
+        <div class="game-container">
+            <div class="game-header">
+                <h3 id="gameTitle">Jeux Interactifs</h3>
+                <button class="close-game" onclick="closeGame()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="game-content" id="gameContent">
+                <p style="text-align: center; padding: 2rem;">Les jeux interactifs seront bientôt disponibles. Merci de votre patience !</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donation Section -->
+    <section id="donation" class="section donation-section">
+        <div class="container">
+            <div class="donation-header">
+                <h2 class="section-title">
+                    <i class="fas fa-heart"></i>
+                    Soutenez Notre Cause
+                </h2>
+                <p class="section-subtitle">Votre don aide à améliorer la vie des enfants avec TSA au Sénégal</p>
+            </div>
+
+            <div class="donation-content">
+                <div class="donation-info">
+                    <div class="donation-stats">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="850">0</div>
+                            <div class="stat-label">Enfants aidés</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="45">0</div>
+                            <div class="stat-label">Centres partenaires</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="120">0</div>
+                            <div class="stat-label">Familles accompagnées</div>
+                        </div>
+                    </div>
+
+                    <div class="donation-impact">
+                        <h3>Votre impact</h3>
+                        <div class="impact-items">
+                            <div class="impact-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>15 000 FCFA = Formation d'un enseignant</span>
+                            </div>
+                            <div class="impact-item">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>30 000 FCFA = Séance de thérapie pour un enfant</span>
+                            </div>
+                            <div class="impact-item">
+                                <i class="fas fa-book"></i>
+                                <span>60 000 FCFA = Matériel pédagogique adapté</span>
+                            </div>
+                            <div class="impact-item">
+                                <i class="fas fa-hospital"></i>
+                                <span>120 000 FCFA = Diagnostic complet TSA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donation-form-container">
+                    <form id="donationForm" class="donation-form">
+                        <h3>Faire un don</h3>
+                        
+                        <div class="amount-selection">
+                            <label>Montant du don (FCFA)</label>
+                            <div class="amount-buttons">
+                                <button type="button" class="amount-btn" data-amount="5000">5 000</button>
+                                <button type="button" class="amount-btn" data-amount="10000">10 000</button>
+                                <button type="button" class="amount-btn" data-amount="25000">25 000</button>
+                                <button type="button" class="amount-btn" data-amount="50000">50 000</button>
+                            </div>
+                            <input type="number" id="customAmount" placeholder="Montant personnalisé" min="1000" class="custom-amount">
+                        </div>
+
+                        <div class="donor-info">
+                            <div class="input-group">
+                                <input type="text" id="donorName" required placeholder="Nom complet">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="donorEmail" required placeholder="Email">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="input-group">
+                                <input type="tel" id="donorPhone" required placeholder="Téléphone (ex: 77 123 45 67)">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+
+                        <div class="payment-methods">
+                            <label>Méthode de paiement</label>
+                            <div class="payment-grid">
+                                <button type="button" class="payment-btn" data-method="orange">
+                                    <div class="orange-logo">
+                                        <svg width="30" height="30" viewBox="0 0 100 100">
+                                            <circle cx="50" cy="50" r="45" fill="#FF7900"/>
+                                            <text x="50" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">O</text>
+                                            <text x="50" y="65" text-anchor="middle" fill="white" font-size="8">Money</text>
+                                        </svg>
+                                    </div>
+                                    <span>Orange Money</span>
+                                </button>
+                                <button type="button" class="payment-btn" data-method="wave">
+                                    <div class="wave-logo-icon">
+                                        <svg width="30" height="30" viewBox="0 0 100 100">
+                                            <rect width="100" height="100" rx="15" fill="#00D4AA"/>
+                                            <path d="M20 60 Q30 40, 40 60 T60 60 T80 60" stroke="white" stroke-width="8" fill="none"/>
+                                            <circle cx="25" cy="25" r="4" fill="white"/>
+                                            <circle cx="75" cy="25" r="4" fill="white"/>
+                                        </svg>
+                                    </div>
+                                    <span>Wave</span>
+                                </button>
+                                <button type="button" class="payment-btn" data-method="free">
+                                    <div class="free-logo">
+                                        <svg width="30" height="30" viewBox="0 0 100 100">
+                                            <rect width="100" height="100" rx="10" fill="#8B0000"/>
+                                            <text x="50" y="35" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Free</text>
+                                            <text x="50" y="65" text-anchor="middle" fill="white" font-size="8">Money</text>
+                                        </svg>
+                                    </div>
+                                    <span>Free Money</span>
+                                </button>
+                                <button type="button" class="payment-btn" data-method="wari">
+                                    <div class="wari-logo">
+                                        <svg width="30" height="30" viewBox="0 0 100 100">
+                                            <rect width="100" height="100" rx="15" fill="#FF6B35"/>
+                                            <text x="50" y="40" text-anchor="middle" fill="white" font-size="16" font-weight="bold">W</text>
+                                            <text x="50" y="65" text-anchor="middle" fill="white" font-size="10">WARI</text>
+                                        </svg>
+                                    </div>
+                                    <span>Paypal</span>
+                                </button>
+                                <button type="button" class="payment-btn" data-method="mastercard">
+                                    <i class="fab fa-cc-mastercard" style="color: #EB001B; font-size: 1.8rem;"></i>
+                                    <span>Mastercard</span>
+                                </button>
+                                <button type="button" class="payment-btn" data-method="visa">
+                                    <i class="fab fa-cc-visa" style="color: #1A1F71; font-size: 1.8rem;"></i>
+                                    <span>Visa</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="donation-options">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="monthlyDonation">
+                                <label for="monthlyDonation">Don mensuel récurrent</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="anonymous">
+                                <label for="anonymous">Don anonyme</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="donate-btn">
+                            <i class="fas fa-heart"></i>
+                            Faire le don
+                            <span class="amount-display">0 FCFA</span>
+                        </button>
+                    </form>
+
+                    <div class="security-info">
+                        <div class="security-badges">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Paiement sécurisé SSL</span>
+                        </div>
+                        <div class="security-badges">
+                            <i class="fas fa-certificate"></i>
+                            <span>Reçu fiscal disponible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Rejoignez-nous</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ensemble, nous pouvons faire la différence</h3>
+                    <p>La plateforme des associations d'autisme du Sénégal vous invite à rejoindre notre mouvement pour améliorer la prise en charge des enfants vivant avec les TSA.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@plateformeautismesenegal.org</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p>+221 XX XXX XX XX</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>Dakar, Sénégal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Contactez-nous</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="type" name="type" required>
+                                <option value="">Type de contact</option>
+                                <option value="association">Association</option>
+                                <option value="parent">Parent</option>
+                                <option value="professionnel">Professionnel de santé</option>
+                                <option value="institution">Institution</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Envoyer <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Plateforme Autisme Sénégal</h4>
+                    <p>Ensemble pour améliorer la prise en charge des enfants vivant avec les Troubles du Spectre Autistique au Sénégal.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Utiles</h4>
+                    <ul>
+                        <li><a href="#qui-sommes-nous">Qui sommes-nous ?</a></li>
+                        <li><a href="#objectifs">Objectifs</a></li>
+                        <li><a href="#activites">Activités</a></li>
+                        <li><a href="#ressources">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="#">Centre pédopsychiatrique Fann</a></li>
+                        <li><a href="#">Ministère de la Santé</a></li>
+                        <li><a href="#">Ministère de l'Éducation</a></li>
+                        <li><a href="#">OMS - Autisme</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Plateforme Associations Autisme Sénégal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

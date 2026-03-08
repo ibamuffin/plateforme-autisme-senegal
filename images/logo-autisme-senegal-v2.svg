@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions -->
+  <defs>
+    <!-- Gradient de fond -->
+    <radialGradient id="backgroundGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Filtre d'ombre -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+    
+    <!-- Gradients pour les mains en cercle -->
+    <linearGradient id="hand1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff5252;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a24;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hand2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#26d0ce;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00b894;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hand3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#45b7d1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hand4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9ca24;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0932b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hand5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c5ce7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8e44ad;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a29bfe;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hand6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fd79a8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e91e63;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e84393;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00853f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#27ae60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient vert sénégalais pour le texte -->
+    <linearGradient id="senegalGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00853f;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#27ae60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filtre d'ombre pour le texte -->
+    <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-color="rgba(0,0,0,0.4)"/>
+    </filter>
+  </defs>
+  
+  <!-- Fond -->
+  <circle cx="100" cy="100" r="98" fill="url(#backgroundGradient)" stroke="#00853f" stroke-width="2"/>
+  
+  <!-- Cercle central avec puzzle détaillé de l'autisme -->
+  <circle cx="100" cy="100" r="35" fill="url(#centerGradient)" opacity="0.9" filter="url(#dropShadow)"/>
+  
+  <!-- Puzzle de l'autisme détaillé (4 pièces) -->
+  <g transform="translate(100, 100)" filter="url(#dropShadow)">
+    <!-- Pièce de puzzle 1 (haut-gauche) - Rouge -->
+    <path d="M-17 -17 L-5 -17 Q-5 -22, 0 -22 Q5 -22, 5 -17 L17 -17 Q22 -17, 22 -12 Q22 -7, 17 -7 Q12 -7, 12 -2 L12 2 Q12 7, 7 7 Q2 7, 2 2 L-2 2 Q-7 2, -7 -3 Q-7 -8, -2 -8 L-2 -12 Q-2 -17, -7 -17 Q-12 -17, -12 -12 Q-12 -7, -17 -7 Q-22 -7, -22 -12 Q-22 -17, -17 -17 Z" 
+          fill="#ff6b6b" 
+          stroke="white" 
+          stroke-width="1.5" 
+          opacity="0.9"/>
+    <!-- Détail pièce 1 -->
+    <circle cx="-8" cy="-8" r="2" fill="rgba(255,255,255,0.6)"/>
+    
+    <!-- Pièce de puzzle 2 (haut-droite) - Bleu -->
+    <path d="M17 -17 L5 -17 Q5 -22, 0 -22 Q-5 -22, -5 -17 L-17 -17 Q-22 -17, -22 -12 Q-22 -7, -17 -7 Q-12 -7, -12 -2 L-12 2 Q-12 7, -7 7 Q-2 7, -2 2 L2 2 Q7 2, 7 -3 Q7 -8, 2 -8 L2 -12 Q2 -17, 7 -17 Q12 -17, 12 -12 Q12 -7, 17 -7 Q22 -7, 22 -12 Q22 -17, 17 -17 Z" 
+          fill="#4ecdc4" 
+          stroke="white" 
+          stroke-width="1.5" 
+          opacity="0.9" 
+          transform="rotate(90)"/>
+    <circle cx="8" cy="-8" r="2" fill="rgba(255,255,255,0.6)" transform="rotate(90)"/>
+    
+    <!-- Pièce de puzzle 3 (bas-droite) - Vert -->
+    <path d="M17 17 L5 17 Q5 22, 0 22 Q-5 22, -5 17 L-17 17 Q-22 17, -22 12 Q-22 7, -17 7 Q-12 7, -12 2 L-12 -2 Q-12 -7, -7 -7 Q-2 -7, -2 -2 L2 -2 Q7 -2, 7 3 Q7 8, 2 8 L2 12 Q2 17, 7 17 Q12 17, 12 12 Q12 7, 17 7 Q22 7, 22 12 Q22 17, 17 17 Z" 
+          fill="#45b7d1" 
+          stroke="white" 
+          stroke-width="1.5" 
+          opacity="0.9" 
+          transform="rotate(180)"/>
+    <circle cx="8" cy="8" r="2" fill="rgba(255,255,255,0.6)" transform="rotate(180)"/>
+    
+    <!-- Pièce de puzzle 4 (bas-gauche) - Jaune -->
+    <path d="M-17 17 L-5 17 Q-5 22, 0 22 Q5 22, 5 17 L17 17 Q22 17, 22 12 Q22 7, 17 7 Q12 7, 12 2 L12 -2 Q12 -7, 7 -7 Q2 -7, 2 -2 L-2 -2 Q-7 -2, -7 3 Q-7 8, -2 8 L-2 12 Q-2 17, -7 17 Q-12 17, -12 12 Q-12 7, -17 7 Q-22 7, -22 12 Q-22 17, -17 17 Z" 
+          fill="#f9ca24" 
+          stroke="white" 
+          stroke-width="1.5" 
+          opacity="0.9" 
+          transform="rotate(270)"/>
+    <circle cx="-8" cy="8" r="2" fill="rgba(255,255,255,0.6)" transform="rotate(270)"/>
+    
+    <!-- Centre du puzzle - Connexion -->
+    <circle cx="0" cy="0" r="4" fill="white" opacity="0.8"/>
+    <circle cx="0" cy="0" r="2" fill="url(#centerGradient)"/>
+    
+    <!-- Lignes de jointure subtiles -->
+    <line x1="-17" y1="0" x2="17" y2="0" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+    <line x1="0" y1="-17" x2="0" y2="17" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Mains détaillées en cercle (6 mains) -->
+  <!-- Main 1 (en haut) -->
+  <g transform="translate(100, 50) rotate(0)" filter="url(#dropShadow)">
+    <!-- Paume -->
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#hand1)"/>
+    <!-- Doigts -->
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#hand1)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#hand1)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#hand1)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#hand1)"/>
+    <!-- Pouce -->
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#hand1)" transform="rotate(-30)"/>
+    <!-- Poignet -->
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#hand1)"/>
+    <!-- Détails -->
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Main 2 (en haut à droite) -->
+  <g transform="translate(143, 75) rotate(60)" filter="url(#dropShadow)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#hand2)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#hand2)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#hand2)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#hand2)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#hand2)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#hand2)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#hand2)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Main 3 (en bas à droite) -->
+  <g transform="translate(143, 125) rotate(120)" filter="url(#dropShadow)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#hand3)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#hand3)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#hand3)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#hand3)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#hand3)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#hand3)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#hand3)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Main 4 (en bas) -->
+  <g transform="translate(100, 150) rotate(180)" filter="url(#dropShadow)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#hand4)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#hand4)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#hand4)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#hand4)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#hand4)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#hand4)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#hand4)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Main 5 (en bas à gauche) -->
+  <g transform="translate(57, 125) rotate(240)" filter="url(#dropShadow)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#hand5)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#hand5)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#hand5)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#hand5)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#hand5)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#hand5)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#hand5)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Main 6 (en haut à gauche) -->
+  <g transform="translate(57, 75) rotate(300)" filter="url(#dropShadow)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#hand6)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#hand6)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#hand6)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#hand6)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#hand6)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#hand6)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#hand6)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Étoile centrale (drapeau sénégalais) -->
+  <path d="M100 90 L102.5 97 L110 97 L104.5 102 L106.5 109 L100 105 L93.5 109 L95.5 102 L90 97 L97.5 97 Z" 
+        fill="#f9ca24" 
+        stroke="white" 
+        stroke-width="1"/>
+  
+  <!-- Motifs africains décoratifs -->
+  <g opacity="0.4">
+    <!-- Cercles concentriques (inspiration tambours africains) -->
+    <circle cx="100" cy="100" r="75" fill="none" stroke="#00853f" stroke-width="1" stroke-dasharray="3,3"/>
+    <circle cx="100" cy="100" r="85" fill="none" stroke="#f9ca24" stroke-width="1" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Texte mis en exergue avec arrière-plan et effets -->
+  <g>
+    <!-- Arrière-plan du texte principal avec bordure -->
+    <rect x="40" y="160" width="120" height="20" rx="10" ry="10" 
+          fill="white" 
+          stroke="url(#senegalGreen)" 
+          stroke-width="2" 
+          filter="url(#dropShadow)"/>
+    
+    <!-- Texte principal avec gradient et ombre -->
+    <text x="100" y="173" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="11" font-weight="900" 
+          fill="url(#senegalGreen)" filter="url(#textShadow)">
+      ENSEMBLE POUR L'AUTISME
+    </text>
+    
+    <!-- Ligne de séparation décorative -->
+    <line x1="50" y1="185" x2="150" y2="185" stroke="#f9ca24" stroke-width="2"/>
+    
+    <!-- Arrière-plan du texte "SÉNÉGAL" -->
+    <ellipse cx="100" cy="30" rx="35" ry="12" 
+             fill="#f9ca24" 
+             stroke="#00853f" 
+             stroke-width="3" 
+             filter="url(#dropShadow)"/>
+    
+    <!-- Texte "SÉNÉGAL" avec effet relief -->
+    <text x="100" y="35" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="12" font-weight="900" 
+          fill="white" filter="url(#textShadow)">
+      SÉNÉGAL
+    </text>
+    
+    <!-- Étoiles décoratives autour du texte -->
+    <g fill="#f9ca24">
+      <path d="M65 30 L66 32 L68 32 L66.5 33.5 L67 35.5 L65 34.5 L63 35.5 L63.5 33.5 L62 32 L64 32 Z"/>
+      <path d="M135 30 L136 32 L138 32 L136.5 33.5 L137 35.5 L135 34.5 L133 35.5 L133.5 33.5 L132 32 L134 32 Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,157 @@
+/*!
+ * Font Awesome Free 6.0.0 - Local Version
+ * License: https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1)
+ */
+
+/* Font Awesome Core */
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab,
+.fak {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+/* Solid Icons */
+.fa-solid,
+.fas {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+/* Regular Icons */
+.fa-regular,
+.far {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+
+/* Brand Icons */
+.fa-brands,
+.fab {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+}
+
+/* Font Face Declarations avec multiple sources et fallbacks */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('https://use.fontawesome.com/releases/v6.4.0/webfonts/fa-solid-900.woff2') format('woff2'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2'),
+       url('https://pro.fontawesome.com/releases/v6.4.0/webfonts/fa-solid-900.woff2') format('woff2'),
+       url('https://kit.fontawesome.com/fonts/fa-solid-900.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://use.fontawesome.com/releases/v6.4.0/webfonts/fa-regular-400.woff2') format('woff2'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2') format('woff2'),
+       url('https://pro.fontawesome.com/releases/v6.4.0/webfonts/fa-regular-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://use.fontawesome.com/releases/v6.4.0/webfonts/fa-brands-400.woff2') format('woff2'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2'),
+       url('https://pro.fontawesome.com/releases/v6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
+}
+
+/* Icônes principales utilisées dans le projet */
+.fa-puzzle-piece:before { content: "\f12e"; }
+.fa-heart:before { content: "\f004"; }
+.fa-users:before { content: "\f0c0"; }
+.fa-graduation-cap:before { content: "\f19d"; }
+.fa-hospital:before { content: "\f0f8"; }
+.fa-bullseye:before { content: "\f140"; }
+.fa-clipboard-check:before { content: "\f46c"; }
+.fa-chart-line:before { content: "\f201"; }
+.fa-handshake:before { content: "\f2b5"; }
+.fa-envelope:before { content: "\f0e0"; }
+.fa-phone:before { content: "\f095"; }
+.fa-map-marker-alt:before { content: "\f3c5"; }
+.fa-bars:before { content: "\f0c9"; }
+.fa-times:before { content: "\f00d"; }
+.fa-gamepad:before { content: "\f11b"; }
+.fa-play:before { content: "\f04b"; }
+.fa-palette:before { content: "\f53f"; }
+.fa-seedling:before { content: "\f4d8"; }
+.fa-shapes:before { content: "\f61f"; }
+.fa-music:before { content: "\f001"; }
+.fa-clock:before { content: "\f017"; }
+.fa-circle:before { content: "\f111"; }
+.fa-paw:before { content: "\f1b0"; }
+.fa-paint-brush:before { content: "\f1fc"; }
+.fa-eye:before { content: "\f06e"; }
+.fa-universal-access:before { content: "\f29a"; }
+.fa-adjust:before { content: "\f042"; }
+.fa-crosshairs:before { content: "\f05b"; }
+.fa-redo:before { content: "\f01e"; }
+.fa-pause:before { content: "\f04c"; }
+.fa-question:before { content: "\f128"; }
+.fa-check-circle:before { content: "\f058"; }
+.fa-trophy:before { content: "\f091"; }
+.fa-thumbs-up:before { content: "\f164"; }
+.fa-spinner:before { content: "\f110"; }
+.fa-exclamation-circle:before { content: "\f06a"; }
+.fa-info-circle:before { content: "\f05a"; }
+.fa-tint:before { content: "\f043"; }
+.fa-sun:before { content: "\f185"; }
+.fa-flower-tulip:before { content: "\f801"; }
+.fa-donate:before { content: "\f4b9"; }
+.fa-credit-card:before { content: "\f09d"; }
+.fa-mobile-alt:before { content: "\f3cd"; }
+.fa-university:before { content: "\f19c"; }
+
+/* Animations pour les icônes */
+.fa-spinner {
+  animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tailles d'icônes */
+.fa-xs { font-size: 0.75em; }
+.fa-sm { font-size: 0.875em; }
+.fa-lg { font-size: 1.25em; }
+.fa-xl { font-size: 1.5em; }
+.fa-2x { font-size: 2em; }
+.fa-3x { font-size: 3em; }
+.fa-4x { font-size: 4em; }
+.fa-5x { font-size: 5em; }
+
+/* Fallback pour les icônes manquantes */
+.fa:before,
+.fas:before,
+.far:before,
+.fab:before {
+  font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands', sans-serif;
+}
+
+/* Support pour les anciennes versions */
+.fa-flower-tulip:before { 
+  content: "\f4d8"; /* Utilise seedling comme fallback */
+}

@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation Logos - Commanditaire | Plateforme Autisme Sénégal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+            body { background: white; }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Page de Couverture */
+        .cover-page {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 3rem;
+            margin: -2rem -2rem 3rem -2rem;
+        }
+
+        .cover-logo {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 50%;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .cover-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .cover-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cover-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cover-info {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .cover-info p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        /* En-tête de Section */
+        .section-header {
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0 2rem 0;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Carte de Logo */
+        .logo-presentation {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 2px solid #e5e7eb;
+        }
+
+        .logo-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .logo-visual {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+            border-radius: 15px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo-visual img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-info {
+            flex: 1;
+        }
+
+        .logo-number {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .logo-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-concept {
+            font-size: 1.2rem;
+            color: #6b7280;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .info-section {
+            margin-bottom: 2rem;
+        }
+
+        .info-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-section p, .info-section ul {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-section ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-section ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .message-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .message-box h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .message-box p {
+            font-size: 0.85rem;
+            color: #374151;
+        }
+
+        .usage-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #10b981;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tag.context { background: #f59e0b; }
+        .tag.emotion { background: #8b5cf6; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h4 {
+            color: #92400e;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-box p {
+            color: #78350f;
+            font-size: 1rem;
+        }
+
+        /* Tableau */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table th {
+            background: #f8fafc;
+            color: #1f2937;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table td {
+            color: #4b5563;
+            font-size: 0.85rem;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Bouton d'impression */
+        .print-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(37, 99, 235, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .cover-title { font-size: 2rem; }
+            .cover-subtitle { font-size: 1.1rem; }
+            .logo-header { flex-direction: column; }
+            .logo-visual { width: 100%; height: 180px; }
+            .message-boxes { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page de Couverture -->
+    <div class="cover-page">
+        <div class="cover-logo">
+            <img src="images/logo-autisme-senegal-v2-improved.svg" alt="Logo Plateforme Autisme">
+        </div>
+        <h1 class="cover-title">🧩 Présentation des Logos</h1>
+        <p class="cover-subtitle">Plateforme des Associations d'Autisme du Sénégal</p>
+        <div class="cover-info">
+            <p><strong>9 Logos Professionnels</strong></p>
+            <p>36 Fichiers PNG Haute Qualité</p>
+            <p>Guide Complet d'Utilisation et de Promotion</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Janvier 2026</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Collection 1: Logos Originaux -->
+        <div class="section-header">
+            <h2>🎨 Collection 1 : Logos Originaux</h2>
+            <p>Thème Communautaire - Solidarité et Protection</p>
+        </div>
+
+        <!-- Logo 1 -->
+        <div class="logo-presentation">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-v2-improved.svg" alt="Logo 1">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number">Logo 1</span>
+                    <h3 class="logo-name">V2 Improved - Bleu Autisme 🔵</h3>
+                    <p class="logo-concept">L'union fait la force</p>
+                    <div class="usage-tags">
+                        <span class="tag">International</span>
+                        <span class="tag">Web</span>
+                        <span class="tag context">ONG/ONU</span>
+                        <span class="tag emotion">Espoir</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>📝 Description Visuelle</h4>
+                <p>Six mains colorées en cercle parfait symbolisant la solidarité, avec trois enfants joyeux au sommet représentant l'inclusion. Utilise exclusivement la palette bleu autisme (#1e40af à #dbeafe), reconnue mondialement.</p>
+            </div>
+
+            <div class="message-boxes">
+                <div class="message-box">
+                    <h5>💙 Solidarité</h5>
+                    <p>Les mains unies représentent l'engagement collectif de tous les acteurs</p>
+                </div>
+                <div class="message-box">
+                    <h5>🛡️ Protection</h5>
+                    <p>Le cercle forme un cocon protecteur pour les enfants</p>
+                </div>
+                <div class="message-box">
+                    <h5>🌍 Universalité</h5>
+                    <p>Couleurs bleues reconnues internationalement pour l'autisme</p>
+                </div>
+                <div class="message-box">
+                    <h5>✨ Espoir</h5>
+                    <p>Enfants souriants montrent un avenir positif et inclusif</p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>✅ Utilisation Recommandée</h4>
+                <ul>
+                    <li>Communication internationale (ONU, OMS, partenaires étrangers)</li>
+                    <li>Journée mondiale de l'autisme (2 avril)</li>
+                    <li>Documents pour organisations internationales</li>
+                    <li>Site web version anglaise</li>
+                    <li>Réseaux sociaux internationaux</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💬 Slogan Suggéré</h4>
+                <p><strong>"Ensemble, protégeons et accompagnons nos enfants"</strong></p>
+            </div>
+        </div>
+
+        <!-- Logo 2 -->
+        <div class="logo-presentation page-break">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-v2-improved-senegal.svg" alt="Logo 2">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number" style="background: linear-gradient(135deg, #00853f, #059669);">Logo 2</span>
+                    <h3 class="logo-name">V2 Improved - Sénégal 🇸🇳</h3>
+                    <p class="logo-concept">Fierté nationale et inclusion</p>
+                    <div class="usage-tags">
+                        <span class="tag" style="background: #00853f;">National</span>
+                        <span class="tag" style="background: #f9ca24; color: #1f2937;">Événements</span>
+                        <span class="tag context">Gouvernement</span>
+                        <span class="tag emotion">Fierté</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>📝 Description Visuelle</h4>
+                <p>Variante culturelle avec couleurs du drapeau sénégalais. Les six mains arborent des gradients vert (#00853f), jaune (#f9ca24) et bleu (#2563eb). Les trois enfants portent ces couleurs nationales avec des petits cœurs symbolisant l'amour.</p>
+            </div>
+
+            <div class="message-boxes">
+                <div class="message-box" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-color: #00853f;">
+                    <h5 style="color: #065f46;">🇸🇳 Identité Nationale</h5>
+                    <p>Ancrage profond dans la culture sénégalaise</p>
+                </div>
+                <div class="message-box" style="background: linear-gradient(135deg, #fef3c7, #fde68a); border-color: #f9ca24;">
+                    <h5 style="color: #92400e;">🤝 Unité Patriotique</h5>
+                    <p>Mobilisation de tout le pays pour la cause</p>
+                </div>
+                <div class="message-box" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-color: #00853f;">
+                    <h5 style="color: #065f46;">🎨 Diversité</h5>
+                    <p>Chaque enfant a sa couleur, tous sont égaux</p>
+                </div>
+                <div class="message-box" style="background: linear-gradient(135deg, #fef3c7, #fde68a); border-color: #f9ca24;">
+                    <h5 style="color: #92400e;">💚 Engagement Local</h5>
+                    <p>Initiative 100% sénégalaise et fière de l'être</p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>✅ Utilisation Recommandée</h4>
+                <ul>
+                    <li>Événements nationaux et cérémonies officielles</li>
+                    <li>Communication avec Ministère de la Santé</li>
+                    <li>Affiches et campagnes locales dans les quartiers</li>
+                    <li>Médias sénégalais (presse, TV, radio)</li>
+                    <li>Partenariats avec entreprises sénégalaises</li>
+                    <li>Journée nationale de l'autisme</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-color: #00853f;">
+                <h4 style="color: #065f46;">💬 Slogan Suggéré</h4>
+                <p style="color: #064e3b;"><strong>"Le Sénégal uni pour l'autisme - Ensemble nous sommes plus forts"</strong></p>
+            </div>
+        </div>
+
+        <!-- Logo 3 -->
+        <div class="logo-presentation page-break">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-v2-baobab.svg" alt="Logo 3">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number" style="background: linear-gradient(135deg, #92400e, #78350f);">Logo 3</span>
+                    <h3 class="logo-name">V2 Baobab - Bleu Autisme 🌳</h3>
+                    <p class="logo-concept">L'arbre de vie africain</p>
+                    <div class="usage-tags">
+                        <span class="tag" style="background: #92400e;">Afrique</span>
+                        <span class="tag">Rural</span>
+                        <span class="tag context">Conférences</span>
+                        <span class="tag emotion">Sagesse</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>📝 Description Visuelle</h4>
+                <p>Baobab majestueux avec tronc brun (#78350f à #a16207) et feuillage parsemé de pièces de puzzle bleues. Cinq enfants entourent l'arbre en ronde joyeuse, protégés par le cercle des six mains colorées.</p>
+            </div>
+
+            <div class="message-boxes">
+                <div class="message-box" style="background: linear-gradient(135deg, #fed7aa, #fdba74); border-color: #92400e;">
+                    <h5 style="color: #78350f;">🌳 Enracinement</h5>
+                    <p>Le baobab représente les racines africaines profondes</p>
+                </div>
+                <div class="message-box" style="background: linear-gradient(135deg, #fed7aa, #fdba74); border-color: #92400e;">
+                    <h5 style="color: #78350f;">📚 Sagesse</h5>
+                    <p>L'arbre évoque la transmission des valeurs ancestrales</p>
+                </div>
+                <div class="message-box" style="background: linear-gradient(135deg, #fed7aa, #fdba74); border-color: #92400e;">
+                    <h5 style="color: #78350f;">👨‍👩‍👧‍👦 Communauté</h5>
+                    <p>Enfants autour de l'arbre montrent le soutien collectif</p>
+                </div>
+                <div class="message-box" style="background: linear-gradient(135deg, #fed7aa, #fdba74); border-color: #92400e;">
+                    <h5 style="color: #78350f;">⏳ Pérennité</h5>
+                    <p>Comme le baobab millénaire, engagement durable</p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>✅ Utilisation Recommandée</h4>
+                <ul>
+                    <li>Communications axées sur le patrimoine africain</li>
+                    <li>Partenariats avec organisations panafricaines (Union Africaine)</li>
+                    <li>Conférences internationales sur l'autisme en Afrique</li>
+                    <li>Publications scientifiques et rapports d'étude</li>
+                    <li>Sensibilisation dans zones rurales (symbole familier)</li>
+                    <li>Campagnes valorisant les traditions</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #fed7aa, #fdba74); border-color: #92400e;">
+                <h4 style="color: #78350f;">💬 Slogan Suggéré</h4>
+                <p style="color: #78350f;"><strong>"Comme le baobab, notre engagement est enraciné et durable"</strong></p>
+            </div>
+        </div>
+
+        <!-- Logo 4 -->
+        <div class="logo-presentation page-break">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-v2-baobab-senegal.svg" alt="Logo 4">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number" style="background: linear-gradient(135deg, #00853f, #f9ca24);">Logo 4</span>
+                    <h3 class="logo-name">V2 Baobab - Sénégal 🌳🇸🇳</h3>
+                    <p class="logo-concept">Tradition sénégalaise et modernité</p>
+                    <div class="usage-tags">
+                        <span class="tag" style="background: #00853f;">Sénégal</span>
+                        <span class="tag" style="background: #f9ca24; color: #1f2937;">Diaspora</span>
+                        <span class="tag context">Culturel</span>
+                        <span class="tag emotion">Tradition</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>📝 Description Visuelle</h4>
+                <p>Baobab avec feuillage vert éclatant (#10b981) et pièces de puzzle jaunes (#f9ca24). Les cinq enfants portent des vêtements aux couleurs nationales (vert, bleu, jaune), créant une fusion parfaite tradition-modernité.</p>
+            </div>
+
+            <div class="info-section">
+                <h4>✅ Utilisation Recommandée</h4>
+                <ul>
+                    <li>Célébrations nationales (Indépendance, Tabaski, Korité)</li>
+                    <li>Partenariats avec autorités traditionnelles et religieuses</li>
+                    <li>Campagnes dans les régions (Thiès, Saint-Louis, Kaolack)</li>
+                    <li>Événements culturels sénégalais (concerts, festivals)</li>
+                    <li>Communication avec diasporas sénégalaises</li>
+                    <li>Levées de fonds auprès communauté sénégalaise</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #d1fae5, #fef3c7); border-color: #00853f;">
+                <h4 style="color: #065f46;">💬 Slogan Suggéré</h4>
+                <p style="color: #064e3b;"><strong>"Nos racines sénégalaises, notre force pour l'autisme"</strong></p>
+            </div>
+        </div>
+
+        <!-- Collection 2: Logos Modernes -->
+        <div class="section-header page-break" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+            <h2>✨ Collection 2 : Logos Modernes</h2>
+            <p>Thème Contemporain - Innovation et Professionnalisme</p>
+        </div>
+
+        <!-- Logo 5 -->
+        <div class="logo-presentation">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-moderne-1.svg" alt="Logo 5">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number" style="background: linear-gradient(135deg, #2563eb, #1e40af);">Logo 5</span>
+                    <h3 class="logo-name">Moderne 1 - "P" Dynamique 🚀</h3>
+                    <p class="logo-concept">Minimalisme professionnel international</p>
+                    <div class="usage-tags">
+                        <span class="tag">Web/Digital</span>
+                        <span class="tag">Mobile</span>
+                        <span class="tag context">Corporate</span>
+                        <span class="tag emotion">Modernité</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>📝 Description Visuelle</h4>
+                <p>Lettre "P" épurée (Pour l'Autisme) en dégradé bleu autisme, encadrée de deux swoosh fluides. Puzzle intégré dans le P, avec deux petites pièces décoratives. Design minimaliste web 3.0.</p>
+            </div>
+
+            <div class="info-section">
+                <h4>✅ Utilisation Recommandée</h4>
+                <ul>
+                    <li>Site web principal (header, favicon)</li>
+                    <li>Applications mobiles et plateformes numériques</li>
+                    <li>Présentations PowerPoint professionnelles</li>
+                    <li>LinkedIn et réseaux sociaux professionnels</li>
+                    <li>Cartes de visite du personnel</li>
+                    <li>Signatures email officielles</li>
+                    <li>Webinaires et conférences virtuelles</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💬 Slogan Suggéré</h4>
+                <p><strong>"Pour l'autisme, avançons ensemble vers demain"</strong></p>
+            </div>
+        </div>
+
+        <!-- Logo 6 -->
+        <div class="logo-presentation page-break">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-moderne-2.svg" alt="Logo 6">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number" style="background: linear-gradient(135deg, #00853f, #f9ca24);">Logo 6</span>
+                    <h3 class="logo-name">Moderne 2 - "A" Culturel 🎨</h3>
+                    <p class="logo-concept">Fusion identité moderne et patriotisme</p>
+                    <div class="usage-tags">
+                        <span class="tag" style="background: #00853f;">Jeunesse</span>
+                        <span class="tag" style="background: #f9ca24; color: #1f2937;">Social Media</span>
+                        <span class="tag context">Influenceurs</span>
+                        <span class="tag emotion">Énergie</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h4>📝 Description Visuelle</h4>
+                <p>Lettre "A" en gradient tricolore vert-bleu-jaune Sénégal, avec rubans swoosh latéraux. Deux puzzles au sommet, étoile dorée couronnant le design. Très accrocheur visuellement.</p>
+            </div>
+
+            <div class="info-section">
+                <h4>✅ Utilisation Recommandée</h4>
+                <ul>
+                    <li>Événements jeunesse (universités, lycées)</li>
+                    <li>Campagnes Instagram, TikTok, Snapchat</li>
+                    <li>Partenariats avec influenceurs sénégalais</li>
+                    <li>Merchandising (t-shirts, casquettes, sacs)</li>
+                    <li>Concerts et événements culturels</li>
+                    <li>Campagnes grand public médias nationaux</li>
+                    <li>Affiches lieux publics (marchés, gares)</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #d1fae5, #fef3c7);">
+                <h4 style="color: #065f46;">💬 Slogan Suggéré</h4>
+                <p style="color: #064e3b;"><strong>"L'autisme aux couleurs du Sénégal - Notre combat, notre fierté"</strong></p>
+            </div>
+        </div>
+
+        <!-- Logos 7, 8, 9 - Format condensé -->
+        <div class="logo-presentation page-break">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-moderne-3.svg" alt="Logo 7">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number">Logo 7</span>
+                    <h3 class="logo-name">Moderne 3 - "P" Circulaire 🔵⭕</h3>
+                    <p class="logo-concept">Inclusion et unité universelle</p>
+                </div>
+            </div>
+            <p><strong>Utilisation :</strong> Campagnes d'inclusion, écoles, formations, badges de sensibilisation</p>
+            <p><strong>Slogan :</strong> <em>"Dans notre cercle, chacun a sa place"</em></p>
+        </div>
+
+        <div class="logo-presentation">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-moderne-4.svg" alt="Logo 8">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number" style="background: linear-gradient(135deg, #f59e0b, #10b981);">Logo 8</span>
+                    <h3 class="logo-name">Moderne 4 - "S" Solidarité 🤝</h3>
+                    <p class="logo-concept">Solidarité en mouvement</p>
+                </div>
+            </div>
+            <p><strong>Utilisation :</strong> Levées de fonds, galas, partenariats entreprises, rapports annuels</p>
+            <p><strong>Slogan :</strong> <em>"Solidaires aujourd'hui, inclusifs demain"</em></p>
+        </div>
+
+        <div class="logo-presentation">
+            <div class="logo-header">
+                <div class="logo-visual">
+                    <img src="images/logo-autisme-senegal-moderne-5.svg" alt="Logo 9">
+                </div>
+                <div class="logo-info">
+                    <span class="logo-number" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">Logo 9</span>
+                    <h3 class="logo-name">Moderne 5 - "P" Premium 💎</h3>
+                    <p class="logo-concept">Excellence et institutionnalisation</p>
+                </div>
+            </div>
+            <p><strong>Utilisation :</strong> Documents gouvernementaux, bailleurs internationaux, cérémonies officielles, plaques</p>
+            <p><strong>Slogan :</strong> <em>"Plateforme d'excellence pour un avenir inclusif"</em></p>
+        </div>
+
+        <!-- Tableau Récapitulatif -->
+        <div class="section-header page-break">
+            <h2>📊 Tableau Récapitulatif</h2>
+            <p>Guide Rapide de Sélection par Contexte</p>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Logo</th>
+                    <th>Public Cible</th>
+                    <th>Meilleurs Contextes</th>
+                    <th>Émotion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>V2 Improved Bleu</strong></td>
+                    <td>International, ONG</td>
+                    <td>Web international, ONU, OMS</td>
+                    <td>Espoir, protection</td>
+                </tr>
+                <tr>
+                    <td><strong>V2 Improved Sénégal</strong></td>
+                    <td>National, grand public</td>
+                    <td>Événements locaux, médias SN</td>
+                    <td>Fierté, unité</td>
+                </tr>
+                <tr>
+                    <td><strong>V2 Baobab Bleu</strong></td>
+                    <td>Afrique, rural</td>
+                    <td>Conférences Afrique, rural</td>
+                    <td>Sagesse</td>
+                </tr>
+                <tr>
+                    <td><strong>V2 Baobab Sénégal</strong></td>
+                    <td>Sénégalais, diaspora</td>
+                    <td>Fêtes nationales, régions</td>
+                    <td>Tradition</td>
+                </tr>
+                <tr>
+                    <td><strong>Moderne 1 "P"</strong></td>
+                    <td>Professionnels, web</td>
+                    <td>Digital, applications</td>
+                    <td>Dynamisme</td>
+                </tr>
+                <tr>
+                    <td><strong>Moderne 2 "A"</strong></td>
+                    <td>Jeunesse, urbain</td>
+                    <td>Réseaux sociaux, events</td>
+                    <td>Énergie</td>
+                </tr>
+                <tr>
+                    <td><strong>Moderne 3 "P" ⭕</strong></td>
+                    <td>Éducation, familles</td>
+                    <td>Écoles, formations</td>
+                    <td>Inclusion</td>
+                </tr>
+                <tr>
+                    <td><strong>Moderne 4 "S"</strong></td>
+                    <td>Donateurs, partenaires</td>
+                    <td>Fundraising, galas</td>
+                    <td>Générosité</td>
+                </tr>
+                <tr>
+                    <td><strong>Moderne 5 "P" 💎</strong></td>
+                    <td>Gouvernement, institutions</td>
+                    <td>Officiels, académiques</td>
+                    <td>Excellence</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Conclusion -->
+        <div class="highlight-box" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe); border-color: #2563eb; margin-top: 3rem;">
+            <h4 style="color: #1e40af;">✅ Recommandations Finales</h4>
+            <p style="color: #1f2937;">
+                <strong>1. Cohérence :</strong> Choisir 2-3 logos principaux pour reconnaissance de marque<br>
+                <strong>2. Adaptation :</strong> Utiliser le bon logo selon le contexte (voir tableau)<br>
+                <strong>3. Qualité :</strong> Toujours utiliser haute résolution pour impression<br>
+                <strong>4. Respect :</strong> Ne pas déformer, recolorer ou modifier les logos<br>
+                <strong>5. Visibilité :</strong> Privilégier fonds clairs pour meilleure lisibilité
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 4rem 0 2rem 0; padding: 2rem; background: linear-gradient(135deg, #1e40af, #2563eb); border-radius: 20px; color: white;">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">🧩 Ensemble Pour L'Autisme</h2>
+            <p style="font-size: 1.2rem; opacity: 0.95;">Notre engagement, votre confiance 🇸🇳</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Plateforme des Associations d'Autisme du Sénégal • Janvier 2026</p>
+        </div>
+    </div>
+
+    <button class="print-button no-print" onclick="window.print()">🖨️ Imprimer / Exporter PDF</button>
+</body>
+</html>

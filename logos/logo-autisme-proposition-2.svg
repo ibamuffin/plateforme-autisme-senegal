@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- PROPOSITION 2: Mains Très Grandes + Puzzle Dominant -->
+  <!-- Pas d'enfants, étoile intégrée au puzzle de façon subtile -->
+  
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:1" />
+    </radialGradient>
+    
+    <filter id="shadow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="rgba(30,64,175,0.35)"/>
+    </filter>
+    
+    <filter id="glow2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gradients mains bleu autisme -->
+    <linearGradient id="m1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    
+    <linearGradient id="m2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    
+    <linearGradient id="m3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#93c5fd"/>
+    </linearGradient>
+    
+    <linearGradient id="m4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="100%" style="stop-color:#dbeafe"/>
+    </linearGradient>
+    
+    <linearGradient id="m5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    
+    <linearGradient id="m6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1d4ed8"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    
+    <linearGradient id="puzzleCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af"/>
+      <stop offset="50%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond -->
+  <circle cx="100" cy="100" r="98" fill="url(#bg2)" stroke="#2563eb" stroke-width="2.5"/>
+  
+  <!-- PUZZLE CENTRAL GRAND ET DÉTAILLÉ -->
+  <g transform="translate(100, 100)" filter="url(#glow2)">
+    <circle cx="0" cy="0" r="40" fill="white" opacity="0.98"/>
+    
+    <!-- 4 pièces de puzzle détaillées et grandes -->
+    <path d="M-20 -20 L-5 -20 Q-5 -25, 0 -25 Q5 -25, 5 -20 L20 -20 Q25 -20, 25 -15 Q25 -10, 20 -10 L15 -10 Q15 -5, 10 -5 Q5 -5, 5 0 L-5 0 Q-5 -5, -10 -5 Q-15 -5, -15 -10 L-20 -10 Q-25 -10, -25 -15 Q-25 -20, -20 -20 Z" 
+          fill="#1e40af" 
+          stroke="white" 
+          stroke-width="2" 
+          opacity="0.95"/>
+    
+    <path d="M20 -20 L5 -20 Q5 -25, 0 -25 Q-5 -25, -5 -20 L-20 -20 Q-25 -20, -25 -15 Q-25 -10, -20 -10 L-15 -10 Q-15 -5, -10 -5 Q-5 -5, -5 0 L5 0 Q5 -5, 10 -5 Q15 -5, 15 -10 L20 -10 Q25 -10, 25 -15 Q25 -20, 20 -20 Z" 
+          fill="#2563eb" 
+          stroke="white" 
+          stroke-width="2" 
+          opacity="0.95" 
+          transform="rotate(90)"/>
+    
+    <path d="M20 20 L5 20 Q5 25, 0 25 Q-5 25, -5 20 L-20 20 Q-25 20, -25 15 Q-25 10, -20 10 L-15 10 Q-15 5, -10 5 Q-5 5, -5 0 L5 0 Q5 5, 10 5 Q15 5, 15 10 L20 10 Q25 10, 25 15 Q25 20, 20 20 Z" 
+          fill="#3b82f6" 
+          stroke="white" 
+          stroke-width="2" 
+          opacity="0.95" 
+          transform="rotate(180)"/>
+    
+    <path d="M-20 20 L-5 20 Q-5 25, 0 25 Q5 25, 5 20 L20 20 Q25 20, 25 15 Q25 10, 20 10 L15 10 Q15 5, 10 5 Q5 5, 5 0 L-5 0 Q-5 5, -10 5 Q-15 5, -15 10 L-20 10 Q-25 10, -25 15 Q-25 20, -20 20 Z" 
+          fill="#60a5fa" 
+          stroke="white" 
+          stroke-width="2" 
+          opacity="0.95" 
+          transform="rotate(270)"/>
+    
+    <!-- Centre avec étoile subtile intégrée -->
+    <circle cx="0" cy="0" r="8" fill="url(#puzzleCenter)"/>
+    <path d="M0 -4 L1 -1.5 L3.5 -1.5 L1.5 0 L2 2.5 L0 1 L-2 2.5 L-1.5 0 L-3.5 -1.5 L-1 -1.5 Z" 
+          fill="white" 
+          opacity="0.6"/>
+  </g>
+  
+  <!-- MAINS EXTRA GRANDES (échelle 1.35) -->
+  
+  <!-- Main 1 -->
+  <g transform="translate(100, 45) scale(1.35) rotate(0)" filter="url(#shadow2)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#m1)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#m1)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#m1)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#m1)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#m1)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#m1)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#m1)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Main 2 -->
+  <g transform="translate(155, 72) scale(1.35) rotate(60)" filter="url(#shadow2)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#m2)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#m2)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#m2)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#m2)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#m2)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#m2)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#m2)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Main 3 -->
+  <g transform="translate(155, 128) scale(1.35) rotate(120)" filter="url(#shadow2)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#m3)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#m3)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#m3)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#m3)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#m3)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#m3)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#m3)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Main 4 -->
+  <g transform="translate(100, 155) scale(1.35) rotate(180)" filter="url(#shadow2)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#m4)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#m4)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#m4)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#m4)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#m4)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#m4)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#m4)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Main 5 -->
+  <g transform="translate(45, 128) scale(1.35) rotate(240)" filter="url(#shadow2)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#m5)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#m5)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#m5)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#m5)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#m5)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#m5)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#m5)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Main 6 -->
+  <g transform="translate(45, 72) scale(1.35) rotate(300)" filter="url(#shadow2)">
+    <ellipse cx="0" cy="-2" rx="8" ry="12" fill="url(#m6)"/>
+    <ellipse cx="-5" cy="-10" rx="2" ry="6" fill="url(#m6)"/>
+    <ellipse cx="-2" cy="-12" rx="2.2" ry="7" fill="url(#m6)"/>
+    <ellipse cx="1" cy="-11" rx="2.2" ry="6.5" fill="url(#m6)"/>
+    <ellipse cx="4" cy="-9" rx="2" ry="5" fill="url(#m6)"/>
+    <ellipse cx="-7" cy="-5" rx="2.5" ry="4" fill="url(#m6)" transform="rotate(-30)"/>
+    <rect x="-4" y="8" width="8" height="8" rx="3" fill="url(#m6)"/>
+    <path d="M-2 0 Q0 2, 2 0" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Texte mis en exergue avec fond et effets -->
+  <g transform="translate(100, 194)">
+    <!-- Fond avec gradient bleu -->
+    <rect x="-75" y="-12" width="150" height="20" rx="10" fill="url(#puzzleCenter)" opacity="0.15" filter="url(#glow2)"/>
+    
+    <!-- Fond blanc semi-transparent -->
+    <rect x="-75" y="-12" width="150" height="20" rx="10" fill="white" opacity="0.9" filter="url(#shadow2)"/>
+    
+    <!-- Bordure bleu foncé -->
+    <rect x="-75" y="-12" width="150" height="20" rx="10" fill="none" stroke="#1e40af" stroke-width="3"/>
+    
+    <!-- Texte agrandi et en gras -->
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="8.5" font-weight="800" 
+          fill="#1e40af" text-anchor="middle" textLength="140" lengthAdjust="spacing"
+          letter-spacing="0.5">
+      ENSEMBLE POUR L'AUTISME
+    </text>
+  </g>
+</svg>

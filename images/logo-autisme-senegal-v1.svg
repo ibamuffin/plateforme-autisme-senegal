@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions avec intégration bleu autisme -->
+  <defs>
+    <!-- Gradient pour la main protectrice (bleu autisme + couleurs sénégalaises) -->
+    <linearGradient id="handGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00853f;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#f9ca24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Nouveau gradient principal bleu autisme -->
+    <linearGradient id="autismBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient bleu clair pour accents -->
+    <linearGradient id="autismBlueLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#93C5FD;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient combiné bleu-vert sénégalais -->
+    <linearGradient id="senegalAutismGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00853f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient combiné bleu-jaune sénégalais -->
+    <linearGradient id="senegalAutismYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f9ca24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filtre d'ombre pour la main -->
+    <filter id="handShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="3" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,0.4)"/>
+    </filter>
+    
+    <!-- Filtre de brillance pour la main -->
+    <filter id="handGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gradients pour les figures (bleu autisme + couleurs sénégalaises) -->
+    <linearGradient id="figure1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="figure2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f9ca24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="figure3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00853f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#93C5FD;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="figure4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#00853f;stop-opacity:1" />
+      <stop offset="66%" style="stop-color:#f9ca24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="figure5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FBBF24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cercle de fond (bleu autisme avec accent sénégalais) -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#autismBlue)" stroke-width="4"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="url(#autismBlueLight)" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Main protectrice détaillée (couleurs du drapeau sénégalais) -->
+  <g filter="url(#handShadow)">
+    <!-- Paume principale -->
+    <path d="M 25 135 Q 40 105, 70 110 Q 100 115, 130 110 Q 160 105, 175 135 Q 170 165, 140 160 Q 100 155, 60 160 Q 30 165, 25 135 Z" 
+          fill="url(#handGradient)" 
+          stroke="url(#autismBlue)" 
+          stroke-width="3"
+          opacity="0.95"/>
+    
+    <!-- Doigts détaillés -->
+    <!-- Pouce -->
+    <ellipse cx="40" cy="125" rx="8" ry="15" fill="url(#handGradient)" transform="rotate(-30 40 125)" stroke="url(#autismBlue)" stroke-width="2"/>
+    
+    <!-- Index -->
+    <ellipse cx="60" cy="105" rx="6" ry="18" fill="url(#handGradient)" transform="rotate(-10 60 105)" stroke="url(#autismBlue)" stroke-width="2"/>
+    
+    <!-- Majeur -->
+    <ellipse cx="80" cy="100" rx="6" ry="20" fill="url(#handGradient)" stroke="url(#autismBlue)" stroke-width="2"/>
+    
+    <!-- Annulaire -->
+    <ellipse cx="100" cy="102" rx="6" ry="18" fill="url(#handGradient)" transform="rotate(5 100 102)" stroke="url(#autismBlue)" stroke-width="2"/>
+    
+    <!-- Auriculaire -->
+    <ellipse cx="120" cy="108" rx="5" ry="15" fill="url(#handGradient)" transform="rotate(15 120 108)" stroke="url(#autismBlue)" stroke-width="2"/>
+    
+    <!-- Autre pouce (côté droit) -->
+    <ellipse cx="160" cy="125" rx="8" ry="15" fill="url(#handGradient)" transform="rotate(30 160 125)" stroke="url(#autismBlue)" stroke-width="2"/>
+    
+    <!-- Détails de la paume avec accents bleus -->
+    <path d="M50 130 Q70 135, 90 130 Q110 135, 130 130 Q140 140, 130 145 Q110 150, 90 145 Q70 150, 50 145 Q40 140, 50 130" 
+          fill="rgba(59,130,246,0.3)" 
+          opacity="0.7"/>
+    
+    <!-- Lignes de vie avec bleu autisme -->
+    <path d="M45 135 Q65 140, 85 135" stroke="rgba(37,99,235,0.6)" stroke-width="2" fill="none"/>
+    <path d="M85 140 Q105 145, 125 140" stroke="rgba(37,99,235,0.6)" stroke-width="2" fill="none"/>
+    <path d="M55 145 Q75 150, 95 145" stroke="rgba(37,99,235,0.6)" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Aura protectrice autour de la main (bleu autisme) -->
+  <path d="M 20 130 Q 35 95, 75 105 Q 100 110, 125 105 Q 165 95, 180 130 Q 175 170, 135 165 Q 100 160, 65 165 Q 25 170, 20 130 Z" 
+        fill="none" 
+        stroke="url(#autismBlueLight)" 
+        stroke-width="3" 
+        stroke-dasharray="8,4"
+        opacity="0.7"
+        filter="url(#handGlow)"/>
+  
+  <!-- Figures représentant la diversité et l'unité -->
+  <!-- Figure 1 (enfant au centre) -->
+  <g transform="translate(100, 80)">
+    <circle cx="0" cy="-15" r="12" fill="url(#figure1)"/>
+    <path d="M-8 0 L-5 15 L5 15 L8 0 Q8 -5, 0 -5 Q-8 -5, -8 0" fill="url(#figure1)"/>
+    <!-- Bras levés (joie) -->
+    <circle cx="-12" cy="-8" r="3" fill="url(#figure1)"/>
+    <circle cx="12" cy="-8" r="3" fill="url(#figure1)"/>
+  </g>
+  
+  <!-- Figure 2 (à gauche) -->
+  <g transform="translate(70, 95)">
+    <circle cx="0" cy="-12" r="10" fill="url(#figure2)"/>
+    <path d="M-6 0 L-4 12 L4 12 L6 0 Q6 -4, 0 -4 Q-6 -4, -6 0" fill="url(#figure2)"/>
+    <circle cx="-10" cy="-5" r="2.5" fill="url(#figure2)"/>
+    <circle cx="10" cy="-5" r="2.5" fill="url(#figure2)"/>
+  </g>
+  
+  <!-- Figure 3 (à droite) -->
+  <g transform="translate(130, 95)">
+    <circle cx="0" cy="-12" r="10" fill="url(#figure3)"/>
+    <path d="M-6 0 L-4 12 L4 12 L6 0 Q6 -4, 0 -4 Q-6 -4, -6 0" fill="url(#figure3)"/>
+    <circle cx="-10" cy="-5" r="2.5" fill="url(#figure3)"/>
+    <circle cx="10" cy="-5" r="2.5" fill="url(#figure3)"/>
+  </g>
+  
+  <!-- Figure 4 (en bas à gauche) -->
+  <g transform="translate(65, 115)">
+    <circle cx="0" cy="-10" r="8" fill="url(#figure4)"/>
+    <path d="M-5 0 L-3 10 L3 10 L5 0 Q5 -3, 0 -3 Q-5 -3, -5 0" fill="url(#figure4)"/>
+    <circle cx="-8" cy="-4" r="2" fill="url(#figure4)"/>
+    <circle cx="8" cy="-4" r="2" fill="url(#figure4)"/>
+  </g>
+  
+  <!-- Figure 5 (en bas à droite) -->
+  <g transform="translate(135, 115)">
+    <circle cx="0" cy="-10" r="8" fill="url(#figure5)"/>
+    <path d="M-5 0 L-3 10 L3 10 L5 0 Q5 -3, 0 -3 Q-5 -3, -5 0" fill="url(#figure5)"/>
+    <circle cx="-8" cy="-4" r="2" fill="url(#figure5)"/>
+    <circle cx="8" cy="-4" r="2" fill="url(#figure5)"/>
+  </g>
+  
+  <!-- Éléments du drapeau sénégalais -->
+  <!-- Bandes du drapeau en arrière-plan subtil -->
+  <g opacity="0.15">
+    <rect x="10" y="10" width="180" height="60" fill="#00853f"/>
+    <rect x="10" y="70" width="180" height="60" fill="#f9ca24"/>
+    <rect x="10" y="130" width="180" height="60" fill="#ff4444"/>
+  </g>
+  
+  <!-- Étoile principale du drapeau sénégalais avec bleu autisme (plus grande et plus rayonnante) -->
+  <g transform="translate(100, 45)">
+    <!-- Rayons de l'étoile (effet de rayonnement avec bleu autisme) -->
+    <g opacity="0.4" filter="url(#glow)">
+      <path d="M-25 0 L25 0" stroke="url(#autismBlueLight)" stroke-width="3"/>
+      <path d="M0 -25 L0 25" stroke="url(#autismBlueLight)" stroke-width="3"/>
+      <path d="M-18 -18 L18 18" stroke="url(#senegalAutismYellow)" stroke-width="2"/>
+      <path d="M-18 18 L18 -18" stroke="url(#senegalAutismYellow)" stroke-width="2"/>
+      <path d="M-22 -10 L22 10" stroke="url(#autismBlue)" stroke-width="1"/>
+      <path d="M-22 10 L22 -10" stroke="url(#autismBlue)" stroke-width="1"/>
+    </g>
+    
+    <!-- Étoile principale avec gradient bleu autisme -->
+    <path d="M0 -15 L4.5 -4.5 L15 -4.5 L7.5 3 L12 13.5 L0 6 L-12 13.5 L-7.5 3 L-15 -4.5 L-4.5 -4.5 Z" 
+          fill="url(#senegalAutismYellow)" 
+          stroke="url(#autismBlue)" 
+          stroke-width="3"
+          filter="url(#glow)"/>
+    
+    <!-- Centre brillant de l'étoile avec bleu autisme -->
+    <circle cx="0" cy="0" r="4" fill="url(#autismBlueLight)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="2" fill="#DBEAFE" opacity="0.8"/>
+    
+    <!-- Éclat interne avec bleu autisme -->
+    <path d="M0 -8 L2 -2 L8 -2 L4 2 L6 8 L0 4 L-6 8 L-4 2 L-8 -2 L-2 -2 Z" 
+          fill="url(#autismBlueLight)" 
+          opacity="0.6"/>
+  </g>
+  
+  <!-- Étoiles secondaires (motif décoratif avec bleu autisme) -->
+  <g opacity="0.7">
+    <path d="M40 30 L42 35 L47 35 L43.5 38.5 L45 43.5 L40 40 L35 43.5 L36.5 38.5 L33 35 L38 35 Z" 
+          fill="url(#senegalAutismYellow)" 
+          stroke="url(#autismBlue)" 
+          stroke-width="2"/>
+    <path d="M160 30 L162 35 L167 35 L163.5 38.5 L165 43.5 L160 40 L155 43.5 L156.5 38.5 L153 35 L158 35 Z" 
+          fill="url(#senegalAutismYellow)" 
+          stroke="url(#autismBlue)" 
+          stroke-width="2"/>
+  </g>
+  
+  <!-- Motifs décoratifs sénégalais avec bleu autisme -->
+  <g opacity="0.7">
+    <!-- Motifs géométriques inspirés des textiles sénégalais -->
+    <g transform="translate(40, 60)">
+      <circle cx="0" cy="0" r="4" fill="url(#senegalAutismYellow)" stroke="url(#autismBlue)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="2" fill="url(#autismBlueLight)" opacity="0.8"/>
+    </g>
+    
+    <g transform="translate(160, 60)">
+      <circle cx="0" cy="0" r="4" fill="url(#autismBlue)" stroke="url(#senegalAutismYellow)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="2" fill="white" opacity="0.8"/>
+    </g>
+    
+    <g transform="translate(40, 140)">
+      <circle cx="0" cy="0" r="4" fill="url(#senegalAutismGreen)" stroke="url(#autismBlue)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="2" fill="url(#autismBlueLight)" opacity="0.8"/>
+    </g>
+    
+    <g transform="translate(160, 140)">
+      <circle cx="0" cy="0" r="4" fill="url(#senegalAutismYellow)" stroke="url(#autismBlue)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="2" fill="url(#autismBlueLight)" opacity="0.8"/>
+    </g>
+    
+    <!-- Losanges traditionnels avec bleu autisme -->
+    <g transform="translate(25, 100)">
+      <path d="M0 -6 L6 0 L0 6 L-6 0 Z" fill="url(#senegalAutismGreen)" stroke="url(#autismBlue)" stroke-width="2"/>
+      <path d="M0 -3 L3 0 L0 3 L-3 0 Z" fill="url(#autismBlueLight)"/>
+    </g>
+    
+    <g transform="translate(175, 100)">
+      <path d="M0 -6 L6 0 L0 6 L-6 0 Z" fill="url(#autismBlue)" stroke="url(#senegalAutismYellow)" stroke-width="2"/>
+      <path d="M0 -3 L3 0 L0 3 L-3 0 Z" fill="url(#autismBlueLight)"/>
+    </g>
+    
+    <!-- Motifs en chevrons avec bleu autisme -->
+    <g transform="translate(30, 80)" opacity="0.6">
+      <path d="M0 0 L5 -5 L10 0 L5 5 Z" fill="url(#autismBlue)"/>
+      <path d="M0 10 L5 5 L10 10 L5 15 Z" fill="url(#senegalAutismGreen)"/>
+      <path d="M0 20 L5 15 L10 20 L5 25 Z" fill="url(#senegalAutismYellow)"/>
+    </g>
+    
+    <g transform="translate(160, 80)" opacity="0.6">
+      <path d="M0 0 L5 -5 L10 0 L5 5 Z" fill="url(#senegalAutismYellow)"/>
+      <path d="M0 10 L5 5 L10 10 L5 15 Z" fill="url(#autismBlue)"/>
+      <path d="M0 20 L5 15 L10 20 L5 25 Z" fill="url(#senegalAutismGreen)"/>
+    </g>
+  </g>
+
+</svg>

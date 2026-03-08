@@ -1,0 +1,241 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arrière-plan contrasté pour meilleure visibilité -->
+  <defs>
+    <!-- Fond clair avec bordure bleu autisme -->
+    <linearGradient id="lightBackground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.95" />
+      <stop offset="50%" style="stop-color:#F8FAFC;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#EFF6FF;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Dégradés contrastés pour les éléments autisme -->
+    <linearGradient id="autismBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="autismBlueLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#60A5FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#93C5FD;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="puzzlePieceGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.9" />
+      <stop offset="40%" style="stop-color:#DBEAFE;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:0.9" />
+    </radialGradient>
+    
+    <!-- Filtre pour effet de lueur renforcée -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Filtre pour contour -->
+    <filter id="outline">
+      <feMorphology operator="dilate" radius="2"/>
+      <feColorMatrix values="0 0 0 0 0.117 0 0 0 0 0.251 0 0 0 0 0.686 0 0 0 1 0"/>
+    </filter>
+  </defs>
+  
+  <!-- Fond clair avec bordure bleu autisme -->
+  <rect width="400" height="300" fill="url(#lightBackground)" stroke="#2563EB" stroke-width="4" rx="10"/>
+  
+  <!-- Zone ciel claire -->
+  <rect x="4" y="4" width="392" height="192" fill="url(#lightBackground)" rx="6"/>
+  
+  <!-- Herbe -->
+  <rect x="4" y="196" width="392" height="100" fill="url(#grassGradient)" rx="0 0 6 6"/>
+  
+  <!-- Soleil avec meilleur contraste -->
+  <g filter="url(#glow)">
+    <circle cx="350" cy="50" r="30" fill="#FFD700" stroke="#F59E0B" stroke-width="3" opacity="0.95"/>
+    <g transform="translate(350, 50)">
+      <line x1="-40" y1="0" x2="-35" y2="0" stroke="#FFD700" stroke-width="3"/>
+      <line x1="35" y1="0" x2="40" y2="0" stroke="#FFD700" stroke-width="3"/>
+      <line x1="0" y1="-40" x2="0" y2="-35" stroke="#FFD700" stroke-width="3"/>
+      <line x1="0" y1="35" x2="0" y2="40" stroke="#FFD700" stroke-width="3"/>
+      <!-- Rayons diagonaux -->
+      <line x1="-28" y1="-28" x2="-25" y2="-25" stroke="#FFD700" stroke-width="3"/>
+      <line x1="25" y1="-25" x2="28" y2="-28" stroke="#FFD700" stroke-width="3"/>
+      <line x1="-28" y1="28" x2="-25" y2="25" stroke="#FFD700" stroke-width="3"/>
+      <line x1="25" y1="25" x2="28" y2="28" stroke="#FFD700" stroke-width="3"/>
+    </g>
+  </g>
+  
+  <!-- Enfants tenant des pièces de puzzle -->
+  <!-- Enfant 1 - Thème bleu autisme avec contours renforcés -->
+  <g transform="translate(80, 150)" filter="url(#glow)">
+    <!-- Corps avec contour -->
+    <ellipse cx="0" cy="30" rx="15" ry="25" fill="url(#autismBlue)" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- Tête avec contour -->
+    <circle cx="0" cy="0" r="18" fill="#FEF3C7" stroke="#2563EB" stroke-width="2"/>
+    <!-- Cheveux -->
+    <path d="M -15 -10 Q -18 -18 -10 -20 Q 0 -22 10 -20 Q 18 -18 15 -10" fill="url(#autismBlue)" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- Yeux plus expressifs -->
+    <circle cx="-5" cy="-3" r="3" fill="white" stroke="#2563EB" stroke-width="1"/>
+    <circle cx="5" cy="-3" r="3" fill="white" stroke="#2563EB" stroke-width="1"/>
+    <circle cx="-5" cy="-3" r="2" fill="#1E40AF"/>
+    <circle cx="5" cy="-3" r="2" fill="#1E40AF"/>
+    <circle cx="-4" cy="-4" r="0.5" fill="white"/>
+    <circle cx="6" cy="-4" r="0.5" fill="white"/>
+    <!-- Sourire plus visible -->
+    <path d="M -8 5 Q 0 12 8 5" stroke="#F59E0B" stroke-width="3" fill="none"/>
+    <!-- Bras avec contours -->
+    <ellipse cx="-25" cy="20" rx="8" ry="20" fill="#FEF3C7" stroke="#2563EB" stroke-width="2" transform="rotate(-30)"/>
+    <ellipse cx="25" cy="20" rx="8" ry="20" fill="#FEF3C7" stroke="#2563EB" stroke-width="2" transform="rotate(30)"/>
+    <!-- Pièce de puzzle avec effet de lueur renforcée -->
+    <g transform="translate(-35, 10)">
+      <rect width="20" height="15" fill="url(#puzzlePieceGlow)" stroke="#1E40AF" stroke-width="3" rx="2"/>
+      <circle cx="20" cy="7.5" r="3" fill="url(#autismBlue)" stroke="#FFFFFF" stroke-width="1"/>
+      <!-- Motif puzzle intérieur -->
+      <circle cx="10" cy="7.5" r="2" fill="#FFFFFF" opacity="0.9"/>
+      <text x="10" y="10" font-size="8" text-anchor="middle" fill="#2563EB" font-weight="bold">🧩</text>
+    </g>
+    <!-- Jambes avec contours -->
+    <ellipse cx="-8" cy="60" rx="6" ry="20" fill="url(#autismBlue)" stroke="#FFFFFF" stroke-width="2"/>
+    <ellipse cx="8" cy="60" rx="6" ry="20" fill="url(#autismBlue)" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+  
+  <!-- Enfant 2 - Thème rose avec accents bleus et contours -->
+  <g transform="translate(200, 155)" filter="url(#glow)">
+    <!-- Corps -->
+    <ellipse cx="0" cy="30" rx="15" ry="25" fill="#EC4899" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- Tête -->
+    <circle cx="0" cy="0" r="18" fill="#FEF7CD" stroke="#EC4899" stroke-width="2"/>
+    <!-- Cheveux longs -->
+    <path d="M -15 -10 Q -20 -18 -15 -25 Q -5 -22 0 -25 Q 5 -22 15 -25 Q 20 -18 15 -10 L 15 5 Q 10 10 5 5 L 5 -5 L -5 -5 L -5 5 Q -10 10 -15 5 Z" fill="url(#autismBlue)" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- Yeux -->
+    <circle cx="-5" cy="-3" r="3" fill="white" stroke="#EC4899" stroke-width="1"/>
+    <circle cx="5" cy="-3" r="3" fill="white" stroke="#EC4899" stroke-width="1"/>
+    <circle cx="-5" cy="-3" r="2" fill="#1E40AF"/>
+    <circle cx="5" cy="-3" r="2" fill="#1E40AF"/>
+    <circle cx="-4" cy="-4" r="0.5" fill="white"/>
+    <circle cx="6" cy="-4" r="0.5" fill="white"/>
+    <!-- Sourire -->
+    <path d="M -8 5 Q 0 12 8 5" stroke="#F59E0B" stroke-width="3" fill="none"/>
+    <!-- Bras tenant une pièce de puzzle -->
+    <ellipse cx="-25" cy="20" rx="8" ry="20" fill="#FEF7CD" stroke="#EC4899" stroke-width="2" transform="rotate(-30)"/>
+    <ellipse cx="25" cy="20" rx="8" ry="20" fill="#FEF7CD" stroke="#EC4899" stroke-width="2" transform="rotate(30)"/>
+    <!-- Pièce de puzzle avec dégradé bleu-vert -->
+    <g transform="translate(30, 5)">
+      <rect width="20" height="15" fill="url(#autismBlueLight)" stroke="#1E40AF" stroke-width="3" rx="2"/>
+      <circle cx="-3" cy="7.5" r="3" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <!-- Détails intérieurs -->
+      <circle cx="10" cy="7.5" r="2" fill="#10B981" stroke="#FFFFFF" stroke-width="1" opacity="0.9"/>
+      <text x="10" y="10" font-size="6" text-anchor="middle" fill="#FFFFFF" font-weight="bold">💙</text>
+    </g>
+    <!-- Jambes -->
+    <ellipse cx="-8" cy="60" rx="6" ry="20" fill="#BE185D" stroke="#FFFFFF" stroke-width="2"/>
+    <ellipse cx="8" cy="60" rx="6" ry="20" fill="#BE185D" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+    <circle cx="-5" cy="-3" r="1" fill="#1E40AF"/>
+    <circle cx="5" cy="-3" r="1" fill="#1E40AF"/>
+    <!-- Sourire -->
+    <path d="M -8 5 Q 0 12 8 5" stroke="#2563EB" stroke-width="2" fill="none"/>
+    <!-- Bras tenant une pièce de puzzle -->
+    <ellipse cx="-25" cy="20" rx="8" ry="20" fill="#FDF2F8" transform="rotate(-30)"/>
+    <ellipse cx="25" cy="20" rx="8" ry="20" fill="#FDF2F8" transform="rotate(30)"/>
+    <!-- Pièce de puzzle avec dégradé bleu-vert -->
+    <g transform="translate(30, 5)" filter="url(#glow)">
+      <rect width="20" height="15" fill="url(#autismBlueLight)" stroke="#DBEAFE" stroke-width="2" rx="2"/>
+      <circle cx="-3" cy="7.5" r="3" fill="none" stroke="url(#autismBlue)" stroke-width="3"/>
+      <!-- Détails intérieurs -->
+      <circle cx="10" cy="7.5" r="1.5" fill="#10B981" opacity="0.8"/>
+    </g>
+    <!-- Jambes -->
+    <ellipse cx="-8" cy="60" rx="6" ry="20" fill="#BE185D"/>
+    <ellipse cx="8" cy="60" rx="6" ry="20" fill="#BE185D"/>
+  </g>
+  
+  <!-- Enfant 3 - Thème vert avec accents bleus et contours renforcés -->
+  <g transform="translate(320, 160)" filter="url(#glow)">
+    <!-- Corps -->
+    <ellipse cx="0" cy="30" rx="15" ry="25" fill="#059669" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- Tête -->
+    <circle cx="0" cy="0" r="18" fill="#FEF3C7" stroke="#059669" stroke-width="2"/>
+    <!-- Cheveux courts -->
+    <path d="M -15 -8 Q -18 -16 -12 -18 Q 0 -20 12 -18 Q 18 -16 15 -8 L 12 -5 L -12 -5 Z" fill="url(#autismBlue)" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- Yeux -->
+    <circle cx="-5" cy="-3" r="3" fill="white" stroke="#059669" stroke-width="1"/>
+    <circle cx="5" cy="-3" r="3" fill="white" stroke="#059669" stroke-width="1"/>
+    <circle cx="-5" cy="-3" r="2" fill="#1E40AF"/>
+    <circle cx="5" cy="-3" r="2" fill="#1E40AF"/>
+    <circle cx="-4" cy="-4" r="0.5" fill="white"/>
+    <circle cx="6" cy="-4" r="0.5" fill="white"/>
+    <!-- Sourire -->
+    <path d="M -8 5 Q 0 12 8 5" stroke="#F59E0B" stroke-width="3" fill="none"/>
+    <!-- Bras tenant une pièce de puzzle -->
+    <ellipse cx="-25" cy="20" rx="8" ry="20" fill="#FEF3C7" stroke="#059669" stroke-width="2" transform="rotate(-30)"/>
+    <ellipse cx="25" cy="20" rx="8" ry="20" fill="#FEF3C7" stroke="#059669" stroke-width="2" transform="rotate(30)"/>
+    <!-- Pièce de puzzle jaune-bleu -->
+    <g transform="translate(-35, 12)">
+      <rect width="20" height="15" fill="#FBBF24" stroke="#1E40AF" stroke-width="3" rx="2"/>
+      <path d="M 10 -3 Q 15 -3 15 2 Q 15 7 10 7" fill="#FBBF24"/>
+      <!-- Accent bleu -->
+      <circle cx="10" cy="7.5" r="2" fill="url(#autismBlueLight)" stroke="#FFFFFF" stroke-width="1" opacity="0.8"/>
+      <text x="10" y="10" font-size="6" text-anchor="middle" fill="#1E40AF" font-weight="bold">🌟</text>
+    </g>
+    <!-- Jambes -->
+    <ellipse cx="-8" cy="60" rx="6" ry="20" fill="#047857" stroke="#FFFFFF" stroke-width="2"/>
+    <ellipse cx="8" cy="60" rx="6" ry="20" fill="#047857" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+  
+  <!-- Nuages avec contours -->
+  <g opacity="0.9" filter="url(#glow)">
+    <ellipse cx="100" cy="40" rx="20" ry="12" fill="white" stroke="#93C5FD" stroke-width="2"/>
+    <ellipse cx="115" cy="35" rx="15" ry="10" fill="white" stroke="#93C5FD" stroke-width="2"/>
+    <ellipse cx="90" cy="35" rx="12" ry="8" fill="white" stroke="#93C5FD" stroke-width="2"/>
+    
+    <ellipse cx="280" cy="60" rx="25" ry="15" fill="white" stroke="#93C5FD" stroke-width="2"/>
+    <ellipse cx="300" cy="55" rx="18" ry="12" fill="white" stroke="#93C5FD" stroke-width="2"/>
+    <ellipse cx="265" cy="55" rx="15" ry="10" fill="white" stroke="#93C5FD" stroke-width="2"/>
+  </g>
+  
+  <!-- Papillons avec couleurs bleu autisme renforcées -->
+  <g transform="translate(150, 80)" filter="url(#glow)">
+    <ellipse cx="-3" cy="-2" rx="5" ry="7" fill="url(#autismBlue)" stroke="#FFFFFF" stroke-width="1" opacity="0.9"/>
+    <ellipse cx="3" cy="-2" rx="5" ry="7" fill="url(#autismBlueLight)" stroke="#FFFFFF" stroke-width="1" opacity="0.9"/>
+    <ellipse cx="-3" cy="2" rx="4" ry="5" fill="#3B82F6" stroke="#FFFFFF" stroke-width="1" opacity="0.9"/>
+    <ellipse cx="3" cy="2" rx="4" ry="5" fill="#60A5FA" stroke="#FFFFFF" stroke-width="1" opacity="0.9"/>
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#1E40AF" stroke-width="3"/>
+    <!-- Antennes -->
+    <circle cx="-1" cy="-8" r="1.5" fill="#FBBF24" stroke="#1E40AF" stroke-width="1"/>
+    <circle cx="1" cy="-8" r="1.5" fill="#FBBF24" stroke="#1E40AF" stroke-width="1"/>
+  </g>
+  
+  <!-- Papillon supplémentaire -->
+  <g transform="translate(250, 100)" filter="url(#glow)">
+    <ellipse cx="-2" cy="-1" rx="4" ry="5" fill="#93C5FD" stroke="#FFFFFF" stroke-width="1" opacity="0.8"/>
+    <ellipse cx="2" cy="-1" rx="4" ry="5" fill="#DBEAFE" stroke="#FFFFFF" stroke-width="1" opacity="0.8"/>
+    <ellipse cx="-2" cy="1" rx="3" ry="4" fill="#60A5FA" stroke="#FFFFFF" stroke-width="1" opacity="0.8"/>
+    <ellipse cx="2" cy="1" rx="3" ry="4" fill="#93C5FD" stroke="#FFFFFF" stroke-width="1" opacity="0.8"/>
+    <line x1="0" y1="-5" x2="0" y2="5" stroke="#2563EB" stroke-width="2"/>
+  </g>
+  
+  <!-- Message d'espoir avec contour renforcé -->
+  <g filter="url(#glow)">
+    <text x="200" y="280" font-family="Inter, sans-serif" font-size="16" font-weight="800" text-anchor="middle" 
+          fill="#1E40AF" stroke="#FFFFFF" stroke-width="3">
+      Ensemble, construisons un avenir inclusif
+    </text>
+  </g>
+  
+  <!-- Étoiles décoratives avec effet -->
+  <g fill="#FBBF24" stroke="#2563EB" stroke-width="1" opacity="0.9" filter="url(#glow)">
+    <circle cx="50" cy="275" r="3"/>
+    <circle cx="350" cy="275" r="3"/>
+    <circle cx="80" cy="285" r="2"/>
+    <circle cx="320" cy="285" r="2"/>
+  </g>
+</svg>

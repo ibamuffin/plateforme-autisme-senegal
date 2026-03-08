@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions -->
+  <defs>
+    <!-- Gradient de fond (terre africaine) -->
+    <linearGradient id="groundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d2691e;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient pour le tronc (baobab réaliste) -->
+    <linearGradient id="trunkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b7355;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#a0845c;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#654321;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a3018;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient pour les feuilles (plus réaliste) -->
+    <radialGradient id="leavesGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#228b22;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#32cd32;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#00853f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d5016;stop-opacity:0.9" />
+    </radialGradient>
+    
+    <!-- Gradients pour les personnages -->
+    <linearGradient id="person1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a24;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="person2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00b894;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="person3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#45b7d1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="person4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9ca24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0932b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="person5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c5ce7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a29bfe;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient pour le ciel -->
+    <linearGradient id="skyGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#e0f6ff;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond -->
+  <circle cx="100" cy="100" r="98" fill="url(#skyGradient)" stroke="#00853f" stroke-width="2"/>
+  
+  <!-- Sol africain -->
+  <ellipse cx="100" cy="170" rx="80" ry="15" fill="url(#groundGradient)" opacity="0.6"/>
+  
+  <!-- Tronc de baobab réaliste (forme caractéristique large) -->
+  <path d="M88 165 Q85 140, 88 120 Q90 100, 92 90 Q95 85, 100 85 Q105 85, 108 90 Q110 100, 112 120 Q115 140, 112 165 Q110 170, 100 170 Q90 170, 88 165 Z" 
+        fill="url(#trunkGradient)" 
+        stroke="#5d4e37" 
+        stroke-width="1"/>
+  
+  <!-- Texture du tronc (écorce) -->
+  <g opacity="0.4">
+    <path d="M92 95 Q95 97, 98 95 Q102 97, 105 95" stroke="#3d2914" stroke-width="1" fill="none"/>
+    <path d="M90 105 Q95 107, 100 105 Q105 107, 110 105" stroke="#3d2914" stroke-width="1" fill="none"/>
+    <path d="M91 115 Q96 117, 101 115 Q106 117, 109 115" stroke="#3d2914" stroke-width="1" fill="none"/>
+    <path d="M89 125 Q94 127, 99 125 Q104 127, 111 125" stroke="#3d2914" stroke-width="1" fill="none"/>
+    <path d="M90 135 Q95 137, 100 135 Q105 137, 110 135" stroke="#3d2914" stroke-width="1" fill="none"/>
+    <path d="M88 145 Q93 147, 98 145 Q103 147, 112 145" stroke="#3d2914" stroke-width="1" fill="none"/>
+    <path d="M87 155 Q92 157, 97 155 Q102 157, 113 155" stroke="#3d2914" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Racines épaisses et étendues -->
+  <g opacity="0.8">
+    <path d="M88 165 Q82 170, 75 175 Q70 178, 65 180" stroke="url(#trunkGradient)" stroke-width="4" fill="none"/>
+    <path d="M95 170 Q90 175, 85 180 Q80 183, 75 185" stroke="url(#trunkGradient)" stroke-width="3" fill="none"/>
+    <path d="M100 170 Q100 175, 100 180 Q100 183, 100 185" stroke="url(#trunkGradient)" stroke-width="4" fill="none"/>
+    <path d="M105 170 Q110 175, 115 180 Q120 183, 125 185" stroke="url(#trunkGradient)" stroke-width="3" fill="none"/>
+    <path d="M112 165 Q118 170, 125 175 Q130 178, 135 180" stroke="url(#trunkGradient)" stroke-width="4" fill="none"/>
+    <!-- Racines secondaires -->
+    <path d="M78 175 Q72 178, 68 182" stroke="url(#trunkGradient)" stroke-width="2" fill="none"/>
+    <path d="M122 175 Q128 178, 132 182" stroke="url(#trunkGradient)" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Couronne de baobab (forme caractéristique étalée) -->
+  <g opacity="0.9">
+    <!-- Base de la couronne -->
+    <ellipse cx="100" cy="75" rx="50" ry="25" fill="url(#leavesGradient)"/>
+    <!-- Partie supérieure plus dense -->
+    <ellipse cx="95" cy="65" rx="35" ry="20" fill="url(#leavesGradient)"/>
+    <ellipse cx="105" cy="65" rx="35" ry="20" fill="url(#leavesGradient)"/>
+    <!-- Sommet de la couronne -->
+    <ellipse cx="100" cy="55" rx="25" ry="15" fill="url(#leavesGradient)"/>
+  </g>
+  
+  <!-- Branches principales caractéristiques du baobab -->
+  <g opacity="0.8">
+    <!-- Branches principales épaisses -->
+    <path d="M95 85 Q80 75, 65 70 Q55 68, 50 65" stroke="#654321" stroke-width="4" fill="none"/>
+    <path d="M105 85 Q120 75, 135 70 Q145 68, 150 65" stroke="#654321" stroke-width="4" fill="none"/>
+    <path d="M92 90 Q75 85, 60 82 Q50 80, 45 78" stroke="#654321" stroke-width="3" fill="none"/>
+    <path d="M108 90 Q125 85, 140 82 Q150 80, 155 78" stroke="#654321" stroke-width="3" fill="none"/>
+    
+    <!-- Branches secondaires -->
+    <path d="M88 95 Q70 90, 55 88" stroke="#654321" stroke-width="2" fill="none"/>
+    <path d="M112 95 Q130 90, 145 88" stroke="#654321" stroke-width="2" fill="none"/>
+    <path d="M100 88 Q85 82, 75 80" stroke="#654321" stroke-width="2" fill="none"/>
+    <path d="M100 88 Q115 82, 125 80" stroke="#654321" stroke-width="2" fill="none"/>
+    
+    <!-- Petites branches vers le haut -->
+    <path d="M95 85 Q90 80, 88 75" stroke="#654321" stroke-width="2" fill="none"/>
+    <path d="M105 85 Q110 80, 112 75" stroke="#654321" stroke-width="2" fill="none"/>
+    <path d="M100 85 Q98 78, 96 72" stroke="#654321" stroke-width="1.5" fill="none"/>
+    <path d="M100 85 Q102 78, 104 72" stroke="#654321" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Détails de feuillage -->
+  <g opacity="0.7">
+    <!-- Groupes de feuilles -->
+    <circle cx="85" cy="65" r="8" fill="url(#leavesGradient)"/>
+    <circle cx="115" cy="65" r="8" fill="url(#leavesGradient)"/>
+    <circle cx="100" cy="50" r="6" fill="url(#leavesGradient)"/>
+    <circle cx="70" cy="75" r="5" fill="url(#leavesGradient)"/>
+    <circle cx="130" cy="75" r="5" fill="url(#leavesGradient)"/>
+    <circle cx="60" cy="68" r="4" fill="url(#leavesGradient)"/>
+    <circle cx="140" cy="68" r="4" fill="url(#leavesGradient)"/>
+  </g>
+  
+  <!-- Personnages autour de l'arbre (communauté) -->
+  <!-- Personne 1 (adulte au centre) -->
+  <g transform="translate(100, 135)">
+    <circle cx="0" cy="-15" r="8" fill="url(#person1)"/>
+    <path d="M-6 -5 L-4 10 L4 10 L6 -5 Q6 -8, 0 -8 Q-6 -8, -6 -5" fill="url(#person1)"/>
+    <circle cx="-8" cy="-10" r="2.5" fill="url(#person1)"/>
+    <circle cx="8" cy="-10" r="2.5" fill="url(#person1)"/>
+  </g>
+  
+  <!-- Personne 2 (enfant à gauche) -->
+  <g transform="translate(75, 145)">
+    <circle cx="0" cy="-12" r="6" fill="url(#person2)"/>
+    <path d="M-4 -5 L-3 8 L3 8 L4 -5 Q4 -7, 0 -7 Q-4 -7, -4 -5" fill="url(#person2)"/>
+    <circle cx="-6" cy="-8" r="2" fill="url(#person2)"/>
+    <circle cx="6" cy="-8" r="2" fill="url(#person2)"/>
+  </g>
+  
+  <!-- Personne 3 (enfant à droite) -->
+  <g transform="translate(125, 145)">
+    <circle cx="0" cy="-12" r="6" fill="url(#person3)"/>
+    <path d="M-4 -5 L-3 8 L3 8 L4 -5 Q4 -7, 0 -7 Q-4 -7, -4 -5" fill="url(#person3)"/>
+    <circle cx="-6" cy="-8" r="2" fill="url(#person3)"/>
+    <circle cx="6" cy="-8" r="2" fill="url(#person3)"/>
+  </g>
+  
+  <!-- Personne 4 (à gauche) -->
+  <g transform="translate(65, 125)">
+    <circle cx="0" cy="-10" r="5" fill="url(#person4)"/>
+    <path d="M-3 -5 L-2 6 L2 6 L3 -5 Q3 -6, 0 -6 Q-3 -6, -3 -5" fill="url(#person4)"/>
+    <circle cx="-5" cy="-6" r="1.5" fill="url(#person4)"/>
+    <circle cx="5" cy="-6" r="1.5" fill="url(#person4)"/>
+  </g>
+  
+  <!-- Personne 5 (à droite) -->
+  <g transform="translate(135, 125)">
+    <circle cx="0" cy="-10" r="5" fill="url(#person5)"/>
+    <path d="M-3 -5 L-2 6 L2 6 L3 -5 Q3 -6, 0 -6 Q-3 -6, -3 -5" fill="url(#person5)"/>
+    <circle cx="-5" cy="-6" r="1.5" fill="url(#person5)"/>
+    <circle cx="5" cy="-6" r="1.5" fill="url(#person5)"/>
+  </g>
+  
+  <!-- Étoile du Sénégal dans l'arbre -->
+  <path d="M100 75 L102 82 L109 82 L104 87 L106 94 L100 90 L94 94 L96 87 L91 82 L98 82 Z" 
+        fill="#f9ca24" 
+        stroke="white" 
+        stroke-width="1"/>
+  
+  <!-- Oiseaux (liberté et espoir) -->
+  <g opacity="0.6">
+    <path d="M140 50 Q145 45, 150 50 Q155 45, 160 50" stroke="#2563eb" stroke-width="2" fill="none"/>
+    <path d="M45 55 Q50 50, 55 55 Q60 50, 65 55" stroke="#2563eb" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Soleil africain -->
+  <g transform="translate(160, 40)" opacity="0.7">
+    <circle cx="0" cy="0" r="12" fill="#f9ca24"/>
+    <g stroke="#f9ca24" stroke-width="2">
+      <line x1="-18" y1="0" x2="-15" y2="0"/>
+      <line x1="18" y1="0" x2="15" y2="0"/>
+      <line x1="0" y1="-18" x2="0" y2="-15"/>
+      <line x1="0" y1="18" x2="0" y2="15"/>
+      <line x1="-13" y1="-13" x2="-11" y2="-11"/>
+      <line x1="13" y1="-13" x2="11" y2="-11"/>
+      <line x1="-13" y1="13" x2="-11" y2="11"/>
+      <line x1="13" y1="13" x2="11" y2="11"/>
+    </g>
+  </g>
+  
+  <!-- Motifs traditionnels africains -->
+  <g opacity="0.3">
+    <!-- Losanges traditionnels -->
+    <path d="M25 100 L30 95 L35 100 L30 105 Z" fill="#f9ca24"/>
+    <path d="M170 80 L175 75 L180 80 L175 85 Z" fill="#f9ca24"/>
+    <path d="M30 140 L35 135 L40 140 L35 145 Z" fill="#00853f"/>
+    
+    <!-- Cercles décoratifs -->
+    <circle cx="170" cy="120" r="3" fill="#2563eb"/>
+    <circle cx="30" cy="60" r="3" fill="#2563eb"/>
+  </g>
+  
+  <!-- Texte intégré dans le cercle -->
+  <text x="100" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#00853f">
+    SÉNÉGAL
+  </text>
+  
+  <text x="100" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2563eb">
+    ARBRE DE L'AUTISME
+  </text>
+</svg>

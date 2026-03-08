@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo V2 Amélioré - Comparaison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .logo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .logo-card h2 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .logo-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%);
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-display img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(30,64,175,0.2));
+        }
+        
+        .features {
+            list-style: none;
+        }
+        
+        .features li {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            color: #1e40af;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .features li::before {
+            content: '✓';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-weight: bold;
+        }
+        
+        .improved .features li::before {
+            background: #2563eb;
+        }
+        
+        .improvements {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .improvements h2 {
+            color: #1e40af;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .improvement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .improvement-item {
+            padding: 20px;
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 15px;
+            border: 2px solid #2563eb;
+        }
+        
+        .improvement-item h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .improvement-item p {
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        .color-palette {
+            margin-top: 50px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .color-palette h2 {
+            color: #1e40af;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .colors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .color-swatch {
+            text-align: center;
+        }
+        
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 3px solid white;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            color: #1e40af;
+            font-size: 0.9rem;
+        }
+        
+        .color-code {
+            font-family: 'Courier New', monospace;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .improvement-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧩 Logo Autisme Sénégal V2</h1>
+            <p>Version Améliorée avec Palette Bleu Autisme Complète</p>
+        </div>
+        
+        <div class="comparison">
+            <div class="logo-card">
+                <h2>Version Originale</h2>
+                <div class="logo-display">
+                    <img src="images/logo-autisme-senegal-v2.svg" alt="Logo V2 Original" width="200">
+                </div>
+                <ul class="features">
+                    <li>Mains multicolores variées</li>
+                    <li>Texte "SÉNÉGAL" en haut</li>
+                    <li>Centre vert (drapeau)</li>
+                    <li>Texte 11px serré</li>
+                    <li>Cadre 120px de large</li>
+                </ul>
+            </div>
+            
+            <div class="logo-card improved">
+                <h2>✨ Version Améliorée</h2>
+                <div class="logo-display">
+                    <img src="images/logo-autisme-senegal-v2-improved.svg" alt="Logo V2 Amélioré" width="200">
+                </div>
+                <ul class="features">
+                    <li>Palette 100% bleu autisme</li>
+                    <li>Enfants qui jouent</li>
+                    <li>Centre bleu autisme</li>
+                    <li>Texte 9.5px espacé</li>
+                    <li>Cadre 150px adapté</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="improvements">
+            <h2>🎨 Principales Améliorations</h2>
+            <div class="improvement-grid">
+                <div class="improvement-item">
+                    <h3>🎨 Palette Bleu Autisme</h3>
+                    <p>Toutes les couleurs harmonisées avec les nuances officielles du bleu autisme, créant une identité visuelle cohérente et reconnaissable.</p>
+                </div>
+                
+                <div class="improvement-item">
+                    <h3>👶 Enfants Joyeux</h3>
+                    <p>Remplacement du texte "SÉNÉGAL" par 3 enfants jouant ensemble : ballon, saut, et pièce de puzzle symbolisant l'inclusion.</p>
+                </div>
+                
+                <div class="improvement-item">
+                    <h3>📏 Texte Optimisé</h3>
+                    <p>Taille de police ajustée (9.5px) avec espacement des lettres pour une meilleure lisibilité dans le cadre agrandi.</p>
+                </div>
+                
+                <div class="improvement-item">
+                    <h3>🌟 Message Universel</h3>
+                    <p>Focus sur l'inclusion et l'espoir plutôt que l'ancrage géographique, rendant le logo plus universel et inspirant.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="color-palette">
+            <h2>🎨 Palette de Couleurs Bleu Autisme</h2>
+            <div class="colors">
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #1e40af;"></div>
+                    <div class="color-name">Bleu Très Foncé</div>
+                    <div class="color-code">#1e40af</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #1e3a8a;"></div>
+                    <div class="color-name">Bleu Ultra Foncé</div>
+                    <div class="color-code">#1e3a8a</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #2563eb;"></div>
+                    <div class="color-name">Bleu Autisme</div>
+                    <div class="color-code">#2563eb</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #3b82f6;"></div>
+                    <div class="color-name">Bleu Moyen</div>
+                    <div class="color-code">#3b82f6</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #60a5fa;"></div>
+                    <div class="color-name">Bleu Clair</div>
+                    <div class="color-code">#60a5fa</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #93c5fd;"></div>
+                    <div class="color-name">Bleu Très Clair</div>
+                    <div class="color-code">#93c5fd</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #dbeafe;"></div>
+                    <div class="color-name">Bleu Pastel</div>
+                    <div class="color-code">#dbeafe</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #0ea5e9;"></div>
+                    <div class="color-name">Cyan Autisme</div>
+                    <div class="color-code">#0ea5e9</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

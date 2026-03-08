@@ -1,0 +1,300 @@
+<svg width="100%" height="100%" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" class="background-svg">
+  <defs>
+    <!-- Gradients pour les couleurs de l'autisme - Dominante bleue -->
+    <linearGradient id="puzzleGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:0.2" />
+    </linearGradient>
+    
+    <linearGradient id="puzzleGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#2563eb;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.2" />
+    </linearGradient>
+    
+    <linearGradient id="puzzleGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0.2" />
+    </linearGradient>
+    
+    <radialGradient id="heartGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:0.1" />
+    </radialGradient>
+    
+    <!-- Filtres pour les effets -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+    </filter>
+  </defs>
+  
+  <!-- Fond dégradé animé -->
+  <rect width="100%" height="100%" fill="url(#backgroundGrad)">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      values="0 600 400;360 600 400" 
+      dur="60s" 
+      repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Pièces de puzzle animées - Grande taille -->
+  <g class="puzzle-pieces">
+    <!-- Pièce 1 - Bleue -->
+    <path d="M 50 100 L 150 100 C 160 90 170 90 180 100 L 180 200 C 190 200 190 210 180 220 L 150 220 C 140 230 130 230 120 220 L 50 220 C 40 210 40 200 50 200 Z" 
+          fill="url(#puzzleGrad1)" 
+          filter="url(#glow)"
+          opacity="0.4">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 20,-10; 0,0; -15,8; 0,0" 
+        dur="12s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0.4;0.7;0.4" 
+        dur="6s" 
+        repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Pièce 2 - Orange -->
+    <path d="M 300 150 L 400 150 C 410 140 420 140 430 150 L 430 250 C 440 250 440 260 430 270 L 400 270 C 390 280 380 280 370 270 L 300 270 C 290 260 290 250 300 250 Z" 
+          fill="url(#puzzleGrad2)" 
+          filter="url(#glow)"
+          opacity="0.5">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; -18,12; 0,0; 22,-8; 0,0" 
+        dur="15s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0.5;0.8;0.5" 
+        dur="8s" 
+        repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Pièce 3 - Verte -->
+    <path d="M 650 80 L 750 80 C 760 70 770 70 780 80 L 780 180 C 790 180 790 190 780 200 L 750 200 C 740 210 730 210 720 200 L 650 200 C 640 190 640 180 650 180 Z" 
+          fill="url(#puzzleGrad1)" 
+          filter="url(#glow)"
+          opacity="0.3">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 15,20; 0,0; -20,-5; 0,0" 
+        dur="18s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0.3;0.6;0.3" 
+        dur="10s" 
+        repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Pièce 4 - Rouge -->
+    <path d="M 900 200 L 1000 200 C 1010 190 1020 190 1030 200 L 1030 300 C 1040 300 1040 310 1030 320 L 1000 320 C 990 330 980 330 970 320 L 900 320 C 890 310 890 300 900 300 Z" 
+          fill="url(#puzzleGrad2)" 
+          filter="url(#glow)"
+          opacity="0.4">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; -25,15; 0,0; 18,-12; 0,0" 
+        dur="14s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0.4;0.7;0.4" 
+        dur="7s" 
+        repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Pièces supplémentaires plus petites -->
+    <path d="M 200 400 L 280 400 C 285 395 290 395 295 400 L 295 480 C 300 480 300 485 295 490 L 280 490 C 275 495 270 495 265 490 L 200 490 C 195 485 195 480 200 480 Z" 
+          fill="url(#puzzleGrad1)" 
+          filter="url(#blur)"
+          opacity="0.25">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 12,-8; 0,0; -10,15; 0,0" 
+        dur="20s" 
+        repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 500 350 L 580 350 C 585 345 590 345 595 350 L 595 430 C 600 430 600 435 595 440 L 580 440 C 575 445 570 445 565 440 L 500 440 C 495 435 495 430 500 430 Z" 
+          fill="url(#puzzleGrad2)" 
+          filter="url(#blur)"
+          opacity="0.3">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; -15,10; 0,0; 20,-5; 0,0" 
+        dur="16s" 
+        repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Cœurs flottants pour la solidarité -->
+  <g class="floating-hearts">
+    <path d="M 100 500 C 90 485, 65 485, 65 510 C 65 535, 100 560, 100 560 C 100 560, 135 535, 135 510 C 135 485, 110 485, 100 500 Z" 
+          fill="url(#heartGrad)" 
+          filter="url(#glow)">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 0,-300; 0,-600" 
+        dur="25s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0;0.6;0.6;0" 
+        dur="25s" 
+        repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 400 650 C 390 635, 365 635, 365 660 C 365 685, 400 710, 400 710 C 400 710, 435 685, 435 660 C 435 635, 410 635, 400 650 Z" 
+          fill="url(#heartGrad)" 
+          filter="url(#glow)">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 0,-400; 0,-800" 
+        dur="30s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0;0.5;0.5;0" 
+        dur="30s" 
+        repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 800 600 C 790 585, 765 585, 765 610 C 765 635, 800 660, 800 660 C 800 660, 835 635, 835 610 C 835 585, 810 585, 800 600 Z" 
+          fill="url(#heartGrad)" 
+          filter="url(#glow)">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 0,-350; 0,-700" 
+        dur="28s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0;0.4;0.4;0" 
+        dur="28s" 
+        repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Cercles de sensibilisation -->
+  <g class="awareness-circles">
+    <circle cx="150" cy="300" r="30" fill="rgba(37, 99, 235, 0.2)" filter="url(#glow)">
+      <animate 
+        attributeName="r" 
+        values="30;50;30" 
+        dur="8s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0.2;0.4;0.2" 
+        dur="8s" 
+        repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="600" cy="450" r="25" fill="rgba(16, 185, 129, 0.2)" filter="url(#glow)">
+      <animate 
+        attributeName="r" 
+        values="25;45;25" 
+        dur="10s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0.2;0.5;0.2" 
+        dur="10s" 
+        repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="950" cy="120" r="35" fill="rgba(245, 158, 11, 0.2)" filter="url(#glow)">
+      <animate 
+        attributeName="r" 
+        values="35;55;35" 
+        dur="12s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0.2;0.3;0.2" 
+        dur="12s" 
+        repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Particules flottantes -->
+  <g class="floating-particles">
+    <circle cx="250" cy="150" r="3" fill="#2563eb" opacity="0.3">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 50,100; 100,200; 150,300; 200,400" 
+        dur="35s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0;0.3;0.6;0.3;0" 
+        dur="35s" 
+        repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="750" cy="250" r="4" fill="#10b981" opacity="0.4">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; -30,80; -60,160; -90,240; -120,320" 
+        dur="40s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0;0.4;0.7;0.4;0" 
+        dur="40s" 
+        repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="500" cy="100" r="2" fill="#f59e0b" opacity="0.5">
+      <animateTransform 
+        attributeName="transform" 
+        type="translate" 
+        values="0,0; 80,-20; 160,-40; 240,-60; 320,-80" 
+        dur="32s" 
+        repeatCount="indefinite"/>
+      <animate 
+        attributeName="opacity" 
+        values="0;0.5;0.8;0.5;0" 
+        dur="32s" 
+        repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Texte subtil d'espoir -->
+  <text x="600" y="700" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" 
+        fill="rgba(37, 99, 235, 0.1)" font-weight="300">
+    Espoir • Solidarité • Inclusion
+    <animate 
+      attributeName="opacity" 
+      values="0.05;0.15;0.05" 
+      dur="15s" 
+      repeatCount="indefinite"/>
+  </text>
+</svg>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveaux Logos Modernes - Autisme Sénégal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.95);
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .logo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        }
+
+        .logo-preview {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+        }
+
+        .logo-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-title {
+            color: #1f2937;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .logo-description {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .logo-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .logo-features li {
+            color: #6b7280;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .logo-features li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.green {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .badge.gold {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        }
+
+        .comparison-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            margin-top: 3rem;
+        }
+
+        .comparison-title {
+            color: #1f2937;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table th {
+            background: #f8fafc;
+            color: #374151;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .download-title {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .download-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .download-card h4 {
+            color: #1f2937;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .download-card p {
+            color: #6b7280;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .logos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Nouveaux Logos Modernes - Autisme Sénégal</h1>
+        <p class="subtitle">Cinq designs contemporains inspirés des tendances graphiques modernes</p>
+        
+        <div class="logos-grid">
+            <!-- Logo Moderne 1 -->
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="images/logo-autisme-senegal-moderne-1.svg" alt="Logo Moderne 1 - Lettre P avec Swoosh">
+                </div>
+                <h3 class="logo-title">Logo Moderne 1 - "P" Dynamique</h3>
+                <p class="logo-description">
+                    Design minimaliste avec lettre "P" (Pour l'Autisme) stylisée et éléments de swoosh 
+                    fluides. Couleurs bleu autisme pur avec accents lumineux.
+                </p>
+                <ul class="logo-features">
+                    <li>Lettre "P" moderne et épurée</li>
+                    <li>Swoosh dynamiques en arc</li>
+                    <li>Pièce de puzzle intégrée</li>
+                    <li>Palette bleu autisme (#1e40af → #93c5fd)</li>
+                    <li>Style contemporain et professionnel</li>
+                </ul>
+                <span class="badge">Bleu Autisme</span>
+            </div>
+
+            <!-- Logo Moderne 2 -->
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="images/logo-autisme-senegal-moderne-2.svg" alt="Logo Moderne 2 - Lettre A avec Rubans">
+                </div>
+                <h3 class="logo-title">Logo Moderne 2 - "A" Culturel</h3>
+                <p class="logo-description">
+                    Lettre "A" (Autisme) entrelacée avec rubans tricolores sénégalais. 
+                    Fusion harmonieuse des couleurs nationales et symboles de l'autisme.
+                </p>
+                <ul class="logo-features">
+                    <li>Lettre "A" avec gradient tricolore</li>
+                    <li>Rubans vert et jaune sénégalais</li>
+                    <li>Deux pièces de puzzle au sommet</li>
+                    <li>Étoile sénégalaise stylisée</li>
+                    <li>Identité culturelle affirmée</li>
+                </ul>
+                <span class="badge green">Couleurs Sénégal</span>
+            </div>
+
+            <!-- Logo Moderne 3 -->
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="images/logo-autisme-senegal-moderne-3.svg" alt="Logo Moderne 3 - P Circulaire">
+                </div>
+                <h3 class="logo-title">Logo Moderne 3 - "P" Circulaire</h3>
+                <p class="logo-description">
+                    Design circulaire symbolisant l'unité et l'inclusion. Lettre "P" au centre 
+                    entourée de cercles et swoosh avec pièces de puzzle en constellation.
+                </p>
+                <ul class="logo-features">
+                    <li>Cercle de solidarité (gradient radial)</li>
+                    <li>Lettre "P" centrale puissante</li>
+                    <li>Swoosh circulaires multiples</li>
+                    <li>4 puzzles disposés en croix</li>
+                    <li>Effet de lumière (glow)</li>
+                </ul>
+                <span class="badge">Unité & Inclusion</span>
+            </div>
+
+            <!-- Logo Moderne 4 -->
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="images/logo-autisme-senegal-moderne-4.svg" alt="Logo Moderne 4 - S Solidarité">
+                </div>
+                <h3 class="logo-title">Logo Moderne 4 - "S" Solidarité</h3>
+                <p class="logo-description">
+                    Lettre "S" en forme de ruban symbolisant la solidarité. 
+                    Mix élégant des couleurs bleu, vert et jaune avec swoosh fluides.
+                </p>
+                <ul class="logo-features">
+                    <li>Lettre "S" en ruban fluide</li>
+                    <li>Gradient vert-bleu culturel</li>
+                    <li>Accents jaune-orange chaleureux</li>
+                    <li>Swoosh multidirectionnels</li>
+                    <li>Sous-titre "Solidarité • Sénégal"</li>
+                </ul>
+                <span class="badge green">Fusion Culturelle</span>
+            </div>
+
+            <!-- Logo Moderne 5 -->
+            <div class="logo-card">
+                <div class="logo-preview">
+                    <img src="images/logo-autisme-senegal-moderne-5.svg" alt="Logo Moderne 5 - P Premium">
+                </div>
+                <h3 class="logo-title">Logo Moderne 5 - "P" Premium</h3>
+                <p class="logo-description">
+                    Design haut de gamme avec lettre "P" et constellation de swoosh dorés, verts et bleus. 
+                    Étoile sénégalaise dorée et pièces de puzzle colorées.
+                </p>
+                <ul class="logo-features">
+                    <li>Lettre "P" avec reflets premium</li>
+                    <li>Swoosh dorés (gradient or)</li>
+                    <li>Constellation de 5 puzzles colorés</li>
+                    <li>Étoile dorée sénégalaise</li>
+                    <li>Sous-titre "Plateforme des Associations"</li>
+                </ul>
+                <span class="badge gold">Design Premium</span>
+            </div>
+        </div>
+
+        <div class="comparison-section">
+            <h2 class="comparison-title">📊 Analyse Comparative des Logos Modernes</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Critères</th>
+                        <th>Moderne 1</th>
+                        <th>Moderne 2</th>
+                        <th>Moderne 3</th>
+                        <th>Moderne 4</th>
+                        <th>Moderne 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Style</strong></td>
+                        <td>Minimaliste</td>
+                        <td>Culturel</td>
+                        <td>Circulaire</td>
+                        <td>Ruban</td>
+                        <td><span class="highlight">Premium</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Couleurs</strong></td>
+                        <td><span class="highlight">Bleu pur</span></td>
+                        <td>Tricolore</td>
+                        <td><span class="highlight">Bleu pur</span></td>
+                        <td>Mix culturel</td>
+                        <td>Multi-accents</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complexité</strong></td>
+                        <td>Simple</td>
+                        <td>Moyenne</td>
+                        <td>Moyenne</td>
+                        <td>Moyenne</td>
+                        <td><span class="highlight">Riche</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Identité Sénégal</strong></td>
+                        <td>Faible</td>
+                        <td><span class="highlight">Très forte</span></td>
+                        <td>Faible</td>
+                        <td><span class="highlight">Forte</span></td>
+                        <td>Forte</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Symbole Autisme</strong></td>
+                        <td>Puzzle intégré</td>
+                        <td>Puzzles doubles</td>
+                        <td><span class="highlight">4 puzzles</span></td>
+                        <td>Puzzle central</td>
+                        <td><span class="highlight">5 puzzles</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adaptabilité</strong></td>
+                        <td><span class="highlight">Excellente</span></td>
+                        <td>Bonne</td>
+                        <td>Bonne</td>
+                        <td>Bonne</td>
+                        <td>Moyenne</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Message</strong></td>
+                        <td>Dynamisme</td>
+                        <td>Unité culturelle</td>
+                        <td>Inclusion</td>
+                        <td>Solidarité</td>
+                        <td>Excellence</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="download-section">
+                <h4 class="download-title">📥 Formats Disponibles</h4>
+                <p style="color: #4b5563; margin-bottom: 1.5rem;">
+                    Chaque logo est disponible en 4 résolutions pour tous vos besoins
+                </p>
+                <div class="download-grid">
+                    <div class="download-card">
+                        <h4>🖼️ Small (200px)</h4>
+                        <p>Pour vignettes et aperçus</p>
+                        <p><strong>~6-11 KB</strong></p>
+                    </div>
+                    <div class="download-card">
+                        <h4>💻 Medium (400px)</h4>
+                        <p>Pour sites web et réseaux sociaux</p>
+                        <p><strong>~14-26 KB</strong></p>
+                    </div>
+                    <div class="download-card">
+                        <h4>📄 Large (800px)</h4>
+                        <p>Pour documents et présentations</p>
+                        <p><strong>~34-61 KB</strong></p>
+                    </div>
+                    <div class="download-card">
+                        <h4>🖨️ XLarge (1600px)</h4>
+                        <p>Pour impression haute qualité</p>
+                        <p><strong>~83-140 KB</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #bfdbfe); border-radius: 15px;">
+                <h4 style="color: #1e40af; margin-bottom: 1rem;">💡 Recommandations d'Utilisation</h4>
+                <p style="color: #1f2937; line-height: 1.8;">
+                    <strong>Logo Moderne 1 & 3:</strong> Idéaux pour communication internationale (bleu autisme universel)<br>
+                    <strong>Logo Moderne 2:</strong> Parfait pour identité nationale forte et événements locaux<br>
+                    <strong>Logo Moderne 4:</strong> Excellent pour campagnes de solidarité et partenariats<br>
+                    <strong>Logo Moderne 5:</strong> Premium pour documents officiels et supports institutionnels
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
