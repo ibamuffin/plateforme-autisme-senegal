@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Répertoire des Écoles Spécialisées - Plateforme Autisme Sénégal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/fontawesome-local.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="images/logo-autisme-senegal-v2-improved.svg" alt="Logo Plateforme Autisme Sénégal" class="logo-img">
+                <span class="logo-text">Plateforme Autisme Sénégal</span>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a></li>
+                <li class="nav-item"><a href="index.html#objectifs" class="nav-link">Objectifs</a></li>
+                <li class="nav-item"><a href="index.html#activites" class="nav-link">Activités</a></li>
+                <li class="nav-item"><a href="index.html#ressources" class="nav-link">Ressources</a></li>
+                <li class="nav-item"><a href="index.html#donation" class="nav-link">Don</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-secondary">
+        <div class="container">
+            <h1><i class="fas fa-school"></i> Répertoire des Écoles Spécialisées</h1>
+            <p class="hero-subtitle">Établissements scolaires et centres d'apprentissage adaptés aux enfants avec TSA au Sénégal</p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="content-intro">
+                <h2>L'éducation inclusive et spécialisée pour les enfants TSA</h2>
+                <p class="lead">L'accès à l'éducation est un droit fondamental pour tous les enfants, y compris ceux vivant avec les Troubles du Spectre Autistique. Ce répertoire recense les établissements scolaires et centres éducatifs au Sénégal offrant un environnement adapté et un accompagnement spécialisé.</p>
+                
+                <div class="education-approaches">
+                    <h3>Les différentes approches éducatives :</h3>
+                    <div class="approaches-grid">
+                        <div class="approach-card">
+                            <i class="fas fa-users-class"></i>
+                            <h4>Écoles Inclusives</h4>
+                            <p>Établissements ordinaires avec dispositifs d'accompagnement et personnel formé aux TSA.</p>
+                        </div>
+                        <div class="approach-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Classes Spécialisées</h4>
+                            <p>Classes dédiées au sein d'écoles ordinaires avec ratio réduit et enseignants spécialisés.</p>
+                        </div>
+                        <div class="approach-card">
+                            <i class="fas fa-school"></i>
+                            <h4>Centres Spécialisés</h4>
+                            <p>Établissements exclusivement dédiés aux enfants avec besoins éducatifs particuliers.</p>
+                        </div>
+                        <div class="approach-card">
+                            <i class="fas fa-home"></i>
+                            <h4>Centres de Jour</h4>
+                            <p>Structures proposant activités éducatives, thérapeutiques et sociales en journée.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 2rem; padding: 1.5rem; background: #dbeafe; border-radius: 10px; border-left: 5px solid #2563eb;">
+                    <h3 style="color: #1e40af; margin-bottom: 1rem;"><i class="fas fa-balance-scale"></i> Droit à l'éducation</h3>
+                    <p style="color: #1f2937; line-height: 1.6;">La Convention Internationale des Droits des Personnes Handicapées (CIDPH), ratifiée par le Sénégal, garantit le droit à une éducation inclusive de qualité pour tous les enfants, sans discrimination. Les écoles doivent mettre en place des aménagements raisonnables pour permettre la scolarisation des enfants TSA.</p>
+                </div>
+            </div>
+
+            <!-- Filtres -->
+            <div class="filters-section" style="margin: 3rem 0;">
+                <h3><i class="fas fa-filter"></i> Filtrer par :</h3>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="regionFilter">Région</label>
+                        <select id="regionFilter" class="filter-select">
+                            <option value="">Toutes les régions</option>
+                            <option value="dakar">Dakar</option>
+                            <option value="thies">Thiès</option>
+                            <option value="saint-louis">Saint-Louis</option>
+                            <option value="kaolack">Kaolack</option>
+                            <option value="ziguinchor">Ziguinchor</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="typeFilter">Type d'établissement</label>
+                        <select id="typeFilter" class="filter-select">
+                            <option value="">Tous les types</option>
+                            <option value="inclusive">École inclusive</option>
+                            <option value="specialisee">École spécialisée</option>
+                            <option value="centre-jour">Centre de jour</option>
+                            <option value="association">Centre associatif</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="ageFilter">Tranche d'âge</label>
+                        <select id="ageFilter" class="filter-select">
+                            <option value="">Tous les âges</option>
+                            <option value="prescolaire">Préscolaire (3-6 ans)</option>
+                            <option value="primaire">Primaire (6-12 ans)</option>
+                            <option value="secondaire">Secondaire (12-18 ans)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liste des Écoles -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Établissements et Centres Éducatifs</h2>
+
+            <div class="directory-grid">
+                <!-- École Spécialisée Les Petits Anges -->
+                <div class="directory-card" data-region="dakar" data-type="specialisee" data-age="prescolaire primaire">
+                    <div class="card-header">
+                        <div class="doctor-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3>École Spécialisée "Les Petits Anges"</h3>
+                        <span class="speciality-badge">École Spécialisée</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">École privée spécialisée accueillant exclusivement des enfants avec TSA et troubles neurodéveloppementaux.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Almadies, Dakar</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+221 77 234 56 78</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-child"></i>
+                            <span><strong>Âges accueillis :</strong> 3 à 12 ans</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <span><strong>Effectifs :</strong> 5-6 élèves par classe</span>
+                        </div>
+                        
+                        <div class="services-list">
+                            <h4>Services et méthodes :</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Méthode ABA (Applied Behavior Analysis)</li>
+                                <li><i class="fas fa-check-circle"></i> Programme TEACCH</li>
+                                <li><i class="fas fa-check-circle"></i> Orthophonie intégrée</li>
+                                <li><i class="fas fa-check-circle"></i> Psychomotricité</li>
+                                <li><i class="fas fa-check-circle"></i> Activités sensorielles</li>
+                                <li><i class="fas fa-check-circle"></i> Accompagnement parental</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centre Autisme Dakar -->
+                <div class="directory-card" data-region="dakar" data-type="centre-jour" data-age="prescolaire primaire">
+                    <div class="card-header">
+                        <div class="doctor-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Centre Autisme Dakar</h3>
+                        <span class="speciality-badge">Centre de Jour</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Centre de jour proposant activités éducatives, thérapeutiques et sociales pour enfants TSA.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sacré-Cœur 3, Dakar</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+221 76 345 67 89</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-child"></i>
+                            <span><strong>Âges accueillis :</strong> 4 à 14 ans</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span><strong>Horaires :</strong> Lundi-Vendredi, 8h-16h</span>
+                        </div>
+                        
+                        <div class="services-list">
+                            <h4>Activités proposées :</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Ateliers éducatifs structurés</li>
+                                <li><i class="fas fa-check-circle"></i> Activités artistiques et créatives</li>
+                                <li><i class="fas fa-check-circle"></i> Jeux sociaux et d'imitation</li>
+                                <li><i class="fas fa-check-circle"></i> Apprentissage des autonomies</li>
+                                <li><i class="fas fa-check-circle"></i> Sorties éducatives</li>
+                                <li><i class="fas fa-check-circle"></i> Repas thérapeutiques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- École Inclusive Cours Sainte Marie de Hann -->
+                <div class="directory-card" data-region="dakar" data-type="inclusive" data-age="prescolaire primaire">
+                    <div class="card-header">
+                        <div class="doctor-icon">
+                            <i class="fas fa-users-class"></i>
+                        </div>
+                        <h3>Cours Sainte Marie de Hann</h3>
+                        <span class="speciality-badge">École Inclusive</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">École privée catholique avec dispositif d'inclusion pour enfants à besoins éducatifs particuliers.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hann Maristes, Dakar</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+221 33 832 02 47</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-child"></i>
+                            <span><strong>Niveaux :</strong> Maternelle à CM2</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span><strong>Personnel spécialisé :</strong> Enseignants formés, AVS disponibles</span>
+                        </div>
+                        
+                        <div class="services-list">
+                            <h4>Dispositifs d'accompagnement :</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Auxiliaires de Vie Scolaire (AVS)</li>
+                                <li><i class="fas fa-check-circle"></i> Adaptations pédagogiques</li>
+                                <li><i class="fas fa-check-circle"></i> Salle sensorielle</li>
+                                <li><i class="fas fa-check-circle"></i> Temps de pause adaptés</li>
+                                <li><i class="fas fa-check-circle"></i> Communication avec thérapeutes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Association Autisme Sénégal -->
+                <div class="directory-card" data-region="dakar" data-type="association" data-age="prescolaire primaire secondaire">
+                    <div class="card-header">
+                        <div class="doctor-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Association Autisme Sénégal</h3>
+                        <span class="speciality-badge">Centre Associatif</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Association proposant activités éducatives, formations et soutien aux familles d'enfants TSA.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ouakam, Dakar</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+221 77 456 78 90</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@autismesenegal.org</span>
+                        </div>
+                        
+                        <div class="services-list">
+                            <h4>Services proposés :</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Ateliers éducatifs hebdomadaires</li>
+                                <li><i class="fas fa-check-circle"></i> Groupes de compétences sociales</li>
+                                <li><i class="fas fa-check-circle"></i> Formation des parents</li>
+                                <li><i class="fas fa-check-circle"></i> Sensibilisation en milieu scolaire</li>
+                                <li><i class="fas fa-check-circle"></i> Plaidoyer pour l'inclusion</li>
+                                <li><i class="fas fa-check-circle"></i> Groupe de parole</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- École Espoir de Thiès -->
+                <div class="directory-card" data-region="thies" data-type="specialisee" data-age="prescolaire primaire">
+                    <div class="card-header">
+                        <div class="doctor-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3>École Espoir - Thiès</h3>
+                        <span class="speciality-badge">École Spécialisée</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Centre éducatif spécialisé pour enfants avec handicaps et troubles du développement.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Médina Fall, Thiès</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+221 76 567 89 01</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-child"></i>
+                            <span><strong>Âges accueillis :</strong> 5 à 15 ans</span>
+                        </div>
+                        
+                        <div class="services-list">
+                            <h4>Programmes :</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Apprentissages académiques adaptés</li>
+                                <li><i class="fas fa-check-circle"></i> Éducation structurée TEACCH</li>
+                                <li><i class="fas fa-check-circle"></i> Activités manuelles et artistiques</li>
+                                <li><i class="fas fa-check-circle"></i> Sports adaptés</li>
+                                <li><i class="fas fa-check-circle"></i> Formation préprofessionnelle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centre Communautaire Saint-Louis -->
+                <div class="directory-card" data-region="saint-louis" data-type="centre-jour" data-age="prescolaire primaire">
+                    <div class="card-header">
+                        <div class="doctor-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Centre Communautaire d'Inclusion</h3>
+                        <span class="speciality-badge">Centre de Jour</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Centre de jour communautaire offrant activités éducatives et sociales pour enfants TSA.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sor, Saint-Louis</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+221 77 678 90 12</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-child"></i>
+                            <span><strong>Âges accueillis :</strong> 3 à 10 ans</span>
+                        </div>
+                        
+                        <div class="services-list">
+                            <h4>Activités :</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Stimulation précoce</li>
+                                <li><i class="fas fa-check-circle"></i> Activités sensorielles</li>
+                                <li><i class="fas fa-check-circle"></i> Jeux éducatifs</li>
+                                <li><i class="fas fa-check-circle"></i> Sorties communautaires</li>
+                                <li><i class="fas fa-check-circle"></i> Soutien aux familles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- École Sénégalaise pour Sourds -->
+                <div class="directory-card" data-region="dakar" data-type="specialisee" data-age="prescolaire primaire secondaire">
+                    <div class="card-header">
+                        <div class="doctor-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3>Institut des Besoins Éducatifs Spéciaux</h3>
+                        <span class="speciality-badge">Institut Spécialisé</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">Institut accueillant enfants avec divers besoins éducatifs spéciaux, dont TSA.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Yoff, Dakar</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+221 33 820 73 45</span>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-child"></i>
+                            <span><strong>Niveaux :</strong> Préscolaire à secondaire</span>
+                        </div>
+                        
+                        <div class="services-list">
+                            <h4>Services :</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Évaluation des besoins</li>
+                                <li><i class="fas fa-check-circle"></i> Plan éducatif individualisé (PEI)</li>
+                                <li><i class="fas fa-check-circle"></i> Enseignement spécialisé</li>
+                                <li><i class="fas fa-check-circle"></i> Rééducations intégrées</li>
+                                <li><i class="fas fa-check-circle"></i> Orientation professionnelle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guide pour choisir un établissement -->
+            <div class="guide-section" style="margin-top: 4rem;">
+                <h3><i class="fas fa-compass"></i> Guide pour choisir le bon établissement</h3>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h4>1. Évaluer les besoins</h4>
+                        <p>Déterminez le niveau d'autonomie de votre enfant, ses forces et ses difficultés pour choisir l'environnement le plus adapté.</p>
+                    </div>
+                    <div class="guide-card">
+                        <i class="fas fa-eye"></i>
+                        <h4>2. Visiter l'établissement</h4>
+                        <p>Prenez rendez-vous pour visiter les locaux, rencontrer l'équipe et observer une journée type.</p>
+                    </div>
+                    <div class="guide-card">
+                        <i class="fas fa-users"></i>
+                        <h4>3. Vérifier les qualifications</h4>
+                        <p>Assurez-vous que le personnel est formé aux TSA et aux méthodes éducatives spécialisées (ABA, TEACCH, etc.).</p>
+                    </div>
+                    <div class="guide-card">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h4>4. Communication famille-école</h4>
+                        <p>Privilégiez les établissements qui valorisent la collaboration avec les parents et les thérapeutes.</p>
+                    </div>
+                    <div class="guide-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>5. Suivi individualisé</h4>
+                        <p>Vérifiez qu'un Plan Éducatif Individualisé (PEI) sera élaboré pour votre enfant avec des objectifs mesurables.</p>
+                    </div>
+                    <div class="guide-card">
+                        <i class="fas fa-wallet"></i>
+                        <h4>6. Coût et accessibilité</h4>
+                        <p>Renseignez-vous sur les frais de scolarité et les possibilités d'aide financière ou de prise en charge.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information sur l'inclusion -->
+            <div class="info-box" style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 15px; border-left: 5px solid #0ea5e9;">
+                <h3 style="color: #0c4a6e; margin-bottom: 1rem;"><i class="fas fa-heart"></i> L'inclusion scolaire : un droit et un bénéfice</h3>
+                <p style="color: #1f2937; line-height: 1.6; margin-bottom: 1rem;">L'éducation inclusive permet aux enfants TSA de développer leurs compétences sociales et académiques dans un environnement ordinaire. Elle bénéficie également aux autres élèves qui apprennent la diversité, l'empathie et l'entraide.</p>
+                <p style="color: #1f2937; line-height: 1.6;"><strong>Important :</strong> L'inclusion nécessite des aménagements appropriés (AVS, adaptations pédagogiques, environnement sensoriel adapté) pour être réussie. N'hésitez pas à défendre les droits de votre enfant.</p>
+            </div>
+
+            <!-- Appel à contribution -->
+            <div class="contribution-box" style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 15px; border-left: 5px solid #10b981;">
+                <h3 style="color: #065f46; margin-bottom: 1rem;"><i class="fas fa-plus-circle"></i> Votre établissement accueille des enfants TSA ?</h3>
+                <p style="color: #1f2937; line-height: 1.6; margin-bottom: 1.5rem;">Si vous dirigez une école, un centre éducatif ou une association proposant des services éducatifs pour enfants avec TSA et souhaitez être référencé dans notre répertoire, contactez-nous.</p>
+                <a href="index.html#contact" class="cta-button">Nous contacter <i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Plateforme Autisme Sénégal</h4>
+                    <p>Ensemble pour améliorer la prise en charge des enfants vivant avec les Troubles du Spectre Autistique au Sénégal.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Utiles</h4>
+                    <ul>
+                        <li><a href="index.html#qui-sommes-nous">Qui sommes-nous ?</a></li>
+                        <li><a href="index.html#objectifs">Objectifs</a></li>
+                        <li><a href="index.html#activites">Activités</a></li>
+                        <li><a href="index.html#ressources">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="jeux-interactifs.html">Jeux Interactifs</a></li>
+                        <li><a href="repertoire-medecins.html">Répertoire Médecins</a></li>
+                        <li><a href="repertoire-paramedicaux.html">Répertoire Paramédicaux</a></li>
+                        <li><a href="repertoire-ecoles.html">Répertoire Écoles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Plateforme Associations Autisme Sénégal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Script de filtrage
+        document.getElementById('regionFilter').addEventListener('change', filterDirectory);
+        document.getElementById('typeFilter').addEventListener('change', filterDirectory);
+        document.getElementById('ageFilter').addEventListener('change', filterDirectory);
+
+        function filterDirectory() {
+            const regionFilter = document.getElementById('regionFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            const ageFilter = document.getElementById('ageFilter').value;
+            const cards = document.querySelectorAll('.directory-card');
+
+            cards.forEach(card => {
+                const region = card.getAttribute('data-region');
+                const type = card.getAttribute('data-type');
+                const ages = card.getAttribute('data-age');
+                
+                const matchRegion = !regionFilter || region === regionFilter;
+                const matchType = !typeFilter || type === typeFilter;
+                const matchAge = !ageFilter || ages.includes(ageFilter);
+                
+                if (matchRegion && matchType && matchAge) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
