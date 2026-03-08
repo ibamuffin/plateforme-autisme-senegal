@@ -358,7 +358,7 @@ main:hover .animated-background .floating-hearts {
     display: flex;
     align-items: center;
     padding: 100px 20px 50px;
-    background: var(--hero-gradient);
+    background: var(--white);
     position: relative;
     overflow: hidden;
 }
@@ -370,7 +370,7 @@ main:hover .animated-background .floating-hearts {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--hero-overlay);
+    background: transparent;
     z-index: 1;
 }
 
@@ -382,9 +382,9 @@ main:hover .animated-background .floating-hearts {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+        radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(37, 99, 235, 0.02) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 40%, rgba(30, 64, 175, 0.01) 50%, transparent 60%);
     animation: autism-shimmer 8s ease-in-out infinite;
     z-index: 2;
 }
@@ -410,22 +410,22 @@ main:hover .animated-background .floating-hearts {
 }
 
 .hero h1 {
-    color: var(--white);
+    color: var(--primary-color);
     margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
     animation: autism-title-glow 4s ease-in-out infinite;
 }
 
 @keyframes autism-title-glow {
-    0%, 100% { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
-    50% { text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.3); }
+    0%, 100% { text-shadow: 0 0 0 transparent; }
+    50% { text-shadow: 0 0 20px rgba(30, 64, 175, 0.15); }
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-medium);
     margin-bottom: 2rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: none;
 }
 
 .hero-stats {
