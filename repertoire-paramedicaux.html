@@ -3,443 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Répertoire des Paramédicaux - Plateforme Autisme Sénégal</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Jeux Interactifs - Plateforme Autisme Sénégal</title>
+    <meta name="description" content="Jeux éducatifs et interactifs adaptés pour les enfants vivant avec les TSA au Sénégal. Activités ludiques pour favoriser l'apprentissage.">
+    <meta name="keywords" content="jeux interactifs, autisme, TSA, éducation, enfants, activités ludiques, sénégal">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logo-autisme-senegal.svg">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="styles/fontawesome-local.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    
+    <!-- Font Awesome Fallback Script -->
+    <script src="js/fontawesome-fallback.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="images/logo-autisme-senegal-v2-improved.svg" alt="Logo Plateforme Autisme Sénégal" class="logo-img">
-                <span class="logo-text">Plateforme Autisme Sénégal</span>
-            </div>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <!-- Animated Interactive Background -->
+    <div class="animated-background" id="animatedBg"></div>
 
+    <!-- Navigation (Template d'origine) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo-autisme-senegal.svg" alt="Logo Plateforme Autisme Sénégal" class="logo-image">
+                <h2>Plateforme Autisme Sénégal</h2>
+            </div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="index.html#qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a></li>
-                <li class="nav-item"><a href="index.html#objectifs" class="nav-link">Objectifs</a></li>
-                <li class="nav-item"><a href="index.html#activites" class="nav-link">Activités</a></li>
-                <li class="nav-item"><a href="index.html#ressources" class="nav-link">Ressources</a></li>
-                <li class="nav-item"><a href="index.html#donation" class="nav-link">Don</a></li>
-                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="index.html#accueil" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#objectifs" class="nav-link">Objectifs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#activites" class="nav-link">Activités</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#ressources" class="nav-link active">Ressources</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#donation" class="nav-link">Don</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-secondary">
-        <div class="container">
-            <h1><i class="fas fa-user-nurse"></i> Répertoire des Professionnels Paramédicaux</h1>
-            <p class="hero-subtitle">Orthophonistes, psychomotriciens, ergothérapeutes et autres spécialistes au Sénégal</p>
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <div class="hero-icon-box">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <h1>Jeux Interactifs</h1>
+            <p class="hero-subtitle">Des activités ludiques et éducatives pour accompagner les enfants avec TSA</p>
+            <div class="hero-breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+                <span>/</span>
+                <a href="index.html#ressources">Ressources</a>
+                <span>/</span>
+                <span>Jeux Interactifs</span>
+            </div>
         </div>
     </section>
 
-    <!-- Introduction -->
-    <section class="section bg-light">
+    <!-- Jeux Interactifs Section -->
+    <section id="jeux" class="section games-section">
         <div class="container">
-            <div class="content-intro">
-                <h2>Une prise en charge multidisciplinaire essentielle</h2>
-                <p class="lead">Les enfants avec Troubles du Spectre Autistique (TSA) bénéficient grandement d'une approche multidisciplinaire incluant différents professionnels paramédicaux. Chaque spécialiste apporte son expertise pour favoriser le développement global de l'enfant.</p>
-                
-                <div class="specialties-overview">
-                    <h3>Les spécialités paramédicales clés pour les TSA :</h3>
-                    <div class="specialties-grid">
-                        <div class="specialty-card">
-                            <i class="fas fa-comments"></i>
-                            <h4>Orthophoniste</h4>
-                            <p>Travaille sur la communication, le langage oral et non-verbal, et les interactions sociales.</p>
-                        </div>
-                        <div class="specialty-card">
-                            <i class="fas fa-running"></i>
-                            <h4>Psychomotricien</h4>
-                            <p>Améliore la coordination motrice, l'équilibre, le schéma corporel et la régulation sensorielle.</p>
-                        </div>
-                        <div class="specialty-card">
-                            <i class="fas fa-hand-holding-heart"></i>
-                            <h4>Ergothérapeute</h4>
-                            <p>Développe l'autonomie dans les activités quotidiennes et adapte l'environnement de l'enfant.</p>
-                        </div>
-                        <div class="specialty-card">
-                            <i class="fas fa-brain"></i>
-                            <h4>Psychologue</h4>
-                            <p>Accompagne le développement émotionnel, comportemental et cognitif de l'enfant et de sa famille.</p>
-                        </div>
-                        <div class="specialty-card">
-                            <i class="fas fa-user-graduate"></i>
-                            <h4>Éducateur spécialisé</h4>
-                            <p>Soutient l'apprentissage et l'intégration sociale par des activités éducatives adaptées.</p>
-                        </div>
-                        <div class="specialty-card">
-                            <i class="fas fa-heartbeat"></i>
-                            <h4>Psychothérapeute</h4>
-                            <p>Propose des thérapies comportementales et émotionnelles (ABA, TEACCH, etc.).</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="games-intro">
+                <h2>Des jeux adaptés pour favoriser l'apprentissage</h2>
+                <p class="lead">Nos jeux interactifs sont spécialement conçus pour stimuler le développement cognitif, social et sensoriel des enfants vivant avec les Troubles du Spectre Autistique. Chaque activité peut être adaptée selon les besoins et le niveau de l'enfant.</p>
             </div>
 
-            <!-- Filtres -->
-            <div class="filters-section" style="margin: 3rem 0;">
-                <h3><i class="fas fa-filter"></i> Filtrer par :</h3>
-                <div class="filters-grid">
-                    <div class="filter-group">
-                        <label for="regionFilter">Région</label>
-                        <select id="regionFilter" class="filter-select">
-                            <option value="">Toutes les régions</option>
-                            <option value="dakar">Dakar</option>
-                            <option value="thies">Thiès</option>
-                            <option value="saint-louis">Saint-Louis</option>
-                            <option value="kaolack">Kaolack</option>
-                            <option value="ziguinchor">Ziguinchor</option>
+            <div class="games-controls">
+                <h3>Paramètres d'accessibilité</h3>
+                <div class="accessibility-controls">
+                    <div class="control-group">
+                        <label for="volumeControl">
+                            <i class="fas fa-volume-up"></i> Volume des sons
+                        </label>
+                        <input type="range" id="volumeControl" min="0" max="100" value="70" class="volume-slider">
+                        <span id="volumeValue">70%</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="animationSpeed">
+                            <i class="fas fa-tachometer-alt"></i> Vitesse des animations
+                        </label>
+                        <select id="animationSpeed" class="speed-select">
+                            <option value="slow">Lente</option>
+                            <option value="normal" selected>Normale</option>
+                            <option value="fast">Rapide</option>
                         </select>
                     </div>
-                    <div class="filter-group">
-                        <label for="specialityFilter">Spécialité</label>
-                        <select id="specialityFilter" class="filter-select">
-                            <option value="">Toutes les spécialités</option>
-                            <option value="orthophoniste">Orthophoniste</option>
-                            <option value="psychomotricien">Psychomotricien</option>
-                            <option value="ergotherapeute">Ergothérapeute</option>
-                            <option value="psychologue">Psychologue</option>
-                            <option value="educateur">Éducateur spécialisé</option>
-                            <option value="psychotherapeute">Psychothérapeute</option>
-                        </select>
+
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="contrastMode" class="toggle-checkbox">
+                            <i class="fas fa-adjust"></i> Mode Contraste Élevé
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="focusMode" class="toggle-checkbox">
+                            <i class="fas fa-eye"></i> Mode Focus (réduit les distractions)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="games-grid">
+                <!-- Jeu 1: Puzzle des Émotions -->
+                <div class="game-card" data-game="emotions-puzzle">
+                    <div class="game-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Puzzle des Émotions</h3>
+                    <p class="game-description">Reconnaître et assembler les expressions faciales pour comprendre les émotions de base.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-brain"></i> Reconnaissance émotionnelle</span>
+                        <span class="benefit-tag"><i class="fas fa-hand-pointer"></i> Motricité fine</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('emotions-puzzle')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 2: Séquences Logiques -->
+                <div class="game-card" data-game="sequences">
+                    <div class="game-icon">
+                        <i class="fas fa-sort-amount-down"></i>
+                    </div>
+                    <h3>Séquences Logiques</h3>
+                    <p class="game-description">Organiser des images dans l'ordre chronologique pour comprendre les routines quotidiennes.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-clock"></i> Séquencement temporel</span>
+                        <span class="benefit-tag"><i class="fas fa-lightbulb"></i> Raisonnement logique</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('sequences')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 3: Jardin des Couleurs -->
+                <div class="game-card" data-game="colors-garden">
+                    <div class="game-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Jardin des Couleurs</h3>
+                    <p class="game-description">Planter des fleurs en associant les couleurs pour développer la reconnaissance visuelle.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-palette"></i> Reconnaissance des couleurs</span>
+                        <span class="benefit-tag"><i class="fas fa-check-circle"></i> Association visuelle</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('colors-garden')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 4: Tri des Formes -->
+                <div class="game-card" data-game="shapes-sorting">
+                    <div class="game-icon">
+                        <i class="fas fa-shapes"></i>
+                    </div>
+                    <h3>Tri des Formes</h3>
+                    <p class="game-description">Classer les formes géométriques dans les bonnes catégories.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-cube"></i> Reconnaissance des formes</span>
+                        <span class="benefit-tag"><i class="fas fa-sort"></i> Classification</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('shapes-sorting')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 5: Piano Musical -->
+                <div class="game-card" data-game="musical-piano">
+                    <div class="game-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Piano Musical</h3>
+                    <p class="game-description">Créer de la musique en tapant sur des touches colorées pour développer l'expression créative.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-headphones"></i> Stimulation auditive</span>
+                        <span class="benefit-tag"><i class="fas fa-paint-brush"></i> Expression créative</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('musical-piano')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 6: Routine du Matin -->
+                <div class="game-card" data-game="morning-routine">
+                    <div class="game-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Routine du Matin</h3>
+                    <p class="game-description">Apprendre les étapes de la routine matinale dans le bon ordre.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-list-ol"></i> Routines quotidiennes</span>
+                        <span class="benefit-tag"><i class="fas fa-user-check"></i> Autonomie</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('morning-routine')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 7: Bulles Apaisantes -->
+                <div class="game-card" data-game="calming-bubbles">
+                    <div class="game-icon">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <h3>Bulles Apaisantes</h3>
+                    <p class="game-description">Éclater des bulles doucement pour favoriser le calme et la concentration.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-spa"></i> Apaisement</span>
+                        <span class="benefit-tag"><i class="fas fa-crosshairs"></i> Coordination œil-main</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('calming-bubbles')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 8: Sons des Animaux -->
+                <div class="game-card" data-game="animal-sounds">
+                    <div class="game-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Sons des Animaux</h3>
+                    <p class="game-description">Associer les animaux à leurs cris pour développer l'apprentissage auditif.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-volume-up"></i> Discrimination auditive</span>
+                        <span class="benefit-tag"><i class="fas fa-link"></i> Association son-image</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('animal-sounds')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 9: Dessin Libre -->
+                <div class="game-card" data-game="free-drawing">
+                    <div class="game-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>Dessin Libre</h3>
+                    <p class="game-description">Dessiner librement avec différentes couleurs et formes pour stimuler la créativité.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-palette"></i> Expression artistique</span>
+                        <span class="benefit-tag"><i class="fas fa-hand-sparkles"></i> Motricité fine</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('free-drawing')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+
+                <!-- Jeu 10: Correspondance d'Objets -->
+                <div class="game-card" data-game="object-matching">
+                    <div class="game-icon">
+                        <i class="fas fa-equals"></i>
+                    </div>
+                    <h3>Correspondance d'Objets</h3>
+                    <p class="game-description">Trouver les paires d'objets identiques pour développer la mémoire visuelle.</p>
+                    <div class="game-benefits">
+                        <span class="benefit-tag"><i class="fas fa-brain"></i> Mémoire visuelle</span>
+                        <span class="benefit-tag"><i class="fas fa-eye"></i> Attention aux détails</span>
+                    </div>
+                    <button class="play-button" onclick="launchGame('object-matching')">
+                        <i class="fas fa-play"></i> Jouer
+                    </button>
+                </div>
+            </div>
+
+            <!-- Conseils pour les parents -->
+            <div class="parent-tips">
+                <h3><i class="fas fa-info-circle"></i> Conseils pour les parents et accompagnants</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Durée adaptée</h4>
+                        <p>Limitez les sessions à 15-20 minutes pour éviter la fatigue et maintenir l'engagement.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h4>Accompagnement</h4>
+                        <p>Restez présent pour encourager et guider l'enfant, surtout lors des premières utilisations.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-star"></i>
+                        <h4>Renforcement positif</h4>
+                        <p>Félicitez chaque effort et progression, même minime, pour renforcer la motivation.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Répétition régulière</h4>
+                        <p>La répétition aide à l'apprentissage. Rejouez les mêmes jeux plusieurs fois par semaine.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Liste des Professionnels -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Professionnels Paramédicaux Spécialisés</h2>
-
-            <div class="directory-grid">
-                <!-- Centre DYSLEXIE Sénégal -->
-                <div class="directory-card" data-region="dakar" data-speciality="orthophoniste">
-                    <div class="card-header">
-                        <div class="doctor-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h3>Centre DYSLEXIE Sénégal</h3>
-                        <span class="speciality-badge">Orthophonie</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description">Centre spécialisé en orthophonie avec expertise dans les troubles du langage et de la communication chez les enfants TSA.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Sacré-Cœur 3, Dakar</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+221 77 123 45 67</span>
-                        </div>
-                        
-                        <div class="services-list">
-                            <h4>Services proposés :</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Bilan orthophonique</li>
-                                <li><i class="fas fa-check-circle"></i> Rééducation du langage</li>
-                                <li><i class="fas fa-check-circle"></i> Communication alternative (PECS, Makaton)</li>
-                                <li><i class="fas fa-check-circle"></i> Guidance parentale</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cabinet d'Orthophonie - Mermoz -->
-                <div class="directory-card" data-region="dakar" data-speciality="orthophoniste">
-                    <div class="card-header">
-                        <div class="doctor-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h3>Cabinet d'Orthophonie Mermoz</h3>
-                        <span class="speciality-badge">Orthophonie</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description">Consultations individuelles d'orthophonie pour enfants avec troubles de la communication.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Mermoz, près Auchan, Dakar</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+221 76 234 56 78</span>
-                        </div>
-                        
-                        <div class="services-list">
-                            <h4>Services proposés :</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Séances individuelles</li>
-                                <li><i class="fas fa-check-circle"></i> Travail sur l'articulation</li>
-                                <li><i class="fas fa-check-circle"></i> Développement du vocabulaire</li>
-                                <li><i class="fas fa-check-circle"></i> Pragmatique du langage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Centre de Psychomotricité Dakar -->
-                <div class="directory-card" data-region="dakar" data-speciality="psychomotricien">
-                    <div class="card-header">
-                        <div class="doctor-icon">
-                            <i class="fas fa-running"></i>
-                        </div>
-                        <h3>Centre de Psychomotricité de Dakar</h3>
-                        <span class="speciality-badge">Psychomotricité</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description">Prise en charge psychomotrice spécialisée pour les enfants avec troubles neurodéveloppementaux.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Almadies, Dakar</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+221 77 345 67 89</span>
-                        </div>
-                        
-                        <div class="services-list">
-                            <h4>Services proposés :</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Bilan psychomoteur</li>
-                                <li><i class="fas fa-check-circle"></i> Intégration sensorielle</li>
-                                <li><i class="fas fa-check-circle"></i> Coordination motrice</li>
-                                <li><i class="fas fa-check-circle"></i> Régulation tonico-émotionnelle</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cabinet d'Ergothérapie -->
-                <div class="directory-card" data-region="dakar" data-speciality="ergotherapeute">
-                    <div class="card-header">
-                        <div class="doctor-icon">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </div>
-                        <h3>Cabinet d'Ergothérapie Les Almadies</h3>
-                        <span class="speciality-badge">Ergothérapie</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description">Accompagnement ergothérapique pour développer l'autonomie et adapter l'environnement.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Route des Almadies, Ngor, Dakar</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+221 76 456 78 90</span>
-                        </div>
-                        
-                        <div class="services-list">
-                            <h4>Services proposés :</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Évaluation ergothérapique</li>
-                                <li><i class="fas fa-check-circle"></i> Activités de la vie quotidienne</li>
-                                <li><i class="fas fa-check-circle"></i> Motricité fine</li>
-                                <li><i class="fas fa-check-circle"></i> Adaptation de l'environnement</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cabinet de Psychologie ESPOIR -->
-                <div class="directory-card" data-region="dakar" data-speciality="psychologue">
-                    <div class="card-header">
-                        <div class="doctor-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Cabinet de Psychologie ESPOIR</h3>
-                        <span class="speciality-badge">Psychologie</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description">Psychologues spécialisés en neuropsychologie et troubles du développement.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Point E, Dakar</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+221 77 567 89 01</span>
-                        </div>
-                        
-                        <div class="services-list">
-                            <h4>Services proposés :</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Évaluation psychologique</li>
-                                <li><i class="fas fa-check-circle"></i> Tests cognitifs (WISC, WPPSI)</li>
-                                <li><i class="fas fa-check-circle"></i> Suivi psychologique</li>
-                                <li><i class="fas fa-check-circle"></i> Thérapie familiale</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Centre ABA Sénégal -->
-                <div class="directory-card" data-region="dakar" data-speciality="psychotherapeute">
-                    <div class="card-header">
-                        <div class="doctor-icon">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h3>Centre ABA Sénégal</h3>
-                        <span class="speciality-badge">Analyse Comportementale</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description">Centre spécialisé en Analyse Appliquée du Comportement (ABA) pour enfants TSA.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Ouakam, Dakar</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+221 76 678 90 12</span>
-                        </div>
-                        
-                        <div class="services-list">
-                            <h4>Services proposés :</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Programme ABA individualisé</li>
-                                <li><i class="fas fa-check-circle"></i> Gestion des comportements</li>
-                                <li><i class="fas fa-check-circle"></i> Apprentissages structurés</li>
-                                <li><i class="fas fa-check-circle"></i> Formation parents et professionnels</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Association AUTISME Thiès -->
-                <div class="directory-card" data-region="thies" data-speciality="educateur">
-                    <div class="card-header">
-                        <div class="doctor-icon">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <h3>Centre Éducatif Spécialisé Thiès</h3>
-                        <span class="speciality-badge">Éducation Spécialisée</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description">Équipe d'éducateurs spécialisés formés aux méthodes TEACCH et ABA.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Quartier Médina Fall, Thiès</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+221 77 789 01 23</span>
-                        </div>
-                        
-                        <div class="services-list">
-                            <h4>Services proposés :</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Séances éducatives</li>
-                                <li><i class="fas fa-check-circle"></i> Activités structurées TEACCH</li>
-                                <li><i class="fas fa-check-circle"></i> Socialisation en groupe</li>
-                                <li><i class="fas fa-check-circle"></i> Accompagnement scolaire</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cabinet Pluridisciplinaire Saint-Louis -->
-                <div class="directory-card" data-region="saint-louis" data-speciality="psychologue">
-                    <div class="card-header">
-                        <div class="doctor-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Cabinet Pluridisciplinaire Saint-Louis</h3>
-                        <span class="speciality-badge">Multidisciplinaire</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description">Centre regroupant psychologues, orthophonistes et éducateurs spécialisés.</p>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Sor, Saint-Louis</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+221 76 890 12 34</span>
-                        </div>
-                        
-                        <div class="services-list">
-                            <h4>Services proposés :</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Prise en charge globale</li>
-                                <li><i class="fas fa-check-circle"></i> Coordination pluridisciplinaire</li>
-                                <li><i class="fas fa-check-circle"></i> Consultations spécialisées</li>
-                                <li><i class="fas fa-check-circle"></i> Groupes de parole parents</li>
-                            </ul>
-                        </div>
-                    </div>
+    <!-- Game Modal -->
+    <div id="gameModal" class="game-modal">
+        <div class="game-container">
+            <div class="game-header">
+                <h3 id="gameTitle">Jeu Interactif</h3>
+                <button class="close-game" onclick="closeGame()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="game-content" id="gameContent">
+                <!-- Le contenu du jeu sera chargé dynamiquement ici -->
+                <div class="game-loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Chargement du jeu...</p>
                 </div>
             </div>
-
-            <!-- Guide pour les parents -->
-            <div class="guide-section" style="margin-top: 4rem;">
-                <h3><i class="fas fa-lightbulb"></i> Conseils pour optimiser la prise en charge</h3>
-                <div class="guide-grid">
-                    <div class="guide-card">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h4>Régularité des séances</h4>
-                        <p>Les thérapies doivent être régulières (2 à 3 fois par semaine minimum) pour être efficaces.</p>
-                    </div>
-                    <div class="guide-card">
-                        <i class="fas fa-handshake"></i>
-                        <h4>Coordination des professionnels</h4>
-                        <p>Assurez une bonne communication entre tous les professionnels qui suivent votre enfant.</p>
-                    </div>
-                    <div class="guide-card">
-                        <i class="fas fa-home"></i>
-                        <h4>Continuité à la maison</h4>
-                        <p>Appliquez au quotidien les stratégies et exercices recommandés par les thérapeutes.</p>
-                    </div>
-                    <div class="guide-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Suivi des progrès</h4>
-                        <p>Tenez un journal des avancées et échangez régulièrement avec les professionnels.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Information financière -->
-            <div class="info-box" style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 15px; border-left: 5px solid #f59e0b;">
-                <h3 style="color: #92400e; margin-bottom: 1rem;"><i class="fas fa-coins"></i> Information sur les coûts</h3>
-                <p style="color: #1f2937; line-height: 1.6; margin-bottom: 1rem;">Les tarifs des séances varient généralement entre 15 000 et 30 000 FCFA selon le professionnel et la région. Certaines mutuelles de santé peuvent couvrir partiellement ces frais. N'hésitez pas à vous renseigner.</p>
-                <p style="color: #1f2937; line-height: 1.6;"><strong>Astuce :</strong> Certaines associations proposent des tarifs solidaires ou des aides financières pour les familles en difficulté.</p>
-            </div>
-
-            <!-- Appel à contribution -->
-            <div class="contribution-box" style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 15px; border-left: 5px solid #10b981;">
-                <h3 style="color: #065f46; margin-bottom: 1rem;"><i class="fas fa-plus-circle"></i> Vous êtes professionnel paramédical ?</h3>
-                <p style="color: #1f2937; line-height: 1.6; margin-bottom: 1.5rem;">Si vous êtes orthophoniste, psychomotricien, ergothérapeute, psychologue ou éducateur spécialisé avec une expertise TSA et souhaitez être référencé, contactez-nous.</p>
-                <a href="index.html#contact" class="cta-button">Nous contacter <i class="fas fa-envelope"></i></a>
+            <div class="game-controls">
+                <button class="game-control-btn" onclick="restartGame()">
+                    <i class="fas fa-redo"></i> Recommencer
+                </button>
+                <button class="game-control-btn" onclick="pauseGame()">
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button class="game-control-btn" onclick="closeGame()">
+                    <i class="fas fa-times"></i> Fermer
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -484,30 +395,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        // Script de filtrage
-        document.getElementById('regionFilter').addEventListener('change', filterDirectory);
-        document.getElementById('specialityFilter').addEventListener('change', filterDirectory);
-
-        function filterDirectory() {
-            const regionFilter = document.getElementById('regionFilter').value;
-            const specialityFilter = document.getElementById('specialityFilter').value;
-            const cards = document.querySelectorAll('.directory-card');
-
-            cards.forEach(card => {
-                const region = card.getAttribute('data-region');
-                const speciality = card.getAttribute('data-speciality');
-                
-                const matchRegion = !regionFilter || region === regionFilter;
-                const matchSpeciality = !specialityFilter || speciality === specialityFilter;
-                
-                if (matchRegion && matchSpeciality) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
