@@ -767,6 +767,11 @@ class DonationSystem {
         const paymentBtns = document.querySelectorAll('.payment-btn');
         const donateBtn = document.querySelector('.donate-btn');
         
+        // Vérifier que les éléments existent avant d'ajouter des listeners
+        if (!form || !customAmount) {
+            return; // Sortir si la section donation n'existe pas sur cette page
+        }
+        
         // Amount selection
         amountBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {

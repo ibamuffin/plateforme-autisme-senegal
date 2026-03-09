@@ -170,21 +170,26 @@ function loadGame(gameId, container) {
         case 'shapes-sorting':
             loadShapesSorting(container);
             break;
+        case 'piano':
         case 'musical-piano':
             loadMusicalPiano(container);
             break;
+        case 'routine':
         case 'daily-routine':
             loadDailyRoutine(container);
             break;
+        case 'bubbles':
         case 'soap-bubbles':
             loadSoapBubbles(container);
             break;
         case 'animal-sounds':
             loadAnimalSounds(container);
             break;
+        case 'drawing':
         case 'creative-drawing':
             loadCreativeDrawing(container);
             break;
+        case 'memory':
         case 'matching-game':
             loadMatchingGame(container);
             break;
