@@ -134,7 +134,7 @@ body {
         filter: hue-rotate(15deg) brightness(1.1) saturate(1.2);
     }
 }
-}
+
 
 .puzzle-piece {
     position: absolute;
@@ -568,7 +568,7 @@ main:hover .animated-background .floating-hearts {
     object-fit: contain;
     padding: 1rem;
 }
-}
+
 
 @keyframes hero-float {
     0%, 100% { transform: translateY(0px) rotateZ(0deg); }
