@@ -286,8 +286,20 @@ function closeMobileNav() {
 
 // Smooth scrolling for navigation links
 function smoothScroll(e) {
+    const href = this.getAttribute('href');
+    
+    // Si le lien pointe vers une autre page (contient /), laisser la navigation normale
+    if (href.includes('/') && !href.startsWith('#')) {
+        // C'est un lien vers une page annexe, laisser le navigateur gérer
+        return;
+    }
+    
     e.preventDefault();
-    const targetId = this.getAttribute('href');
+    
+    // Extraire l'ID de la section (enlever le / si présent)
+    const targetId = href.replace(/^\//, '');
+    
+    // Vérifier si la section existe sur la page actuelle
     const targetSection = document.querySelector(targetId);
     
     if (targetSection) {
@@ -296,6 +308,10 @@ function smoothScroll(e) {
             top: offsetTop,
             behavior: 'smooth'
         });
+    } else {
+        // Si la section n'existe pas, c'est qu'on est sur une page annexe
+        // Rediriger vers la page d'accueil avec l'ancre
+        window.location.href = '/' + targetId;
     }
     
     closeMobileNav();
