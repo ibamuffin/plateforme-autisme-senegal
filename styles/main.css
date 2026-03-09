@@ -544,9 +544,11 @@ main:hover .animated-background .floating-hearts {
 }
 
 .hero-image {
-    max-width: 120%;
-    width: 450px;
-    height: auto;
+    /* Taille optimisée pour la visibilité */
+    max-width: 100%;
+    width: 380px;
+    height: 285px;
+    min-width: 300px;
     border-radius: 20px;
     position: relative;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
@@ -564,6 +566,7 @@ main:hover .animated-background .floating-hearts {
     /* S'assurer que l'image est visible */
     display: block;
     object-fit: contain;
+    padding: 1rem;
 }
 }
 
@@ -2269,6 +2272,13 @@ main:hover .animated-background .floating-hearts {
     
     .hero h1 {
         font-size: 2rem;
+    }
+    
+    .hero-image {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin: 0 auto;
     }
     
     .contact-content {
