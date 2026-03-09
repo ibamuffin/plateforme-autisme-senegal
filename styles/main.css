@@ -539,6 +539,8 @@ main:hover .animated-background .floating-hearts {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 3;
 }
 
 .hero-image {
@@ -550,14 +552,19 @@ main:hover .animated-background .floating-hearts {
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
     transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.95);
+    /* Fond visible pour s'assurer que l'image est toujours visible */
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 50%, #BFDBFE 100%);
     backdrop-filter: blur(15px);
-    border: 3px solid rgba(255, 255, 255, 0.8);
+    border: 3px solid rgba(37, 99, 235, 0.3);
     box-shadow: 
         0 0 0 1px rgba(30, 64, 175, 0.2),
         0 20px 40px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
     animation: hero-float 6s ease-in-out infinite, hero-contrast-glow 4s ease-in-out infinite alternate;
+    /* S'assurer que l'image est visible */
+    display: block;
+    object-fit: contain;
+}
 }
 
 @keyframes hero-float {
