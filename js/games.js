@@ -494,16 +494,19 @@ function playTone(frequency, duration) {
 
 // Jeux supplémentaires (versions simplifiées)
 function loadDailyRoutine(container) {
+    const items = ['🛏️ Se réveiller', '🦷 Se brosser les dents', '🍳 Petit déjeuner', '🎒 Aller à l\'école'];
+    const buttons = items.map(item => 
+        `<button style="padding: 1.5rem; font-size: 1.2rem; background: white; border: 2px solid #2563eb; border-radius: 10px; cursor: pointer;" onclick="alert('Bien joué!')">
+            ${item}
+        </button>`
+    ).join('');
+    
     container.innerHTML = `
         <div class="game-area" style="padding: 2rem; text-align: center;">
             <h3>Routine Quotidienne</h3>
             <p style="font-size: 1.2rem; margin: 2rem 0;">Que fais-tu le matin?</p>
             <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-                ${['🛏️ Se réveiller', '🦷 Se brosser les dents', '🍳 Petit déjeuner', '🎒 Aller à l'école'].map(item => `
-                    <button style="padding: 1.5rem; font-size: 1.2rem; background: white; border: 2px solid #2563eb; border-radius: 10px; cursor: pointer;" onclick="alert('Bien joué!')">
-                        ${item}
-                    </button>
-                `).join('')}
+                ${buttons}
             </div>
         </div>
     `;
@@ -577,15 +580,17 @@ function loadAnimalSounds(container) {
         '🦆': 'Coin coin!'
     };
 
+    const animalButtons = Object.entries(animals).map(([animal, sound]) => 
+        `<button style="font-size: 4rem; padding: 2rem; background: white; border: 3px solid #2563eb; border-radius: 15px; cursor: pointer; transition: all 0.3s;" onclick="showSound('${sound}', this)">
+            ${animal}
+        </button>`
+    ).join('');
+
     container.innerHTML = `
         <div class="game-area" style="padding: 2rem; text-align: center;">
             <h3 style="margin-bottom: 2rem;">Sons des Animaux</h3>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 500px; margin: 0 auto;">
-                ${Object.entries(animals).map(([animal, sound]) => `
-                    <button style="font-size: 4rem; padding: 2rem; background: white; border: 3px solid #2563eb; border-radius: 15px; cursor: pointer; transition: all 0.3s;" onclick="showSound('${sound}', this)">
-                        ${animal}
-                    </button>
-                `).join('')}
+                ${animalButtons}
             </div>
             <div id="animalSound" style="margin-top: 2rem; font-size: 2rem; font-weight: bold; color: #2563eb; min-height: 3rem;"></div>
         </div>

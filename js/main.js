@@ -2220,16 +2220,17 @@ class GamesManager {
         
         this.matchingData.flipped = [];
     }
+}
 
-    // Initialize games manager
-    let gamesManager;
+// Initialize games manager
+let gamesManager;
 
-    // Global functions for game controls
-    function openGame(gameType) {
-        if (gamesManager) {
-            gamesManager.openGame(gameType);
-        }
+// Global functions for game controls
+function openGame(gameType) {
+    if (gamesManager) {
+        gamesManager.openGame(gameType);
     }
+}
 
     function closeGame() {
         if (gamesManager) {
