@@ -4,13 +4,12 @@ Script pour redimensionner l'image SVG hero selon les dimensions CSS
 Dimensions cibles: 380x285px (ratio 4:3)
 """
 
-import re
 import os
 from pathlib import Path
 
 def resize_svg_simple(input_file, output_file, target_width=380, target_height=285):
     """
-    Redimensionne un fichier SVG en modifiant directement les attributs width et height
+    Redimensionne un fichier SVG en modifiant uniquement la première ligne
     
     Args:
         input_file (str): Chemin vers le fichier SVG source
@@ -18,56 +17,30 @@ def resize_svg_simple(input_file, output_file, target_width=380, target_height=2
         target_width (int): Largeur cible en pixels
         target_height (int): Hauteur cible en pixels
     """
-    # Lire le fichier SVG
+    # Lire tout le fichier
     with open(input_file, 'r', encoding='utf-8') as f:
-        svg_content = f.read()
+        lines = f.readlines()
     
-    # Extraire les dimensions originales
-    width_match = re.search(r'<svg[^>]*width="(\d+)"', svg_content)
-    height_match = re.search(r'<svg[^>]*height="(\d+)"', svg_content)
-    viewbox_match = re.search(r'<svg[^>]*viewBox="([^"]+)"', svg_content)
+    print(f"📏 Fichier original:")
+    print(f"   Première ligne: {lines[0].strip()}")
     
-    if width_match and height_match:
-        original_width = width_match.group(1)
-        original_height = height_match.group(1)
-        print(f"📏 Dimensions originales:")
-        print(f"   Width: {original_width}px")
-        print(f"   Height: {original_height}px")
+    # Modifier uniquement la première ligne pour changer width et height
+    if '<svg' in lines[0] and 'width=' in lines[0] and 'height=' in lines[0]:
+        # Remplacer width="400" par width="380"
+        new_line = lines[0].replace('width="400"', f'width="{target_width}"')
+        # Remplacer height="300" par height="285"
+        new_line = new_line.replace('height="300"', f'height="{target_height}"')
+        lines[0] = new_line
+        
+        print(f"\n📐 Nouvelle première ligne:")
+        print(f"   {new_line.strip()}")
     else:
-        print("⚠️ Impossible de trouver les dimensions originales")
-        original_width = "inconnu"
-        original_height = "inconnu"
+        print("⚠️ Format SVG non reconnu, aucune modification effectuée")
+        return False
     
-    if viewbox_match:
-        original_viewbox = viewbox_match.group(1)
-        print(f"   ViewBox: {original_viewbox}")
-    else:
-        print("   ViewBox: non défini")
-        original_viewbox = None
-    
-    # Remplacer les attributs width et height dans la balise <svg>
-    # Pattern pour capturer la balise svg complète
-    svg_pattern = r'(<svg[^>]*?)width="[^"]*"([^>]*?)height="[^"]*"'
-    
-    # Nouvelle balise avec les dimensions mises à jour
-    svg_replacement = rf'\1width="{target_width}"\2height="{target_height}"'
-    
-    # Appliquer le remplacement
-    new_content = re.sub(svg_pattern, svg_replacement, svg_content)
-    
-    # Si le remplacement n'a pas fonctionné, essayer dans l'autre sens (height avant width)
-    if new_content == svg_content:
-        svg_pattern = r'(<svg[^>]*?)height="[^"]*"([^>]*?)width="[^"]*"'
-        svg_replacement = rf'\1height="{target_height}"\2width="{target_width}"'
-        new_content = re.sub(svg_pattern, svg_replacement, svg_content)
-    
-    print(f"\n📐 Nouvelles dimensions:")
-    print(f"   Width: {target_width}px")
-    print(f"   Height: {target_height}px")
-    
-    # Sauvegarder le fichier modifié
+    # Écrire le fichier modifié
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(new_content)
+        f.writelines(lines)
     
     print(f"\n💾 Fichier sauvegardé: {output_file}")
     
@@ -79,14 +52,7 @@ def resize_svg_simple(input_file, output_file, target_width=380, target_height=2
     print(f"   Original: {original_size:,} bytes ({original_size/1024:.2f} KB)")
     print(f"   Nouveau: {new_size:,} bytes ({new_size/1024:.2f} KB)")
     
-    if new_size < original_size:
-        reduction = ((original_size - new_size) / original_size) * 100
-        print(f"   🎉 Réduction: {reduction:.1f}%")
-    elif new_size > original_size:
-        increase = ((new_size - original_size) / original_size) * 100
-        print(f"   ⚠️ Augmentation: {increase:.1f}%")
-    else:
-        print(f"   ➡️ Taille similaire")
+    return True
 
 def main():
     """Fonction principale"""
@@ -113,12 +79,13 @@ def main():
     
     # Redimensionner
     try:
-        resize_svg_simple(str(input_file), str(output_file), 380, 285)
-        print("\n" + "=" * 60)
-        print("✅ Redimensionnement terminé avec succès!")
-        print("=" * 60)
-        print(f"\n💡 Pour utiliser la nouvelle image, modifiez index.html:")
-        print(f'   <img src="images/enfants-autisme-accueil-optimized.svg?v=2024-03-09"...')
+        success = resize_svg_simple(str(input_file), str(output_file), 380, 285)
+        if success:
+            print("\n" + "=" * 60)
+            print("✅ Redimensionnement terminé avec succès!")
+            print("=" * 60)
+        else:
+            print("\n❌ Le redimensionnement a échoué")
         
     except Exception as e:
         print(f"\n❌ Erreur lors du redimensionnement: {e}")
