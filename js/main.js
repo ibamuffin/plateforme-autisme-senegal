@@ -2352,6 +2352,28 @@ class GamesManager {
     // Export utils for potential use in other scripts
     window.AutismePlatformUtils = utils;
 
+    // Reveal on Scroll Animation for Web 3.0 components
+    function initRevealOnScroll() {
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // Optionnel : ne plus observer après révélation
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1, // L'élément est visible à 10%
+            rootMargin: '0px 0px -50px 0px' // Déclencher un peu avant que l'élément soit visible
+        });
+        
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+    }
+
     // Initialize Web 3.0 effects
     document.addEventListener('DOMContentLoaded', () => {
         // Initialize games system
@@ -2359,6 +2381,9 @@ class GamesManager {
         
         // Add Web 3.0 CSS animations
         addWeb3Animations();
+        
+        // Initialize reveal on scroll
+        initRevealOnScroll();
         
         // Initialize animated background
         const animatedBg = new AnimatedBackground();
