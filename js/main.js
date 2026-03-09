@@ -2356,20 +2356,39 @@ class GamesManager {
     function initRevealOnScroll() {
         const revealElements = document.querySelectorAll('.reveal-on-scroll');
         
+        // Vérifier si l'élément est déjà visible au chargement
+        const isElementInViewport = (el) => {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+        
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
-                    // Optionnel : ne plus observer après révélation
+                    entry.target.classList.remove('to-reveal');
+                    // Ne plus observer après révélation pour optimiser
                     revealObserver.unobserve(entry.target);
                 }
             });
         }, {
             threshold: 0.1, // L'élément est visible à 10%
-            rootMargin: '0px 0px -50px 0px' // Déclencher un peu avant que l'élément soit visible
+            rootMargin: '0px 0px -100px 0px' // Déclencher avant que l'élément soit visible
         });
         
         revealElements.forEach(element => {
+            // Si l'élément n'est pas visible au chargement, ajouter la classe to-reveal
+            if (!isElementInViewport(element)) {
+                element.classList.add('to-reveal');
+            } else {
+                // Si déjà visible, marquer comme révélé immédiatement
+                element.classList.add('revealed');
+            }
             revealObserver.observe(element);
         });
     }
