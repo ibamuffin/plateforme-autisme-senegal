@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dépliant — Plateforme Autisme Sénégal (P.A.S)</title>
+    <meta name="description" content="Dépliant officiel de la Plateforme des Associations d'Autisme du Sénégal — Contexte, Mission, Objectifs, Activités et Résultats attendus.">
+    <meta name="keywords" content="dépliant, plateforme autisme sénégal, PAS, TSA, objectifs, activités, autisme">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css?v=2024-03-28b">
+    <link rel="stylesheet" href="styles/web3-components.css?v=2024-03-28b">
+    <link rel="stylesheet" href="styles/fontawesome-local.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <script src="js/fontawesome-fallback.js"></script>
+    <style>
+        /* ═══════════════════════════════════════════════════
+           STYLES SPÉCIFIQUES DÉPLIANT P.A.S
+           Palette bleu autisme officielle
+           ═══════════════════════════════════════════════════ */
+        :root {
+            --b-nuit:   #0B1D35;
+            --b-deep:   #023E8A;
+            --b-main:   #1A4F8A;
+            --b-royal:  #2E86C1;
+            --b-ciel:   #5DADE2;
+            --b-aut:    #0073CF;
+            --b-lght:   #00A6FB;
+            --b-ice:    #90E0EF;
+            --b-pale:   #E8F4FF;
+        }
+
+        /* ── HERO DÉPLIANT ── */
+        .hero-depliant {
+            background: linear-gradient(160deg, var(--b-nuit) 0%, var(--b-deep) 45%, var(--b-main) 100%);
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 2rem 5rem;
+        }
+        .hero-depliant::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .hero-depliant::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--b-aut), var(--b-lght), var(--b-ice));
+        }
+
+        /* Puzzles décoratifs */
+        .puzzle-deco {
+            position: absolute;
+            opacity: 0.12;
+            pointer-events: none;
+        }
+        .pz-shape {
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0,115,207,0.2);
+            border: 1px solid rgba(0,166,251,0.35);
+            border-radius: 30px;
+            padding: 0.5rem 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--b-ice);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-logo-circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid rgba(0,166,251,0.4);
+            background: rgba(0,115,207,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-logo-circle img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .hero-sigle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 900;
+            color: white;
+            letter-spacing: 0.15em;
+            position: relative;
+            z-index: 2;
+            line-height: 1;
+            text-shadow: 0 4px 30px rgba(0,115,207,0.5);
+        }
+        .hero-sigle span {
+            background: linear-gradient(135deg, var(--b-lght), var(--b-ice));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-full-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 700;
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0.7rem 0 0.3rem;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-slogan {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 600;
+            font-style: italic;
+            color: var(--b-lght);
+            margin-top: 0.8rem;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: rgba(0,115,207,0.25);
+            border: 1px solid rgba(0,166,251,0.3);
+            border-radius: 14px;
+            padding: 0.8rem 1.8rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-stat-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--b-lght);
+        }
+        .hero-stat-text {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        /* ── SECTIONS COMMUNES ── */
+        .section-title-block {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title-block h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.1rem);
+            font-weight: 800;
+            color: var(--b-nuit);
+            margin-bottom: 0.6rem;
+        }
+        .section-title-block.light h2 { color: white; }
+        .section-title-block p {
+            font-size: 0.95rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .section-title-block.light p { color: rgba(255,255,255,0.7); }
+        .section-rule {
+            width: 60px;
+            height: 4px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--b-aut), var(--b-lght));
+            margin: 0.8rem auto 0;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ── CONTEXTE & MISSION ── */
+        .contexte-section {
+            padding: 5rem 0;
+            background: white;
+        }
+        .contexte-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) { .contexte-grid { grid-template-columns: 1fr; } }
+
+        .stats-cards-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 130px;
+            border-radius: 14px;
+            padding: 1.2rem;
+            text-align: center;
+            border: 2px solid;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+        .stat-val {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--b-main);
+            margin-top: 0.3rem;
+            display: block;
+        }
+        .stat-source {
+            font-size: 0.65rem;
+            color: #9ca3af;
+            margin-top: 0.2rem;
+            display: block;
+        }
+        .stat-card.blue { border-color: rgba(0,115,207,0.2); background: rgba(0,115,207,0.04); }
+        .stat-card.blue .stat-val { color: var(--b-aut); }
+        .stat-card.blue::before { background: linear-gradient(90deg, var(--b-aut), var(--b-lght)); }
+        .stat-card.green { border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.04); }
+        .stat-card.green .stat-val { color: #059669; }
+        .stat-card.green::before { background: linear-gradient(90deg, #10b981, #34d399); }
+        .stat-card.orange { border-color: rgba(245,158,11,0.2); background: rgba(245,158,11,0.04); }
+        .stat-card.orange .stat-val { color: #d97706; }
+        .stat-card.orange::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+        .contexte-quote {
+            background: var(--b-pale);
+            border-left: 4px solid var(--b-aut);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        .contexte-text {
+            font-size: 0.92rem;
+            color: #374151;
+            line-height: 1.8;
+        }
+
+        .vision-mission-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .vm-card {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .vm-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 1.2rem;
+        }
+        .vm-header i { font-size: 1.1rem; color: white; }
+        .vm-header h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: white;
+        }
+        .vm-body {
+            background: var(--b-pale);
+            padding: 1rem 1.2rem;
+            font-size: 0.85rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+        .vm-card.vision .vm-header { background: linear-gradient(90deg, var(--b-deep), var(--b-main)); }
+        .vm-card.mission .vm-header { background: linear-gradient(90deg, var(--b-aut), var(--b-royal)); }
+        .vm-card.valeurs .vm-header { background: linear-gradient(90deg, #059669, #10b981); }
+
+        /* ── OBJECTIFS ── */
+        .objectifs-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--b-pale) 0%, #f8fafc 100%);
+        }
+        .objectifs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .objectif-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 1px solid rgba(26,79,138,0.1);
+            box-shadow: 0 4px 20px rgba(26,79,138,0.07);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .objectif-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--b-aut), var(--b-lght));
+        }
+        .objectif-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(26,79,138,0.14);
+        }
+        .objectif-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: rgba(0,115,207,0.12);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .objectif-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--b-aut), var(--b-royal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .objectif-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--b-main);
+            margin-bottom: 0.6rem;
+            line-height: 1.4;
+        }
+        .objectif-card p {
+            font-size: 0.83rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ── ACTIVITÉS ── */
+        .activites-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--b-nuit) 0%, var(--b-deep) 100%);
+        }
+        .activites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .activite-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(0,166,251,0.2);
+            border-radius: 16px;
+            padding: 1.8rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        .activite-card:hover {
+            background: rgba(0,115,207,0.15);
+            border-color: rgba(0,166,251,0.5);
+            transform: translateY(-3px);
+        }
+        .activite-step {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--b-ice);
+            margin-bottom: 0.8rem;
+        }
+        .activite-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--b-aut), var(--b-royal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .activite-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.6rem;
+            line-height: 1.4;
+        }
+        .activite-card p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+        }
+        .activite-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+        .activite-tag {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--b-lght);
+            background: rgba(0,166,251,0.12);
+            border: 1px solid rgba(0,166,251,0.25);
+            border-radius: 20px;
+            padding: 2px 8px;
+        }
+
+        /* ── RÉSULTATS ── */
+        .resultats-section {
+            padding: 5rem 0;
+            background: white;
+        }
+        .resultats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .resultat-card {
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 2px solid;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .resultat-card:hover { transform: translateY(-4px); }
+        .resultat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+        .resultat-card.r1 { border-color: rgba(0,115,207,0.2); background: rgba(0,115,207,0.03); }
+        .resultat-card.r1::before { background: linear-gradient(90deg, var(--b-aut), var(--b-lght)); }
+        .resultat-card.r2 { border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.03); }
+        .resultat-card.r2::before { background: linear-gradient(90deg, #10b981, #34d399); }
+        .resultat-card.r3 { border-color: rgba(245,158,11,0.2); background: rgba(245,158,11,0.03); }
+        .resultat-card.r3::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .resultat-card.r4 { border-color: rgba(168,85,247,0.2); background: rgba(168,85,247,0.03); }
+        .resultat-card.r4::before { background: linear-gradient(90deg, #a855f7, #c084fc); }
+
+        .resultat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.2rem;
+        }
+        .r1 .resultat-icon { background: linear-gradient(135deg, var(--b-aut), var(--b-royal)); color: white; }
+        .r2 .resultat-icon { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .r3 .resultat-icon { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+        .r4 .resultat-icon { background: linear-gradient(135deg, #a855f7, #7c3aed); color: white; }
+
+        .resultat-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .r1 .resultat-num { color: var(--b-aut); }
+        .r2 .resultat-num { color: #059669; }
+        .r3 .resultat-num { color: #d97706; }
+        .r4 .resultat-num { color: #7c3aed; }
+
+        .resultat-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--b-nuit);
+            margin: 0.6rem 0 0.5rem;
+            line-height: 1.4;
+        }
+        .resultat-card p {
+            font-size: 0.8rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        .resultat-progress {
+            height: 6px;
+            background: rgba(0,0,0,0.06);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 1.2rem;
+        }
+        .resultat-bar {
+            height: 100%;
+            border-radius: 6px;
+        }
+        .r1 .resultat-bar { background: linear-gradient(90deg, var(--b-aut), var(--b-lght)); width: 85%; }
+        .r2 .resultat-bar { background: linear-gradient(90deg, #10b981, #34d399); width: 75%; }
+        .r3 .resultat-bar { background: linear-gradient(90deg, #f59e0b, #fbbf24); width: 90%; }
+        .r4 .resultat-bar { background: linear-gradient(90deg, #a855f7, #c084fc); width: 70%; }
+
+        /* ── CONTACT ── */
+        .contact-section {
+            padding: 5rem 0;
+            background: linear-gradient(160deg, var(--b-nuit) 0%, var(--b-deep) 50%, var(--b-main) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+        .contact-info-block h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        .contact-info-block p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.9rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(0,166,251,0.2);
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .contact-item:hover {
+            background: rgba(0,115,207,0.2);
+            border-color: rgba(0,166,251,0.4);
+        }
+        .contact-item i {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--b-aut), var(--b-royal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .contact-item-text .label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--b-ice);
+            display: block;
+        }
+        .contact-item-text .value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            display: block;
+        }
+
+        .partenaires-block h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 1px solid rgba(0,166,251,0.25);
+        }
+        .partenaires-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+        .partenaire-chip {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(0,166,251,0.2);
+            border-radius: 8px;
+            padding: 0.5rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.85);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .partenaire-chip i { color: var(--b-lght); font-size: 0.85rem; }
+
+        /* ── CTA TÉLÉCHARGEMENT ── */
+        .cta-download-bar {
+            background: linear-gradient(90deg, var(--b-aut), var(--b-royal));
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        .cta-download-bar p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--b-aut);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn-download:hover {
+            background: var(--b-pale);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        .btn-back-event {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-left: 1rem;
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .btn-back-event:hover { background: rgba(255,255,255,0.25); }
+
+    </style>
+</head>
+<body>
+    <!-- ══════════════════════════════════════════
+         NAVBAR
+         ══════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/logo-pas-officiel.png" alt="Logo Plateforme Autisme Sénégal" class="logo-image">
+                </a>
+                <h2>Plateforme Autisme Sénégal</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="index.html#about" class="nav-link">Qui sommes-nous&nbsp;?</a></li>
+                <li><a href="index.html#objectifs" class="nav-link">Objectifs</a></li>
+                <li><a href="index.html#activites" class="nav-link">Activités</a></li>
+                <li><a href="index.html#ressources" class="nav-link">Ressources</a></li>
+                <li><a href="evenement.html" class="nav-link nav-event">Événement <span class="nav-badge">2 Avr</span></a></li>
+                <li><a href="depliant.html" class="nav-link" style="color:var(--b-aut);font-weight:600;">Dépliant</a></li>
+                <li><a href="index.html#don" class="nav-link">Don</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+         HERO
+         ══════════════════════════════════════════ -->
+    <section class="hero-depliant">
+        <!-- Puzzles décoratifs -->
+        <div class="puzzle-deco" style="top:10%;left:5%;width:120px;height:120px;">
+            <div class="pz-shape" style="width:100%;height:100%;background:#5DADE2;"></div>
+        </div>
+        <div class="puzzle-deco" style="bottom:15%;right:6%;width:90px;height:90px;">
+            <div class="pz-shape" style="width:100%;height:100%;background:#00A6FB;"></div>
+        </div>
+        <div class="puzzle-deco" style="top:25%;right:12%;width:60px;height:60px;">
+            <div class="pz-shape" style="width:100%;height:100%;background:#90E0EF;"></div>
+        </div>
+
+        <div class="hero-badge">
+            <i class="fas fa-puzzle-piece"></i>
+            DÉPLIANT OFFICIEL
+        </div>
+
+        <div class="hero-logo-circle">
+            <img src="images/logo-pas-officiel.png" alt="Logo P.A.S">
+        </div>
+
+        <div class="hero-sigle">P<span>.</span>A<span>.</span>S</div>
+        <div class="hero-full-name">Plateforme des Associations d'Autisme du Sénégal</div>
+        <div class="hero-slogan">"Ensemble pour l'Autisme"</div>
+
+        <div class="hero-stat">
+            <div class="hero-stat-num">1/160</div>
+            <div class="hero-stat-text">personnes touchées<br>par l'autisme dans le monde<br><small style="opacity:.7;font-size:0.7em;">(Source : OMS)</small></div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         CONTEXTE & MISSION
+         ══════════════════════════════════════════ -->
+    <section class="contexte-section">
+        <div class="container">
+            <div class="section-title-block">
+                <h2><i class="fas fa-globe-africa" style="color:var(--b-aut);margin-right:.5rem;"></i> Contexte &amp; Mission</h2>
+                <div class="section-rule"></div>
+                <p>La situation de l'autisme au Sénégal et les fondements de notre plateforme</p>
+            </div>
+
+            <div class="contexte-grid">
+                <!-- Colonne gauche : stats + texte -->
+                <div>
+                    <div class="stats-cards-row">
+                        <div class="stat-card blue">
+                            <div class="stat-val">0,8%</div>
+                            <span class="stat-label">Enfants touchés<br>au Sénégal</span>
+                            <span class="stat-source">Ctr pédopsych. Fann</span>
+                        </div>
+                        <div class="stat-card green">
+                            <div class="stat-val">1/160</div>
+                            <span class="stat-label">Prévalence<br>mondiale OMS</span>
+                            <span class="stat-source">Organisation Mondiale<br>de la Santé</span>
+                        </div>
+                        <div class="stat-card orange">
+                            <div class="stat-val">7+</div>
+                            <span class="stat-label">Associations<br>membres P.A.S</span>
+                            <span class="stat-source">Sénégal</span>
+                        </div>
+                    </div>
+
+                    <blockquote class="contexte-quote">
+                        Les Troubles du Spectre Autistique (TSA) constituent un enjeu de santé publique majeur au Sénégal. 
+                        Malgré une prévalence estimée à 0,8% chez les enfants en bas âge, les ressources dédiées restent insuffisantes 
+                        et les familles manquent d'accompagnement adapté.
+                    </blockquote>
+
+                    <p class="contexte-text">
+                        Face à cette réalité, les associations d'autisme du Sénégal ont décidé de s'unir au sein d'une 
+                        <strong>plateforme commune</strong> pour mutualiser leurs forces, harmoniser leurs pratiques et 
+                        amplifier leur impact auprès des autorités, des partenaires et des familles concernées.
+                    </p>
+                </div>
+
+                <!-- Colonne droite : Vision / Mission / Valeurs -->
+                <div class="vision-mission-grid">
+                    <div class="vm-card vision">
+                        <div class="vm-header">
+                            <i class="fas fa-eye"></i>
+                            <h4>Notre Vision</h4>
+                        </div>
+                        <div class="vm-body">
+                            Un Sénégal inclusif où chaque enfant vivant avec un TSA bénéficie d'un diagnostic précoce, 
+                            d'une prise en charge de qualité et d'une pleine participation à la vie sociale.
+                        </div>
+                    </div>
+                    <div class="vm-card mission">
+                        <div class="vm-header">
+                            <i class="fas fa-bullseye"></i>
+                            <h4>Notre Mission</h4>
+                        </div>
+                        <div class="vm-body">
+                            Fédérer les associations d'autisme du Sénégal pour améliorer la prise en charge des enfants TSA 
+                            à travers le plaidoyer, la formation, le partage de ressources et la sensibilisation du public.
+                        </div>
+                    </div>
+                    <div class="vm-card valeurs">
+                        <div class="vm-header">
+                            <i class="fas fa-hands-helping"></i>
+                            <h4>Nos Valeurs</h4>
+                        </div>
+                        <div class="vm-body">
+                            <strong>Solidarité</strong> entre associations · <strong>Inclusivité</strong> et dignité de chaque enfant · 
+                            <strong>Excellence</strong> dans les pratiques · <strong>Transparence</strong> dans la gouvernance · 
+                            <strong>Innovation</strong> dans les solutions.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         OBJECTIFS
+         ══════════════════════════════════════════ -->
+    <section class="objectifs-section">
+        <div class="container">
+            <div class="section-title-block">
+                <h2><i class="fas fa-bullseye" style="color:var(--b-aut);margin-right:.5rem;"></i> Nos 7 Objectifs Spécifiques</h2>
+                <div class="section-rule"></div>
+                <p>Les axes stratégiques qui guident l'action de la Plateforme Autisme Sénégal</p>
+            </div>
+
+            <div class="objectifs-grid">
+                <div class="objectif-card">
+                    <div class="objectif-num">01</div>
+                    <div class="objectif-icon"><i class="fas fa-link"></i></div>
+                    <h3>Créer un cadre fédérateur</h3>
+                    <p>Mettre en place une plateforme nationale représentant les associations d'autisme du Sénégal avec une gouvernance structurée.</p>
+                </div>
+                <div class="objectif-card">
+                    <div class="objectif-num">02</div>
+                    <div class="objectif-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Renforcer les capacités</h3>
+                    <p>Former les professionnels, accompagnateurs et membres des associations aux meilleures pratiques de prise en charge TSA.</p>
+                </div>
+                <div class="objectif-card">
+                    <div class="objectif-num">03</div>
+                    <div class="objectif-icon"><i class="fas fa-megaphone"></i></div>
+                    <h3>Plaidoyer & politiques</h3>
+                    <p>Influencer les politiques publiques pour améliorer l'accès aux services, aux droits et aux ressources pour les enfants autistes.</p>
+                </div>
+                <div class="objectif-card">
+                    <div class="objectif-num">04</div>
+                    <div class="objectif-icon"><i class="fas fa-broadcast-tower"></i></div>
+                    <h3>Sensibiliser le grand public</h3>
+                    <p>Mener des campagnes nationales de sensibilisation pour lutter contre les stigmates et promouvoir l'inclusion sociale.</p>
+                </div>
+                <div class="objectif-card">
+                    <div class="objectif-num">05</div>
+                    <div class="objectif-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Mobiliser les ressources</h3>
+                    <p>Développer des partenariats stratégiques avec les institutions, bailleurs et secteur privé pour financer les programmes.</p>
+                </div>
+                <div class="objectif-card">
+                    <div class="objectif-num">06</div>
+                    <div class="objectif-icon"><i class="fas fa-users"></i></div>
+                    <h3>Soutenir les familles</h3>
+                    <p>Offrir accompagnement psychosocial, réseaux d'entraide et ressources pratiques aux familles d'enfants vivant avec un TSA.</p>
+                </div>
+                <div class="objectif-card">
+                    <div class="objectif-num">07</div>
+                    <div class="objectif-icon"><i class="fas fa-database"></i></div>
+                    <h3>Partager les données</h3>
+                    <p>Constituer une base de connaissances commune : répertoire de ressources, études, outils pédagogiques et bonnes pratiques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         ACTIVITÉS
+         ══════════════════════════════════════════ -->
+    <section class="activites-section">
+        <div class="container">
+            <div class="section-title-block light">
+                <h2><i class="fas fa-calendar-check" style="color:var(--b-lght);margin-right:.5rem;"></i> Activités Principales</h2>
+                <div class="section-rule"></div>
+                <p>Les actions concrètes déployées par la Plateforme Autisme Sénégal</p>
+            </div>
+
+            <div class="activites-grid">
+                <div class="activite-card">
+                    <div class="activite-step">Activité 01</div>
+                    <div class="activite-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Création et structuration de la plateforme</h3>
+                    <p>Formalisation juridique, mise en place de la gouvernance, adoption des statuts et des règles de fonctionnement des associations membres.</p>
+                    <div class="activite-tags">
+                        <span class="activite-tag">Gouvernance</span>
+                        <span class="activite-tag">Juridique</span>
+                    </div>
+                </div>
+                <div class="activite-card">
+                    <div class="activite-step">Activité 02</div>
+                    <div class="activite-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Formations et renforcement de capacités</h3>
+                    <p>Ateliers pratiques, formations certifiantes, séminaires pour professionnels, familles et responsables d'associations sur les TSA.</p>
+                    <div class="activite-tags">
+                        <span class="activite-tag">Formation</span>
+                        <span class="activite-tag">Certification</span>
+                    </div>
+                </div>
+                <div class="activite-card">
+                    <div class="activite-step">Activité 03</div>
+                    <div class="activite-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Campagnes de sensibilisation</h3>
+                    <p>Journée mondiale de l'autisme (2 Avril), campagnes médias, actions en milieu scolaire et communautaire à travers tout le Sénégal.</p>
+                    <div class="activite-tags">
+                        <span class="activite-tag">Sensibilisation</span>
+                        <span class="activite-tag">Médias</span>
+                        <span class="activite-tag">2 Avril</span>
+                    </div>
+                </div>
+                <div class="activite-card">
+                    <div class="activite-step">Activité 04</div>
+                    <div class="activite-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Plateforme numérique et ressources</h3>
+                    <p>Site web interactif, répertoires de professionnels et d'écoles inclusives, jeux éducatifs en ligne pour les enfants TSA.</p>
+                    <div class="activite-tags">
+                        <span class="activite-tag">Numérique</span>
+                        <span class="activite-tag">Ressources</span>
+                    </div>
+                </div>
+                <div class="activite-card">
+                    <div class="activite-step">Activité 05</div>
+                    <div class="activite-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Plaidoyer institutionnel</h3>
+                    <p>Dialogues avec les ministères, propositions législatives, participation aux forums nationaux et internationaux sur l'autisme.</p>
+                    <div class="activite-tags">
+                        <span class="activite-tag">Plaidoyer</span>
+                        <span class="activite-tag">Politique</span>
+                    </div>
+                </div>
+                <div class="activite-card">
+                    <div class="activite-step">Activité 06</div>
+                    <div class="activite-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Accompagnement des familles</h3>
+                    <p>Groupes de soutien, ligne d'écoute, guides pratiques, mise en réseau des familles et ateliers de résilience parentale.</p>
+                    <div class="activite-tags">
+                        <span class="activite-tag">Familles</span>
+                        <span class="activite-tag">Soutien</span>
+                    </div>
+                </div>
+                <div class="activite-card">
+                    <div class="activite-step">Activité 07</div>
+                    <div class="activite-icon"><i class="fas fa-search"></i></div>
+                    <h3>Recherche et documentation</h3>
+                    <p>Collecte de données épidémiologiques, études qualitatives sur la prise en charge, publication de rapports annuels d'impact.</p>
+                    <div class="activite-tags">
+                        <span class="activite-tag">Recherche</span>
+                        <span class="activite-tag">Documentation</span>
+                    </div>
+                </div>
+                <div class="activite-card">
+                    <div class="activite-step">Activité 08</div>
+                    <div class="activite-icon"><i class="fas fa-coins"></i></div>
+                    <h3>Mobilisation de fonds</h3>
+                    <p>Campagnes de collecte, soumission de projets aux bailleurs, développement de partenariats publics-privés et événements caritatifs.</p>
+                    <div class="activite-tags">
+                        <span class="activite-tag">Financement</span>
+                        <span class="activite-tag">Partenariats</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         RÉSULTATS ATTENDUS
+         ══════════════════════════════════════════ -->
+    <section class="resultats-section">
+        <div class="container">
+            <div class="section-title-block">
+                <h2><i class="fas fa-chart-line" style="color:var(--b-aut);margin-right:.5rem;"></i> Résultats Attendus</h2>
+                <div class="section-rule"></div>
+                <p>L'impact que la Plateforme Autisme Sénégal vise à générer</p>
+            </div>
+
+            <div class="resultats-grid">
+                <div class="resultat-card r1">
+                    <div class="resultat-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="resultat-num">1</div>
+                    <h3>Réseau national unifié</h3>
+                    <p>Une plateforme fédératrice reconnue, regroupant toutes les associations d'autisme actives au Sénégal, avec une voix commune auprès des institutions.</p>
+                    <div class="resultat-progress"><div class="resultat-bar"></div></div>
+                </div>
+                <div class="resultat-card r2">
+                    <div class="resultat-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="resultat-num">500+</div>
+                    <h3>Professionnels formés</h3>
+                    <p>Médecins, thérapeutes, enseignants et accompagnateurs formés aux meilleures pratiques de détection et prise en charge des TSA.</p>
+                    <div class="resultat-progress"><div class="resultat-bar"></div></div>
+                </div>
+                <div class="resultat-card r3">
+                    <div class="resultat-icon"><i class="fas fa-users"></i></div>
+                    <div class="resultat-num">10 000+</div>
+                    <h3>Familles sensibilisées</h3>
+                    <p>Des familles informées, soutenues et outillées pour accompagner leur enfant dans son développement et son inclusion sociale.</p>
+                    <div class="resultat-progress"><div class="resultat-bar"></div></div>
+                </div>
+                <div class="resultat-card r4">
+                    <div class="resultat-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="resultat-num">3+</div>
+                    <h3>Politiques publiques impactées</h3>
+                    <p>Des recommandations intégrées dans les politiques nationales de santé, d'éducation inclusive et de protection sociale de l'enfant.</p>
+                    <div class="resultat-progress"><div class="resultat-bar"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         CONTACT & PARTENAIRES
+         ══════════════════════════════════════════ -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-title-block light" style="margin-bottom:3rem;">
+                <h2>Contact &amp; Partenaires</h2>
+                <div class="section-rule"></div>
+                <p>Rejoignez-nous dans cette mission pour l'autisme au Sénégal</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-block">
+                    <h3>Plateforme Autisme Sénégal</h3>
+                    <p>Pour tout renseignement, partenariat ou adhésion, contactez-nous via les canaux suivants&nbsp;:</p>
+
+                    <a href="mailto:contact@plateforme-autisme-senegal.org" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-item-text">
+                            <span class="label">E-mail</span>
+                            <span class="value">contact@plateforme-autisme-senegal.org</span>
+                        </div>
+                    </a>
+                    <a href="tel:+15513319306" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-item-text">
+                            <span class="label">Téléphone</span>
+                            <span class="value">+1 (551) 331-9306<br>+221 77 204 58 50<br>+221 77 657 82 75</span>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item-text">
+                            <span class="label">Adresse</span>
+                            <span class="value">Liberté 6 Villa N°7974<br>Dakar, Sénégal</span>
+                        </div>
+                    </div>
+                    <a href="https://plateforme-autisme-senegal.netlify.app" target="_blank" class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div class="contact-item-text">
+                            <span class="label">Site web</span>
+                            <span class="value">plateforme-autisme-senegal.netlify.app</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="partenaires-block">
+                    <h3><i class="fas fa-star" style="color:var(--b-lght);margin-right:.5rem;"></i> Nos Partenaires</h3>
+                    <div class="partenaires-list">
+                        <div class="partenaire-chip"><i class="fas fa-landmark"></i> Min. Santé &amp; Action Sociale</div>
+                        <div class="partenaire-chip"><i class="fas fa-landmark"></i> Min. Éducation Nationale</div>
+                        <div class="partenaire-chip"><i class="fas fa-landmark"></i> Min. Protection Sociale</div>
+                        <div class="partenaire-chip"><i class="fas fa-flag"></i> Institut Français du Sénégal</div>
+                        <div class="partenaire-chip"><i class="fas fa-film"></i> Cinéma Pathé Dakar</div>
+                        <div class="partenaire-chip"><i class="fas fa-hands-helping"></i> SOLID</div>
+                        <div class="partenaire-chip"><i class="fas fa-heart"></i> I'AM Autisme Sénégal</div>
+                        <div class="partenaire-chip"><i class="fas fa-users"></i> AMS</div>
+                        <div class="partenaire-chip"><i class="fas fa-hospital"></i> CHU Fann — Pédopsychiatrie</div>
+                        <div class="partenaire-chip"><i class="fas fa-globe-africa"></i> OMS Sénégal</div>
+                    </div>
+
+                    <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(0,166,251,0.25);">
+                        <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:1rem;">
+                            <i class="fas fa-puzzle-piece" style="color:var(--b-lght);margin-right:.4rem;"></i>
+                            La Plateforme Autisme Sénégal est ouverte à tout partenariat visant à améliorer la prise en charge 
+                            des enfants vivant avec les Troubles du Spectre Autistique.
+                        </p>
+                        <a href="evenement.html" class="contact-item" style="text-decoration:none;color:white;">
+                            <i class="fas fa-calendar-star"></i>
+                            <div class="contact-item-text">
+                                <span class="label">Prochain événement</span>
+                                <span class="value">Journée Mondiale Autisme — 2 Avril 2026</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         CTA TÉLÉCHARGEMENT / RETOUR
+         ══════════════════════════════════════════ -->
+    <div class="cta-download-bar">
+        <p><i class="fas fa-file-pdf" style="margin-right:.5rem;"></i> Ce dépliant est disponible en version imprimable</p>
+        <a href="javascript:window.print()" class="btn-download">
+            <i class="fas fa-print"></i> Imprimer / Enregistrer en PDF
+        </a>
+        <a href="evenement.html" class="btn-back-event">
+            <i class="fas fa-calendar-alt"></i> Voir l'Événement
+        </a>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         FOOTER
+         ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logo-pas-officiel.png" alt="Logo P.A.S" style="width:50px;height:50px;border-radius:50%;object-fit:cover;margin-bottom:.5rem;">
+                <h3>Plateforme Autisme Sénégal</h3>
+                <p>"Ensemble pour l'Autisme"</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#objectifs">Objectifs</a></li>
+                    <li><a href="index.html#activites">Activités</a></li>
+                    <li><a href="evenement.html">Événement 2 Avril</a></li>
+                    <li><a href="depliant.html">Dépliant P.A.S</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Ressources</h4>
+                <ul>
+                    <li><a href="repertoire-medecins.html">Répertoire Médecins</a></li>
+                    <li><a href="repertoire-paramedicaux.html">Para-médicaux</a></li>
+                    <li><a href="repertoire-ecoles.html">Écoles Inclusives</a></li>
+                    <li><a href="jeux-interactifs.html">Jeux Interactifs</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> contact@plateforme-autisme-senegal.org</p>
+                <p><i class="fas fa-phone"></i> +1 (551) 331-9306 / +221 77 204 58 50</p>
+                <p><i class="fas fa-map-marker-alt"></i> Liberté 6 Villa N°7974, Dakar, Sénégal</p>
+                <p style="margin-top:.5rem;font-size:.8rem;opacity:.6;">
+                    <i class="fas fa-puzzle-piece" style="margin-right:.3rem;"></i>
+                    Symbole mondial de l'autisme
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Plateforme Autisme Sénégal. Tous droits réservés. Fait avec ❤️ pour les enfants TSA du Sénégal.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2024-03-28b"></script>
+</body>
+</html>

@@ -246,6 +246,18 @@ main:hover .animated-background .floating-hearts {
     color: var(--white);
 }
 
+.navbar.scrolled .nav-logo h2 {
+    color: var(--white);
+}
+
+.navbar.scrolled .nav-event {
+    color: var(--white) !important;
+}
+
+.navbar.scrolled .nav-event:hover {
+    color: #90E0EF !important;
+}
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -298,8 +310,9 @@ main:hover .animated-background .floating-hearts {
 
 .nav-logo h2 {
     color: var(--primary-color);
-    font-size: 1.25rem;
+    font-size: 0.95rem;
     margin: 0;
+    white-space: nowrap;
 }
 
 .nav-logo i {
@@ -309,18 +322,20 @@ main:hover .animated-background .floating-hearts {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.3rem;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
+    font-size: 0.875rem;
     transition: color 0.3s ease;
     position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -344,10 +359,10 @@ main:hover .animated-background .floating-hearts {
 
 /* ── Lien Événement avec badge ── */
 .nav-event {
-    color: #1A4F8A !important;
-    font-weight: 600 !important;
+    color: #1A4F8A;
+    font-weight: 600;
 }
-.nav-event:hover { color: #0073CF !important; }
+.nav-event:hover { color: #0073CF; }
 
 .nav-badge {
     display: inline-block;
