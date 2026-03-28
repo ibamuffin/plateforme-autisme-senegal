@@ -263,9 +263,10 @@ main:hover .animated-background .floating-hearts {
 }
 
 .logo-image {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
     position: relative;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 4px 8px rgba(30, 64, 175, 0.3));
@@ -317,6 +318,9 @@ main:hover .animated-background .floating-hearts {
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .nav-link:hover {
@@ -336,6 +340,31 @@ main:hover .animated-background .floating-hearts {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+/* ── Lien Événement avec badge ── */
+.nav-event {
+    color: #1A4F8A !important;
+    font-weight: 600 !important;
+}
+.nav-event:hover { color: #0073CF !important; }
+
+.nav-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    font-size: 0.58rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 2px;
+    vertical-align: middle;
+    line-height: 1.2;
+    animation: pulse-badge 2s infinite;
+}
+@keyframes pulse-badge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
 }
 
 .hamburger {

@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journée Mondiale de l'Autisme — 2 Avril 2026 — P.A.S Sénégal</title>
+    <meta name="description" content="Journée Mondiale de l'Autisme 2026 au Sénégal - Conférence, Débats, Documentaire, Projections de films au Cinéma Pathé Dakar le 2 Avril 2026 à 9H">
+    <meta name="keywords" content="journée mondiale autisme, 2 avril, sénégal, conférence, TSA, dakar, PAS, plateforme autisme">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css?v=2024-03-28">
+    <link rel="stylesheet" href="styles/web3-components.css?v=2024-03-28">
+    <link rel="stylesheet" href="styles/fontawesome-local.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <script src="js/fontawesome-fallback.js"></script>
+    <style>
+        /* ═══════════════════════════════════════════════════
+           STYLES SPÉCIFIQUES PAGE ÉVÉNEMENT
+           Palette bleu autisme cohérente avec P.A.S
+           ═══════════════════════════════════════════════════ */
+        :root {
+            --ev-nuit:   #0B1D35;
+            --ev-deep:   #023E8A;
+            --ev-main:   #1A4F8A;
+            --ev-royal:  #2E86C1;
+            --ev-ciel:   #5DADE2;
+            --ev-aut:    #0073CF;
+            --ev-lght:   #00A6FB;
+            --ev-ice:    #90E0EF;
+            --ev-pale:   #E8F4FF;
+        }
+
+        /* ── Navbar badge événement ── */
+        .nav-event { position: relative; }
+        .nav-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 4px;
+            vertical-align: middle;
+            animation: pulse-badge 2s infinite;
+        }
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* ── HERO ÉVÉNEMENT ── */
+        .hero-event {
+            background: linear-gradient(160deg, var(--ev-nuit) 0%, var(--ev-deep) 40%, var(--ev-main) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 2rem 4rem;
+        }
+
+        .hero-event::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .hero-event-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0,115,207,0.25);
+            border: 1px solid rgba(0,166,251,0.4);
+            color: var(--ev-lght);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-event-badge .dot-live {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero-event-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0.5rem;
+        }
+        .hero-event-title span {
+            display: block;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+            color: var(--ev-lght);
+            letter-spacing: 3px;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-event-date {
+            background: rgba(0,115,207,0.3);
+            border: 2px solid var(--ev-aut);
+            border-radius: 16px;
+            padding: 1.2rem 2.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+        .hero-event-date .date-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+        .hero-event-date .date-mois {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--ev-lght);
+        }
+        .hero-event-date .date-info {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.3rem;
+        }
+
+        .hero-event-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 2.5rem;
+        }
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+        }
+        .hero-meta-item i { color: var(--ev-ciel); font-size: 1.1rem; }
+
+        .hero-event-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        .btn-event-primary {
+            background: linear-gradient(135deg, var(--ev-aut), var(--ev-lght));
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,115,207,0.4);
+        }
+        .btn-event-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(0,115,207,0.6); }
+        .btn-event-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        .btn-event-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+        /* Puzzles décoratifs */
+        .puzzle-deco {
+            position: absolute;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .pz-shape {
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            background: var(--ev-ciel);
+        }
+
+        /* ── PROGRAMME ── */
+        .programme-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--ev-pale) 0%, #f8fafc 100%);
+        }
+        .programme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .programme-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 2px solid var(--ev-pale);
+            box-shadow: 0 4px 20px rgba(26,79,138,0.08);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .programme-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ev-aut), var(--ev-lght));
+        }
+        .programme-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(26,79,138,0.15); }
+        .programme-card .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ev-aut), var(--ev-royal));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        .programme-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ev-main);
+            margin-bottom: 0.5rem;
+        }
+        .programme-card p {
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* ── INTERVENANTS ── */
+        .intervenants-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--ev-nuit) 0%, var(--ev-deep) 100%);
+        }
+        .intervenants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .intervenant-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(0,166,251,0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        .intervenant-card:hover {
+            background: rgba(0,115,207,0.15);
+            border-color: rgba(0,166,251,0.5);
+            transform: translateY(-3px);
+        }
+        .intervenant-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ev-aut), var(--ev-royal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+            border: 2px solid rgba(0,166,251,0.4);
+        }
+        .intervenant-role {
+            display: inline-block;
+            background: rgba(0,115,207,0.3);
+            border: 1px solid rgba(0,166,251,0.4);
+            color: var(--ev-lght);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 0.7rem;
+        }
+        .intervenant-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+        }
+        .intervenant-titre {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.3rem;
+        }
+
+        /* ── THÈME ── */
+        .theme-section {
+            padding: 5rem 0;
+            background: white;
+        }
+        .theme-card {
+            background: linear-gradient(135deg, var(--ev-nuit) 0%, var(--ev-main) 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(11,29,53,0.25);
+        }
+        .theme-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .theme-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ev-ciel);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        .theme-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            font-weight: 700;
+            color: white;
+            font-style: italic;
+            line-height: 1.5;
+            position: relative;
+            z-index: 2;
+        }
+        .theme-text em {
+            color: var(--ev-lght);
+            font-style: normal;
+        }
+
+        /* ── INFOLINE ── */
+        .infoline-bar {
+            background: linear-gradient(135deg, var(--ev-aut), var(--ev-royal));
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .infoline-bar p {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .infoline-bar a {
+            color: #fde68a;
+            text-decoration: none;
+        }
+        .infoline-bar a:hover { text-decoration: underline; }
+
+        /* ── FICHE INSTITUTIONNELLE ── */
+        .fiche-section {
+            padding: 5rem 0;
+            background: var(--ev-pale);
+        }
+        .fiche-container {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(26,79,138,0.12);
+        }
+        .fiche-header {
+            background: linear-gradient(135deg, var(--ev-nuit), var(--ev-main));
+            padding: 2.5rem 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .fiche-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ev-aut), var(--ev-lght), var(--ev-ciel));
+        }
+        .fiche-logo-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid rgba(0,166,251,0.5);
+            background: rgba(0,115,207,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .fiche-logo-circle img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .fiche-header-info h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+        .fiche-header-info p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        .fiche-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.7rem;
+        }
+        .fiche-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .fiche-body {
+            padding: 2.5rem 3rem;
+        }
+        .fiche-intro {
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.7;
+            padding: 1.2rem 1.5rem;
+            background: var(--ev-pale);
+            border-left: 4px solid var(--ev-aut);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        /* Stats hexagones */
+        .stats-hex-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .stat-hex-item {
+            flex: 1;
+            min-width: 140px;
+            background: white;
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .stat-hex-val {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            display: block;
+        }
+        .stat-hex-lbl {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--ev-main);
+            display: block;
+            margin-top: 0.2rem;
+        }
+        .stat-hex-src {
+            font-size: 0.65rem;
+            color: #9ca3af;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        /* Deux colonnes missions/activités */
+        .fiche-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 768px) { .fiche-cols { grid-template-columns: 1fr; } }
+        .fiche-col-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--ev-pale);
+        }
+        .fiche-col-header {
+            padding: 1rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .fiche-col-header h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .fiche-col-body {
+            padding: 1rem 1.2rem;
+            background: var(--ev-pale);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .fiche-col-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(26,79,138,0.08);
+        }
+        .fiche-col-item:last-child { border-bottom: none; }
+        .fiche-bullet {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .fiche-col-item span {
+            font-size: 0.82rem;
+            color: #374151;
+            line-height: 1.4;
+        }
+
+        /* Résultats attendus */
+        .resultats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .resultat-card {
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            border: 2px solid;
+        }
+        .resultat-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            display: block;
+        }
+        .resultat-lbl {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.3rem;
+            display: block;
+        }
+
+        /* ── PARTENAIRES ── */
+        .partenaires-section {
+            padding: 4rem 0;
+            background: white;
+            border-top: 1px solid var(--ev-pale);
+        }
+        .partenaires-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .partenaire-badge {
+            background: var(--ev-pale);
+            border: 1px solid rgba(26,79,138,0.15);
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--ev-main);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .partenaire-badge i { color: var(--ev-aut); }
+
+        /* ── SECTION TITRE COMMUNE ── */
+        .ev-section-title {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .ev-section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--ev-nuit);
+        }
+        .ev-section-title.light h2 { color: white; }
+        .ev-section-title p {
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+        .ev-section-title.light p { color: rgba(255,255,255,0.7); }
+        .ev-rule {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--ev-aut), var(--ev-lght));
+            border-radius: 3px;
+            margin: 0.8rem auto 0;
+        }
+
+        /* ── COUNTDOWN ── */
+        .countdown-section {
+            background: linear-gradient(135deg, var(--ev-aut), var(--ev-royal));
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .countdown-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+        }
+        .countdown-boxes {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .countdown-box {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            min-width: 90px;
+            backdrop-filter: blur(10px);
+        }
+        .countdown-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            display: block;
+            line-height: 1;
+        }
+        .countdown-lbl {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 0.3rem;
+            display: block;
+        }
+
+        /* ── LIEU ── */
+        .lieu-section {
+            padding: 4rem 0;
+            background: var(--ev-pale);
+        }
+        .lieu-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 20px rgba(26,79,138,0.08);
+            border: 1px solid rgba(26,79,138,0.1);
+        }
+        .lieu-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--ev-aut), var(--ev-lght));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            flex-shrink: 0;
+        }
+        .lieu-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--ev-nuit);
+        }
+        .lieu-info p {
+            color: #6b7280;
+            margin-top: 0.3rem;
+        }
+        .lieu-badges {
+            display: flex;
+            gap: 0.7rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .lieu-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: var(--ev-pale);
+            border: 1px solid rgba(26,79,138,0.2);
+            color: var(--ev-main);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        .lieu-badge i { color: var(--ev-aut); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-event { padding: 100px 1rem 3rem; }
+            .fiche-header { flex-direction: column; text-align: center; padding: 1.5rem; }
+            .fiche-body { padding: 1.5rem; }
+            .stats-hex-row { flex-direction: column; }
+            .programme-grid { grid-template-columns: 1fr 1fr; }
+            .intervenants-grid { grid-template-columns: 1fr 1fr; }
+            .lieu-card { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .programme-grid { grid-template-columns: 1fr; }
+            .intervenants-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background" id="animatedBg"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo-pas-officiel.png" alt="Logo P.A.S - Plateforme Autisme Sénégal" class="logo-image">
+                <h2>Plateforme Autisme Sénégal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#qui-sommes-nous" class="nav-link">Qui sommes-nous ?</a></li>
+                <li class="nav-item"><a href="index.html#objectifs" class="nav-link">Objectifs</a></li>
+                <li class="nav-item"><a href="index.html#activites" class="nav-link">Activités</a></li>
+                <li class="nav-item"><a href="index.html#ressources" class="nav-link">Ressources</a></li>
+                <li class="nav-item">
+                    <a href="evenement.html" class="nav-link active nav-event">
+                        <i class="fas fa-calendar-star"></i> Événement
+                        <span class="nav-badge">2 Avr</span>
+                    </a>
+                </li>
+                <li class="nav-item"><a href="index.html#donation" class="nav-link">Don</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO ÉVÉNEMENT
+         ═══════════════════════════════════════════════════════ -->
+    <section class="hero-event" id="accueil">
+        <!-- Puzzles décoratifs -->
+        <div class="puzzle-deco" style="top:12%;left:4%;"><div class="pz-shape" style="width:40px;height:40px;transform:rotate(15deg);"></div></div>
+        <div class="puzzle-deco" style="top:8%;right:5%;"><div class="pz-shape" style="width:50px;height:50px;transform:rotate(-20deg);"></div></div>
+        <div class="puzzle-deco" style="bottom:20%;left:3%;"><div class="pz-shape" style="width:30px;height:30px;transform:rotate(45deg);"></div></div>
+        <div class="puzzle-deco" style="bottom:25%;right:4%;"><div class="pz-shape" style="width:35px;height:35px;transform:rotate(-35deg);"></div></div>
+
+        <!-- Badge Journée Mondiale -->
+        <div class="hero-event-badge">
+            <span class="dot-live"></span>
+            Journée Mondiale de l'Autisme 2026
+        </div>
+
+        <!-- Logo central -->
+        <img src="images/logo-pas-officiel.png"
+             alt="Logo P.A.S - Ensemble pour l'Autisme"
+             style="width:160px;height:160px;border-radius:50%;border:3px solid rgba(0,166,251,0.5);margin-bottom:1.5rem;position:relative;z-index:2;box-shadow:0 0 40px rgba(0,115,207,0.4);">
+
+        <!-- Titre -->
+        <h1 class="hero-event-title">
+            <span>Journée Mondiale de</span>
+            l'Autisme
+        </h1>
+
+        <!-- Date encadrée -->
+        <div class="hero-event-date">
+            <div class="date-num">2</div>
+            <div class="date-mois">AVRIL 2026</div>
+            <div class="date-info"><i class="fas fa-clock"></i> À 9H00 — Cinéma Pathé Dakar</div>
+        </div>
+
+        <!-- Métadonnées -->
+        <div class="hero-event-meta">
+            <div class="hero-meta-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Cinéma Pathé Dakar</span>
+            </div>
+            <div class="hero-meta-item">
+                <i class="fas fa-clock"></i>
+                <span>9H00 — Toute la journée</span>
+            </div>
+            <div class="hero-meta-item">
+                <i class="fas fa-phone"></i>
+                <span>77 037 52 23</span>
+            </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="hero-event-ctas">
+            <a href="#programme" class="btn-event-primary">
+                <i class="fas fa-calendar-check"></i>
+                Voir le programme
+            </a>
+            <a href="#intervenants" class="btn-event-outline">
+                <i class="fas fa-users"></i>
+                Les intervenants
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         BARRE INFOLINE
+         ═══════════════════════════════════════════════════════ -->
+    <div class="infoline-bar">
+        <p>
+            <i class="fas fa-phone-alt"></i>
+            Infoline &amp; inscriptions :
+            <a href="tel:+22177037523">+221 77 037 52 23</a>
+            &nbsp;|&nbsp;
+            <i class="fas fa-map-marker-alt"></i>
+            Cinéma Pathé Dakar — Entrée libre
+        </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PROGRAMME
+         ═══════════════════════════════════════════════════════ -->
+    <section class="programme-section" id="programme">
+        <div class="container">
+            <div class="ev-section-title">
+                <h2><i class="fas fa-calendar-alt" style="color:var(--ev-aut);margin-right:0.5rem;"></i>Programme de la Journée</h2>
+                <p>Une journée complète de conférences, débats et projections cinématographiques</p>
+                <div class="ev-rule"></div>
+            </div>
+
+            <div class="programme-grid">
+                <div class="programme-card">
+                    <div class="card-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3>Conférence</h3>
+                    <p>Présentations d'experts sur les avancées dans la prise en charge des personnes autistes au Sénégal et dans le monde.</p>
+                </div>
+                <div class="programme-card">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Débats</h3>
+                    <p>Échanges interactifs entre professionnels, parents, associations et représentants institutionnels sur les enjeux actuels.</p>
+                </div>
+                <div class="programme-card">
+                    <div class="card-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Documentaire</h3>
+                    <p>Projection d'un documentaire sur la vie quotidienne des familles d'enfants autistes au Sénégal.</p>
+                </div>
+                <div class="programme-card">
+                    <div class="card-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Projections de films</h3>
+                    <p>Sélection de films abordant les thématiques de l'autisme, l'inclusion sociale et la neurodiversité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         THÈME
+         ═══════════════════════════════════════════════════════ -->
+    <section class="theme-section">
+        <div class="container">
+            <div class="theme-card">
+                <p class="theme-label">Thème de la journée 2026</p>
+                <p class="theme-text">
+                    « La prise en charge des jeunes autistes :<br>
+                    <em>défis, inclusion et parcours de vie</em> »
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         INTERVENANTS
+         ═══════════════════════════════════════════════════════ -->
+    <section class="intervenants-section" id="intervenants">
+        <div class="container">
+            <div class="ev-section-title light">
+                <h2><i class="fas fa-user-tie" style="color:var(--ev-ciel);margin-right:0.5rem;"></i>Les Intervenants</h2>
+                <p>Des experts et professionnels reconnus pour partager leur expertise</p>
+                <div class="ev-rule"></div>
+            </div>
+
+            <div class="intervenants-grid">
+                <div class="intervenant-card">
+                    <div class="intervenant-avatar">AT</div>
+                    <div class="intervenant-role">Conférencier</div>
+                    <div class="intervenant-name">Mr. Aboubekr THIAM</div>
+                    <div class="intervenant-titre">Spécialiste Autisme &amp; TSA</div>
+                </div>
+                <div class="intervenant-card">
+                    <div class="intervenant-avatar">LF</div>
+                    <div class="intervenant-role">Conférencier</div>
+                    <div class="intervenant-name">Pr. Lamine FALL</div>
+                    <div class="intervenant-titre">Professeur — Expert en Neurosciences</div>
+                </div>
+                <div class="intervenant-card">
+                    <div class="intervenant-avatar">MG</div>
+                    <div class="intervenant-role">Conférencier</div>
+                    <div class="intervenant-name">Pr. Massamba GUEYE</div>
+                    <div class="intervenant-titre">Professeur — Psychiatre</div>
+                </div>
+                <div class="intervenant-card">
+                    <div class="intervenant-avatar" style="background:linear-gradient(135deg,#9333ea,#6b21a8);">RD</div>
+                    <div class="intervenant-role" style="background:rgba(147,51,234,0.3);border-color:rgba(147,51,234,0.4);color:#d8b4fe;">Modératrice</div>
+                    <div class="intervenant-name">Mme Raby DIALLO KANE</div>
+                    <div class="intervenant-titre">Modératrice — Journaliste</div>
+                </div>
+                <div class="intervenant-card">
+                    <div class="intervenant-avatar" style="background:linear-gradient(135deg,#059669,#065f46);">IG</div>
+                    <div class="intervenant-role" style="background:rgba(5,150,105,0.3);border-color:rgba(5,150,105,0.4);color:#6ee7b7;">Conférencier</div>
+                    <div class="intervenant-name">Dr. Ibrahima GIROUX</div>
+                    <div class="intervenant-titre">Médecin — Spécialiste Développement Enfant</div>
+                </div>
+            </div>
+
+            <!-- Organisateurs -->
+            <div style="text-align:center;margin-top:3rem;padding:1.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(0,166,251,0.2);border-radius:16px;">
+                <p style="font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ev-ciel);margin-bottom:0.8rem;">Organisé par</p>
+                <div style="display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;">
+                    <div style="display:flex;align-items:center;gap:0.7rem;">
+                        <img src="images/logo-pas-officiel.png" alt="P.A.S" style="width:40px;height:40px;border-radius:50%;">
+                        <span style="color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.9rem;">Plateforme Autisme Sénégal (P.A.S)</span>
+                    </div>
+                    <div style="color:rgba(255,255,255,0.5);">•</div>
+                    <div style="display:flex;align-items:center;gap:0.5rem;">
+                        <i class="fas fa-building" style="color:var(--ev-ciel);"></i>
+                        <span style="color:white;font-size:0.9rem;font-weight:600;">Solidarité Enfance Inclusive</span>
+                    </div>
+                    <div style="color:rgba(255,255,255,0.5);">•</div>
+                    <div style="display:flex;align-items:center;gap:0.5rem;">
+                        <i class="fas fa-sun" style="color:#fbbf24;"></i>
+                        <span style="color:white;font-size:0.9rem;font-weight:600;">CIVA — Centre Inclusif de Vacances</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         LIEU & LOGISTIQUE
+         ═══════════════════════════════════════════════════════ -->
+    <section class="lieu-section" id="lieu">
+        <div class="container">
+            <div class="ev-section-title">
+                <h2><i class="fas fa-map-marker-alt" style="color:var(--ev-aut);margin-right:0.5rem;"></i>Lieu de l'Événement</h2>
+                <div class="ev-rule"></div>
+            </div>
+
+            <div class="lieu-card" style="margin-top:2rem;">
+                <div class="lieu-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <div class="lieu-info">
+                    <h3>Cinéma Pathé Dakar</h3>
+                    <p>Dakar, Sénégal — Le <strong>2 Avril 2026 à 9H00</strong></p>
+                    <div class="lieu-badges">
+                        <span class="lieu-badge"><i class="fas fa-door-open"></i> Entrée libre</span>
+                        <span class="lieu-badge"><i class="fas fa-clock"></i> Toute la journée</span>
+                        <span class="lieu-badge"><i class="fas fa-map-pin"></i> Dakar, Sénégal</span>
+                        <span class="lieu-badge"><i class="fas fa-phone"></i> 77 037 52 23</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         FICHE INSTITUTIONNELLE P.A.S
+         ═══════════════════════════════════════════════════════ -->
+    <section class="fiche-section" id="fiche-pas">
+        <div class="container">
+            <div class="ev-section-title">
+                <h2><i class="fas fa-building" style="color:var(--ev-aut);margin-right:0.5rem;"></i>La Plateforme Autisme Sénégal</h2>
+                <p>Fiche institutionnelle — P.A.S</p>
+                <div class="ev-rule"></div>
+            </div>
+
+            <div class="fiche-container" style="margin-top:2rem;">
+                <!-- Header fiche -->
+                <div class="fiche-header">
+                    <div class="fiche-logo-circle">
+                        <img src="images/logo-pas-officiel.png" alt="Logo P.A.S">
+                    </div>
+                    <div class="fiche-header-info">
+                        <h2>Plateforme des Associations d'Autisme au Sénégal</h2>
+                        <p>Fédérer · Plaider · Sensibiliser · Accompagner · Former · Connecter</p>
+                        <p style="margin-top:0.3rem;font-style:italic;color:rgba(255,255,255,0.6);font-size:0.8rem;">
+                            « Ensemble pour une société inclusive où chaque personne compte »
+                        </p>
+                        <div class="fiche-tags">
+                            <span class="fiche-tag" style="background:var(--ev-main);">Associations</span>
+                            <span class="fiche-tag" style="background:var(--ev-deep);">TSA</span>
+                            <span class="fiche-tag" style="background:var(--ev-aut);">Plaidoyer</span>
+                            <span class="fiche-tag" style="background:var(--ev-royal);">Sénégal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corps fiche -->
+                <div class="fiche-body">
+                    <p class="fiche-intro">
+                        La <strong>Plateforme des Associations d'Autisme au Sénégal (P.A.S)</strong> est une structure fédératrice
+                        qui regroupe les associations engagées dans le domaine de l'autisme. Elle vise à promouvoir une société
+                        inclusive, équitable et respectueuse des droits des personnes autistes, à travers le plaidoyer,
+                        la sensibilisation, le renforcement des capacités et l'amélioration de l'accès aux services éducatifs,
+                        sanitaires et sociaux.
+                    </p>
+
+                    <!-- Statistiques clés -->
+                    <div style="margin-bottom:1.5rem;">
+                        <h3 style="font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:var(--ev-main);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem;">
+                            <i class="fas fa-chart-bar" style="margin-right:0.4rem;"></i>Données Clés
+                        </h3>
+                        <div class="stats-hex-row">
+                            <div class="stat-hex-item" style="border-color:rgba(26,79,138,0.2);">
+                                <span class="stat-hex-val" style="color:var(--ev-aut);">1/160</span>
+                                <span class="stat-hex-lbl">Personnes touchées</span>
+                                <span class="stat-hex-src">Source : OMS</span>
+                            </div>
+                            <div class="stat-hex-item" style="border-color:rgba(0,115,207,0.2);">
+                                <span class="stat-hex-val" style="color:var(--ev-royal);">0,8%</span>
+                                <span class="stat-hex-lbl">Enfants au Sénégal</span>
+                                <span class="stat-hex-src">Source : Hôpital Fann</span>
+                            </div>
+                            <div class="stat-hex-item" style="border-color:rgba(93,173,226,0.3);">
+                                <span class="stat-hex-val" style="color:var(--ev-ciel);">7</span>
+                                <span class="stat-hex-lbl">Objectifs stratégiques</span>
+                                <span class="stat-hex-src">Plan d'action P.A.S</span>
+                            </div>
+                            <div class="stat-hex-item" style="border-color:rgba(16,185,129,0.2);">
+                                <span class="stat-hex-val" style="color:#059669;">4</span>
+                                <span class="stat-hex-lbl">Résultats attendus</span>
+                                <span class="stat-hex-src">Programmes 2025-2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Missions & Activités -->
+                    <div class="fiche-cols">
+                        <div class="fiche-col-card">
+                            <div class="fiche-col-header" style="background:linear-gradient(135deg,var(--ev-main),var(--ev-royal));">
+                                <i class="fas fa-bullseye" style="color:white;font-size:1rem;"></i>
+                                <h4>Objectifs Stratégiques</h4>
+                            </div>
+                            <div class="fiche-col-body">
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-aut);"></div>
+                                    <span>Créer un cadre de concertation pérenne avec l'État</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-royal);"></div>
+                                    <span>Inciter les autorités à réaliser un état des lieux</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-ciel);"></div>
+                                    <span>Renforcer le personnel médical et paramédical</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-main);"></div>
+                                    <span>Élaborer des programmes éducatifs adaptés</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-aut);"></div>
+                                    <span>Renforcer les capacités du corps enseignant</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-royal);"></div>
+                                    <span>Mettre en place un système d'éducation inclusive</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-ciel);"></div>
+                                    <span>Renforcer les infrastructures spécialisées</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fiche-col-card">
+                            <div class="fiche-col-header" style="background:linear-gradient(135deg,var(--ev-deep),var(--ev-aut));">
+                                <i class="fas fa-cogs" style="color:white;font-size:1rem;"></i>
+                                <h4>Nos Activités Clés</h4>
+                            </div>
+                            <div class="fiche-col-body">
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-aut);"></div>
+                                    <span>Coordination des actions des associations membres</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-royal);"></div>
+                                    <span>Sensibilisation des autorités publiques</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-ciel);"></div>
+                                    <span>Actions de plaidoyer institutionnel</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-main);"></div>
+                                    <span>Création de cadres de concertation</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-aut);"></div>
+                                    <span>Formation et renforcement des capacités</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-royal);"></div>
+                                    <span>Accompagnement des associations membres</span>
+                                </div>
+                                <div class="fiche-col-item">
+                                    <div class="fiche-bullet" style="background:var(--ev-ciel);"></div>
+                                    <span>Mise en relation avec les bailleurs de fonds</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Résultats attendus -->
+                    <div>
+                        <h3 style="font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:var(--ev-main);text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem;">
+                            <i class="fas fa-trophy" style="margin-right:0.4rem;"></i>Résultats Attendus
+                        </h3>
+                        <div class="resultats-row">
+                            <div class="resultat-card" style="border-color:rgba(26,79,138,0.2);background:var(--ev-pale);">
+                                <span class="resultat-num" style="color:var(--ev-aut);">1</span>
+                                <span class="resultat-lbl" style="color:var(--ev-main);">Cadre de concertation formalisé avec l'État</span>
+                            </div>
+                            <div class="resultat-card" style="border-color:rgba(0,115,207,0.2);background:#eff8ff;">
+                                <span class="resultat-num" style="color:var(--ev-royal);">2</span>
+                                <span class="resultat-lbl" style="color:var(--ev-main);">Plan national autisme adopté</span>
+                            </div>
+                            <div class="resultat-card" style="border-color:rgba(93,173,226,0.2);background:#f0faff;">
+                                <span class="resultat-num" style="color:var(--ev-ciel);">3</span>
+                                <span class="resultat-lbl" style="color:var(--ev-main);">Personnel médical renforcé</span>
+                            </div>
+                            <div class="resultat-card" style="border-color:rgba(16,185,129,0.2);background:#f0fdf4;">
+                                <span class="resultat-num" style="color:#059669;">4</span>
+                                <span class="resultat-lbl" style="color:#065f46;">Accès aux services amélioré</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PARTENAIRES & SOUTIENS
+         ═══════════════════════════════════════════════════════ -->
+    <section class="partenaires-section">
+        <div class="container">
+            <div class="ev-section-title">
+                <h2><i class="fas fa-handshake" style="color:var(--ev-aut);margin-right:0.5rem;"></i>Partenaires &amp; Soutiens Institutionnels</h2>
+                <p>Cet événement est organisé avec le soutien de partenaires institutionnels clés</p>
+                <div class="ev-rule"></div>
+            </div>
+
+            <div class="partenaires-grid">
+                <div class="partenaire-badge"><i class="fas fa-university"></i> Ministère de la Famille et des Solidarités</div>
+                <div class="partenaire-badge"><i class="fas fa-graduation-cap"></i> Ministère de l'Éducation Nationale</div>
+                <div class="partenaire-badge"><i class="fas fa-tools"></i> Ministère de la Formation Professionnelle</div>
+                <div class="partenaire-badge"><i class="fas fa-flag"></i> Institut Français du Sénégal</div>
+                <div class="partenaire-badge"><i class="fas fa-film"></i> Pathé Cinémas</div>
+                <div class="partenaire-badge"><i class="fas fa-users"></i> Groupe SOLID</div>
+                <div class="partenaire-badge"><i class="fas fa-building"></i> I'AM Group</div>
+                <div class="partenaire-badge"><i class="fas fa-hands-helping"></i> AMS — Association Médicale</div>
+                <div class="partenaire-badge"><i class="fas fa-child"></i> Solidarité Enfance Inclusive</div>
+                <div class="partenaire-badge"><i class="fas fa-sun"></i> CIVA — Centre Inclusif de Vacances</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Plateforme Autisme Sénégal</h4>
+                    <p>Ensemble pour améliorer la prise en charge des enfants vivant avec les TSA au Sénégal.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Utiles</h4>
+                    <ul>
+                        <li><a href="index.html#qui-sommes-nous">Qui sommes-nous ?</a></li>
+                        <li><a href="index.html#objectifs">Objectifs</a></li>
+                        <li><a href="index.html#ressources">Ressources</a></li>
+                        <li><a href="evenement.html">Événement 2 Avril</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="repertoire-medecins.html">Répertoire Médecins</a></li>
+                        <li><a href="repertoire-paramedicaux.html">Paramédicaux</a></li>
+                        <li><a href="repertoire-ecoles.html">Écoles Spécialisées</a></li>
+                        <li><a href="jeux-interactifs.html">Jeux Interactifs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Événement</h4>
+                    <div class="contact-methods" style="flex-direction:column;gap:0.7rem;">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div><p>+221 77 037 52 23</p></div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><p>Cinéma Pathé Dakar</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Plateforme Associations Autisme Sénégal — Journée Mondiale de l'Autisme</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js?v=2024-03-28"></script>
+</body>
+</html>
