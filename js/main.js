@@ -326,11 +326,13 @@ function handleNavbarScroll() {
     }
 }
 
-// Form submission
-function handleFormSubmit(e) {
+const CONTACT_EMAIL = 'contact@plateforme-autisme-senegal.org';
+const FORM_SUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+
+// Form submission (FormSubmit — hébergement statique OVH)
+async function handleFormSubmit(e) {
     e.preventDefault();
-    
-    // Get form data
+
     const formData = new FormData(contactForm);
     const data = {
         name: formData.get('name'),
@@ -338,25 +340,62 @@ function handleFormSubmit(e) {
         type: formData.get('type'),
         message: formData.get('message')
     };
-    
-    // Validate form
+
     if (!validateForm(data)) {
         return;
     }
-    
-    // Show loading state
-    const submitBtn = document.querySelector('.submit-btn');
+
+    const submitBtn = contactForm.querySelector('.submit-btn');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
     submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        showNotification('Message envoyé avec succès!', 'success');
-        contactForm.reset();
+
+    const typeLabels = {
+        association: 'Association',
+        parent: 'Parent',
+        professionnel: 'Professionnel de santé',
+        institution: 'Institution',
+        autre: 'Autre'
+    };
+    const typeLabel = typeLabels[data.type] || data.type;
+
+    try {
+        const response = await fetch(FORM_SUBMIT_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                name: data.name,
+                email: data.email,
+                type_de_contact: typeLabel,
+                message: data.message,
+                _subject: `Contact PAS — ${typeLabel} — ${data.name}`,
+                _replyto: data.email,
+                _template: 'table',
+                _captcha: 'false'
+            })
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok && result.success !== 'false') {
+            showNotification('Message envoyé avec succès ! Nous vous répondrons bientôt.', 'success');
+            contactForm.reset();
+        } else {
+            throw new Error(result.message || 'Échec de l\'envoi');
+        }
+    } catch (err) {
+        console.error('Contact form error:', err);
+        showNotification(
+            `Impossible d'envoyer le message pour le moment. Écrivez-nous à <a href="mailto:${CONTACT_EMAIL}" style="color:inherit;text-decoration:underline;">${CONTACT_EMAIL}</a>.`,
+            'error'
+        );
+    } finally {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-    }, 2000);
+    }
 }
 
 // Form validation

@@ -259,13 +259,17 @@ main:hover .animated-background .floating-hearts {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: min(100%, 1440px);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0.5rem 1.25rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    min-height: 70px;
+    height: auto;
+    row-gap: 0.35rem;
+    column-gap: 0.75rem;
 }
 
 .nav-logo {
@@ -310,8 +314,9 @@ main:hover .animated-background .floating-hearts {
 
 .nav-logo h2 {
     color: var(--primary-color);
-    font-size: 0.95rem;
+    font-size: clamp(0.8rem, 1.1vw, 0.95rem);
     margin: 0;
+    line-height: 1.2;
     white-space: nowrap;
 }
 
@@ -322,20 +327,38 @@ main:hover .animated-background .floating-hearts {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1.3rem;
+    margin: 0;
+    padding: 0.15rem 0 0.25rem;
+    flex: 1 1 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem 0.65rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
-    font-size: 0.875rem;
+    font-size: clamp(0.72rem, 0.9vw, 0.82rem);
     transition: color 0.3s ease;
     position: relative;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.25rem;
     white-space: nowrap;
+    line-height: 1.2;
+    padding: 0.35rem 0.25rem;
+    min-height: 2rem;
 }
 
 .nav-link:hover {
@@ -394,6 +417,84 @@ main:hover .animated-background .floating-hearts {
     background-color: var(--text-dark);
     margin: 3px 0;
     transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: nowrap;
+        padding: 0 1rem;
+        min-height: 70px;
+        height: 70px;
+    }
+
+    .nav-logo h2 {
+        font-size: 0.8rem;
+        max-width: 9.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        padding: 1rem 0 1.5rem;
+        transition: left 0.3s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 0.85rem 1.5rem;
+        font-size: 1rem;
+        color: var(--white);
+        justify-content: flex-start;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-event {
+        color: var(--white) !important;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 }
 
 /* Hero Section */
