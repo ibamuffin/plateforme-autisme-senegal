@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dépliant — Plateforme Autisme Sénégal (P.A.S)</title>
-    <meta name="description" content="Dépliant officiel de la Plateforme des Associations d'Autisme du Sénégal — Contexte, Mission, Objectifs, Activités et Résultats attendus.">
-    <meta name="keywords" content="dépliant, plateforme autisme sénégal, PAS, TSA, objectifs, activités, autisme">
+    <title>Dépliant P.A.S — Plateforme Autisme Sénégal | Bureau, mission & associations TSA</title>
+    <meta name="description" content="Dépliant officiel de la Plateforme des Associations intervenant dans l'Autisme au Sénégal (P.A.S) : mot de la présidente, bureau exécutif, conseil d'administration, 10+ associations membres, mission et objectifs pour l'inclusion TSA au Sénégal.">
+    <meta name="keywords" content="plateforme autisme sénégal, PAS, P.A.S, TSA, troubles du spectre autistique, autisme Dakar, associations autisme Sénégal, inclusion, bureau exécutif, conseil administration, Aïssatou Diallo Camara, journée mondiale autisme, 2 avril, écoles spécialisées, pédopsychiatrie, OMS autisme, santé publique Afrique, ensemble pour l'autisme">
+    <meta name="author" content="Plateforme Autisme Sénégal (P.A.S)">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.plateforme-autisme-senegal.org/depliant.html">
+    <meta property="og:title" content="Dépliant — Plateforme Autisme Sénégal (P.A.S)">
+    <meta property="og:description" content="Mission, bureau exécutif et associations fédérées pour améliorer la prise en charge de l'autisme au Sénégal.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.plateforme-autisme-senegal.org/depliant.html">
+    <meta property="og:image" content="https://www.plateforme-autisme-senegal.org/images/logo-pas-officiel.png">
+    <meta property="og:locale" content="fr_SN">
+    <meta property="og:site_name" content="Plateforme Autisme Sénégal">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css?v=2024-03-28b">
+    <link rel="stylesheet" href="styles/main.css?v=2026-07-27d">
+    <link rel="stylesheet" href="styles/organisation.css?v=2026-07-28b">
     <link rel="stylesheet" href="styles/web3-components.css?v=2024-03-28b">
     <link rel="stylesheet" href="styles/fontawesome-local.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
@@ -706,6 +717,139 @@
         }
         .btn-back-event:hover { background: rgba(255,255,255,0.25); }
 
+        .depliant-subnav {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.75rem 0;
+            position: sticky;
+            top: 70px;
+            z-index: 900;
+        }
+        .depliant-subnav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+        .depliant-subnav a {
+            color: var(--b-deep);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .depliant-subnav a:hover { background: var(--b-pale); color: var(--b-aut); }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .member-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(2,62,138,0.06);
+        }
+        .member-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            background: var(--b-pale);
+        }
+        .member-photo.placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--b-aut);
+        }
+        .member-body { padding: 1rem 1.1rem 1.25rem; }
+        .member-body h3 { margin: 0 0 0.25rem; font-size: 1rem; color: #1e293b; }
+        .member-role {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--b-aut);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        .member-body p { margin: 0; font-size: 0.88rem; color: #64748b; line-height: 1.55; }
+        .assoc-card {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 1.1rem;
+        }
+        .assoc-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            object-fit: contain;
+            flex-shrink: 0;
+            border: 2px solid var(--b-pale);
+            background: #f8fafc;
+            padding: 4px;
+        }
+        .assoc-logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 0.85rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+        .assoc-logo-tile {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 0.65rem;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .assoc-logo-tile img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .member-photo.member-logo-img {
+            object-fit: contain;
+            padding: 1.25rem;
+            background: #f8fafc;
+        }
+        .appel-action-box {
+            background: linear-gradient(135deg, var(--b-deep), var(--b-aut));
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .appel-action-box h3 { font-family: 'Montserrat', sans-serif; margin: 0 0 0.75rem; }
+        .appel-payments {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin: 1.25rem 0;
+        }
+        .appel-payments span {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 10px;
+            padding: 0.5rem 0.85rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
     </style>
 </head>
 <body>
@@ -721,15 +865,26 @@
                 <h2>Plateforme Autisme Sénégal</h2>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="index.html#about" class="nav-link">Qui sommes-nous&nbsp;?</a></li>
-                <li><a href="index.html#objectifs" class="nav-link">Objectifs</a></li>
-                <li><a href="index.html#activites" class="nav-link">Activités</a></li>
-                <li><a href="index.html#ressources" class="nav-link">Ressources</a></li>
-                <li><a href="evenement.html" class="nav-link nav-event">Événement <span class="nav-badge">2 Avr</span></a></li>
-                <li><a href="depliant.html" class="nav-link" style="color:var(--b-aut);font-weight:600;">Dépliant</a></li>
-                <li><a href="index.html#don" class="nav-link">Don</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="index.html#qui-sommes-nous" class="nav-link">Qui sommes-nous&nbsp;?</a></li>
+                <li class="nav-item"><a href="index.html#objectifs" class="nav-link">Objectifs</a></li>
+                <li class="nav-item"><a href="index.html#activites" class="nav-link">Activités</a></li>
+                <li class="nav-item"><a href="index.html#actualites" class="nav-link">Actualités</a></li>
+                <li class="nav-item"><a href="index.html#ressources" class="nav-link">Ressources</a></li>
+                <li class="nav-item"><a href="mot-presidente.html" class="nav-link">Mot de la Présidente</a></li>
+                <li class="nav-item"><a href="associations-membres.html" class="nav-link">Associations Membres</a></li>
+                <li class="nav-item nav-dropdown-wrap">
+                    <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false">Organisation <i class="fas fa-chevron-down"></i></button>
+                    <ul class="nav-dropdown">
+                        <li><a href="bureau-executif.html" class="nav-link">Bureau Exécutif</a></li>
+                        <li><a href="conseil-administration.html" class="nav-link">Conseil d'Administration</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="evenement.html" class="nav-link nav-event"><i class="fas fa-calendar-star"></i> Événement <span class="nav-badge">2 Avr</span></a></li>
+                <li class="nav-item"><a href="temoignages-evenement.html" class="nav-link">Témoignages</a></li>
+                <li class="nav-item"><a href="depliant.html" class="nav-link" style="color:var(--b-aut);font-weight:600;">Dépliant</a></li>
+                <li class="nav-item"><a href="index.html#donation" class="nav-link">Don</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -764,19 +919,32 @@
         </div>
 
         <div class="hero-sigle">P<span>.</span>A<span>.</span>S</div>
-        <div class="hero-full-name">Plateforme des Associations d'Autisme du Sénégal</div>
+        <div class="hero-full-name">Plateforme des Associations intervenant dans l'Autisme au Sénégal</div>
         <div class="hero-slogan">"Ensemble pour l'Autisme"</div>
 
         <div class="hero-stat">
             <div class="hero-stat-num">1/160</div>
-            <div class="hero-stat-text">personnes touchées<br>par l'autisme dans le monde<br><small style="opacity:.7;font-size:0.7em;">(Source : OMS)</small></div>
+            <div class="hero-stat-text">personnes atteintes d'autisme<br>selon l'OMS<br><small style="opacity:.7;font-size:0.7em;">1 enfant sur 100 · 15 millions en Afrique</small></div>
         </div>
     </section>
+
+    <nav class="depliant-subnav" aria-label="Sections du dépliant">
+        <div class="container">
+            <ul>
+                <li><a href="#contexte">Contexte</a></li>
+                <li><a href="mot-presidente.html">Mot de la présidente</a></li>
+                <li><a href="associations-membres.html">Associations membres</a></li>
+                <li><a href="bureau-executif.html">Bureau exécutif</a></li>
+                <li><a href="conseil-administration.html">Conseil d'administration</a></li>
+                <li><a href="#appel-action">Appel à l'action</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- ══════════════════════════════════════════
          CONTEXTE & MISSION
          ══════════════════════════════════════════ -->
-    <section class="contexte-section">
+    <section class="contexte-section" id="contexte">
         <div class="container">
             <div class="section-title-block">
                 <h2><i class="fas fa-globe-africa" style="color:var(--b-aut);margin-right:.5rem;"></i> Contexte &amp; Mission</h2>
@@ -789,17 +957,22 @@
                 <div>
                     <div class="stats-cards-row">
                         <div class="stat-card blue">
-                            <div class="stat-val">0,8%</div>
-                            <span class="stat-label">Enfants touchés<br>au Sénégal</span>
-                            <span class="stat-source">Ctr pédopsych. Fann</span>
+                            <div class="stat-val">1/160</div>
+                            <span class="stat-label">Personnes atteintes<br>d'autisme (monde)</span>
+                            <span class="stat-source">Organisation Mondiale<br>de la Santé</span>
                         </div>
                         <div class="stat-card green">
-                            <div class="stat-val">1/160</div>
-                            <span class="stat-label">Prévalence<br>mondiale OMS</span>
+                            <div class="stat-val">1/100</div>
+                            <span class="stat-label">Enfants TSA<br>selon l'OMS</span>
                             <span class="stat-source">Organisation Mondiale<br>de la Santé</span>
                         </div>
                         <div class="stat-card orange">
-                            <div class="stat-val">7+</div>
+                            <div class="stat-val">15M</div>
+                            <span class="stat-label">Personnes touchées<br>en Afrique</span>
+                            <span class="stat-source">Estimation OMS</span>
+                        </div>
+                        <div class="stat-card blue">
+                            <div class="stat-val">10+</div>
                             <span class="stat-label">Associations<br>membres P.A.S</span>
                             <span class="stat-source">Sénégal</span>
                         </div>
@@ -812,7 +985,7 @@
                     </blockquote>
 
                     <p class="contexte-text">
-                        Face à cette réalité, les associations d'autisme du Sénégal ont décidé de s'unir au sein d'une 
+                        Face à cette réalité, les associations intervenant dans l'autisme du Sénégal ont décidé de s'unir au sein d'une 
                         <strong>plateforme commune</strong> pour mutualiser leurs forces, harmoniser leurs pratiques et 
                         amplifier leur impact auprès des autorités, des partenaires et des familles concernées.
                     </p>
@@ -836,7 +1009,7 @@
                             <h4>Notre Mission</h4>
                         </div>
                         <div class="vm-body">
-                            Fédérer les associations d'autisme du Sénégal pour améliorer la prise en charge des enfants TSA 
+                            Fédérer les associations intervenant dans l'autisme du Sénégal pour améliorer la prise en charge des enfants TSA 
                             à travers le plaidoyer, la formation, le partage de ressources et la sensibilisation du public.
                         </div>
                     </div>
@@ -1011,6 +1184,474 @@
         </div>
     </section>
 
+    <!-- MOT DE LA PRÉSIDENTE -->
+    <section class="contexte-section" id="mot-presidente" style="background:#fff;">
+        <div class="container">
+            <div class="section-title-block">
+                <h2><i class="fas fa-microphone" style="color:var(--b-aut);margin-right:.5rem;"></i> Mot de la Présidente</h2>
+                <div class="section-rule"></div>
+            </div>
+            <div class="contexte-grid">
+                <div class="member-card" style="max-width:320px;margin:0 auto;">
+                    <img src="images/presidente-aissatou-diallo-camara.png" alt="Aïssatou Diallo Camara, Présidente de la Plateforme Autisme Sénégal" class="member-photo">
+                    <div class="member-body" style="text-align:center;">
+                        <span class="member-role">Présidente</span>
+                        <h3>Aïssatou Diallo Camara</h3>
+                        <p>Plateforme Autisme Sénégal (P.A.S)</p>
+                    </div>
+                </div>
+                <div>
+                    <blockquote class="contexte-quote" style="margin-top:0;">
+                        « L'autisme n'est pas une fatalité, mais une différence qui mérite respect, dignité et inclusion.
+                        <em>Ensemble pour l'autisme</em>, faisons entendre la voix des familles sénégalaises et bâtissons une société où chaque enfant TSA peut grandir différent, mais jamais seul. »
+                    </blockquote>
+                    <p class="contexte-text">
+                        Chères familles, chers partenaires, chers concitoyens,
+                    </p>
+                    <p class="contexte-text">
+                        Au Sénégal comme ailleurs en Afrique, l'autisme reste trop souvent méconnu, diagnostiqué tardivement et insuffisamment pris en charge.
+                        L'Organisation mondiale de la Santé estime qu'<strong>1 personne sur 160</strong> est atteinte d'autisme dans le monde, qu'<strong>1 enfant sur 100</strong> souffre des Troubles du Spectre de l'Autisme (TSA), et que <strong>15 millions de personnes</strong> sont touchées par l'autisme en Afrique. Au Sénégal, les estimations avoisinent <strong>0,8&nbsp;%</strong> de la population,
+                        un chiffre qui traduit des milliers de familles en quête de réponses, de structures adaptées et de reconnaissance sociale.
+                    </p>
+                    <p class="contexte-text">
+                        En tant que mère de deux enfants autistes et présidente de la Plateforme des Associations intervenant dans l'Autisme au Sénégal (P.A.S),
+                        je connais intimement le parcours des parents&nbsp;: l'incertitude du diagnostic, la recherche d'écoles inclusives, l'accès limité aux spécialistes,
+                        la charge émotionnelle et financière, mais aussi la force, la résilience et l'amour inconditionnel qui nous animent.
+                    </p>
+                    <p class="contexte-text">
+                        C'est pour répondre à ces défis que la P.A.S fédère aujourd'hui <strong>plus de dix associations</strong> actives sur tout le territoire.
+                        Notre ambition est claire&nbsp;: unifier les voix du secteur associatif, renforcer le plaidoyer auprès des institutions publiques,
+                        faciliter l'accès à la formation des professionnels de santé et de l'éducation, et créer des ponts entre familles, praticiens, écoles et bailleurs de fonds.
+                    </p>
+                    <p class="contexte-text">
+                        Chaque 2&nbsp;avril, Journée mondiale de l'autisme, nous rappelons que l'inclusion n'est pas un luxe mais un droit.
+                        Nos actions — conférences, sensibilisations, répertoires de ressources, événements culturels — visent à faire évoluer les mentalités
+                        et à garantir que plus aucun enfant ne reste invisible faute de structures ou de compréhension.
+                    </p>
+                    <p class="contexte-text">
+                        Je remercie le bureau exécutif, le conseil d'administration, nos associations membres et l'ensemble des partenaires
+                        qui croient en une autisme-friendly Sénégal. Rejoignez-nous, soutenez nos initiatives, partagez nos messages.
+                        Parce qu'ensemble, nous pouvons transformer le regard porté sur l'autisme et ouvrir la voie à une société plus juste et plus humaine.
+                    </p>
+                    <p class="contexte-text" style="font-style:italic;margin-top:1rem;">
+                        Aïssatou Diallo Camara<br>
+                        Présidente — Plateforme Autisme Sénégal (P.A.S)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASSOCIATIONS MEMBRES -->
+    <section class="objectifs-section" id="associations-membres">
+        <div class="container">
+            <div class="section-title-block">
+                <h2><i class="fas fa-users" style="color:var(--b-aut);margin-right:.5rem;"></i> Associations Membres</h2>
+                <div class="section-rule"></div>
+                <p>10 associations fédérées au sein de la P.A.S — contacts et localisation</p>
+            </div>
+            <div class="assoc-logos-grid">
+                <div class="assoc-logo-tile"><img src="images/partenaires/association-enfants-soleil.png" alt="Enfants Soleil"></div>
+                <div class="assoc-logo-tile"><img src="images/partenaires/partenaire-02.jpg" alt="Solidarité Enfance Inclusive"></div>
+                <div class="assoc-logo-tile"><img src="images/partenaires/partenaire-03.jpeg" alt="Special Olympics"></div>
+                <div class="assoc-logo-tile"><img src="images/partenaires/partenaire-04.jpeg" alt="Impact Social"></div>
+                <div class="assoc-logo-tile"><img src="images/partenaires/association-monde-de-naby.png" alt="Le Monde de Naby"></div>
+                <div class="assoc-logo-tile"><img src="images/partenaires/association-maison-espoir-autisme.png" alt="Maison d'Espoir Autisme"></div>
+                <div class="assoc-logo-tile"><img src="images/partenaires/association-sourire-espoir.png" alt="Sourire d'Espoir"></div>
+                <div class="assoc-logo-tile"><img src="images/partenaires/association-colombin.png" alt="Association les Colombins"></div>
+                <div class="assoc-logo-tile assoc-logo-badge"><i class="fas fa-hands-helping"></i><span>Jappo Dollel Khaleyi</span></div>
+                <div class="assoc-logo-tile assoc-logo-tile--dark"><img src="images/partenaires/association-delossi.png" alt="Centre Delossi"></div>
+            </div>
+            <div class="team-grid">
+                <div class="assoc-card">
+                    <img src="images/partenaires/association-enfants-soleil.png" alt="Enfants Soleil" class="assoc-logo">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">ONG Enfants Soleil Sénégal</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> Malika, Dakar</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;"><i class="fas fa-phone"></i> +221 78 540 51 51 · +221 77 484 58 58</p>
+                        <p style="margin:0;font-size:.85rem;"><a href="https://enfantsoleilmonde.org" target="_blank" rel="noopener">enfantsoleilmonde.org</a></p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <img src="images/partenaires/partenaire-02.jpg" alt="SEI" class="assoc-logo">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Solidarité Enfance Inclusive</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> Dakar</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-phone"></i> A renseigner · <i class="fas fa-envelope"></i> A renseigner</p>
+                        <p style="margin:0;font-size:.85rem;color:#64748b;">Sensibilisation, plaidoyer et inclusion des enfants TSA au Sénégal.</p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <img src="images/partenaires/partenaire-03.jpeg" alt="Special Olympics" class="assoc-logo">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Special Olympics Sénégal</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> INSEPS Dakar, Stade Iba Mar Diop, Dakar</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;"><i class="fas fa-phone"></i> +221 77 332 59 09</p>
+                        <p style="margin:0;font-size:.85rem;"><a href="http://www.specialolympics.sn" target="_blank" rel="noopener">specialolympics.sn</a></p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <img src="images/partenaires/partenaire-04.jpeg" alt="Impact Social" class="assoc-logo">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Impact Social</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> Dakar</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-phone"></i> A renseigner · <i class="fas fa-envelope"></i> A renseigner</p>
+                        <p style="margin:0;font-size:.85rem;color:#64748b;">Protection de l'enfance, inclusion et défense des droits des personnes vulnérables, y compris TSA.</p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <img src="images/partenaires/association-monde-de-naby.png" alt="Le Monde de Naby" class="assoc-logo">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Le Monde de Naby</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> Rouilly, France · actions au Sénégal</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;"><i class="fas fa-phone"></i> +33 7 61 09 22 52</p>
+                        <p style="margin:0;font-size:.85rem;"><a href="mailto:contact@lemondedenaby.org">contact@lemondedenaby.org</a> · <a href="https://lemondedenaby.org" target="_blank" rel="noopener">lemondedenaby.org</a></p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <img src="images/partenaires/association-maison-espoir-autisme.png" alt="Maison d'Espoir Autisme" class="assoc-logo">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Maison d'Espoir Autisme</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-phone"></i> A renseigner · <i class="fas fa-envelope"></i> A renseigner</p>
+                        <p style="margin:0;font-size:.85rem;"><a href="https://ameautisme.org" target="_blank" rel="noopener">ameautisme.org</a></p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <img src="images/partenaires/association-sourire-espoir.png" alt="Sourire d'Espoir" class="assoc-logo">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Association Sourire d'Espoir</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> A renseigner</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-phone"></i> A renseigner · <i class="fas fa-envelope"></i> A renseigner</p>
+                        <p style="margin:0;font-size:.85rem;color:#64748b;">Actions en faveur des enfants vulnérables et sensibilisation communautaire.</p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <img src="images/partenaires/association-colombin.png" alt="Colombins" class="assoc-logo">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Association les Colombins</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> Avenue Cheikh Anta Diop, face Brigade de Gendarmerie, Ouakam, Dakar</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;"><i class="fas fa-phone"></i> +221 77 564 95 59</p>
+                        <p style="margin:0;font-size:.85rem;"><a href="mailto:Colombinpoterie@gmail.com">Colombinpoterie@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <div class="assoc-logo assoc-logo-badge"><i class="fas fa-hands-helping"></i></div>
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Jappo Dollel Khaleyi</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> A renseigner</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-phone"></i> A renseigner · <i class="fas fa-envelope"></i> A renseigner</p>
+                        <p style="margin:0;font-size:.85rem;color:#64748b;">Association membre P.A.S — coordonnées à confirmer auprès de la plateforme.</p>
+                    </div>
+                </div>
+                <div class="assoc-card">
+                    <img src="images/partenaires/association-delossi.png" alt="Centre Delossi" class="assoc-logo assoc-logo--dark">
+                    <div>
+                        <h3 style="margin:0 0 .35rem;font-size:1rem;">Centre Delossi</h3>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;color:#64748b;"><i class="fas fa-map-marker-alt"></i> Colobane Malick Guisse, Rufisque, Sénégal</p>
+                        <p style="margin:0 0 .35rem;font-size:.85rem;"><i class="fas fa-phone"></i> +221 77 422 13 22</p>
+                        <p style="margin:0;font-size:.85rem;"><a href="mailto:contact@delossi.org">contact@delossi.org</a> · <a href="https://delossi.org" target="_blank" rel="noopener">delossi.org</a></p>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align:center;margin-top:1.5rem;color:#64748b;font-size:.9rem;">
+                <a href="associations-membres.html" style="color:var(--b-aut);font-weight:600;">Voir toutes les associations membres</a> ·
+                Votre association souhaite adhérer ? <a href="index.html#contact" style="color:var(--b-aut);font-weight:600;">Contactez la plateforme</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- BUREAU EXÉCUTIF -->
+    <section class="activites-section" id="bureau-executif">
+        <div class="container">
+            <div class="section-title-block light">
+                <h2><i class="fas fa-sitemap" style="color:var(--b-lght);margin-right:.5rem;"></i> Bureau Exécutif</h2>
+                <div class="section-rule"></div>
+                <p style="color:rgba(255,255,255,.85);margin-top:.5rem;font-size:.9rem;">Instance dirigeante — exécution des décisions de l'Assemblée générale</p>
+            </div>
+            <div class="ca-profiles-list">
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/presidente-aissatou-diallo-camara.png" alt="Aïssatou Diallo Camara" class="ca-profile-photo">
+                        <div class="ca-profile-identity">
+                            <h3>Aïssatou Diallo Camara</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Présidente</span>
+                                <span class="ca-profile-badge">Bureau exécutif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-profile-body">
+                        <div class="ca-profile-text">
+                            <h4>Profil</h4>
+                            <p>Senior en gestion de projet (20+ ans). Maman de deux garçons autistes, militante depuis 15 ans. Ancienne SG du COPEKX.</p>
+                        </div>
+                        <div class="ca-profile-functions">
+                            <h4>Fonctions principales</h4>
+                            <ul>
+                                <li>Coordination nationale et plaidoyer institutionnel</li>
+                                <li>Représentation auprès des autorités</li>
+                                <li>Pilotage stratégique de la fédération</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/magor-dia.png" alt="Magor Dia" class="ca-profile-photo">
+                        <div class="ca-profile-identity">
+                            <h3>Magor Dia</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Vice-président</span>
+                                <span class="ca-profile-badge">Bureau exécutif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-profile-body">
+                        <div class="ca-profile-text">
+                            <h4>Profil</h4>
+                            <p>Sociologue, spécialiste petite enfance et protection de l'enfant. Coordinateur Impact Sociale. Expert plaidoyer TSA.</p>
+                        </div>
+                        <div class="ca-profile-functions">
+                            <h4>Fonctions principales</h4>
+                            <ul>
+                                <li>Plaidoyer institutionnel et politiques inclusives</li>
+                                <li>Structuration des actions collectives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Mame Seye Thiam" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Mame Seye Thiam</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Vice-présidente</span>
+                                <span class="ca-profile-badge">Bureau exécutif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-profile-body">
+                        <div class="ca-profile-text">
+                            <h4>Profil</h4>
+                            <p>Mère de Naby, 21 ans, autiste. Engagée pour l'inclusion et la visibilité des familles.</p>
+                        </div>
+                        <div class="ca-profile-functions">
+                            <h4>Fonctions principales</h4>
+                            <ul>
+                                <li>Programmes associatifs et soutien aux familles</li>
+                                <li>Sensibilisation et lutte contre la stigmatisation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Aminata Fall Niane" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Aminata Fall Niane</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Secrétaire générale</span>
+                                <span class="ca-profile-badge">Bureau exécutif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-profile-body">
+                        <div class="ca-profile-text">
+                            <h4>Profil</h4>
+                            <p>20+ ans en assistanat de direction. Ex-SG COPEKX. Fondatrice Solidarité Enfance Inclusive.</p>
+                        </div>
+                        <div class="ca-profile-functions">
+                            <h4>Fonctions principales</h4>
+                            <ul>
+                                <li>Animation des instances et suivi administratif</li>
+                                <li>Coordination des réunions du bureau</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Khadim Amar" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Khadim Amar</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Trésorier</span>
+                                <span class="ca-profile-badge">Bureau exécutif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-profile-body">
+                        <div class="ca-profile-text">
+                            <h4>Profil</h4>
+                            <p>15 ans IT Manager (banque). Parent d'un enfant autiste, engagé pour l'inclusion.</p>
+                        </div>
+                        <div class="ca-profile-functions">
+                            <h4>Fonctions principales</h4>
+                            <ul>
+                                <li>Gestion financière et transparence comptable</li>
+                                <li>Mobilisation des ressources</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/ndeye-marieme-fall-sadio.png" alt="Ndeye Marieme Fall Sadio" class="ca-profile-photo">
+                        <div class="ca-profile-identity">
+                            <h3>Ndeye Marieme Fall Sadio</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Communication</span>
+                                <span class="ca-profile-badge">Bureau exécutif</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-profile-body">
+                        <div class="ca-profile-text">
+                            <h4>Profil</h4>
+                            <p>Responsable communication institutionnelle : visibilité, cohérence du message et animation des canaux.</p>
+                        </div>
+                        <div class="ca-profile-functions">
+                            <h4>Fonctions principales</h4>
+                            <ul>
+                                <li>Stratégie de communication et réseaux sociaux</li>
+                                <li>Relations presse et contenus de sensibilisation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p style="text-align:center;margin-top:1.25rem;"><a href="bureau-executif.html" style="color:var(--b-lght);font-weight:600;font-size:.9rem;">Voir la page complète du Bureau exécutif →</a></p>
+        </div>
+    </section>
+
+    <!-- CONSEIL D'ADMINISTRATION -->
+    <section class="contexte-section" id="conseil-administration" style="background:#fff;">
+        <div class="container">
+            <div class="section-title-block">
+                <h2><i class="fas fa-landmark" style="color:var(--b-aut);margin-right:.5rem;"></i> Conseil d'Administration</h2>
+                <div class="section-rule"></div>
+            </div>
+            <div class="ca-governance-intro">
+                <p style="font-size:.95rem;">
+                    Conformément aux statuts, la P.A.S est administrée par un <strong>Conseil d'administration</strong> de sept (7) membres
+                    et un <strong>Bureau exécutif</strong> de cinq (5) membres, instance dirigeante pilotant le secrétariat permanent
+                    et les comités thématiques.
+                </p>
+                <div class="ca-stats-grid">
+                    <div class="ca-stat-card"><strong>7</strong><span>Membres du CA</span></div>
+                    <div class="ca-stat-card"><strong>5</strong><span>Bureau exécutif</span></div>
+                    <div class="ca-stat-card"><strong>10+</strong><span>Associations fédérées</span></div>
+                </div>
+            </div>
+            <div class="ca-section-heading">
+                <h2 style="font-size:1.25rem;color:var(--b-deep);"><i class="fas fa-user-tie" style="color:var(--b-aut);margin-right:.4rem;"></i> Profils et activités</h2>
+                <p>Plan d'Actions PAS 2026 — Ressources humaines</p>
+            </div>
+            <div class="ca-profiles-list">
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Seynabou Kasse" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Seynabou Kasse</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Présidente du CA</span>
+                                <span class="ca-profile-badge">Membre du CA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Professeur Lamine Fall" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Professeur Lamine Fall</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Membre</span>
+                                <span class="ca-profile-badge">Membre du CA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Awa Khouma Sall" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Awa Khouma Sall</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Membre</span>
+                                <span class="ca-profile-badge">Membre du CA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Raby Seydou Diallo Kane" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Raby Seydou Diallo Kane</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Membre</span>
+                                <span class="ca-profile-badge">Membre du CA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Mame Khady Ba" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Mame Khady Ba</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Membre</span>
+                                <span class="ca-profile-badge">Membre du CA</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/presidente-aissatou-diallo-camara.png" alt="Aïssatou Diallo Camara" class="ca-profile-photo">
+                        <div class="ca-profile-identity">
+                            <h3>Aïssatou Diallo Camara</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Membre</span>
+                                <span class="ca-profile-badge">Membre du CA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-profile-body">
+                        <div class="ca-profile-text">
+                            <h4>Profil</h4>
+                            <p>Senior en gestion de projet (20+ ans). Maman de deux garçons autistes. Présidente du Bureau exécutif. Ancienne SG du COPEKX.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="ca-profile-card">
+                    <div class="ca-profile-header">
+                        <img src="images/logo-pas-officiel.png" alt="Aminata Fall Niane" class="ca-profile-photo logo-placeholder">
+                        <div class="ca-profile-identity">
+                            <h3>Aminata Fall Niane</h3>
+                            <div class="ca-profile-badges">
+                                <span class="ca-profile-badge primary">Membre</span>
+                                <span class="ca-profile-badge">Membre du CA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ca-profile-body">
+                        <div class="ca-profile-text">
+                            <h4>Profil</h4>
+                            <p>20+ ans en assistanat de direction. Ex-SG COPEKX. Secrétaire générale du Bureau exécutif. Fondatrice Solidarité Enfance Inclusive.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <p class="ca-footer-note">Le CA comprend également des représentants désignés par les associations membres, pour une gouvernance participative ancrée dans le terrain.</p>
+            <p style="text-align:center;margin-top:1rem;"><a href="conseil-administration.html" style="color:var(--b-aut);font-weight:600;font-size:.9rem;">Voir la page complète du Conseil d'administration →</a></p>
+        </div>
+    </section>
+
     <!-- ══════════════════════════════════════════
          RÉSULTATS ATTENDUS
          ══════════════════════════════════════════ -->
@@ -1027,7 +1668,7 @@
                     <div class="resultat-icon"><i class="fas fa-network-wired"></i></div>
                     <div class="resultat-num">1</div>
                     <h3>Réseau national unifié</h3>
-                    <p>Une plateforme fédératrice reconnue, regroupant toutes les associations d'autisme actives au Sénégal, avec une voix commune auprès des institutions.</p>
+                    <p>Une plateforme fédératrice reconnue, regroupant toutes les associations dans l'autisme actives au Sénégal, avec une voix commune auprès des institutions.</p>
                     <div class="resultat-progress"><div class="resultat-bar"></div></div>
                 </div>
                 <div class="resultat-card r2">
@@ -1051,6 +1692,27 @@
                     <p>Des recommandations intégrées dans les politiques nationales de santé, d'éducation inclusive et de protection sociale de l'enfant.</p>
                     <div class="resultat-progress"><div class="resultat-bar"></div></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPEL À L'ACTION -->
+    <section class="contexte-section" id="appel-action" style="background:#f8fafc;">
+        <div class="container">
+            <div class="appel-action-box">
+                <h3><i class="fas fa-hand-holding-heart"></i> Appel à l'action — Soutenez la P.A.S</h3>
+                <p style="max-width:640px;margin:0 auto 1rem;opacity:.95;line-height:1.6;">
+                    Votre don permet de financer la sensibilisation, la formation et l'accompagnement des familles d'enfants vivant avec les TSA au Sénégal.
+                </p>
+                <div class="appel-payments">
+                    <span><i class="fab fa-orange"></i> Orange Money</span>
+                    <span><i class="fas fa-water"></i> Wave</span>
+                    <span><i class="fab fa-cc-visa"></i> Visa</span>
+                    <span><i class="fab fa-cc-mastercard"></i> Mastercard</span>
+                </div>
+                <a href="index.html#donation" class="btn-download" style="margin-top:.5rem;">
+                    <i class="fas fa-heart"></i> Faire un don maintenant
+                </a>
             </div>
         </div>
     </section>
@@ -1152,44 +1814,56 @@
          FOOTER
          ══════════════════════════════════════════ -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img src="images/logo-pas-officiel.png" alt="Logo P.A.S" style="width:50px;height:50px;border-radius:50%;object-fit:cover;margin-bottom:.5rem;">
-                <h3>Plateforme Autisme Sénégal</h3>
-                <p>"Ensemble pour l'Autisme"</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Plateforme Autisme Sénégal</h4>
+                    <p>Ensemble pour améliorer la prise en charge des enfants vivant avec les TSA au Sénégal.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Utiles</h4>
+                    <ul>
+                        <li><a href="index.html#qui-sommes-nous">Qui sommes-nous ?</a></li>
+                        <li><a href="index.html#objectifs">Objectifs</a></li>
+                        <li><a href="index.html#activites">Activités</a></li>
+                        <li><a href="evenement.html">Événement 2 Avril</a></li>
+                        <li><a href="depliant.html">Dépliant P.A.S</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="repertoire-medecins.html">Répertoire Médecins</a></li>
+                        <li><a href="repertoire-paramedicaux.html">Paramédicaux</a></li>
+                        <li><a href="repertoire-ecoles.html">Écoles Spécialisées</a></li>
+                        <li><a href="jeux-interactifs.html">Jeux Interactifs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <p style="margin-bottom:0.75rem;font-size:0.88rem;">
+                        <i class="fas fa-envelope" style="margin-right:0.35rem;"></i>
+                        contact@plateforme-autisme-senegal.org
+                    </p>
+                    <p style="margin-bottom:0.75rem;font-size:0.88rem;">
+                        <i class="fas fa-phone" style="margin-right:0.35rem;"></i>
+                        +221 77 204 58 50 · +221 77 657 82 75
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/Plateforme-Autisme-S%C3%A9n%C3%A9gal/61589993237523/" aria-label="Facebook" class="social-link-brand facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="X (Twitter)" class="social-link-brand twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="social-link-brand linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram" class="social-link-brand instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p style="margin-top:0.75rem;font-size:0.8rem;opacity:0.75;">
+                        <i class="fas fa-puzzle-piece" style="margin-right:0.3rem;"></i>
+                        Symbole mondial de l'autisme
+                    </p>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="index.html#objectifs">Objectifs</a></li>
-                    <li><a href="index.html#activites">Activités</a></li>
-                    <li><a href="evenement.html">Événement 2 Avril</a></li>
-                    <li><a href="depliant.html">Dépliant P.A.S</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Plateforme Associations Autisme Sénégal. Tous droits réservés. Fait avec ❤️ pour les enfants TSA du Sénégal.</p>
             </div>
-            <div class="footer-links">
-                <h4>Ressources</h4>
-                <ul>
-                    <li><a href="repertoire-medecins.html">Répertoire Médecins</a></li>
-                    <li><a href="repertoire-paramedicaux.html">Para-médicaux</a></li>
-                    <li><a href="repertoire-ecoles.html">Écoles Inclusives</a></li>
-                    <li><a href="jeux-interactifs.html">Jeux Interactifs</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <p><i class="fas fa-envelope"></i> contact@plateforme-autisme-senegal.org</p>
-                <p><i class="fas fa-phone"></i> +1 (551) 331-9306 / +221 77 204 58 50</p>
-                <p><i class="fas fa-map-marker-alt"></i> Liberté 6 Villa N°7974, Dakar, Sénégal</p>
-                <p style="margin-top:.5rem;font-size:.8rem;opacity:.6;">
-                    <i class="fas fa-puzzle-piece" style="margin-right:.3rem;"></i>
-                    Symbole mondial de l'autisme
-                </p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Plateforme Autisme Sénégal. Tous droits réservés. Fait avec ❤️ pour les enfants TSA du Sénégal.</p>
         </div>
     </footer>
 

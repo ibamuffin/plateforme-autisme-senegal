@@ -7,6 +7,8 @@
     "start": "python -m http.server 8000",
     "dev": "python -m http.server 8000",
     "build": "echo 'Site statique - pas de build nécessaire'",
+    "update-news": "python scripts/update-news-feed.py",
+    "deploy-news": "scripts\\update-and-deploy-news.bat",
     "deploy": "netlify deploy --prod"
   },
   "keywords": [

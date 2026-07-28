@@ -939,6 +939,12 @@ class DonationSystem {
                 merchantId: 'YOUR_WAVE_MERCHANT_ID',
                 secretKey: 'YOUR_WAVE_SECRET_KEY'
             },
+            free: {
+                name: 'Free Money',
+                apiUrl: 'https://api.free.sn/v1',
+                merchantId: 'YOUR_FREE_MERCHANT_ID',
+                secretKey: 'YOUR_FREE_SECRET_KEY'
+            },
             mixyas: {
                 name: 'Mixyas',
                 apiUrl: 'https://api.mixyas.com/v1',
@@ -1027,6 +1033,8 @@ class DonationSystem {
                 return await this.processOrangeMoney(config);
             case 'wave':
                 return await this.processWave(config);
+            case 'free':
+                return await this.processFreeMoney(config);
             case 'mixyas':
                 return await this.processMixyas(config);
             case 'mastercard':
@@ -1085,6 +1093,25 @@ class DonationSystem {
             return { success: true, provider: 'Wave', transactionId: this.generateTransactionId() };
         } catch (error) {
             return { success: false, message: 'Erreur lors du paiement Wave' };
+        }
+    }
+    
+    async processFreeMoney(config) {
+        const payload = {
+            amount: this.selectedAmount,
+            currency: this.formData.currency,
+            customer: {
+                name: this.formData.donorName,
+                email: this.formData.donorEmail,
+                phone: this.formData.donorPhone
+            }
+        };
+        
+        try {
+            await this.simulatePaymentAPI('Free Money', payload);
+            return { success: true, provider: 'Free Money', transactionId: this.generateTransactionId() };
+        } catch (error) {
+            return { success: false, message: 'Erreur lors du paiement Free Money' };
         }
     }
     
@@ -2320,6 +2347,20 @@ function openGame(gameType) {
     document.addEventListener('DOMContentLoaded', () => {
         // Mobile navigation
         hamburger?.addEventListener('click', toggleMobileNav);
+
+        // Menu déroulant Organisation
+        document.querySelectorAll('.nav-dropdown-wrap').forEach((wrap) => {
+            const toggle = wrap.querySelector('.nav-dropdown-toggle');
+            toggle?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = wrap.classList.contains('open');
+                document.querySelectorAll('.nav-dropdown-wrap.open').forEach((w) => w.classList.remove('open'));
+                if (!isOpen) wrap.classList.add('open');
+            });
+        });
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.nav-dropdown-wrap.open').forEach((w) => w.classList.remove('open'));
+        });
         
         // Smooth scrolling for nav links
         navLinks.forEach(link => {

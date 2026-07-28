@@ -74,28 +74,32 @@
   
   <!-- Statistiques OMS avec graphiques plus clairs -->
   <g transform="translate(220, 70)">
-    <rect x="-10" y="-10" width="160" height="100" fill="white" stroke="#E5E7EB" stroke-width="2" rx="8"/>
+    <rect x="-10" y="-10" width="160" height="130" fill="white" stroke="#E5E7EB" stroke-width="2" rx="8"/>
     
     <text x="70" y="10" font-family="Inter, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1F2937">
-      STATISTIQUES MONDIALES
+      STATISTIQUES OMS
     </text>
     
     <!-- Représentation visuelle 1/160 -->
     <g transform="translate(10, 25)">
-      <!-- Fond pour les 160 personnes -->
-      <rect x="0" y="0" width="120" height="30" fill="#E5E7EB" rx="5"/>
-      
-      <!-- Barre représentant 1 personne avec autisme -->
-      <rect x="0" y="0" width="3" height="30" fill="#2563EB" rx="1"/>
-      
-      <!-- Texte explicatif -->
-      <text x="60" y="45" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#1F2937">
-        1 personne sur 160
-      </text>
-      <text x="60" y="58" font-family="Arial" font-size="10" text-anchor="middle" fill="#6B7280">
-        touchée par l'autisme (OMS)
+      <rect x="0" y="0" width="120" height="20" fill="#E5E7EB" rx="5"/>
+      <rect x="0" y="0" width="3" height="20" fill="#2563EB" rx="1"/>
+      <text x="60" y="32" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#1F2937">
+        1 personne sur 160 (monde)
       </text>
     </g>
+
+    <g transform="translate(10, 60)">
+      <rect x="0" y="0" width="120" height="20" fill="#E5E7EB" rx="5"/>
+      <rect x="0" y="0" width="6" height="20" fill="#10B981" rx="1"/>
+      <text x="60" y="32" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#1F2937">
+        1 enfant sur 100 (TSA)
+      </text>
+    </g>
+
+    <text x="70" y="108" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#F59E0B">
+      15 millions en Afrique
+    </text>
   </g>
   
   <!-- Statistiques Sénégal avec contexte local -->
