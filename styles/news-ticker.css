@@ -18,7 +18,7 @@ body.has-news-ticker .hero {
 }
 
 @media (max-width: 768px) {
-    body.has-news-ticker .nav-menu {
+    body.has-news-ticker .nav-panel {
         top: calc(70px + var(--news-ticker-height));
         max-height: calc(100vh - 70px - var(--news-ticker-height));
     }

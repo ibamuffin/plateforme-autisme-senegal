@@ -16,6 +16,17 @@ let gameSettings = {
 document.addEventListener('DOMContentLoaded', function() {
     initializeGameSettings();
     initializeAccessibilityControls();
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeGame();
+    });
+
+    const modal = document.getElementById('gameModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeGame();
+        });
+    }
 });
 
 // Initialiser les paramètres
@@ -143,7 +154,7 @@ function launchGame(gameId) {
         'matching-game': 'Jeu de Correspondance'
     };
 
-    if (gameTitle) gameTitle.textContent = gameTitles[gameId] || 'Jeu Interactif';
+    if (gameTitle) gameTitle.innerHTML = '<i class="fas fa-gamepad"></i> ' + (gameTitles[gameId] || 'Jeu Interactif');
 
     // Charger le jeu spécifique
     loadGame(gameId, gameContent);

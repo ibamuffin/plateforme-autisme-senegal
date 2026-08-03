@@ -1,5 +1,6 @@
 // DOM Elements
 const hamburger = document.querySelector('.hamburger');
+const navPanel = document.querySelector('.nav-panel');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const contactForm = document.getElementById('contactForm');
@@ -275,13 +276,12 @@ function addWeb3Animations() {
 // Mobile Navigation Toggle
 function toggleMobileNav() {
     hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    navPanel?.classList.toggle('active');
 }
 
-// Close mobile nav when clicking on a link
 function closeMobileNav() {
     hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    navPanel?.classList.remove('active');
 }
 
 // Smooth scrolling for navigation links
@@ -2388,7 +2388,8 @@ function openGame(gameType) {
         
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            const navTarget = navPanel || navMenu;
+            if (hamburger && navTarget && !hamburger.contains(e.target) && !navTarget.contains(e.target)) {
                 closeMobileNav();
             }
         });
