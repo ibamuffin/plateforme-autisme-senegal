@@ -11,8 +11,13 @@
     <meta property="og:url" content="https://www.plateforme-autisme-senegal.org/mot-presidente.html">
     <meta property="og:type" content="article">
     <link rel="canonical" href="https://www.plateforme-autisme-senegal.org/mot-presidente.html">
+    <link rel="alternate" hreflang="fr" href="https://www.plateforme-autisme-senegal.org/mot-presidente.html">
+    <link rel="alternate" hreflang="en" href="https://www.plateforme-autisme-senegal.org/en/mot-presidente.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.plateforme-autisme-senegal.org/mot-presidente.html">
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/main.css?v=2026-08-01b">
+    <link rel="stylesheet" href="styles/lang-switcher.css?v=2026-08-12">
     <link rel="stylesheet" href="styles/organisation.css?v=2026-07-27">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -49,7 +54,13 @@
                 <li class="nav-item"><a href="depliant.html" class="nav-link"><i class="fas fa-file-alt"></i> Dépliant</a></li>
             </ul>
             <ul class="nav-menu nav-actions" aria-label="Actions rapides">
-                <li class="nav-item"><a href="index.html#donation" class="nav-link nav-link-cta">Appel à l'action</a></li>
+            <li class="nav-item lang-switcher-wrap">
+              <div class="lang-switcher" role="group" aria-label="Language">
+                <a href="mot-presidente.html" data-lang="fr" class="lang-btn is-active" hreflang="fr" title="Français" aria-current="true"><span aria-hidden="true">🇫🇷</span><span class="lang-code">FR</span></a>
+                <a href="en/mot-presidente.html" data-lang="en" class="lang-btn" hreflang="en" title="English"><span aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></a>
+              </div>
+            </li>
+<li class="nav-item"><a href="index.html#donation" class="nav-link nav-link-cta">Appel à l'action</a></li>
                 <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
             </div>
@@ -105,5 +116,6 @@
     </section>
 
     <script src="js/main.js?v=2026-08-01a"></script>
+    <script src="js/i18n-switcher.js?v=2026-08-12" defer></script>
 </body>
 </html>

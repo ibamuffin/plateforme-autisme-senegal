@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dépliant P.A.S — Plateforme Autisme Sénégal — Imprimable FR</title>
+<style>
+/* ============================================================
+   DÉPLIANT TRI-FOLD v2 — PLATEFORME AUTISME SÉNÉGAL
+   Palette exacte du document Word/PDF source
+   Format A4 Paysage (297×210mm) | 3 volets × 2 pages
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* ── PALETTE EXACTE DU PDF SOURCE ── */
+  --bleu-nuit:   #003F7D;   /* Bleu nuit principal — #003F7D */
+  --bleu-corps:  #1F4D78;   /* Bleu corps texte — #1F4D78 */
+  --bleu-vif:    #0072BC;   /* Bleu autism vif — #0072BC */
+  --bleu-word:   #2E74B5;   /* Bleu Word heading — #2E74B5 */
+  --bleu-liens:  #0563C1;   /* Bleu liens — #0563C1 */
+  --vert:        #1E8449;   /* Vert mission — #1E8449 */
+  --vert2:       #117A65;   /* Vert foncé — #117A65 */
+  --violet:      #6C3483;   /* Violet objectifs — #6C3483 */
+  --orange:      #E67E22;   /* Orange CTA — #E67E22 */
+  --rouge:       #A93226;   /* Rouge accent — #A93226 */
+  --gris-med:    #7F8C8D;   /* Gris moyen — #7F8C8D */
+  --gris-fonce:  #2C3E50;   /* Gris foncé — #2C3E50 */
+  --fond-creme:  #FEF9E7;   /* Fond crème — #FEF9E7 */
+  --fond-gris:   #F4F6F7;   /* Fond gris clair — #F4F6F7 */
+  --fond-bleu:   #EBF5FB;   /* Fond bleu très pâle — #EBF5FB */
+  --blanc:       #FFFFFF;
+  --pw: 99mm;
+  --ph: 210mm;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  background: #34495E;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.no-print { }
+.print-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  max-width: 297mm;
+  margin: 0 auto 16px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+}
+.print-toolbar a,
+.print-toolbar button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #fff;
+  background: var(--bleu-vif);
+}
+.print-toolbar a:hover,
+.print-toolbar button:hover { background: var(--bleu-nuit); }
+.print-toolbar a:last-child { background: var(--gris-fonce); }
+
+.page-label {
+  color: #BDC3C7;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  margin: 12px auto 6px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ── FEUILLE A4 PAYSAGE ── */
+.sheet {
+  width: 297mm;
+  height: 210mm;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto 8px;
+  background: var(--blanc);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Lignes de pli */
+.sheet::before, .sheet::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; width: 1px;
+  background: repeating-linear-gradient(to bottom,
+    rgba(100,100,130,0.35) 0, rgba(100,100,130,0.35) 3px,
+    transparent 3px, transparent 8px);
+  z-index: 100;
+}
+.sheet::before { left: calc(297mm / 3); }
+.sheet::after  { left: calc(297mm * 2 / 3); }
+
+/* ── VOLET BASE ── */
+.panel {
+  width: var(--pw);
+  height: var(--ph);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ════════════════════════════════════════════════════════
+   COMPOSANTS COMMUNS
+   ════════════════════════════════════════════════════════ */
+
+/* Header volet */
+.panel-hd {
+  flex-shrink: 0;
+  padding: 5mm 6mm 4mm;
+  position: relative;
+  overflow: hidden;
+}
+.panel-hd::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+}
+.panel-hd-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11pt;
+  font-weight: 800;
+  color: var(--blanc);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  line-height: 1.1;
+  position: relative;
+  z-index: 2;
+}
+.panel-hd-sub {
+  font-size: 6.5pt;
+  color: rgba(255,255,255,0.8);
+  font-style: italic;
+  margin-top: 1.5mm;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+.panel-hd-rule {
+  height: 1.5px;
+  background: rgba(255,255,255,0.3);
+  margin: 2mm 0 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Badge section */
+.s-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1mm 3mm;
+  border-radius: 1.5mm;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6.5pt;
+  font-weight: 700;
+  color: var(--blanc);
+  align-self: flex-start;
+  letter-spacing: 0.5px;
+  margin-bottom: 1mm;
+}
+
+/* Footer volet */
+.panel-ft {
+  flex-shrink: 0;
+  padding: 1.5mm 0;
+  text-align: center;
+  font-size: 5.8pt;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Divider */
+.hdiv {
+  height: 0.6px;
+  background: var(--fond-gris);
+  margin: 1mm 0;
+}
+
+/* Barre arc-en-ciel top */
+.rainbow-bar {
+  width: 100%;
+  height: 7mm;
+  flex-shrink: 0;
+  display: flex;
+}
+.rb-seg { flex: 1; }
+
+
+/* ════════════════════════════════════════════════════════
+   RECTO — VOLET GAUCHE : OBJECTIFS SPÉCIFIQUES
+   ════════════════════════════════════════════════════════ */
+.v-obj {
+  background: var(--blanc);
+}
+
+.v-obj .panel-hd {
+  background: linear-gradient(135deg, var(--violet) 0%, #4A235A 100%);
+}
+.v-obj .panel-hd::after { background: var(--orange); }
+
+/* Barre latérale gauche arc-en-ciel */
+.obj-sidebar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4.5mm;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+.obj-sidebar-seg { flex: 1; }
+
+.obj-body {
+  flex: 1;
+  padding: 3mm 4mm 3mm 7mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+  overflow: hidden;
+}
+
+.obj-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5mm;
+  background: var(--blanc);
+  border-radius: 2.5mm;
+  padding: 2.5mm 3mm;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+  border: 0.5px solid #E8EAF0;
+  position: relative;
+  overflow: hidden;
+}
+.obj-item-stripe {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4mm;
+  border-radius: 2.5mm 0 0 2.5mm;
+}
+.obj-num {
+  width: 9mm; height: 9mm;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 7.5pt;
+  color: var(--blanc);
+  flex-shrink: 0;
+  margin-left: 1.5mm;
+}
+.obj-content { flex: 1; }
+.obj-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 7pt;
+  line-height: 1.2;
+}
+.obj-desc {
+  font-size: 6.3pt;
+  color: var(--gris-med);
+  line-height: 1.4;
+  margin-top: 0.5mm;
+}
+
+.obj-vision-box {
+  background: linear-gradient(135deg, var(--bleu-nuit), var(--bleu-vif));
+  border-radius: 3mm;
+  padding: 3mm 4mm;
+  margin: 0 4mm 0 7mm;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.obj-vision-box::before {
+  content: '❝';
+  position: absolute;
+  top: -1mm; left: 2mm;
+  font-size: 18pt;
+  color: rgba(255,255,255,0.2);
+  line-height: 1;
+}
+.obj-vision-text {
+  font-size: 7pt;
+  color: var(--blanc);
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 3mm;
+}
+
+/* ════════════════════════════════════════════════════════
+   RECTO — VOLET CENTRE : CONTEXTE & MISSION
+   ════════════════════════════════════════════════════════ */
+.v-ctx {
+  background: var(--fond-gris);
+}
+.v-ctx .panel-hd {
+  background: linear-gradient(135deg, var(--bleu-nuit) 0%, var(--bleu-corps) 100%);
+}
+.v-ctx .panel-hd::after { background: var(--vert); }
+
+.ctx-body {
+  flex: 1;
+  padding: 4mm 6mm;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  overflow: hidden;
+}
+
+.stat-duo {
+  display: flex;
+  gap: 3mm;
+  flex-shrink: 0;
+}
+.stat-box {
+  flex: 1;
+  background: var(--bleu-nuit);
+  border-radius: 3mm;
+  padding: 3mm 3mm;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.stat-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16pt;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  display: block;
+}
+.stat-lbl {
+  font-size: 6pt;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.35;
+  display: block;
+  margin-top: 1mm;
+}
+
+.ctx-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+  flex-shrink: 0;
+}
+.ctx-text {
+  font-size: 7.5pt;
+  color: var(--bleu-corps);
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.ctx-photo {
+  border-radius: 3mm;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--bleu-vif);
+  box-shadow: 0 2px 8px rgba(0,63,125,0.15);
+}
+.ctx-photo img {
+  width: 100%;
+  height: 26mm;
+  object-fit: cover;
+  display: block;
+}
+.ctx-photo-cap {
+  font-size: 5.8pt;
+  color: var(--gris-med);
+  font-style: italic;
+  text-align: center;
+  padding: 1mm 2mm;
+  background: var(--blanc);
+}
+
+.ctx-quote {
+  background: var(--fond-bleu);
+  border-radius: 2.5mm;
+  padding: 2.5mm 4mm;
+  border-left: 3px solid var(--bleu-vif);
+  flex-shrink: 0;
+}
+.ctx-quote p {
+  font-size: 7pt;
+  color: var(--bleu-nuit);
+  font-style: italic;
+  line-height: 1.45;
+  text-align: center;
+}
+
+/* ════════════════════════════════════════════════════════
+   RECTO — VOLET DROIT : COUVERTURE
+   ════════════════════════════════════════════════════════ */
+.v-cover {
+  background: linear-gradient(170deg, var(--bleu-nuit) 0%, #002550 60%, var(--bleu-corps) 100%);
+  align-items: center;
+  position: relative;
+}
+.v-cover::before {
+  content: '';
+  position: absolute;
+  top: -25mm; right: -20mm;
+  width: 75mm; height: 75mm;
+  background: rgba(255,255,255,0.03);
+  border-radius: 50%;
+}
+.v-cover::after {
+  content: '';
+  position: absolute;
+  bottom: -20mm; left: -20mm;
+  width: 65mm; height: 65mm;
+  background: rgba(255,255,255,0.03);
+  border-radius: 50%;
+}
+
+/* Grille de points déco */
+.cover-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 9mm 9mm;
+  pointer-events: none;
+}
+
+/* Puzzles décoratifs */
+.pz {
+  position: absolute;
+  opacity: 0.7;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+.cover-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4mm 6mm;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.cover-img-ring {
+  width: 58mm; height: 58mm;
+  border-radius: 50%;
+  border: 2.5px solid var(--orange);
+  padding: 2px;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 2mm;
+}
+.cover-img-ring::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(230,126,34,0.3);
+}
+.cover-img-ring img {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.cover-img-fallback {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bleu-corps), var(--bleu-vif));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20pt;
+  font-weight: 900;
+  color: var(--orange);
+  letter-spacing: 2px;
+}
+
+/* Pastilles awareness */
+.awareness-row {
+  display: flex;
+  justify-content: center;
+  gap: 2mm;
+  margin: 2mm 0 0;
+}
+.aw-dot {
+  width: 4mm; height: 4mm;
+  border-radius: 50%;
+}
+
+.cover-sigle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26pt;
+  font-weight: 900;
+  color: var(--orange);
+  letter-spacing: 4px;
+  line-height: 1;
+  margin-top: 2.5mm;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.cover-name1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 1.5px;
+  margin-top: 1.5mm;
+  text-transform: uppercase;
+}
+.cover-name2-wrap {
+  background: var(--orange);
+  padding: 1.5mm 5mm;
+  border-radius: 2mm;
+  margin-top: 1.5mm;
+}
+.cover-name2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5pt;
+  font-weight: 900;
+  color: var(--blanc);
+  letter-spacing: 3px;
+}
+
+.cover-divider {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin: 3mm 0 2mm;
+}
+.cover-div-line {
+  flex: 1;
+  height: 0.8px;
+  background: rgba(230,126,34,0.4);
+}
+.cover-div-dot {
+  width: 4mm; height: 4mm;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.cover-slogan {
+  font-size: 7.5pt;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  padding: 0 5mm;
+  line-height: 1.4;
+}
+
+.cover-stat-box {
+  width: calc(100% - 10mm);
+  border: 1.5px solid rgba(230,126,34,0.5);
+  background: rgba(255,255,255,0.07);
+  border-radius: 3mm;
+  padding: 3mm 4mm;
+  margin-top: 3mm;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+.cover-stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14pt;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+}
+.cover-stat-sub {
+  font-size: 6.5pt;
+  color: rgba(255,255,255,0.7);
+  margin-top: 1mm;
+  line-height: 1.3;
+}
+
+.cover-cta {
+  width: calc(100% - 10mm);
+  background: var(--orange);
+  border-radius: 3mm;
+  padding: 3mm 4mm;
+  margin-top: 3mm;
+  text-align: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 12px rgba(230,126,34,0.4);
+}
+.cover-cta-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 8.5pt;
+  color: var(--blanc);
+}
+.cover-cta-sub {
+  font-size: 6pt;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.8mm;
+}
+
+.cover-bottom {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ════════════════════════════════════════════════════════
+   VERSO — VOLET GAUCHE : NOS ACTIVITÉS
+   ════════════════════════════════════════════════════════ */
+.v-act {
+  background: var(--fond-gris);
+}
+.v-act .panel-hd {
+  background: linear-gradient(135deg, var(--vert2) 0%, var(--vert) 100%);
+}
+.v-act .panel-hd::after { background: var(--orange); }
+
+.act-body {
+  flex: 1;
+  padding: 3.5mm 5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+  overflow: hidden;
+}
+
+.act-card {
+  background: var(--blanc);
+  border-radius: 3mm;
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5mm;
+  padding: 2.5mm 3mm;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border: 0.5px solid #DDE8F0;
+  position: relative;
+  overflow: hidden;
+}
+.act-card-stripe {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3.5mm;
+  border-radius: 3mm 0 0 3mm;
+}
+.act-icon {
+  width: 11mm; height: 11mm;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8.5pt;
+  font-weight: 900;
+  color: var(--blanc);
+  flex-shrink: 0;
+  margin-left: 1mm;
+}
+.act-content { flex: 1; }
+.act-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  color: var(--blanc);
+  display: inline-block;
+  padding: 0.5mm 2mm;
+  border-radius: 1mm;
+  margin-bottom: 1mm;
+  letter-spacing: 0.5px;
+}
+.act-desc {
+  font-size: 6.8pt;
+  color: var(--gris-fonce);
+  line-height: 1.4;
+}
+
+.act-photo {
+  margin: 0 5mm;
+  border-radius: 3mm;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--vert);
+}
+.act-photo img {
+  width: 100%;
+  height: 18mm;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ════════════════════════════════════════════════════════
+   VERSO — VOLET CENTRE : RÉSULTATS ATTENDUS
+   ════════════════════════════════════════════════════════ */
+.v-res {
+  background: var(--blanc);
+}
+.v-res .panel-hd {
+  background: linear-gradient(135deg, var(--bleu-vif) 0%, var(--bleu-nuit) 100%);
+}
+.v-res .panel-hd::after { background: var(--vert); }
+
+/* Barre latérale droite */
+.res-sidebar {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 4.5mm;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.res-body {
+  flex: 1;
+  padding: 3.5mm 8mm 3mm 6mm;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  overflow: hidden;
+}
+
+.res-card {
+  background: var(--blanc);
+  border-radius: 3mm;
+  padding: 3mm 4mm;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.09);
+  border-left: 4px solid var(--bleu-nuit);
+  position: relative;
+  overflow: hidden;
+}
+.res-card-bg-num {
+  position: absolute;
+  right: 3mm; top: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22pt;
+  font-weight: 900;
+  color: rgba(0,63,125,0.07);
+  line-height: 1;
+}
+.res-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11pt;
+  font-weight: 900;
+  line-height: 1;
+}
+.res-bar {
+  height: 2mm;
+  border-radius: 1mm;
+  width: 10mm;
+  margin: 1mm 0 1.5mm;
+}
+.res-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 7.5pt;
+  color: var(--bleu-nuit);
+  line-height: 1.2;
+}
+.res-desc {
+  font-size: 6.8pt;
+  color: var(--gris-fonce);
+  line-height: 1.4;
+  margin-top: 0.8mm;
+}
+
+.oms-card {
+  background: linear-gradient(135deg, var(--bleu-nuit), var(--bleu-corps));
+  border-radius: 3mm;
+  padding: 3mm 4mm;
+  text-align: center;
+  flex-shrink: 0;
+  border-top: 3px solid var(--orange);
+}
+.oms-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.oms-text {
+  font-size: 7pt;
+  color: var(--blanc);
+  margin-top: 1mm;
+  line-height: 1.4;
+}
+.oms-sub {
+  font-size: 5.8pt;
+  color: rgba(255,255,255,0.65);
+  font-style: italic;
+  margin-top: 0.8mm;
+}
+
+.res-photo {
+  border-radius: 3mm;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--bleu-vif);
+}
+.res-photo img {
+  width: 100%; height: 18mm;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ════════════════════════════════════════════════════════
+   VERSO — VOLET DROIT : CONTACT + LOGOS MEMBRES
+   ════════════════════════════════════════════════════════ */
+.v-contact {
+  background: linear-gradient(170deg, #071525 0%, var(--bleu-corps) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.v-contact::before {
+  content: '';
+  position: absolute;
+  top: -20mm; left: -22mm;
+  width: 75mm; height: 75mm;
+  background: rgba(255,255,255,0.03);
+  border-radius: 50%;
+}
+.v-contact::after {
+  content: '';
+  position: absolute;
+  bottom: -22mm; right: -18mm;
+  width: 65mm; height: 65mm;
+  background: rgba(255,255,255,0.03);
+  border-radius: 50%;
+}
+
+.contact-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4mm 5mm 3mm;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  gap: 2.5mm;
+  overflow: hidden;
+}
+
+.contact-logo-circle {
+  width: 30mm; height: 30mm;
+  border-radius: 50%;
+  border: 2px solid rgba(230,126,34,0.6);
+  background: rgba(0,114,188,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-pas {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18pt;
+  font-weight: 900;
+  color: var(--orange);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+.contact-name {
+  font-size: 5pt;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.5px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1mm;
+}
+
+.contact-divider {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  flex-shrink: 0;
+}
+.contact-div-line {
+  flex: 1;
+  height: 0.8px;
+  background: rgba(230,126,34,0.4);
+}
+.contact-div-dot {
+  width: 3.5mm; height: 3.5mm;
+  background: var(--orange);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contact-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+  flex-shrink: 0;
+}
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2mm;
+}
+.contact-badge {
+  width: 11mm; height: 6.5mm;
+  border-radius: 1.5mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5.8pt;
+  font-weight: 700;
+  color: var(--blanc);
+  flex-shrink: 0;
+}
+.contact-val {
+  font-size: 6.5pt;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.3;
+  word-break: break-all;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Ruban puzzles */
+.puzzle-ribbon {
+  display: flex;
+  justify-content: center;
+  gap: 1.5mm;
+  flex-shrink: 0;
+}
+.puzz-chip {
+  width: 8mm; height: 8mm;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+/* ── LOGOS ASSOCIATIONS MEMBRES ── */
+.members-section {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+}
+.members-hd {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+}
+.members-hd-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(230,126,34,0.4);
+}
+.members-hd-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5.5pt;
+  font-weight: 800;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5mm;
+}
+.member-logo {
+  background: rgba(255,255,255,0.96);
+  border-radius: 2mm;
+  border: 1px solid rgba(230,126,34,0.25);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+.member-logo img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  padding: 1.5mm;
+  display: block;
+}
+.member-logo--dark {
+  background: #0f172a;
+}
+/* Badge texte pour association sans logo */
+.member-badge {
+  background: linear-gradient(135deg, var(--bleu-nuit), var(--bleu-corps));
+  border-radius: 2mm;
+  border: 1px solid rgba(230,126,34,0.5);
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5mm;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  gap: 0.8mm;
+}
+.member-badge-icon {
+  font-size: 9pt;
+  line-height: 1;
+}
+.member-badge-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4.2pt;
+  font-weight: 800;
+  color: var(--orange);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+.members-tagline {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 5pt;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.contact-slogan {
+  width: 100%;
+  background: var(--orange);
+  border-radius: 2.5mm;
+  padding: 2.5mm 4mm;
+  text-align: center;
+  flex-shrink: 0;
+}
+.contact-slogan-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 800;
+  color: var(--blanc);
+  letter-spacing: 0.3px;
+}
+
+.contact-bottom {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ════════════════════════════════════════════════
+   PRINT
+   ════════════════════════════════════════════════ */
+@media print {
+  body { background: white; padding: 0; margin: 0; }
+  .no-print { display: none !important; }
+  .page-label { display: none; }
+  .sheet {
+    box-shadow: none;
+    page-break-after: always;
+    width: 297mm; height: 210mm;
+    margin: 0;
+  }
+  .sheet:last-child { page-break-after: avoid; }
+  @page { size: A4 landscape; margin: 0; }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a2535; }
+::-webkit-scrollbar-thumb { background: #4A6FA5; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="print-toolbar no-print">
+  <a href="depliant.html">Version web</a>
+  <button type="button" onclick="window.print()">Imprimer / PDF</button>
+  <a href="en/depliant-print.html">English</a>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 1 — RECTO
+     G=Objectifs | C=Contexte | D=Couverture
+     ════════════════════════════════════════════════════════════ -->
+<div class="page-label">📄 RECTO — Page 1 (imprimer en recto)</div>
+<div class="sheet" id="recto">
+
+  <!-- ═══ VOLET GAUCHE : OBJECTIFS SPÉCIFIQUES ═══ -->
+  <div class="panel v-obj">
+    <!-- Barre latérale arc-en-ciel -->
+    <div class="obj-sidebar">
+      <div class="obj-sidebar-seg" style="background:var(--bleu-nuit)"></div>
+      <div class="obj-sidebar-seg" style="background:var(--bleu-vif)"></div>
+      <div class="obj-sidebar-seg" style="background:var(--vert)"></div>
+      <div class="obj-sidebar-seg" style="background:var(--violet)"></div>
+      <div class="obj-sidebar-seg" style="background:var(--orange)"></div>
+      <div class="obj-sidebar-seg" style="background:var(--rouge)"></div>
+      <div class="obj-sidebar-seg" style="background:var(--bleu-word)"></div>
+    </div>
+
+    <div class="panel-hd">
+      <div class="panel-hd-title">OBJECTIFS SPÉCIFIQUES</div>
+      <div class="panel-hd-rule"></div>
+      <div class="panel-hd-sub">7 axes d'action prioritaires</div>
+    </div>
+
+    <div class="obj-body">
+
+      <div class="obj-item">
+        <div class="obj-item-stripe" style="background:var(--bleu-nuit)"></div>
+        <div class="obj-num" style="background:var(--bleu-nuit)">1</div>
+        <div class="obj-content">
+          <div class="obj-title" style="color:var(--bleu-nuit)">Cadre de concertation</div>
+          <div class="obj-desc">Créer un cadre pérenne de concertation avec l'État</div>
+        </div>
+      </div>
+
+      <div class="obj-item">
+        <div class="obj-item-stripe" style="background:var(--bleu-vif)"></div>
+        <div class="obj-num" style="background:var(--bleu-vif)">2</div>
+        <div class="obj-content">
+          <div class="obj-title" style="color:var(--bleu-vif)">État des lieux</div>
+          <div class="obj-desc">Inciter les autorités à dresser un état des lieux national</div>
+        </div>
+      </div>
+
+      <div class="obj-item">
+        <div class="obj-item-stripe" style="background:var(--vert)"></div>
+        <div class="obj-num" style="background:var(--vert)">3</div>
+        <div class="obj-content">
+          <div class="obj-title" style="color:var(--vert)">Ressources médicales</div>
+          <div class="obj-desc">Plaider pour renforcer le personnel médical et paramédical</div>
+        </div>
+      </div>
+
+      <div class="obj-item">
+        <div class="obj-item-stripe" style="background:var(--violet)"></div>
+        <div class="obj-num" style="background:var(--violet)">4</div>
+        <div class="obj-content">
+          <div class="obj-title" style="color:var(--violet)">Programmes éducatifs</div>
+          <div class="obj-desc">Accompagner l'État dans l'élaboration de programmes adaptés</div>
+        </div>
+      </div>
+
+      <div class="obj-item">
+        <div class="obj-item-stripe" style="background:var(--orange)"></div>
+        <div class="obj-num" style="background:var(--orange)">5</div>
+        <div class="obj-content">
+          <div class="obj-title" style="color:var(--orange)">Corps enseignant</div>
+          <div class="obj-desc">Renforcer les capacités du corps enseignant au TSA</div>
+        </div>
+      </div>
+
+      <div class="obj-item">
+        <div class="obj-item-stripe" style="background:var(--vert2)"></div>
+        <div class="obj-num" style="background:var(--vert2)">6</div>
+        <div class="obj-content">
+          <div class="obj-title" style="color:var(--vert2)">Éducation inclusive</div>
+          <div class="obj-desc">Promouvoir un système d'éducation inclusive pour tous</div>
+        </div>
+      </div>
+
+      <div class="obj-item">
+        <div class="obj-item-stripe" style="background:var(--bleu-word)"></div>
+        <div class="obj-num" style="background:var(--bleu-word)">7</div>
+        <div class="obj-content">
+          <div class="obj-title" style="color:var(--bleu-word)">Formation professionnelle</div>
+          <div class="obj-desc">Élaborer des programmes de formation pour adolescents TSA</div>
+        </div>
+      </div>
+
+    </div><!-- /.obj-body -->
+
+    <div class="obj-vision-box">
+      <div class="obj-vision-text">Ensemble pour une société inclusive où chaque personne autiste compte</div>
+    </div>
+
+    <div class="panel-ft" style="background:var(--bleu-nuit); color:rgba(255,255,255,0.7); margin-top:3mm;">
+      PLATEFORME AUTISME SÉNÉGAL &nbsp;•&nbsp; P.A.S
+    </div>
+  </div><!-- /volet objectifs -->
+
+
+  <!-- ═══ VOLET CENTRE : CONTEXTE & MISSION ═══ -->
+  <div class="panel v-ctx">
+    <div class="panel-hd">
+      <div class="panel-hd-title">CONTEXTE &amp; MISSION</div>
+      <div class="panel-hd-rule"></div>
+      <div class="panel-hd-sub">La réalité de l'autisme au Sénégal</div>
+    </div>
+
+    <div class="ctx-body">
+
+      <!-- Stats duo -->
+      <div class="stat-duo">
+        <div class="stat-box">
+          <div class="stat-box" style="background:var(--bleu-nuit)">
+            <div class="stat-box::before" style="background:var(--orange)"></div>
+          </div>
+          <span class="stat-val" style="color:var(--orange)">1/160</span>
+          <span class="stat-lbl">enfants autistes dans le monde (OMS)</span>
+        </div>
+        <div class="stat-box" style="background:var(--bleu-corps)">
+          <span class="stat-val" style="color:var(--orange)">0,8 %</span>
+          <span class="stat-lbl">enfants autistes au Sénégal</span>
+        </div>
+      </div>
+
+      <div class="hdiv"></div>
+
+      <!-- Contexte -->
+      <div class="ctx-section">
+        <span class="s-badge" style="background:var(--bleu-nuit)">CONTEXTE</span>
+        <p class="ctx-text">Au Sénégal, 0,8 % des enfants en bas âge sont touchés par l'autisme. Face au déficit criard en ressources médicales, paramédicales et éducatives, la coordination des acteurs est une priorité absolue.</p>
+      </div>
+
+      <div class="hdiv"></div>
+
+      <!-- Mission -->
+      <div class="ctx-section">
+        <span class="s-badge" style="background:var(--vert)">NOTRE MISSION</span>
+        <p class="ctx-text">Coordonner les actions des associations pour une amélioration de la prise en charge des enfants vivant avec les Troubles du Spectre de l'Autisme (TSA).</p>
+      </div>
+
+      <div class="hdiv"></div>
+
+      <!-- Objectif général -->
+      <div class="ctx-section">
+        <span class="s-badge" style="background:var(--violet)">OBJECTIF GÉNÉRAL</span>
+        <p class="ctx-text">Fédérer les associations engagées dans l'autisme afin de promouvoir une société inclusive, équitable et respectueuse des droits des personnes autistes.</p>
+      </div>
+
+      <!-- Photo -->
+      <div class="ctx-photo">
+        <img src="WhatsApp Image 2026-03-24 at 14.24.44.jpeg"
+             alt="Enfants accompagnés au Sénégal"
+             onerror="this.parentElement.style.display='none'">
+        <div class="ctx-photo-cap">Enfants accompagnés au Sénégal — Centre pédopsychiatrique</div>
+      </div>
+
+      <!-- Citation -->
+      <div class="ctx-quote">
+        <p>« Parler d'une seule et même voix pour mieux porter la problématique de l'autisme »</p>
+      </div>
+
+    </div><!-- /.ctx-body -->
+
+    <div class="panel-ft" style="background:var(--gris-fonce); color:rgba(255,255,255,0.6);">
+      www.plateforme-autisme-senegal.org
+    </div>
+  </div><!-- /volet contexte -->
+
+
+  <!-- ═══ VOLET DROIT : COUVERTURE ═══ -->
+  <div class="panel v-cover">
+    <div class="cover-dots"></div>
+
+    <!-- Puzzles déco -->
+    <div class="pz" style="top:8mm; left:5mm; width:10mm; height:10mm; background:var(--orange); transform:rotate(12deg)"></div>
+    <div class="pz" style="top:5mm; right:6mm; width:11mm; height:11mm; background:var(--violet); transform:rotate(-18deg)"></div>
+    <div class="pz" style="top:22mm; left:3mm; width:7mm; height:7mm; background:var(--vert); transform:rotate(50deg)"></div>
+    <div class="pz" style="top:22mm; right:3mm; width:8mm; height:8mm; background:var(--bleu-vif); transform:rotate(-40deg)"></div>
+    <div class="pz" style="bottom:20mm; left:4mm; width:7mm; height:7mm; background:var(--vert2); transform:rotate(130deg)"></div>
+    <div class="pz" style="bottom:20mm; right:4mm; width:6mm; height:6mm; background:var(--rouge); transform:rotate(200deg)"></div>
+
+    <!-- Barre top arc-en-ciel -->
+    <div class="rainbow-bar">
+      <div class="rb-seg" style="background:var(--bleu-nuit)"></div>
+      <div class="rb-seg" style="background:var(--vert)"></div>
+      <div class="rb-seg" style="background:var(--orange)"></div>
+      <div class="rb-seg" style="background:var(--violet)"></div>
+      <div class="rb-seg" style="background:var(--rouge)"></div>
+      <div class="rb-seg" style="background:var(--bleu-vif)"></div>
+    </div>
+
+    <div class="cover-content">
+      <!-- Image cercle -->
+      <div class="cover-img-ring">
+        <img src="Gemini_Generated_Image_2wcdef2wcdef2wcd.png"
+             alt="Autisme Sénégal"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="cover-img-fallback" style="display:none;">P.A.S</div>
+      </div>
+
+      <!-- Pastilles awareness -->
+      <div class="awareness-row">
+        <div class="aw-dot" style="background:var(--bleu-nuit)"></div>
+        <div class="aw-dot" style="background:var(--vert)"></div>
+        <div class="aw-dot" style="background:var(--orange)"></div>
+        <div class="aw-dot" style="background:var(--violet)"></div>
+        <div class="aw-dot" style="background:var(--bleu-vif)"></div>
+      </div>
+
+      <div class="cover-sigle">P.A.S</div>
+      <div class="cover-name1">PLATEFORME AUTISME</div>
+      <div class="cover-name2-wrap">
+        <div class="cover-name2">S É N É G A L</div>
+      </div>
+
+      <div class="cover-divider">
+        <div class="cover-div-line"></div>
+        <div class="cover-div-dot"></div>
+        <div class="cover-div-line"></div>
+      </div>
+
+      <div class="cover-slogan">« Ensemble pour l'autisme »</div>
+
+      <div class="cover-stat-box">
+        <div class="cover-stat-num">1 enfant / 160</div>
+        <div class="cover-stat-sub">est autiste dans le monde (OMS)</div>
+      </div>
+
+      <div class="cover-cta">
+        <div class="cover-cta-title">▶ &nbsp;Rejoignez-nous !</div>
+        <div class="cover-cta-sub">Ensemble notre voix est plus forte</div>
+      </div>
+    </div><!-- /.cover-content -->
+
+    <!-- Barre bas -->
+    <div class="cover-bottom">
+      <div style="height:5mm; background:var(--bleu-nuit)"></div>
+      <div style="height:2.5mm; background:var(--orange)"></div>
+    </div>
+  </div><!-- /volet couverture -->
+
+</div><!-- /.sheet recto -->
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 2 — VERSO
+     G=Activités | C=Résultats | D=Contact+Logos
+     ════════════════════════════════════════════════════════════ -->
+<div class="page-label">📄 VERSO — Page 2 (imprimer en verso)</div>
+<div class="sheet" id="verso">
+
+  <!-- ═══ VOLET GAUCHE : NOS ACTIVITÉS ═══ -->
+  <div class="panel v-act">
+    <div class="panel-hd">
+      <div class="panel-hd-title">NOS ACTIVITÉS</div>
+      <div class="panel-hd-rule"></div>
+      <div class="panel-hd-sub">6 axes d'intervention clés</div>
+    </div>
+
+    <div class="act-body">
+
+      <div class="act-card">
+        <div class="act-card-stripe" style="background:var(--bleu-nuit)"></div>
+        <div class="act-icon" style="background:var(--bleu-nuit)">●</div>
+        <div class="act-content">
+          <div class="act-title" style="background:var(--bleu-nuit)">REGROUPEMENT</div>
+          <div class="act-desc">Fédérer toutes les associations membres autour de la plateforme nationale.</div>
+        </div>
+      </div>
+
+      <div class="act-card">
+        <div class="act-card-stripe" style="background:var(--violet)"></div>
+        <div class="act-icon" style="background:var(--violet)">▲</div>
+        <div class="act-content">
+          <div class="act-title" style="background:var(--violet)">PLAIDOYER</div>
+          <div class="act-desc">Sensibiliser les autorités sur l'urgence de la prise en charge des enfants TSA.</div>
+        </div>
+      </div>
+
+      <div class="act-card">
+        <div class="act-card-stripe" style="background:var(--orange)"></div>
+        <div class="act-icon" style="background:var(--orange)">■</div>
+        <div class="act-content">
+          <div class="act-title" style="background:var(--orange)">CONCERTATION</div>
+          <div class="act-desc">Créer un cadre de dialogue permanent avec les institutions publiques.</div>
+        </div>
+      </div>
+
+      <div class="act-card">
+        <div class="act-card-stripe" style="background:var(--vert)"></div>
+        <div class="act-icon" style="background:var(--vert)">◆</div>
+        <div class="act-content">
+          <div class="act-title" style="background:var(--vert)">STRATÉGIE</div>
+          <div class="act-desc">Définir une feuille de route commune et la présenter aux autorités.</div>
+        </div>
+      </div>
+
+      <div class="act-card">
+        <div class="act-card-stripe" style="background:var(--bleu-vif)"></div>
+        <div class="act-icon" style="background:var(--bleu-vif)">★</div>
+        <div class="act-content">
+          <div class="act-title" style="background:var(--bleu-vif)">FORMATION</div>
+          <div class="act-desc">Former les associations sur les nouvelles pratiques et outils TSA.</div>
+        </div>
+      </div>
+
+      <div class="act-card">
+        <div class="act-card-stripe" style="background:var(--vert2)"></div>
+        <div class="act-icon" style="background:var(--vert2)">◉</div>
+        <div class="act-content">
+          <div class="act-title" style="background:var(--vert2)">RÉSEAUTAGE</div>
+          <div class="act-desc">Connecter les associations avec les ministères et les bailleurs de fonds.</div>
+        </div>
+      </div>
+
+    </div><!-- /.act-body -->
+
+    <div class="act-photo">
+      <img src="WhatsApp Image 2026-03-24 at 14.24.45.jpeg"
+           alt="Activité PAS"
+           onerror="this.parentElement.style.display='none'">
+    </div>
+  </div><!-- /volet activités -->
+
+
+  <!-- ═══ VOLET CENTRE : RÉSULTATS ATTENDUS ═══ -->
+  <div class="panel v-res">
+    <!-- Barre latérale droite arc-en-ciel -->
+    <div class="res-sidebar">
+      <div style="flex:1; background:var(--orange)"></div>
+      <div style="flex:1; background:var(--bleu-vif)"></div>
+      <div style="flex:1; background:var(--vert)"></div>
+      <div style="flex:1; background:var(--violet)"></div>
+      <div style="flex:1; background:var(--rouge)"></div>
+      <div style="flex:1; background:var(--bleu-nuit)"></div>
+      <div style="flex:1; background:var(--vert2)"></div>
+    </div>
+
+    <div class="panel-hd">
+      <div class="panel-hd-title">RÉSULTATS ATTENDUS</div>
+      <div class="panel-hd-rule"></div>
+      <div class="panel-hd-sub">Nos 4 engagements concrets</div>
+    </div>
+
+    <div class="res-body">
+
+      <div class="res-card" style="border-left-color:var(--bleu-nuit)">
+        <div class="res-card-bg-num" style="color:var(--bleu-nuit)">01</div>
+        <div class="res-num" style="color:var(--bleu-nuit)">01</div>
+        <div class="res-bar" style="background:var(--bleu-nuit)"></div>
+        <div class="res-title">Référentiel autisme</div>
+        <div class="res-desc">Une situation de référence sur l'autisme au Sénégal établie et documentée.</div>
+      </div>
+
+      <div class="res-card" style="border-left-color:var(--vert)">
+        <div class="res-card-bg-num" style="color:var(--vert)">02</div>
+        <div class="res-num" style="color:var(--vert)">02</div>
+        <div class="res-bar" style="background:var(--vert)"></div>
+        <div class="res-title">Infrastructures renforcées</div>
+        <div class="res-desc">Les infrastructures médicales et éducatives consolidées et accessibles.</div>
+      </div>
+
+      <div class="res-card" style="border-left-color:var(--orange)">
+        <div class="res-card-bg-num" style="color:var(--orange)">03</div>
+        <div class="res-num" style="color:var(--orange)">03</div>
+        <div class="res-bar" style="background:var(--orange)"></div>
+        <div class="res-title">Éducation inclusive</div>
+        <div class="res-desc">Un programme national d'éducation inclusive effectivement mis en place.</div>
+      </div>
+
+      <div class="res-card" style="border-left-color:var(--violet)">
+        <div class="res-card-bg-num" style="color:var(--violet)">04</div>
+        <div class="res-num" style="color:var(--violet)">04</div>
+        <div class="res-bar" style="background:var(--violet)"></div>
+        <div class="res-title">Formation professionnelle</div>
+        <div class="res-desc">Des programmes de formation professionnelle élaborés pour adolescents autistes.</div>
+      </div>
+
+      <div class="oms-card">
+        <div class="oms-title">⬡ DONNÉES OMS</div>
+        <div class="oms-text">1 enfant sur 160 est autiste dans le monde</div>
+        <div class="oms-sub">0,8 % des enfants en bas âge au Sénégal</div>
+      </div>
+
+      <div class="res-photo">
+        <img src="WhatsApp Image 2026-03-24 at 14.24.45_1.jpeg"
+             alt="Résultats PAS"
+             onerror="this.parentElement.style.display='none'">
+      </div>
+
+    </div><!-- /.res-body -->
+
+    <div class="panel-ft" style="background:var(--gris-fonce); color:rgba(255,255,255,0.6);">
+      P.A.S — Plateforme Autisme Sénégal
+    </div>
+  </div><!-- /volet résultats -->
+
+
+  <!-- ═══ VOLET DROIT : CONTACT + LOGOS MEMBRES ═══ -->
+  <div class="panel v-contact">
+
+    <!-- Barre top arc-en-ciel -->
+    <div class="rainbow-bar">
+      <div class="rb-seg" style="background:var(--bleu-nuit)"></div>
+      <div class="rb-seg" style="background:var(--vert)"></div>
+      <div class="rb-seg" style="background:var(--orange)"></div>
+      <div class="rb-seg" style="background:var(--violet)"></div>
+      <div class="rb-seg" style="background:var(--rouge)"></div>
+      <div class="rb-seg" style="background:var(--bleu-vif)"></div>
+    </div>
+
+    <div class="contact-body">
+
+      <!-- Logo P.A.S -->
+      <div class="contact-logo-circle">
+        <div class="contact-pas">P.A.S</div>
+        <div class="contact-name">PLATEFORME AUTISME SÉNÉGAL</div>
+      </div>
+
+      <!-- Séparateur -->
+      <div class="contact-divider">
+        <div class="contact-div-line"></div>
+        <div class="contact-div-dot"></div>
+        <div class="contact-div-line"></div>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-badge" style="background:var(--bleu-vif)">@</div>
+          <div class="contact-val">contact@plateforme-autisme-senegal.org</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-badge" style="background:var(--bleu-nuit)">WEB</div>
+          <div class="contact-val">www.plateforme-autisme-senegal.org</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-badge" style="background:#4267B2">FB</div>
+          <div class="contact-val">Plateforme Autisme Sénégal</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-badge" style="background:#0077B5">IN</div>
+          <div class="contact-val">Plateforme Autisme Sénégal</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-badge" style="background:var(--vert)">📍</div>
+          <div class="contact-val">Liberté 6 Villa N°7974 Dakar-Sénégal</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-badge" style="background:var(--bleu-nuit)">☎</div>
+          <div class="contact-val">+221 77 204 58 50<br>+221 77 657 82 75<br>+1 (551) 331-9306 <span style="opacity:.75;font-size:0.9em">(diaspora)</span></div>
+        </div>
+      </div>
+
+      <!-- Ruban puzzles awareness -->
+      <div class="puzzle-ribbon">
+        <div class="puzz-chip" style="background:var(--bleu-nuit)"></div>
+        <div class="puzz-chip" style="background:var(--vert)"></div>
+        <div class="puzz-chip" style="background:var(--orange)"></div>
+        <div class="puzz-chip" style="background:var(--violet)"></div>
+        <div class="puzz-chip" style="background:var(--rouge)"></div>
+        <div class="puzz-chip" style="background:var(--bleu-vif)"></div>
+        <div class="puzz-chip" style="background:var(--vert2)"></div>
+      </div>
+
+      <!-- ── LOGOS ASSOCIATIONS MEMBRES ── -->
+      <div class="members-section">
+        <div class="members-hd">
+          <div class="members-hd-line"></div>
+          <div class="members-hd-title">🤝 Associations membres</div>
+          <div class="members-hd-line"></div>
+        </div>
+        <div class="members-grid">
+          <div class="member-logo">
+            <img src="images/partenaires/association-enfants-soleil.png" alt="Enfants Soleil">
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/partenaire-02.jpg" alt="SEI">
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/partenaire-03.jpeg" alt="Special Olympics">
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/association-copekx.png" alt="COPEKX">
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/partenaire-04.jpeg" alt="Impact Social">
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/association-monde-de-naby.png" alt="Monde de Naby">
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/association-maison-espoir-autisme.png" alt="Maison Espoir">
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/association-sourire-espoir.png" alt="Sourire Espoir">
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/association-colombin.png" alt="Colombins">
+          </div>
+          <div class="member-badge">
+            <div class="member-badge-icon">🤝</div>
+            <div class="member-badge-name">Jappo Dollel Khaleyi</div>
+          </div>
+          <div class="member-logo">
+            <img src="images/partenaires/association-najee-global.png" alt="Najee">
+          </div>
+          <div class="member-logo member-logo--dark">
+            <img src="images/partenaires/association-delossi.png" alt="Delossi">
+          </div>
+        </div>
+        <div class="members-tagline">Unis pour une cause commune — Ensemble notre voix est plus forte</div>
+      </div>
+
+      <!-- Slogan final -->
+      <div class="contact-slogan">
+        <div class="contact-slogan-text">« Fédérer pour mieux agir »</div>
+      </div>
+
+    </div><!-- /.contact-body -->
+
+    <!-- Barre bas -->
+    <div class="contact-bottom">
+      <div style="height:5mm; background:var(--bleu-nuit)"></div>
+      <div style="height:2.5mm; background:var(--orange)"></div>
+    </div>
+  </div><!-- /volet contact -->
+
+</div><!-- /.sheet verso -->
+
+</body>
+</html>

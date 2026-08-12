@@ -1,0 +1,53 @@
+/* Compact FR/EN language switcher — no pill overload */
+.lang-switcher {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.lang-switcher-wrap {
+  list-style: none;
+}
+
+.lang-switcher a,
+.lang-switcher .lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.72;
+  border-radius: 2px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lang-switcher a:hover,
+.lang-switcher .lang-btn:hover {
+  opacity: 1;
+}
+
+.lang-switcher a.is-active,
+.lang-switcher .lang-btn.is-active {
+  opacity: 1;
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lang-switcher .lang-code {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.lang-switcher [aria-hidden="true"] {
+  font-size: 0.95rem;
+  line-height: 1;
+}
