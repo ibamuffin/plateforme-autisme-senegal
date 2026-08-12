@@ -284,36 +284,67 @@ function closeMobileNav() {
     navPanel?.classList.remove('active');
 }
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links (language-safe)
+function isIndexPathname(pathname) {
+    const segs = String(pathname || '').split('/').filter(Boolean);
+    const last = segs.length ? segs[segs.length - 1] : '';
+    return !last || last === 'en' || last === 'index.html' || last === 'index';
+}
+
+function currentSiteLang() {
+    return /(?:^|\/)en(?:\/|$)/i.test(window.location.pathname || '') ? 'en' : 'fr';
+}
+
+function langHomePath(lang, file, search, hash) {
+    const name = file || 'index.html';
+    const isIndex = name === 'index.html' || name === 'index';
+    if (lang === 'en') {
+        return (isIndex ? '/en/index.html' : '/en/' + name) + (search || '') + (hash || '');
+    }
+    return (isIndex ? '/index.html' : '/' + name) + (search || '') + (hash || '');
+}
+
 function smoothScroll(e) {
     const href = this.getAttribute('href');
-    
-    // Si le lien pointe vers une autre page (contient /), laisser la navigation normale
-    if (href.includes('/') && !href.startsWith('#')) {
-        // C'est un lien vers une page annexe, laisser le navigateur gérer
+    if (!href || /^(mailto:|tel:|javascript:|https?:)/i.test(href)) return;
+
+    let url;
+    try {
+        url = new URL(href, window.location.href);
+    } catch (err) {
         return;
     }
-    
-    e.preventDefault();
-    
-    // Extraire l'ID de la section (enlever le / si présent)
-    const targetId = href.replace(/^\//, '');
-    
-    // Vérifier si la section existe sur la page actuelle
-    const targetSection = document.querySelector(targetId);
-    
-    if (targetSection) {
-        const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
-    } else {
-        // Si la section n'existe pas, c'est qu'on est sur une page annexe
-        // Rediriger vers la page d'accueil avec l'ancre
-        window.location.href = '/' + targetId;
+    if (url.origin !== window.location.origin) return;
+
+    const lang = (window.PAS_I18N && window.PAS_I18N.getPreference && window.PAS_I18N.getPreference())
+        || currentSiteLang();
+    const file = (url.pathname.split('/').filter(Boolean).pop()) || 'index.html';
+    const samePage = url.pathname === window.location.pathname
+        || (isIndexPathname(url.pathname) && isIndexPathname(window.location.pathname));
+
+    /* Plain page link without hash: keep default browser navigation. */
+    if (!url.hash) {
+        closeMobileNav();
+        return;
     }
-    
+
+    /* Same page + hash → smooth scroll. */
+    if (samePage) {
+        e.preventDefault();
+        const targetSection = document.querySelector(url.hash);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 70,
+                behavior: 'smooth'
+            });
+        }
+        closeMobileNav();
+        return;
+    }
+
+    /* Other page + hash → stay in preferred / current language (never force FR root). */
+    e.preventDefault();
+    window.location.href = langHomePath(lang, file, url.search, url.hash);
     closeMobileNav();
 }
 

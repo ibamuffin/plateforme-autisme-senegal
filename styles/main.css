@@ -539,7 +539,7 @@ a[href="#donation"].nav-link,
 @media (min-width: 769px) and (max-width: 1280px) {
     .nav-container {
         padding: 0.4rem 0.65rem;
-        overflow: hidden;
+        overflow: visible;
     }
 
     .nav-logo h2 {

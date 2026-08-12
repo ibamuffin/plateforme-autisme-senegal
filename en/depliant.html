@@ -26,8 +26,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/main.css?v=2026-08-12a">
-    <link rel="stylesheet" href="../styles/lang-switcher.css?v=2026-08-12a">
+    <link rel="stylesheet" href="../styles/main.css?v=2026-08-12c">
+    <link rel="stylesheet" href="../styles/lang-switcher.css?v=2026-08-12c">
     <link rel="stylesheet" href="../styles/organisation.css?v=2026-07-28b">
     <link rel="stylesheet" href="../styles/web3-components.css?v=2024-03-28b">
     <link rel="stylesheet" href="../styles/fontawesome-local.css">
@@ -857,6 +857,7 @@
         }
 
     </style>
+    <script src="../js/i18n-switcher.js?v=2026-08-12e"></script>
 </head>
 <body>
     <!-- ══════════════════════════════════════════
@@ -897,6 +898,12 @@
             <li class="nav-item"><a href="index.html#donation" class="nav-link nav-link-cta">Call to action</a></li>
                 <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
+            </div>
+            <div class="nav-lang-end" aria-label="Language">
+              <div class="lang-switcher" role="group" aria-label="Language">
+                <a href="../depliant.html" data-lang="fr" class="lang-btn" hreflang="fr" title="Français"><span aria-hidden="true">🇫🇷</span><span class="lang-code">FR</span></a>
+                <a href="depliant.html" data-lang="en" class="lang-btn is-active" hreflang="en" title="English" aria-current="true"><span aria-hidden="true">🇬🇧</span><span class="lang-code">EN</span></a>
+              </div>
             </div>
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
@@ -1901,7 +1908,6 @@
         </div>
     </footer>
 
-    <script src="../js/main.js?v=2026-08-01a"></script>
-    <script src="../js/i18n-switcher.js?v=2026-08-12" defer></script>
+    <script src="../js/main.js?v=2026-08-12e"></script>
 </body>
 </html>

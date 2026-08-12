@@ -1,12 +1,16 @@
-/* Compact FR/EN language switcher — pinned to far right of navbar */
+/* Compact FR/EN language switcher — always visible, far right of navbar */
 .nav-lang-end {
-  display: flex;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   align-items: center;
+  flex: 0 0 auto;
   flex-shrink: 0;
   margin-left: 0.35rem;
   padding-left: 0.45rem;
   border-left: 1px solid rgba(30, 64, 175, 0.18);
-  z-index: 1002;
+  position: relative;
+  z-index: 1003;
 }
 
 .navbar.scrolled .nav-lang-end {
@@ -14,9 +18,10 @@
 }
 
 .lang-switcher {
-  display: flex;
+  display: inline-flex !important;
   gap: 0.25rem;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .lang-switcher-wrap {
@@ -25,50 +30,58 @@
 
 .lang-switcher a,
 .lang-switcher .lang-btn {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 0.2rem;
-  padding: 0.28rem 0.4rem;
+  padding: 0.3rem 0.45rem;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.2;
   text-decoration: none;
-  color: var(--primary-color, #1e40af);
-  opacity: 0.75;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  background: transparent;
-  box-shadow: none;
+  color: #1e40af !important;
+  opacity: 1;
+  border-radius: 6px;
+  border: 1px solid rgba(30, 64, 175, 0.28);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+  white-space: nowrap;
 }
 
 .navbar.scrolled .lang-switcher a,
 .navbar.scrolled .lang-switcher .lang-btn {
-  color: #fff;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: none;
 }
 
 .lang-switcher a:hover,
 .lang-switcher .lang-btn:hover {
   opacity: 1;
-  background: rgba(30, 64, 175, 0.08);
+  background: #eff6ff;
+  border-color: #1e40af;
 }
 
 .navbar.scrolled .lang-switcher a:hover,
 .navbar.scrolled .lang-switcher .lang-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.28);
+  border-color: #fff;
 }
 
 .lang-switcher a.is-active,
 .lang-switcher .lang-btn.is-active {
   opacity: 1;
-  border-color: currentColor;
-  background: rgba(30, 64, 175, 0.06);
+  border-color: #1e40af;
+  background: #dbeafe;
+  box-shadow: inset 0 0 0 1px rgba(30, 64, 175, 0.15);
 }
 
 .navbar.scrolled .lang-switcher a.is-active,
 .navbar.scrolled .lang-switcher .lang-btn.is-active {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #fff;
+  box-shadow: none;
 }
 
 .lang-switcher .lang-code {
@@ -84,7 +97,7 @@
 @media (max-width: 768px) {
   .nav-lang-end {
     margin-left: auto;
-    margin-right: 0.5rem;
+    margin-right: 0.45rem;
     padding-left: 0;
     border-left: none;
     order: 2;
@@ -97,4 +110,19 @@
   .nav-logo {
     order: 1;
   }
+
+  .lang-switcher a,
+  .lang-switcher .lang-btn {
+    padding: 0.34rem 0.42rem;
+  }
+}
+
+/* Print toolbars (dépliant imprimable) */
+.print-toolbar .lang-switcher a,
+.print-toolbar .lang-btn {
+  color: #1e40af !important;
+  background: #fff;
+  border: 1px solid rgba(30, 64, 175, 0.3);
+  border-radius: 6px;
+  padding: 0.35rem 0.55rem;
 }

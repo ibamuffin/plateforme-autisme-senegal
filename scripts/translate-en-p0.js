@@ -1,0 +1,661 @@
+/**
+ * Translate EN mirror P0 pages (visible UI + prose).
+ * Run: node scripts/translate-en-p0.js
+ */
+const fs = require('fs');
+const path = require('path');
+
+const EN = path.join(__dirname, '..', 'en');
+const FILES = [
+  'index.html',
+  'associations-membres.html',
+  'mot-presidente.html',
+  'bureau-executif.html',
+  'conseil-administration.html',
+  'depliant.html'
+];
+
+/** Longest-first phrase map (FR → EN). Proper names left unchanged. */
+const PAIRS = [
+  // Meta / SEO common
+  ['meta name="language" content="fr"', 'meta name="language" content="en"'],
+  ['<meta property="og:locale" content="fr_SN">', '<meta property="og:locale" content="en_US">\n    <meta property="og:locale:alternate" content="fr_SN">'],
+
+  // Nav leftovers
+  ['Qui sommes-nous&nbsp;?', 'About us'],
+  ['Qui sommes-nous ?', 'About us'],
+  ['Événement', 'Event'],
+  ['2 Avr', '2 Apr'],
+  ['Dépliant', 'Brochure'],
+  ['Actions rapides', 'Quick actions'],
+  ['aria-label="Actions rapides"', 'aria-label="Quick actions"'],
+  ['aria-label="Sections organisation"', 'aria-label="Organisation sections"'],
+  ['aria-label="Sections du dépliant"', 'aria-label="Brochure sections"'],
+  ['aria-label="Fil d\'actualités autisme"', 'aria-label="Autism news feed"'],
+
+  // Subnav
+  ['Mot de la présidente', "President's message"],
+  ['Mot de la Présidente', "President's Message"],
+  ['Associations membres', 'Member associations'],
+  ['Associations Membres', 'Member Associations'],
+  ['Bureau exécutif', 'Executive Board'],
+  ['Bureau Exécutif', 'Executive Board'],
+  ['Conseil d\'administration', 'Board of Directors'],
+  ['Conseil d\'Administration', 'Board of Directors'],
+  ['Dépliant complet', 'Full brochure'],
+
+  // Footer legal
+  ['Tous droits réservés.', 'All rights reserved.'],
+  ['Mentions légales', 'Legal notice'],
+  ['Politique de confidentialité', 'Privacy policy'],
+  ['Liens Utiles', 'Useful links'],
+  ['Suivez-nous', 'Follow us'],
+  ['Ministère de la Santé', 'Ministry of Health'],
+  ['Ministère de l\'Éducation', 'Ministry of Education'],
+  ['OMS — Autisme', 'WHO — Autism'],
+  ['OMS Autisme', 'WHO Autism'],
+
+  // Index ticker
+  ['Chargement des actualités médias…', 'Loading media news…'],
+  ['Voir plus', 'See more'],
+
+  // Index hero / sections
+  ['Plateforme Autisme au Sénégal', 'Autism Platform Senegal'],
+  ['« Ensemble pour une société plus inclusive où chaque personne compte »', '“Together for a more inclusive society where everyone counts”'],
+  ['Associations membres fédérées (P.A.S)', 'Federated member associations (P.A.S)'],
+  ['Enfants souffrant de TSA selon l\'OMS', 'Children with ASD according to WHO'],
+  ['Personnes touchées par l\'autisme en Afrique', 'People affected by autism in Africa'],
+  ['En savoir plus', 'Learn more'],
+  ['Enfants avec autisme tenant des pièces de puzzle', 'Children with autism holding puzzle pieces'],
+
+  ['Notre Vision', 'Our Vision'],
+  ['Notre Mission', 'Our Mission'],
+  ['Objectif Général', 'Overall Goal'],
+  ['Nos Objectifs', 'Our Goals'],
+  ['Nos Activités', 'Our Activities'],
+  ['Coordonner les efforts', 'Coordinate efforts'],
+  ['Fédérer les associations intervenant dans l\'autisme du Sénégal pour améliorer la prise en charge des enfants TSA à travers le plaidoyer, la formation, le partage de ressources et la sensibilisation du public.',
+    'Unite associations working on autism in Senegal to improve care for children with ASD through advocacy, training, resource sharing, and public awareness.'],
+  ['Fédérer les actions des associations engagées dans le domaine de l\'autisme afin de promouvoir une société inclusive, équitable et respectueuse des droits des personnes autistes, à travers le plaidoyer, la sensibilisation, le renforcement des capacités et l\'amélioration de l\'accès aux services éducatifs, sanitaires et sociaux.',
+    'Unite the actions of associations engaged in autism to promote an inclusive, equitable society that respects the rights of autistic people, through advocacy, awareness-raising, capacity building, and improved access to education, health, and social services.'],
+  ['Nous coordonnons les efforts des différentes parties prenantes pour que des actions concrètes soient posées par les autorités. Nous devons parler d\'une seule et même voix afin de mieux porter la problématique de l\'autisme.',
+    'We coordinate stakeholders so that authorities take concrete action. We must speak with one voice to better advance the autism agenda.'],
+  ['Unir les associations pour plus d\'impact', 'Unite associations for greater impact'],
+  ['Une société où chaque personne compte', 'A society where everyone counts'],
+  ['Meilleure prise en charge des enfants TSA', 'Better care for children with ASD'],
+  ['Plateforme des associations d\'autisme', 'Platform of autism associations'],
+  ['Fédération', 'Federation'],
+  ['Amélioration', 'Improvement'],
+
+  ['Contexte et Justification', 'Context and Rationale'],
+  ['L\'autisme est une pathologie qui commence à prendre de l\'ampleur dans le monde. Selon l\'OMS, <strong>1 enfant sur 100</strong> souffre des Troubles du Spectre de l\'Autisme (TSA), et <strong>15 millions de personnes</strong> sont touchées par l\'autisme en Afrique. Au Sénégal, les estimations avoisinent <strong>0,8&nbsp;%</strong> de la population selon le CHU de Fann.',
+    'Autism is a condition that is increasingly visible worldwide. According to WHO, <strong>1 in 100 children</strong> has Autism Spectrum Disorder (ASD), and <strong>15 million people</strong> are affected by autism in Africa. In Senegal, estimates are around <strong>0.8%</strong> of the population according to CHU Fann.'],
+  ['Situation au Sénégal', 'Situation in Senegal'],
+  ['Au Sénégal, le peu de statistiques que nous avons à disposition renseignent que <strong>"0,8% des enfants en bas âge sont touchés par l\'autisme"</strong> selon le Centre pédopsychiatrique de l\'hôpital Fann.',
+    'In Senegal, the limited statistics available indicate that <strong>“0.8% of young children are affected by autism”</strong> according to the child psychiatry centre at Fann Hospital.'],
+  ['Défis actuels', 'Current challenges'],
+  ['Déficit criard en termes de ressources médicales', 'Severe shortage of medical resources'],
+  ['Manque de personnel paramédical spécialisé', 'Lack of specialized allied health professionals'],
+  ['Insuffisance de ressources éducatives adaptées', 'Insufficient adapted educational resources'],
+  ['Infrastructures spécialisées limitées', 'Limited specialized infrastructure'],
+  ['Statistiques et défis de l\'autisme au Sénégal', 'Autism statistics and challenges in Senegal'],
+  ['Ampleur Mondiale', 'Global scale'],
+  ['L\'autisme prend de l\'ampleur à travers le monde', 'Autism is growing worldwide'],
+  ['Statistiques Locales', 'Local statistics'],
+  ['0,8% des enfants sénégalais concernés', '0.8% of Senegalese children affected'],
+  ['Action Collective', 'Collective action'],
+  ['Plusieurs associations mobilisées', 'Multiple associations mobilized'],
+
+  ['Schéma des 7 objectifs spécifiques de la plateforme', 'Diagram of the platform’s 7 specific goals'],
+  ['Cadre de Concertation', 'Consultation Framework'],
+  ['Créer un cadre de concertation pérenne avec l\'État', 'Create a lasting consultation framework with the State'],
+  ['État des Lieux', 'Situation Assessment'],
+  ['Inciter les autorités à faire un état des lieux de la situation des enfants', 'Urge authorities to assess the situation of children'],
+  ['Personnel Médical', 'Medical Staff'],
+  ['Faire le plaidoyer pour renforcer le personnel médical et paramédical', 'Advocate to strengthen medical and allied health staffing'],
+  ['Programmes Éducatifs', 'Educational Programs'],
+  ['Accompagner l\'État dans l\'élaboration de programmes d\'éducation adaptés à l\'autisme', 'Support the State in developing autism-adapted education programs'],
+  ['Formation Enseignants', 'Teacher Training'],
+  ['Aider à renforcer les capacités du corps enseignant sur la prise en charge pédagogique', 'Help strengthen teachers’ capacity for pedagogical support'],
+  ['Éducation Inclusive', 'Inclusive Education'],
+  ['Amener l\'État à mettre en place un véritable système d\'éducation inclusive', 'Lead the State to establish a genuine inclusive education system'],
+  ['Infrastructures', 'Infrastructure'],
+  ['Amener les autorités à renforcer les infrastructures éducatives spécialisées', 'Lead authorities to strengthen specialized education infrastructure'],
+
+  ['Centre de thérapie et d\'activités pour enfants avec TSA', 'Therapy and activity centre for children with ASD'],
+  ['Coordonner les actions des associations', 'Coordinate association actions'],
+  ['Harmoniser et organiser les efforts de toutes les associations membres pour maximiser l\'impact', 'Harmonize and organize all member associations’ efforts to maximize impact'],
+  ['Sensibiliser les autorités', 'Raise awareness among authorities'],
+  ['Alerter les décideurs sur l\'urgence de la prise en charge des enfants TSA', 'Alert decision-makers to the urgency of care for children with ASD'],
+  ['Mener des actions de plaidoyer', 'Carry out advocacy'],
+  ['Défendre les droits des personnes autistes auprès des institutions publiques', 'Defend the rights of autistic people with public institutions'],
+  ['Créer des cadres de concertation', 'Create consultation frameworks'],
+  ['Établir des mécanismes permanents de dialogue avec les institutions publiques', 'Establish permanent dialogue mechanisms with public institutions'],
+  ['Assister les associations', 'Support associations'],
+  ['Accompagner les associations dans la mise en œuvre de leurs activités', 'Support associations in implementing their activities'],
+  ['Animer le cadre de concertation', 'Facilitate the consultation framework'],
+  ['Faciliter les échanges réguliers avec les institutions publiques', 'Facilitate regular exchanges with public institutions'],
+  ['Former les associations', 'Train associations'],
+  ['Renforcer les capacités des associations sur les nouvelles pratiques et outils de l\'autisme', 'Build association capacity on new autism practices and tools'],
+  ['Connecter avec les bailleurs', 'Connect with funders'],
+  ['Mettre en relation les associations avec de potentiels bailleurs de fonds', 'Connect associations with potential funders'],
+
+  ['Actualités', 'News'],
+  ['L\'autisme dans le monde et au Sénégal : événements, témoignages, presse et mobilisation.',
+    'Autism worldwide and in Senegal: events, testimonials, press, and mobilization.'],
+  ['Journée Mondiale de l\'Autisme — 2 Avril 2026', 'World Autism Awareness Day — 2 April 2026'],
+  ['Retour sur la mobilisation à Dakar : conférences, projections et sensibilisation.',
+    'Looking back at mobilization in Dakar: conferences, screenings, and awareness.'],
+  ['Voir les témoignages', 'See testimonials'],
+  ['Reportages &amp; vidéos', 'Reports &amp; videos'],
+  ['Couverture média et enregistrements de la plateforme autour de l\'inclusion TSA.',
+    'Media coverage and platform recordings on ASD inclusion.'],
+  ['Regarder', 'Watch'],
+  ['Autisme : enjeu africain', 'Autism: an African challenge'],
+  ['15 millions de personnes touchées par l\'autisme en Afrique selon l\'OMS — un défi de santé publique continental.',
+    '15 million people affected by autism in Africa according to WHO — a continental public health challenge.'],
+  ['Presse sénégalaise', 'Senegalese press'],
+  ['Dakaractu, Seneweb et médias locaux relaient le combat des familles et de la P.A.S.',
+    'Dakaractu, Seneweb, and local media cover families’ and P.A.S’s fight.'],
+  ['Lire les articles', 'Read the articles'],
+
+  ['Outils et répertoires pour accompagner les familles et professionnels', 'Tools and directories to support families and professionals'],
+  ['Jeux Interactifs', 'Interactive Games'],
+  ['10 jeux éducatifs adaptés aux enfants TSA : émotions, couleurs, mémoire, piano et plus — gratuits et accessibles.',
+    '10 educational games adapted for children with ASD: emotions, colours, memory, piano, and more — free and accessible.'],
+  ['Jouer', 'Play'],
+  ['Répertoire des Médecins', 'Doctors Directory'],
+  ['Liste des médecins spécialisés dans l\'autisme et les troubles du développement au Sénégal',
+    'List of doctors specializing in autism and developmental disorders in Senegal'],
+  ['Consulter', 'Browse'],
+  ['Répertoire des Paramédicaux', 'Allied Health Directory'],
+  ['Orthophonistes, psychomotriciens, ergothérapeutes et autres professionnels spécialisés',
+    'Speech therapists, psychomotor therapists, occupational therapists, and other specialists'],
+  ['Répertoire des Écoles Spécialisées', 'Specialized Schools Directory'],
+  ['Établissements scolaires et centres d\'apprentissage adaptés aux enfants avec TSA',
+    'Schools and learning centres adapted for children with ASD'],
+  ['Mise à jour des répertoires', 'Directory updates'],
+  ['Les répertoires sont régulièrement mis à jour pour vous offrir les informations les plus récentes. Si vous êtes un professionnel et souhaitez être référencé, ou si vous constatez une information erronée, n\'hésitez pas à nous contacter.',
+    'Directories are updated regularly to provide the latest information. If you are a professional and wish to be listed, or if you notice an error, please contact us.'],
+  ['Nous contacter', 'Contact us'],
+  ['Les jeux interactifs seront bientôt disponibles. Merci de votre patience !',
+    'Interactive games will be available soon. Thank you for your patience!'],
+
+  ['Soutenez Notre Cause', 'Support Our Cause'],
+  ['Votre don aide à améliorer la vie des enfants avec TSA au Sénégal',
+    'Your donation helps improve the lives of children with ASD in Senegal'],
+  ['Associations membres', 'Member associations'],
+  ['Répertoires actifs', 'Active directories'],
+  ['Avril — Journée mondiale', 'April — World Autism Day'],
+  ['Votre impact', 'Your impact'],
+  ['15 000 FCFA = Formation d\'un enseignant', '15,000 FCFA = Training one teacher'],
+  ['30 000 FCFA = Séance de thérapie pour un enfant', '30,000 FCFA = Therapy session for a child'],
+  ['60 000 FCFA = Matériel pédagogique adapté', '60,000 FCFA = Adapted teaching materials'],
+  ['120 000 FCFA = Diagnostic complet TSA', '120,000 FCFA = Full ASD diagnosis'],
+  ['Faire un don', 'Make a donation'],
+  ['Montant du don (FCFA)', 'Donation amount (FCFA)'],
+  ['Montant personnalisé', 'Custom amount'],
+  ['Nom complet', 'Full name'],
+  ['Téléphone (ex: 77 123 45 67)', 'Phone (e.g. 77 123 45 67)'],
+  ['Méthode de paiement', 'Payment method'],
+  ['Don mensuel récurrent', 'Monthly recurring donation'],
+  ['Don anonyme', 'Anonymous donation'],
+  ['Faire le don', 'Donate now'],
+  ['Paiement sécurisé SSL', 'Secure SSL payment'],
+  ['Reçu fiscal disponible', 'Tax receipt available'],
+
+  ['Rejoignez-nous', 'Join us'],
+  ['Ensemble, nous pouvons faire la différence', 'Together, we can make a difference'],
+  ['La plateforme des associations intervenant dans le domaine de l\'autisme au Sénégal vous invite à rejoindre notre mouvement pour améliorer la prise en charge des enfants vivant avec les TSA.',
+    'The platform of associations working on autism in Senegal invites you to join our movement to improve care for children living with ASD.'],
+  ['Diaspora / international :', 'Diaspora / international:'],
+  ['Adresse', 'Address'],
+  ['Contactez-nous', 'Contact us'],
+  ['Votre nom', 'Your name'],
+  ['Votre email', 'Your email'],
+  ['Type de contact', 'Contact type'],
+  ['Professionnel de santé', 'Health professional'],
+  ['Institution', 'Institution'],
+  ['Autre', 'Other'],
+  ['Votre message', 'Your message'],
+  ['Envoyer', 'Send'],
+  ['Ensemble pour améliorer la prise en charge des enfants vivant avec les Troubles du Spectre Autistique au Sénégal.',
+    'Together to improve care for children living with Autism Spectrum Disorders in Senegal.'],
+  ['Ensemble pour améliorer la prise en charge des enfants vivant avec les TSA au Sénégal.',
+    'Together to improve care for children living with ASD in Senegal.'],
+
+  // Associations page
+  ['12 associations fédérées au sein de la P.A.S — «&nbsp;Unis pour une cause commune&nbsp;»',
+    '12 associations federated within P.A.S — “United for a common cause”'],
+  ['Nos associations membres', 'Our member associations'],
+  ['Ensemble notre voix est plus forte — «&nbsp;Fédérer pour mieux agir&nbsp;»',
+    'Together our voice is stronger — “Unite to act better”'],
+  ['A renseigner', 'To be confirmed'],
+  ['Sensibilisation, plaidoyer et inclusion des enfants TSA au Sénégal.',
+    'Awareness, advocacy, and inclusion of children with ASD in Senegal.'],
+  ['Appui aux familles et meilleure prise en charge des enfants TSA et en déficience intellectuelle (présidente : Khadidiatou Seydou Thiam).',
+    'Support for families and better care for children with ASD and intellectual disability (president: Khadidiatou Seydou Thiam).'],
+  ['Protection de l\'enfance, inclusion et défense des droits des personnes vulnérables, y compris TSA.',
+    'Child protection, inclusion, and defence of the rights of vulnerable people, including ASD.'],
+  ['actions au Sénégal', 'actions in Senegal'],
+  ['Actions en faveur des enfants vulnérables et sensibilisation communautaire.',
+    'Actions for vulnerable children and community awareness.'],
+  ['Association membre P.A.S — coordonnées à confirmer auprès de la plateforme.',
+    'P.A.S member association — contact details to be confirmed with the platform.'],
+  ['Educate, Empower, Include, Heal, Hope — éducation inclusive, stimulation multisensorielle et coaching parental (Najee Classroom).',
+    'Educate, Empower, Include, Heal, Hope — inclusive education, multisensory stimulation, and parental coaching (Najee Classroom).'],
+  ['Votre association souhaite adhérer ?', 'Would your association like to join?'],
+  ['Contactez la plateforme', 'Contact the platform'],
+
+  // President letter
+  ['Message d\'Aïssatou Diallo Camara — Plateforme Autisme Sénégal (P.A.S)',
+    'Message from Aïssatou Diallo Camara — Autism Platform Senegal (P.A.S)'],
+  ['Présidente', 'President'],
+  ['« L\'autisme n\'est pas une fatalité, mais une différence qui mérite respect, dignité et inclusion.\n                        <em>Ensemble pour l\'autisme</em>, faisons entendre la voix des familles sénégalaises et bâtissons une société où chaque enfant TSA peut grandir différent, mais jamais seul. »',
+    '“Autism is not a fate, but a difference that deserves respect, dignity, and inclusion.\n                        <em>Together for autism</em>, let us amplify the voice of Senegalese families and build a society where every child with ASD can grow up different, but never alone.”'],
+  ['Chères familles, chers partenaires, chers concitoyens,', 'Dear families, dear partners, dear fellow citizens,'],
+  ['Au Sénégal comme ailleurs en Afrique, l\'autisme reste trop souvent méconnu, diagnostiqué tardivement et insuffisamment pris en charge. L\'Organisation mondiale de la Santé estime qu\'<strong>1 enfant sur 100</strong> souffre des Troubles du Spectre de l\'Autisme (TSA), et que <strong>15 millions de personnes</strong> sont touchées par l\'autisme en Afrique. Au Sénégal, les estimations avoisinent <strong>0,8&nbsp;%</strong> de la population, un chiffre qui traduit des milliers de familles en quête de réponses, de structures adaptées et de reconnaissance sociale.',
+    'In Senegal as elsewhere in Africa, autism too often remains poorly understood, diagnosed late, and insufficiently supported. The World Health Organization estimates that <strong>1 in 100 children</strong> has Autism Spectrum Disorder (ASD), and that <strong>15 million people</strong> are affected by autism in Africa. In Senegal, estimates are around <strong>0.8%</strong> of the population — a figure that reflects thousands of families seeking answers, adapted services, and social recognition.'],
+  ['En tant que mère de deux enfants autistes et présidente de la Plateforme des Associations intervenant dans l\'Autisme au Sénégal (P.A.S), je connais intimement le parcours des parents&nbsp;: l\'incertitude du diagnostic, la recherche d\'écoles inclusives, l\'accès limité aux spécialistes, la charge émotionnelle et financière, mais aussi la force, la résilience et l\'amour inconditionnel qui nous animent.',
+    'As a mother of two autistic children and president of the Platform of Associations Working on Autism in Senegal (P.A.S), I know parents’ journeys intimately: the uncertainty of diagnosis, the search for inclusive schools, limited access to specialists, the emotional and financial burden — but also the strength, resilience, and unconditional love that drive us.'],
+  ['C\'est pour répondre à ces défis que la P.A.S fédère aujourd\'hui <strong>12 associations</strong> actives sur tout le territoire. Notre ambition est claire&nbsp;: unifier les voix du secteur associatif, renforcer le plaidoyer auprès des institutions publiques, faciliter l\'accès à la formation des professionnels de santé et de l\'éducation, et créer des ponts entre familles, praticiens, écoles et bailleurs de fonds.',
+    'It is to meet these challenges that P.A.S today federates <strong>12 associations</strong> active across the country. Our ambition is clear: unify the voices of the associative sector, strengthen advocacy with public institutions, facilitate training access for health and education professionals, and build bridges between families, practitioners, schools, and funders.'],
+  ['Chaque 2&nbsp;avril, Journée mondiale de l\'autisme, nous rappelons que l\'inclusion n\'est pas un luxe mais un droit. Nos actions — conférences, sensibilisations, répertoires de ressources, événements culturels — visent à faire évoluer les mentalités et à garantir que plus aucun enfant ne reste invisible faute de structures ou de compréhension.',
+    'Every 2&nbsp;April, World Autism Awareness Day, we remind everyone that inclusion is not a luxury but a right. Our actions — conferences, awareness campaigns, resource directories, cultural events — aim to shift mindsets and ensure no child remains invisible for lack of services or understanding.'],
+  ['Je remercie le bureau exécutif, le conseil d\'administration, nos associations membres et l\'ensemble des partenaires qui croient en une autisme-friendly Sénégal. Rejoignez-nous, soutenez nos initiatives, partagez nos messages. Parce qu\'ensemble, nous pouvons transformer le regard porté sur l\'autisme et ouvrir la voie à une société plus juste et plus humaine.',
+    'I thank the executive board, the board of directors, our member associations, and all partners who believe in an autism-friendly Senegal. Join us, support our initiatives, share our messages. Because together, we can transform how autism is seen and open the way to a fairer, more humane society.'],
+  ['Présidente — Plateforme Autisme Sénégal (P.A.S)', 'President — Autism Platform Senegal (P.A.S)'],
+
+  // Bureau / CA roles & prose
+  ['Gouvernance opérationnelle de la Plateforme Autisme Sénégal (P.A.S)',
+    'Operational governance of Autism Platform Senegal (P.A.S)'],
+  ['Membres du Bureau exécutif', 'Executive Board members'],
+  ['Instance dirigeante chargée d\'exécuter les décisions de l\'Assemblée générale et de piloter la fédération',
+    'Governing body responsible for executing General Assembly decisions and steering the federation'],
+  ['Profil', 'Profile'],
+  ['Fonctions principales', 'Main responsibilities'],
+  ['Professionnelle senior en gestion de projet et suivi-évaluation, avec plus de vingt (20) années d\'expérience. Maman de deux (2) garçons autistes, militante depuis plus de quinze (15) ans pour la cause de l\'autisme au Sénégal. Ancienne secrétaire générale du COPEKX.',
+    'Senior project management and monitoring-evaluation professional with over twenty (20) years of experience. Mother of two (2) autistic boys, advocate for autism in Senegal for more than fifteen (15) years. Former secretary-general of COPEKX.'],
+  ['Coordination nationale de la plateforme', 'National coordination of the platform'],
+  ['Plaidoyer institutionnel et représentation auprès des autorités', 'Institutional advocacy and representation with authorities'],
+  ['Pilotage stratégique et mobilisation des associations membres', 'Strategic leadership and mobilization of member associations'],
+  ['Vice-président', 'Vice-President'],
+  ['Vice-présidente', 'Vice-President'],
+  ['Sociologue, spécialiste de la parentalité, de la petite enfance et de la protection des droits de l\'enfant. Coordinateur de l\'Association Impact Sociale. Expert en plaidoyer institutionnel et défense des enfants vulnérables, y compris ceux présentant des TSA.',
+    'Sociologist specializing in parenting, early childhood, and child rights protection. Coordinator of Association Impact Sociale. Expert in institutional advocacy and defence of vulnerable children, including those with ASD.'],
+  ['Appui à la gouvernance et au plaidoyer institutionnel', 'Support for governance and institutional advocacy'],
+  ['Contribution aux politiques publiques inclusives', 'Contribution to inclusive public policies'],
+  ['Représentation et structuration des actions collectives', 'Representation and structuring of collective action'],
+  ['Engagée dans la cause du handicap et de l\'autisme, mère de Naby, jeune homme autiste de 21 ans. Elle défend l\'inclusion, sensibilise le public et donne de la visibilité aux familles confrontées à l\'isolement.',
+    'Committed to disability and autism, mother of Naby, a 21-year-old autistic young man. She champions inclusion, raises public awareness, and gives visibility to families facing isolation.'],
+  ['Coordination des programmes associatifs', 'Coordination of association programs'],
+  ['Soutien aux familles sur le terrain', 'On-the-ground support for families'],
+  ['Actions de sensibilisation et lutte contre la stigmatisation', 'Awareness actions and fight against stigma'],
+  ['Secrétaire générale', 'Secretary-General'],
+  ['Plus de vingt ans d\'expérience en assistanat de direction et gestion de projets. Parent d\'un jeune autiste. Ex-responsable organisation puis secrétaire générale de COPEKX (2011–2024). Fondatrice de Solidarité Enfance Inclusive.',
+    'Over twenty years’ experience in executive assistance and project management. Parent of an autistic young person. Former organization lead then secretary-general of COPEKX (2011–2024). Founder of Solidarité Enfance Inclusive.'],
+  ['Animation des instances et suivi administratif', 'Facilitation of governing bodies and administrative follow-up'],
+  ['Coordination des réunions du bureau', 'Coordination of board meetings'],
+  ['Rédaction des procès-verbaux et documents officiels', 'Drafting of minutes and official documents'],
+  ['Trésorier', 'Treasurer'],
+  ['Quinze (15) ans d\'expérience en tant qu\'IT Manager dans le secteur bancaire. Parent d\'un enfant autiste, engagé pour l\'inclusion des personnes autistes au Sénégal.',
+    'Fifteen (15) years as IT Manager in banking. Parent of an autistic child, committed to inclusion of autistic people in Senegal.'],
+  ['Gestion financière et budgétaire de la fédération', 'Financial and budget management of the federation'],
+  ['Transparence comptable et rapports financiers', 'Accounting transparency and financial reporting'],
+  ['Mobilisation des ressources pour les projets de la plateforme', 'Resource mobilization for platform projects'],
+  ['Responsable de la communication institutionnelle de la P.A.S. Elle assure la visibilité de la plateforme et l\'animation des canaux auprès des familles, partenaires et grand public.',
+    'Head of P.A.S institutional communications. She ensures platform visibility and manages channels for families, partners, and the public.'],
+  ['Stratégie de communication et image publique', 'Communications strategy and public image'],
+  ['Animation des réseaux sociaux et relations presse', 'Social media management and press relations'],
+  ['Production de contenus de sensibilisation', 'Production of awareness content'],
+
+  ['Orientations stratégiques et gouvernance de la P.A.S', 'Strategic direction and governance of P.A.S'],
+  ['Conformément aux statuts de la P.A.S, la plateforme est administrée par un <strong>Conseil d\'administration</strong>\n                    de sept (7) membres élus par l\'Assemblée générale et un <strong>Bureau exécutif</strong> de cinq (5) membres,\n                    instance dirigeante chargée d\'exécuter les décisions de l\'AG, de veiller au bon fonctionnement de la fédération\n                    et de piloter le secrétariat permanent ainsi que les comités thématiques.',
+    'In accordance with P.A.S statutes, the platform is administered by a <strong>Board of Directors</strong>\n                    of seven (7) members elected by the General Assembly and an <strong>Executive Board</strong> of five (5) members,\n                    the governing body responsible for executing GA decisions, ensuring the federation runs well,\n                    and steering the permanent secretariat and thematic committees.'],
+  ['Membres du CA', 'Board members'],
+  ['Associations fédérées', 'Federated associations'],
+  ['Profils et activités', 'Profiles and activities'],
+  ['Équipe dirigeante de la P.A.S — Plan d\'Actions 2026', 'P.A.S leadership team — 2026 Action Plan'],
+  ['Présidente du CA', 'Chair of the Board'],
+  ['Membre du CA', 'Board member'],
+  ['Membre', 'Member'],
+  ['Professionnelle senior en gestion de projet et suivi-évaluation (20+ ans). Maman de deux garçons autistes, militante depuis 15 ans. Présidente du Bureau exécutif de la P.A.S et ancienne SG du COPEKX.',
+    'Senior project management and M&E professional (20+ years). Mother of two autistic boys, advocate for 15 years. President of the P.A.S Executive Board and former SG of COPEKX.'],
+  ['20+ ans en assistanat de direction et gestion de projets. Ex-SG COPEKX. Secrétaire générale du Bureau exécutif. Fondatrice de Solidarité Enfance Inclusive.',
+    '20+ years in executive assistance and project management. Former SG of COPEKX. Secretary-General of the Executive Board. Founder of Solidarité Enfance Inclusive.'],
+  ['Le conseil d\'administration comprend également des <strong>représentants désignés par les associations membres</strong>,\n                conformément aux statuts, pour garantir une gouvernance participative et ancrée dans le terrain.',
+    'The board of directors also includes <strong>representatives designated by member associations</strong>,\n                in accordance with the statutes, to ensure participatory, field-rooted governance.'],
+
+  // Depliant hero / sections
+  ['DÉPLIANT OFFICIEL', 'OFFICIAL BROCHURE'],
+  ['Plateforme des Associations intervenant dans l\'Autisme au Sénégal',
+    'Platform of Associations Working on Autism in Senegal'],
+  ['"Ensemble pour l\'Autisme"', '"Together for Autism"'],
+  ['enfants touchés par les TSA<br>selon l\'OMS<br><small style="opacity:.7;font-size:0.7em;">15 millions en Afrique · 12+ associations P.A.S</small>',
+    'children affected by ASD<br>according to WHO<br><small style="opacity:.7;font-size:0.7em;">15 million in Africa · 12+ P.A.S associations</small>'],
+  ['Contexte &amp; Mission', 'Context &amp; Mission'],
+  ['La situation de l\'autisme au Sénégal et les fondements de notre plateforme',
+    'The autism situation in Senegal and the foundations of our platform'],
+  ['Enfants TSA<br>au Sénégal', 'Children with ASD<br>in Senegal'],
+  ['Enfants TSA<br>selon l\'OMS', 'Children with ASD<br>per WHO'],
+  ['Organisation Mondiale<br>de la Santé', 'World Health<br>Organization'],
+  ['Personnes touchées<br>en Afrique', 'People affected<br>in Africa'],
+  ['Estimation OMS', 'WHO estimate'],
+  ['Associations<br>membres P.A.S', 'P.A.S member<br>associations'],
+  ['Les Troubles du Spectre Autistique (TSA) constituent un enjeu de santé publique majeur au Sénégal. \n                        Malgré une prévalence estimée à 0,8% chez les enfants en bas âge, les ressources dédiées restent insuffisantes \n                        et les familles manquent d\'accompagnement adapté.',
+    'Autism Spectrum Disorders (ASD) are a major public health issue in Senegal. \n                        Despite an estimated prevalence of 0.8% among young children, dedicated resources remain insufficient \n                        and families lack adapted support.'],
+  ['Face à cette réalité, les associations intervenant dans l\'autisme du Sénégal ont décidé de s\'unir au sein d\'une \n                        <strong>plateforme commune</strong> pour mutualiser leurs forces, harmoniser leurs pratiques et \n                        amplifier leur impact auprès des autorités, des partenaires et des familles concernées.',
+    'Facing this reality, associations working on autism in Senegal decided to unite within a \n                        <strong>shared platform</strong> to pool their strengths, harmonize practices, and \n                        amplify their impact with authorities, partners, and affected families.'],
+  ['Un Sénégal inclusif où chaque enfant vivant avec un TSA bénéficie d\'un diagnostic précoce, \n                            d\'une prise en charge de qualité et d\'une pleine participation à la vie sociale.',
+    'An inclusive Senegal where every child living with ASD benefits from early diagnosis, \n                            quality care, and full participation in social life.'],
+  ['Nos Valeurs', 'Our Values'],
+  ['<strong>Solidarité</strong> entre associations · <strong>Inclusivité</strong> et dignité de chaque enfant · \n                            <strong>Excellence</strong> dans les pratiques · <strong>Transparence</strong> dans la gouvernance · \n                            <strong>Innovation</strong> dans les solutions.',
+    '<strong>Solidarity</strong> among associations · <strong>Inclusivity</strong> and dignity for every child · \n                            <strong>Excellence</strong> in practice · <strong>Transparency</strong> in governance · \n                            <strong>Innovation</strong> in solutions.'],
+  ['Nos 7 Objectifs Spécifiques', 'Our 7 Specific Goals'],
+  ['Les axes stratégiques qui guident l\'action de la Plateforme Autisme Sénégal',
+    'The strategic pillars guiding Autism Platform Senegal'],
+  ['Créer un cadre fédérateur', 'Create a unifying framework'],
+  ['Mettre en place une plateforme nationale représentant les associations d\'autisme du Sénégal avec une gouvernance structurée.',
+    'Establish a national platform representing Senegal’s autism associations with structured governance.'],
+  ['Renforcer les capacités', 'Build capacity'],
+  ['Former les professionnels, accompagnateurs et membres des associations aux meilleures pratiques de prise en charge TSA.',
+    'Train professionals, support workers, and association members in best ASD care practices.'],
+  ['Plaidoyer & politiques', 'Advocacy & policy'],
+  ['Influencer les politiques publiques pour améliorer l\'accès aux services, aux droits et aux ressources pour les enfants autistes.',
+    'Influence public policy to improve access to services, rights, and resources for autistic children.'],
+  ['Sensibiliser le grand public', 'Raise public awareness'],
+  ['Mener des campagnes nationales de sensibilisation pour lutter contre les stigmates et promouvoir l\'inclusion sociale.',
+    'Run national awareness campaigns to fight stigma and promote social inclusion.'],
+  ['Mobiliser les ressources', 'Mobilize resources'],
+  ['Développer des partenariats stratégiques avec les institutions, bailleurs et secteur privé pour financer les programmes.',
+    'Develop strategic partnerships with institutions, funders, and the private sector to finance programs.'],
+  ['Soutenir les familles', 'Support families'],
+  ['Offrir accompagnement psychosocial, réseaux d\'entraide et ressources pratiques aux familles d\'enfants vivant avec un TSA.',
+    'Provide psychosocial support, mutual-aid networks, and practical resources to families of children with ASD.'],
+  ['Partager les données', 'Share data'],
+  ['Constituer une base de connaissances commune : répertoire de ressources, études, outils pédagogiques et bonnes pratiques.',
+    'Build a shared knowledge base: resource directory, studies, teaching tools, and good practices.'],
+  ['Activités Principales', 'Main Activities'],
+  ['Les actions concrètes déployées par la Plateforme Autisme Sénégal',
+    'Concrete actions delivered by Autism Platform Senegal'],
+  ['Activité 01', 'Activity 01'],
+  ['Activité 02', 'Activity 02'],
+  ['Activité 03', 'Activity 03'],
+  ['Activité 04', 'Activity 04'],
+  ['Activité 05', 'Activity 05'],
+  ['Activité 06', 'Activity 06'],
+  ['Activité 07', 'Activity 07'],
+  ['Activité 08', 'Activity 08'],
+  ['Création et structuration de la plateforme', 'Creation and structuring of the platform'],
+  ['Formalisation juridique, mise en place de la gouvernance, adoption des statuts et des règles de fonctionnement des associations membres.',
+    'Legal formalization, governance setup, adoption of statutes and operating rules for member associations.'],
+  ['Gouvernance', 'Governance'],
+  ['Juridique', 'Legal'],
+  ['Formations et renforcement de capacités', 'Training and capacity building'],
+  ['Ateliers pratiques, formations certifiantes, séminaires pour professionnels, familles et responsables d\'associations sur les TSA.',
+    'Practical workshops, certified training, and seminars for professionals, families, and association leaders on ASD.'],
+  ['Formation', 'Training'],
+  ['Certification', 'Certification'],
+  ['Campagnes de sensibilisation', 'Awareness campaigns'],
+  ['Journée mondiale de l\'autisme (2 Avril), campagnes médias, actions en milieu scolaire et communautaire à travers tout le Sénégal.',
+    'World Autism Awareness Day (2 April), media campaigns, school and community actions across Senegal.'],
+  ['Sensibilisation', 'Awareness'],
+  ['Médias', 'Media'],
+  ['2 Avril', '2 April'],
+  ['Plateforme numérique et ressources', 'Digital platform and resources'],
+  ['Site web interactif, répertoires de professionnels et d\'écoles inclusives, jeux éducatifs en ligne pour les enfants TSA.',
+    'Interactive website, directories of professionals and inclusive schools, online educational games for children with ASD.'],
+  ['Numérique', 'Digital'],
+  ['Plaidoyer institutionnel', 'Institutional advocacy'],
+  ['Dialogues avec les ministères, propositions législatives, participation aux forums nationaux et internationaux sur l\'autisme.',
+    'Dialogue with ministries, legislative proposals, participation in national and international autism forums.'],
+  ['Plaidoyer', 'Advocacy'],
+  ['Politique', 'Policy'],
+  ['Accompagnement des familles', 'Family support'],
+  ['Groupes de soutien, ligne d\'écoute, guides pratiques, mise en réseau des familles et ateliers de résilience parentale.',
+    'Support groups, helpline, practical guides, family networking, and parental resilience workshops.'],
+  ['Familles', 'Families'],
+  ['Soutien', 'Support'],
+  ['Recherche et documentation', 'Research and documentation'],
+  ['Collecte de données épidémiologiques, études qualitatives sur la prise en charge, publication de rapports annuels d\'impact.',
+    'Epidemiological data collection, qualitative studies on care, publication of annual impact reports.'],
+  ['Recherche', 'Research'],
+  ['Documentation', 'Documentation'],
+  ['Mobilisation de fonds', 'Fundraising'],
+  ['Campagnes de collecte, soumission de projets aux bailleurs, développement de partenariats publics-privés et événements caritatifs.',
+    'Fundraising campaigns, project submissions to donors, public-private partnerships, and charity events.'],
+  ['Financement', 'Funding'],
+  ['Partenariats', 'Partnerships'],
+
+  // Depliant president letter (multiline variants)
+  ['Au Sénégal comme ailleurs en Afrique, l\'autisme reste trop souvent méconnu, diagnostiqué tardivement et insuffisamment pris en charge.\n                        L\'Organisation mondiale de la Santé estime qu\'<strong>1 enfant sur 100</strong> souffre des Troubles du Spectre de l\'Autisme (TSA), et que <strong>15 millions de personnes</strong> sont touchées par l\'autisme en Afrique. Au Sénégal, les estimations avoisinent <strong>0,8&nbsp;%</strong> de la population,\n                        un chiffre qui traduit des milliers de familles en quête de réponses, de structures adaptées et de reconnaissance sociale.',
+    'In Senegal as elsewhere in Africa, autism too often remains poorly understood, diagnosed late, and insufficiently supported.\n                        The World Health Organization estimates that <strong>1 in 100 children</strong> has Autism Spectrum Disorder (ASD), and that <strong>15 million people</strong> are affected by autism in Africa. In Senegal, estimates are around <strong>0.8%</strong> of the population —\n                        a figure that reflects thousands of families seeking answers, adapted services, and social recognition.'],
+  ['En tant que mère de deux enfants autistes et présidente de la Plateforme des Associations intervenant dans l\'Autisme au Sénégal (P.A.S),\n                        je connais intimement le parcours des parents&nbsp;: l\'incertitude du diagnostic, la recherche d\'écoles inclusives, l\'accès limité aux spécialistes,\n                        la charge émotionnelle et financière, mais aussi la force, la résilience et l\'amour inconditionnel qui nous animent.',
+    'As a mother of two autistic children and president of the Platform of Associations Working on Autism in Senegal (P.A.S),\n                        I know parents’ journeys intimately: the uncertainty of diagnosis, the search for inclusive schools, limited access to specialists,\n                        the emotional and financial burden — but also the strength, resilience, and unconditional love that drive us.'],
+  ['C\'est pour répondre à ces défis que la P.A.S fédère aujourd\'hui <strong>12 associations</strong> actives sur tout le territoire.\n                        Notre ambition est claire&nbsp;: unifier les voix du secteur associatif, renforcer le plaidoyer auprès des institutions publiques,\n                        faciliter l\'accès à la formation des professionnels de santé et de l\'éducation, et créer des ponts entre familles, praticiens, écoles et bailleurs de fonds.',
+    'It is to meet these challenges that P.A.S today federates <strong>12 associations</strong> active across the country.\n                        Our ambition is clear: unify the voices of the associative sector, strengthen advocacy with public institutions,\n                        facilitate training access for health and education professionals, and build bridges between families, practitioners, schools, and funders.'],
+  ['Chaque 2&nbsp;avril, Journée mondiale de l\'autisme, nous rappelons que l\'inclusion n\'est pas un luxe mais un droit.\n                        Nos actions — conférences, sensibilisations, répertoires de ressources, événements culturels — visent à faire évoluer les mentalités\n                        et à garantir que plus aucun enfant ne reste invisible faute de structures ou de compréhension.',
+    'Every 2&nbsp;April, World Autism Awareness Day, we remind everyone that inclusion is not a luxury but a right.\n                        Our actions — conferences, awareness campaigns, resource directories, cultural events — aim to shift mindsets\n                        and ensure no child remains invisible for lack of services or understanding.'],
+  ['Je remercie le bureau exécutif, le conseil d\'administration, nos associations membres et l\'ensemble des partenaires\n                        qui croient en une autisme-friendly Sénégal. Rejoignez-nous, soutenez nos initiatives, partagez nos messages.\n                        Parce qu\'ensemble, nous pouvons transformer le regard porté sur l\'autisme et ouvrir la voie à une société plus juste et plus humaine.',
+    'I thank the executive board, the board of directors, our member associations, and all partners\n                        who believe in an autism-friendly Senegal. Join us, support our initiatives, share our messages.\n                        Because together, we can transform how autism is seen and open the way to a fairer, more humane society.'],
+
+  ['12 associations fédérées au sein de la P.A.S — contacts et localisation',
+    '12 associations federated within P.A.S — contacts and locations'],
+  ['Voir toutes les associations membres', 'See all member associations'],
+  ['Instance dirigeante — exécution des décisions de l\'Assemblée générale',
+    'Governing body — executing General Assembly decisions'],
+  ['Senior en gestion de projet (20+ ans). Maman de deux garçons autistes, militante depuis 15 ans. Ancienne SG du COPEKX.',
+    'Senior in project management (20+ years). Mother of two autistic boys, advocate for 15 years. Former SG of COPEKX.'],
+  ['Coordination nationale et plaidoyer institutionnel', 'National coordination and institutional advocacy'],
+  ['Représentation auprès des autorités', 'Representation with authorities'],
+  ['Pilotage stratégique de la fédération', 'Strategic leadership of the federation'],
+  ['Sociologue, spécialiste petite enfance et protection de l\'enfant. Coordinateur Impact Sociale. Expert plaidoyer TSA.',
+    'Sociologist specializing in early childhood and child protection. Impact Sociale coordinator. ASD advocacy expert.'],
+  ['Plaidoyer institutionnel et politiques inclusives', 'Institutional advocacy and inclusive policies'],
+  ['Structuration des actions collectives', 'Structuring collective action'],
+  ['Mère de Naby, 21 ans, autiste. Engagée pour l\'inclusion et la visibilité des familles.',
+    'Mother of Naby, 21, autistic. Committed to inclusion and family visibility.'],
+  ['Programmes associatifs et soutien aux familles', 'Association programs and family support'],
+  ['Sensibilisation et lutte contre la stigmatisation', 'Awareness and fight against stigma'],
+  ['20+ ans en assistanat de direction. Ex-SG COPEKX. Fondatrice Solidarité Enfance Inclusive.',
+    '20+ years in executive assistance. Former SG of COPEKX. Founder of Solidarité Enfance Inclusive.'],
+  ['15 ans IT Manager (banque). Parent d\'un enfant autiste, engagé pour l\'inclusion.',
+    '15 years IT Manager (banking). Parent of an autistic child, committed to inclusion.'],
+  ['Gestion financière et transparence comptable', 'Financial management and accounting transparency'],
+  ['Mobilisation des ressources', 'Resource mobilization'],
+  ['Responsable communication institutionnelle : visibilité, cohérence du message et animation des canaux.',
+    'Head of institutional communications: visibility, message consistency, and channel management.'],
+  ['Stratégie de communication et réseaux sociaux', 'Communications strategy and social media'],
+  ['Relations presse et contenus de sensibilisation', 'Press relations and awareness content'],
+  ['Voir la page complète du Bureau exécutif →', 'See the full Executive Board page →'],
+  ['Conformément aux statuts, la P.A.S est administrée par un <strong>Conseil d\'administration</strong> de sept (7) membres\n                    et un <strong>Bureau exécutif</strong> de cinq (5) membres, instance dirigeante pilotant le secrétariat permanent\n                    et les comités thématiques.',
+    'In accordance with the statutes, P.A.S is administered by a <strong>Board of Directors</strong> of seven (7) members\n                    and an <strong>Executive Board</strong> of five (5) members, the governing body steering the permanent secretariat\n                    and thematic committees.'],
+  ['Plan d\'Actions PAS 2026 — Ressources humaines', 'P.A.S 2026 Action Plan — Human resources'],
+  ['Senior en gestion de projet (20+ ans). Maman de deux garçons autistes. Présidente du Bureau exécutif. Ancienne SG du COPEKX.',
+    'Senior in project management (20+ years). Mother of two autistic boys. President of the Executive Board. Former SG of COPEKX.'],
+  ['20+ ans en assistanat de direction. Ex-SG COPEKX. Secrétaire générale du Bureau exécutif. Fondatrice Solidarité Enfance Inclusive.',
+    '20+ years in executive assistance. Former SG of COPEKX. Secretary-General of the Executive Board. Founder of Solidarité Enfance Inclusive.'],
+  ['Le CA comprend également des représentants désignés par les associations membres, pour une gouvernance participative ancrée dans le terrain.',
+    'The Board also includes representatives designated by member associations, for participatory, field-rooted governance.'],
+  ['Voir la page complète du Conseil d\'administration →', 'See the full Board of Directors page →'],
+
+  ['Résultats Attendus', 'Expected Results'],
+  ['L\'impact que la Plateforme Autisme Sénégal vise à générer',
+    'The impact Autism Platform Senegal aims to generate'],
+  ['Réseau national unifié', 'Unified national network'],
+  ['Une plateforme fédératrice reconnue, regroupant toutes les associations dans l\'autisme actives au Sénégal, avec une voix commune auprès des institutions.',
+    'A recognized unifying platform bringing together all autism associations active in Senegal, with a common voice before institutions.'],
+  ['Professionnels formés', 'Professionals trained'],
+  ['Médecins, thérapeutes, enseignants et accompagnateurs formés aux meilleures pratiques de détection et prise en charge des TSA.',
+    'Doctors, therapists, teachers, and support workers trained in best practices for ASD detection and care.'],
+  ['Familles sensibilisées', 'Families reached'],
+  ['Des familles informées, soutenues et outillées pour accompagner leur enfant dans son développement et son inclusion sociale.',
+    'Families informed, supported, and equipped to accompany their child in development and social inclusion.'],
+  ['Politiques publiques impactées', 'Public policies influenced'],
+  ['Des recommandations intégrées dans les politiques nationales de santé, d\'éducation inclusive et de protection sociale de l\'enfant.',
+    'Recommendations integrated into national health, inclusive education, and child social-protection policies.'],
+
+  ['Appel à l\'action — Soutenez la P.A.S', 'Call to action — Support P.A.S'],
+  ['Votre don permet de financer la sensibilisation, la formation et l\'accompagnement des familles d\'enfants vivant avec les TSA au Sénégal.',
+    'Your donation funds awareness, training, and support for families of children living with ASD in Senegal.'],
+  ['Faire un don maintenant', 'Donate now'],
+  ['Contact &amp; Partenaires', 'Contact &amp; Partners'],
+  ['Rejoignez-nous dans cette mission pour l\'autisme au Sénégal',
+    'Join us in this mission for autism in Senegal'],
+  ['Pour tout renseignement, partenariat ou adhésion, contactez-nous via les canaux suivants&nbsp;:',
+    'For information, partnership, or membership, contact us through the following channels:'],
+  ['Téléphone', 'Phone'],
+  ['Site web', 'Website'],
+  ['Nos Partenaires', 'Our Partners'],
+  ['Min. Santé', 'Min. of Health'],
+  ['Min. Éducation Nationale', 'Min. of National Education'],
+  ['Min. De la Famille et des Solidarités', 'Min. of Family and Solidarities'],
+  ['La Plateforme Autisme Sénégal est ouverte à tout partenariat visant à améliorer la prise en charge \n                            des enfants vivant avec les Troubles du Spectre Autistique.',
+    'Autism Platform Senegal welcomes any partnership aimed at improving care \n                            for children living with Autism Spectrum Disorders.'],
+  ['Prochain événement', 'Next event'],
+  ['Journée Mondiale Autisme — 2 Avril 2026', 'World Autism Day — 2 April 2026'],
+  ['Ce dépliant est disponible en version imprimable', 'This brochure is available in a printable version'],
+  ['Imprimer / Enregistrer en PDF', 'Print / Save as PDF'],
+  ['Voir l\'Événement', 'See the Event'],
+
+  // Titles / meta (index)
+  ['Plateforme Autisme Sénégal (P.A.S) — Associations TSA, inclusion & ressources au Sénégal',
+    'Autism Platform Senegal (P.A.S) — ASD associations, inclusion & resources in Senegal'],
+  ['P.A.S — 12 associations autisme au Sénégal. Répertoires médecins, écoles et paramédicaux TSA, actualités, sensibilisation 2 avril. Ressources gratuites pour familles à Dakar et régions.',
+    'P.A.S — 12 autism associations in Senegal. Free ASD directories of doctors, schools, and allied health, news, and 2 April awareness. Resources for families in Dakar and the regions.'],
+  ['Plateforme Autisme Sénégal (P.A.S) — Ensemble pour l\'autisme',
+    'Autism Platform Senegal (P.A.S) — Together for autism'],
+  ['12 associations TSA fédérées, répertoires gratuits et mobilisation pour l\'inclusion au Sénégal. Découvrez la P.A.S et rejoignez le mouvement.',
+    '12 federated ASD associations, free directories, and mobilization for inclusion in Senegal. Discover P.A.S and join the movement.'],
+  ['12 associations autisme au Sénégal — répertoires TSA, actualités et Journée mondiale du 2 avril. Ressources gratuites P.A.S.',
+    '12 autism associations in Senegal — ASD directories, news, and World Autism Day on 2 April. Free P.A.S resources.'],
+  ['Plateforme fédératrice des associations intervenant dans l\'autisme au Sénégal pour améliorer la prise en charge des TSA et promouvoir l\'inclusion.',
+    'Unifying platform of associations working on autism in Senegal to improve ASD care and promote inclusion.'],
+  ['Ensemble pour l\'autisme', 'Together for autism'],
+  ['Actualités autisme — P.A.S', 'Autism news — P.A.S'],
+
+  // Associations meta
+  ['Associations Membres — Plateforme Autisme Sénégal (P.A.S)',
+    'Member Associations — Autism Platform Senegal (P.A.S)'],
+  ['12 associations autisme fédérées par la P.A.S : COPEKX, Enfants Soleil, Special Olympics, Najee Global, Colombins, Delossi… Contacts et missions TSA au Sénégal.',
+    '12 autism associations federated by P.A.S: COPEKX, Enfants Soleil, Special Olympics, Najee Global, Colombins, Delossi… ASD contacts and missions in Senegal.'],
+  ['Associations Membres — Plateforme Autisme Sénégal',
+    'Member Associations — Autism Platform Senegal'],
+  ['Découvrez les 12 associations membres P.A.S : contacts, logos et actions pour l\'inclusion des enfants TSA au Sénégal.',
+    'Discover the 12 P.A.S member associations: contacts, logos, and actions for inclusion of children with ASD in Senegal.'],
+
+  // President meta
+  ['Mot de la Présidente — Plateforme Autisme Sénégal (P.A.S)',
+    "President's Message — Autism Platform Senegal (P.A.S)"],
+  ['Message d\'Aïssatou Diallo Camara, présidente P.A.S : vision, défis de l\'autisme au Sénégal, mobilisation des familles TSA et plaidoyer pour une société inclusive.',
+    'Message from Aïssatou Diallo Camara, P.A.S president: vision, autism challenges in Senegal, ASD family mobilization, and advocacy for an inclusive society.'],
+  ['Mot de la Présidente — Plateforme Autisme Sénégal',
+    "President's Message — Autism Platform Senegal"],
+  ['Aïssatou Diallo Camara appelle à l\'unité des associations et à l\'inclusion des enfants TSA au Sénégal. Lisez son message.',
+    'Aïssatou Diallo Camara calls for association unity and inclusion of children with ASD in Senegal. Read her message.'],
+
+  // Bureau meta
+  ['Bureau Exécutif — Plateforme Autisme Sénégal (P.A.S)',
+    'Executive Board — Autism Platform Senegal (P.A.S)'],
+  ['Bureau exécutif P.A.S : équipe dirigeante autisme Sénégal (Aïssatou Diallo Camara, Magor Dia, Ndeye Marieme Fall Sadio…). Gouvernance et actions pour l\'inclusion TSA.',
+    'P.A.S executive board: Senegal autism leadership team (Aïssatou Diallo Camara, Magor Dia, Ndeye Marieme Fall Sadio…). Governance and action for ASD inclusion.'],
+  ['Bureau Exécutif — Plateforme Autisme Sénégal',
+    'Executive Board — Autism Platform Senegal'],
+  ['Rencontrez le bureau exécutif P.A.S : présidence, vice-présidence et secrétariat au service de l\'inclusion TSA au Sénégal.',
+    'Meet the P.A.S executive board: presidency, vice-presidency, and secretariat serving ASD inclusion in Senegal.'],
+
+  // CA meta
+  ['Conseil d\'Administration — Plateforme Autisme Sénégal (P.A.S)',
+    'Board of Directors — Autism Platform Senegal (P.A.S)'],
+  ['Conseil d\'administration P.A.S : 7 membres, gouvernance associatif autisme Sénégal, Plan d\'Actions 2026. Profils, fonctions et rôles de chaque administrateur.',
+    'P.A.S board of directors: 7 members, Senegal autism association governance, 2026 Action Plan. Profiles, functions, and roles of each director.'],
+  ['Conseil d\'Administration — Plateforme Autisme Sénégal',
+    'Board of Directors — Autism Platform Senegal'],
+  ['Gouvernance P.A.S : conseil d\'administration, Plan d\'Actions 2026 et profils des membres pour l\'inclusion TSA au Sénégal.',
+    'P.A.S governance: board of directors, 2026 Action Plan, and member profiles for ASD inclusion in Senegal.'],
+
+  // Depliant meta
+  ['Dépliant P.A.S — Plateforme Autisme Sénégal | Bureau, mission & associations TSA',
+    'P.A.S Brochure — Autism Platform Senegal | Board, mission & ASD associations'],
+  ['Dépliant officiel P.A.S : mission, 12 associations, mot de la présidente, bureau et conseil d\'administration. Guide complet autisme et inclusion TSA au Sénégal.',
+    'Official P.A.S brochure: mission, 12 associations, president’s message, executive board and board of directors. Complete autism and ASD inclusion guide for Senegal.'],
+  ['Dépliant — Plateforme Autisme Sénégal (P.A.S)',
+    'Brochure — Autism Platform Senegal (P.A.S)'],
+  ['Dépliant P.A.S : 12 associations, gouvernance, mission et objectifs pour une meilleure prise en charge de l\'autisme au Sénégal.',
+    'P.A.S brochure: 12 associations, governance, mission, and goals for better autism care in Senegal.'],
+];
+
+function addPrintVersionLink(html) {
+  if (html.includes('depliant-print.html') && /Print version/i.test(html)) return html;
+  // After Brochure nav item
+  const patterns = [
+    /(<a href="depliant\.html"[^>]*>[\s\S]*?<\/a>\s*<\/li>)/i,
+    /(<a href="depliant\.html"[^>]*class="nav-link"[^>]*>[\s\S]*?Brochure[\s\S]*?<\/a>\s*<\/li>)/i
+  ];
+  const link =
+    '\n                <li class="nav-item">' +
+    '<a href="depliant-print.html" class="nav-link"><i class="fas fa-print"></i> Print version</a>' +
+    '</li>';
+  for (const re of patterns) {
+    if (re.test(html) && !html.includes('href="depliant-print.html"')) {
+      return html.replace(re, '$1' + link);
+    }
+  }
+  // Fallback: insert before nav-actions closing if Brochure exists
+  if (html.includes('depliant.html') && !html.includes('href="depliant-print.html"')) {
+    return html.replace(
+      /(Brochure<\/a>\s*<\/li>)/i,
+      '$1' + link
+    );
+  }
+  return html;
+}
+
+function fixOgLocale(html) {
+  if (html.includes('og:locale" content="en_US"')) {
+    if (!html.includes('og:locale:alternate')) {
+      html = html.replace(
+        /(<meta property="og:locale" content="en_US">)/,
+        '$1\n    <meta property="og:locale:alternate" content="fr_SN">'
+      );
+    }
+    return html;
+  }
+  if (html.includes('og:locale')) {
+    html = html.replace(
+      /<meta property="og:locale" content="fr_SN">/,
+      '<meta property="og:locale" content="en_US">\n    <meta property="og:locale:alternate" content="fr_SN">'
+    );
+  }
+  return html;
+}
+
+function translate(html) {
+  // Sort by FR length desc for safer replace
+  const sorted = [...PAIRS].sort((a, b) => b[0].length - a[0].length);
+  for (const [fr, en] of sorted) {
+    if (html.includes(fr)) {
+      html = html.split(fr).join(en);
+    }
+  }
+  html = fixOgLocale(html);
+  html = addPrintVersionLink(html);
+  return html;
+}
+
+let totalApproxWords = 0;
+for (const file of FILES) {
+  const fp = path.join(EN, file);
+  if (!fs.existsSync(fp)) {
+    console.warn('missing', file);
+    continue;
+  }
+  const before = fs.readFileSync(fp, 'utf8');
+  const after = translate(before);
+  fs.writeFileSync(fp, after, 'utf8');
+  const changed = before !== after;
+  const words = after.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  totalApproxWords += Math.min(words, 2500);
+  console.log(file, changed ? 'updated' : 'unchanged', 'words~', words);
+}
+console.log('done, approx translated words across pages ~', totalApproxWords);
