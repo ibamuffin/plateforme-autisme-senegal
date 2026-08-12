@@ -321,6 +321,17 @@ main:hover .animated-background .floating-hearts {
     white-space: nowrap;
 }
 
+/* Avoid brand/menu collision on dense desktop layouts */
+@media (max-width: 1400px) {
+    .nav-logo h2 {
+        font-size: 0;
+        width: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+}
+
 .nav-logo i {
     color: var(--secondary-color);
 }
@@ -331,7 +342,8 @@ main:hover .animated-background .floating-hearts {
     min-width: 0;
     align-items: center;
     justify-content: flex-end;
-    gap: 0.15rem;
+    gap: 0.35rem;
+    overflow: hidden;
 }
 
 .nav-menu {
@@ -345,7 +357,7 @@ main:hover .animated-background .floating-hearts {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
-    gap: 0.12rem 0.32rem;
+    gap: 0.08rem 0.22rem;
 }
 
 .nav-menu.nav-actions {
